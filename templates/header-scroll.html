@@ -1,0 +1,32 @@
+<div id="header-scroll">
+
+  {% for event in header_events %}
+  <div class="item" id="event-{{ forloop.counter0 }}">
+
+    <div class="item-top">
+      <div class="date">{{ event.date|date:"d" }}.</div>
+      <a href="{% url event-slug event.slug %}">
+	{% if event.title|length < 33 %}
+          {{ event.title }}
+        {% else %}
+          {{ event.title|stringformat:".33s" }}...
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="item-bottom">
+      <div class="date">{{ event.date|date:"D"}}</div>
+      {{ event.tags }} 
+      {% if event.price %} &mdash; {{ event.price }} {% endif %}
+      {% if event.time %} &mdash; od {{ event.time|time:"H" }}h {% endif %}
+    </div>
+    
+  </div>
+  {% endfor %}
+
+</div>
+
+<div id="header-scroll-arrows">
+  <a href="javascript:header_scroll_up()">&uarr;</a>
+  <a href="javascript:header_scroll_down()">&darr;</a>
+</div>

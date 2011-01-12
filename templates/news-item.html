@@ -1,0 +1,27 @@
+{% extends 'program.html' %}
+
+{% load fb_versions %}
+
+{% block leftcolumn %}
+
+<div class="item">
+  <h3><span class="orange">&raquo;&nbsp;</span>{{ news.publish|date:"l, d. F Y." }}</h3>
+ 
+  <h1>{{ news.subject }}</h1>
+
+  <div class="icontent">
+    {% if news.thumb %}
+      <img src="{% version news.thumb 'medium' %}"  class="thumb" />
+    {% endif %}
+
+    {{ news.description|safe }}
+
+    {{ news.content|safe }}
+    
+    <div class="ifooter"></div> 
+
+  </div>
+
+</div>
+
+{% endblock %}

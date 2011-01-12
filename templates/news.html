@@ -1,0 +1,66 @@
+{% extends 'program.html' %}
+
+{% load fb_versions %}
+
+{% block leftcolumn %}
+
+{% if events %}
+<div id="announce">
+  <h3><span class="orange">&raquo;&nbsp;</span>Posebno najavljujemo!</h3>
+
+  {% for event in events %}
+    <a href="{% url event-slug event.slug %}" style="background-image: url({% version event.thumb 'thumbnail' %}); background-postion: center;">
+      <div class="date">{{ event.date|date:"d.m. l" }}</div>
+      <div class="text">{{ event.title }}</div>
+    </a>
+  {% endfor %}
+
+</div>
+{% endif %}
+
+
+{% for item in news %}
+
+  <div class="item">
+    <h3><span class="orange">&raquo;&nbsp;</span>{{ item.publish|date:"l, d. F Y." }}</h3>
+ 
+    <h1>{{ item.subject }}</h1>
+
+    {% if item.description %}
+
+      <div class="icontent">
+        {% if item.thumb %}
+          <img src="{% version item.thumb 'medium' %}"  class="thumb" />
+        {% endif %}
+
+        {{ item.description|safe }}
+
+        <div id="{{ item.slug }}" style="display:none;">
+          {{ item.content|safe }}
+        </div>
+    
+      </div>
+  
+      {% if item.content %}
+        <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+      {% endif %}
+
+    {% else %}
+
+      <div class="icontent">
+        {% if item.thumb %}
+          <img src="{% version item.thumb 'medium' %}" class="thumb" />
+        {% endif %}
+
+        {{ item.content|safe }}
+      </div>
+    {% endif %}
+
+    <div class="ifooter">
+    </div> 
+
+  </div>
+
+{% endfor %}
+
+{% endblock %}

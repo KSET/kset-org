@@ -1,0 +1,35 @@
+{% extends 'program.html' %}
+
+{% block leftcolumn %}
+
+<div class="hMenu">
+
+  <h3>Odaberi godinu ...</h3>
+  {% for year in years %}
+    <a href="{% url events-archive-year year.0 %}">{{ year.0 }}</a>{% if not forloop.last %}, {% endif %}
+  {% endfor %}
+
+</div>
+
+<div class="item">
+
+  <div class="icontent">
+
+    <table>
+      {% for event in events %}
+    
+      {% ifchanged %} </table><h2>{{ event.date|date:"F Y." }}</h2><table> {% endifchanged %}
+
+      <tr>
+        <td style="width:90px">{{ event.date|date:"d.m.Y." }} </td>
+        <td><a href="{% url event-slug event.slug %}">{{ event.title }}</a></td>
+      </tr>
+
+      {% endfor %}
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

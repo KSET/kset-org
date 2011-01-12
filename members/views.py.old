@@ -1,0 +1,210 @@
+#coding: utf8
+
+from members.models import *
+from members import forms
+
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.shortcuts import render_to_response
+from django.template import Context
+
+import md5
+
+
+# context definition --> put here 'default' values for views/templates
+ctx = Context({'menu': Group.objects.tree()
+             })
+
+
+def require_auth(view):
+    """Custom decorator, checks if user is logged in."""
+    
+    def wrapper(request, *args):
+
+        user_id = request.session.get('user_id', False)
+
+        if (user_id):
+            user = Member.objects.get(id=user_id)
+        else:
+            return HttpResponseRedirect(reverse("members-login"))
+        
+        return view(request, *args)
+    
+    return wrapper
+
+
+def current_user(request):
+    """Gets Member object of currently logged in user."""
+    
+    user_id = request.session.get('user_id', False)
+    
+    return Member.objects.get(id=user_id)  
+    
+
+def user_login(request):
+    """Processes login; checks user's credentials, logs in or reports error."""
+
+    # check if users is already logged in
+    if request.session.get('user_id', False):
+        return HttpResponseRedirect(reverse("members"))
+
+    else:
+
+        # check if form data is posted
+        if (request.method == 'POST'):
+
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+
+            pwhash = md5.new(password).hexdigest() 
+
+            # check username + password
+            try:
+                member = Member.objects.get(password=pwhash, username=username)
+                
+                request.session["user_id"] = member.id
+                return HttpResponseRedirect(reverse("members-member", args=(member.id,)))
+            
+            except:
+                return render_to_response('members-login.html', {
+                    'form': forms.LoginForm(request.POST)
+                    })
+        else:
+            return render_to_response('members-login.html', {
+                'form': forms.LoginForm()
+                })
+
+
+def logout(request):
+    """As the name says --> logs out user."""
+    
+    if request.session.get('user_id', False):
+        request.session.flush()
+        
+    return HttpResponseRedirect(reverse("members-login"))
+
+
+@require_auth
+def active(request):
+    """ ... """
+    
+    members = Member.objects.order_by('surname', 'name')
+
+    return render_to_response('members.html', {
+        'members': members,
+        'logged_user': current_user(request),
+        }, context_instance=ctx)
+
+
+@require_auth
+def single(request, member_id):
+    """Shows full info for single user."""
+    
+    logged_user = current_user(request)
+    
+    member = Member.objects.get(id = member_id)
+
+    return render_to_response('members-single.html',{
+        'member': member,
+        'addresses': Address.objects.filter(member=member.id),
+        'contacts': Contact.objects.filter(member=member.id),
+
+        # hardcoded
+        'divisions': MemberGroupLink.objects.filter(member=member.id).filter(group__parent=1),
+        'cards': MemberGroupLink.objects.filter(member=member.id).filter(group__parent=2),
+        'charges': MemberGroupLink.objects.filter(member=member.id).filter(group__parent=3),
+
+        'logged_user': logged_user
+        }, context_instance=ctx)
+
+
+###
+
+@require_auth
+def edit(request, member_id):
+
+    loged_user = current_user(request)
+    
+    # provjeri jeli postan kontakt
+    posted_contact = request.POST.get("kontakt",False)
+    posted_type = request.POST.get("type",False)
+    
+    if posted_contact and posted_type:
+        novi_kontakt = MemberContact(member = loged_user, contact = posted_contact, contact_type = ContactTypes.objects.get(id=posted_type))
+        novi_kontakt.save()
+        kontakt_dodan = True
+    else:
+        kontakt_dodan = False
+
+    # provjeri jeli postana adresa
+    p_address= request.POST.get("address",False)
+    p_town = request.POST.get("town",False)
+    p_zipcode = request.POST.get("zipcode",False)
+    p_country = request.POST.get("country",False)
+    
+    if p_address and p_town and p_zipcode and p_country:
+        nova_adresa = MemberAddress(member = loged_user,address = p_address, town = p_town, zipcode = p_zipcode, country = p_country)
+        nova_adresa.save()
+        adresa_dodana = True
+    else:
+        adresa_dodana = False
+
+
+    # promjena passworda
+    novi_pass = request.POST.get("novi_pass",False)
+    novi_pass_2 = request.POST.get("novi_pass_2",False)
+    
+    if novi_pass and novi_pass_2:
+        if novi_pass == novi_pass_2:
+            loged_user.password = md5.new(novi_pass).hexdigest()
+            loged_user.save()
+
+            password_ok = True
+
+        else: password_dont_match = True
+    else:
+        password_ok = False
+        password_dont_match = False
+
+    contact_types = ContactType.objects.all()
+    
+    return render_to_response('members-edit-profile.html',{
+        'form': forms.LoginForm(request.POST),
+        }, context_instance=ctx)
+
+
+
+###
+
+@require_auth    
+def delete_contact(request,contact_id):
+    
+    loged_user = current_user(request)
+    
+    kontakt = MemberContact.objects.get(id=contact_id)
+    if kontakt.member == loged_user:
+        kontakt.delete()
+        return HttpResponseRedirect(reverse("members-edit"))
+
+
+@require_auth
+def delete_address(request,contact_id):
+
+    loged_user = current_user(request)    
+    
+    kontakt = MemberAddresses.objects.get(id=contact_id)
+    if kontakt.member == loged_user:
+        kontakt.delete()
+        return HttpResponseRedirect(reverse("members-edit"))    
+
+###
+
+def invitations(request):
+    """Generates HTML with red member's contacts. Used for printing invitations"""
+
+    members = Member.objects.raw("SELECT member.id, name, surname, address, town, zipcode, country FROM members_member AS member LEFT JOIN members_address ON member_id = member.id WHERE address IS NOT NULL AND country IS NULL ORDER BY surname, name;")
+	   
+    return render_to_response("members-invitations.html", {"members": members})
+
+
+        

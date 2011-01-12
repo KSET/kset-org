@@ -1,0 +1,74 @@
+<!DOCTYPE HTML />
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/media/frontend/css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/media/frontend/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="/media/frontend/images/favicon.png" />
+
+    <title>KSET.org - Klub Studenata ElektroTehnike</title>
+
+    <script type="text/javascript" src="/media/frontend/js/jquery-1.4.2.min.js" language="javascript"></script>
+    <script type="text/javascript" src="/media/frontend/js/custom-functions.js" language="javascript"></script>
+
+     <!-- Google analytics -->
+    <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20067825-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+    </script>
+
+
+  </head>
+
+  <body>
+
+    <div id="container">
+
+      <div id="header" style="background-image:url(/media/frontend/images/headers/{{ header_bg }});">
+
+	<a href="{% url root %}"><img src="/media/frontend/images/kset_logo.png" id="kset-logo" /></a>
+
+	<div id="top-menu">
+	  <code id="top-menu-prompt">&gt;</code>
+	  <a href="{% url root %}">program</a>
+	  <a href="{% url club %}">klub / sekcije</a>
+	  <a href="{% url multimedia %}">multimedia</a>
+
+      <!-- veljko postavio da mu google prije indexera nesto drugo -->
+      <a href="http://www.myindian.se/" style="display:none;">myIndian.se</a>
+
+	</div>
+
+	{% include 'header-scroll.html' %}
+	
+      </div>
+
+      <div id="content">
+
+      {% block content %}
+
+      {% endblock %}
+      
+	  <div style="clear:both;"></div>
+
+      </div>
+
+      <div id="footer">
+	<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
+	<i>... prvi put otvorio vrata <b>1976.</b></i>
+      </div>
+
+    </div>
+
+  </body>
+
+</head>

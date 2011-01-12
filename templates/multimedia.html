@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+<div id="right">
+  <h1><span class="orange">&raquo;</span> Zadnje iz fotogalerije</h1>
+  <h1><span class="orange">&raquo;</span> Kratki filmovi</h1>
+</div>
+
+
+<div id="left">
+
+  <h1>Live video stream</h1>
+
+  <!-- 720x576 : 468x374.4 --> 
+  <video controls width="468" height="374"> 
+    <source src="http://zaphod.kset.org:8000/audiovideo.ogg" type="video/ogg">  
+    Your browser does not support the <code>video</code> element.  
+  </video> 
+
+  <p></p>
+
+</div>
+
+{% endblock %} 

@@ -1,0 +1,666 @@
+/*201F25*/
+
+body 
+{
+    background-color: #333;
+    margin: 0px;
+    font-family: Verdana,sans-serif,arial;
+    font-size: 11px;
+
+}
+
+td 
+{
+    vertical-align: top;
+}
+
+a
+{
+    color: #c06833;
+    text-decoration: none;
+}
+
+ul
+{
+    list-style-image: url('sqpurple.gif');
+}
+
+img
+{
+    border: 0px;
+}
+
+input
+{
+    border: 1px solid #aaa;
+    margin: 0px;
+    
+}
+
+.vsep
+{
+    border-bottom: 1px dotted #aaa;
+    margin-top: 8px;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+#container
+{
+    width: 850px;
+    margin: 15px auto 30px auto;
+    background-color: #f1f1f1;
+    border: 5px solid #000;
+    border-bottom: 40px solid #000;
+
+    -moz-box-shadow: 0 0 15px #000;
+    -webkit-box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 15px #000;
+}
+
+.orange
+{
+    color: #fe7929;
+}
+
+#footer
+{
+    position: absolute;
+    margin-top: 5px;
+    width: 850px;
+    text-align: center;
+    color: #bbb;
+}
+
+/* --- HEADER ------------------------------------------------------ */
+
+#header
+{
+    background: #000 url(../images/headers/header_bg_trubac.jpg) no-repeat scroll left top;
+    width: 850px;
+    height: 300px;
+    border-bottom: 2px solid #fe7929;
+    font-family: helvetica, sans-serif, arial;
+    letter-spacing: 1px;
+}
+
+#kset-logo
+{
+    float:left;
+    margin: 10px;
+}
+
+/* SCROLL */
+
+#header-scroll
+{
+    float: right;
+    width: 400px;
+    height: 285px;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-right: 13px;
+}
+
+#header-scroll .item
+{
+    font-size: 18px;
+    color: #ddd;
+    padding: 5px 0px;
+    border-bottom: 1px solid #803d15;
+}
+
+#header-scroll .item a
+{
+    color: #ddd;
+    text-decoration: none;
+}
+#header-scroll .item a:hover
+{
+    color: #fff;
+    text-decoration: underline;
+}
+
+#header-scroll .item-top
+{
+    height: 22px;
+}
+
+#header-scroll .item-top .date
+{
+    float: left;
+    font-weight: bold;
+    width: 40px;
+    height: 22px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+#header-scroll .item-bottom
+{
+    height: 15px;
+    font-size: 12px;
+    color: #777;
+}
+
+#header-scroll .item-bottom .date
+{
+    float: left;
+    width: 40px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+#header-scroll-arrows
+{
+    position: absolute;   
+    margin: 245px 0px 0px 838px;
+}
+
+#header-scroll-arrows a
+{
+    width: 9px;
+    height: 23px;
+    display: block;
+    font-size: 20px;
+}
+
+#header-scroll-arrows a:hover
+{
+    text-decoration: none;
+    color: #FE7929;
+}
+
+
+/* TOP MENU */
+
+#top-menu
+{
+    float: left;
+    position: absolute;
+    margin-top: 270px;
+    height: 25px;
+    width: 400px;
+    background-color: #000;
+    padding: 5px 0px 0px 10px;
+    opacity:0.85;
+    filter:alpha(opacity=85); /* IE */
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#top-menu a
+{
+    color: #eee;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+#top-menu a:hover
+{
+    color: #fe7929;
+    text-decoration: none;
+}
+
+#top-menu-prompt
+{
+    color: #fe7929;
+}
+
+.prompt-blink
+{
+    background-color: #fe7929;
+}
+
+/* --- CONTENT ----------------------------------------------------- */
+
+#content, table
+{
+    font-size: 12px;
+    color: #111;
+}
+
+#content h1
+{
+    font-size: 18px;
+    margin: 5px 0px 0px 0px;
+    text-shadow:1px 1px 1px #ccc;
+}
+
+#content h2
+{
+    font-size: 14px;
+    margin: 5px 0px 0px 0px;
+    text-shadow:1px 1px 1px #ccc;
+}
+
+
+
+#content h3
+{
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #555;
+    margin: 0px;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+#content .hMenu
+{
+    margin-top: 10px;
+}
+
+/* LOGOS */
+
+#social-logos
+{
+    width: 345px;
+    height: 26px;
+}
+
+#social-logos a
+{
+    display: block;
+    height: 26px;
+    float: left;
+    background-image: url(../images/social.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.logo-twitter
+{
+    background-position: 0px -26px;
+    width: 75px;
+}
+.logo-twitter:hover { background-position: 0px 0px; }
+
+.logo-lastfm
+{
+    background-position: -160px -26px;
+    width: 65px;
+}
+.logo-lastfm:hover { background-position: -160px 0px; }
+
+.logo-facebook
+{
+    background-position: -75px -26px;
+    width: 85px;
+}
+.logo-facebook:hover { background-position: -75px 0px; }
+
+.logo-youtube
+{
+    background-position: -225px -26px;
+    width: 55px;
+}
+.logo-youtube:hover { background-position: -225px 0px; }
+
+.logo-rss
+{
+    background-position: -285px -26px;
+    width: 35px;
+}
+.logo-rss:hover { background-position: -285px 0px; }
+
+.logo-irc
+{
+    background-position: -320px -26px;
+    width: 25px;
+}
+.logo-irc:hover { background-position: -320px 0px; }
+
+.logo-fer
+{
+    float: right;
+    margin-right: 5px;
+    margin-top: -18px;
+    background: transparent url(../images/fer.png) no-repeat scroll 0px -60px;
+    
+    display: block;
+    width: 40px;
+    height: 60px;
+}
+.logo-fer:hover
+{
+    background: transparent url(../images/fer.png) no-repeat scroll 0px 0px;
+}
+
+
+/* LEFT COLUMN */
+
+#left
+{
+    width: 468px;
+    margin-left: 10px;
+}
+
+#left p
+{
+    /*text-indent: 20px;*/
+    /*text-align: justify;*/
+}
+
+#left .item
+{
+    margin: 10px 0px;
+    border-top: 1px dotted #aaa;
+    padding-top: 10px;
+}
+
+#left .thumb
+{
+  float: left;
+  margin: 3px 10px 3px 0px;
+}
+
+.shareFb, .shareTw
+{
+  background-image: url(/media/frontend/images/share_fb_tw.png);
+  float: right;
+  display: block;
+  margin-top: -16px;
+  margin-left: 5px;
+  width: 19px;
+  height: 19px;
+}
+.shareFb { background-position: 0px -19px; }
+.shareFb:hover { background-position: 0px 0px; }
+.shareTw { background-position: -19px -19px; }
+.shareTw:hover { background-position: -19px 0px; }
+
+/* ANNOUNCE */
+
+#announce
+{
+    margin-top: 10px;
+    padding-top: 3px;
+    height: 130px;
+}
+
+#announce a
+{
+    display: block;
+    float: left;
+    width: 140px;
+    height: 105px;
+    border: 1px solid #ccc;
+    margin: 5px 0px 9px 12px;
+    position: relative;
+}
+
+#announce a:hover
+{
+    text-decoration: none;
+    border: 1px solid #fe7929;
+}
+
+#announce .text
+{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 3px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #000;    
+    opacity:0.85;
+    filter:alpha(opacity=85); /* IE */
+}
+
+#announce .date
+{
+    color: #fff;
+    font-size: 10px;
+    padding: 0px 5px;
+    background-color: #000;
+    opacity:0.85;
+    filter:alpha(opacity=85); /* IE */
+}
+
+
+/* RIGHT COLUMN */
+
+#right
+{
+    font-size: 11px;
+    color: #333;
+    float: right;
+    clear: both;
+    width: 345px;
+    margin-right: 10px;
+}
+
+#right table
+{
+    font-size: 11px;
+}
+
+#right h1
+{
+    font-family:arial,helvetica,sans-serif;
+    font-size: 10px;
+    color: #555;
+    margin: 0px;
+    padding: 10px 0px 3px 0px;
+}
+
+#right p
+{
+    margin: 5px 3px 3px 12px;
+}
+
+#club-info
+{
+    background: #fff url(../images/cockroach.png) no-repeat scroll right top;
+    border: 1px solid #e6e6e6;
+    font-size: 9px;
+    font-style: italic;
+    color: #555;
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#club-info ol
+{
+    padding: 0px 0px 0px 25px;
+}
+
+/* RIGHT COLUMN - FORMS */
+
+#form-search
+{
+    display: inline;
+}
+
+#form-newsletter
+{
+    margin: 0 0 0 12px;
+}
+
+/* RIGHT COLUMN - SUBCOLUMN */
+
+#right-right
+{
+    float: right;
+    width: 130px;
+}
+
+#right-left
+{
+    width: 200px;
+    border-right: 1px dotted #aaa;
+    padding-right: 5px;
+}
+
+
+
+/* RIGHT COLUMN - KLUB */
+
+
+#right-klub
+{
+    font-size: 11px;
+    color: #333;
+    float: right;
+    width: 400px;
+    margin-right: 10px;
+}
+
+#right-col2-klub
+{
+    float: right;
+    width: 175px;
+    background-color: #e1e1e1;
+    border-right: 1px solid #d1d1d1;
+    border-left: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 0px 3px 10px 5px;
+
+}
+
+#right-col1-klub
+{
+    width: 195px;
+    background-color: #e8e8e8;
+    border-right: 1px solid #d8d8d8;
+    border-left: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 0px 3px 10px 5px;
+}
+
+#right-klub table
+{
+    font-size: 11px;
+}
+
+#right-klub h1
+{
+    font-family:arial,helvetica,sans-serif;
+    font-size: 10px;
+    color: #555;
+    padding: 10px 0px 3px 5px;
+}
+
+#right-klub p
+{
+    margin: 5px 3px 3px 12px;
+}
+
+
+.cellmenu
+{
+}
+
+.cellmenu a
+{
+    display: block;
+    float: left;
+    width: 80px;
+    height: 60px;
+    border: 1px solid #ccc;
+    margin: 5px 0px 0px 12px;
+    position: relative;
+}
+
+.cellmenu a:hover
+{
+    text-decoration: none;
+    border: 1px solid #fe7929;
+}
+
+.cellmenu .text
+{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    padding: 0px 3px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 10px;
+    background-color: #000;    
+    opacity:0.85;
+    filter:alpha(opacity=85); /* IE */
+}
+
+/* CALENDAR */
+
+.calendar
+{
+  height: 120px;
+
+  text-align: center;
+  }
+
+.calendar span
+{ 
+  float: left;
+  display: block;
+  width: 16px;
+
+  font-size: 10px;
+  font-weight: bold;
+  color: #444;
+
+  background-color: #e5e5e5;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #f7ac7b;
+  
+  margin-bottom: 2px;
+  }
+
+.calendar a
+{ 
+  float: left;
+
+  display: block;
+  width: 16px;
+  height: 14px;
+
+  font-size: 10px;
+  color: #000;
+
+  border: 1px solid transparent;
+  }
+
+.calendar a:hover
+{ 
+  font-weight: bold;
+  }
+
+.calendar .reserved
+{ 
+  font-weight: bold;
+  }
+
+.calendar .out-month
+{ 
+  color: #666;
+  }
+
+.calendar .today
+{ 
+  border: 1px solid #999;
+  }
+
+.calendar .month
+{ 
+  width: 88px;
+  font-weight: bold;
+  }
+
+
+
+
+
+

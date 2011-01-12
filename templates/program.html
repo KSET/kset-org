@@ -1,0 +1,128 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div id="right">
+  
+  <div id="club-info">
+    <p>
+      <b>Upute za korištenje KSET-a.</b>
+      <ol style="margin-bottom: 0px;">
+	<li>Klub je tu radi članova.</li>
+	<li>Klub je onakav kakvim ga svaki pojedini član svojim radom i stavom čini.</li>
+	<li>Održavanje Kluba "nužno je zlo", koje se može obaviti na poprilično zabavan način.</li>
+	<li>Svaki pravi ksetovac je barem jednom očistio zahode.</li>
+	<li>Bitno je druženje, razmjena iskustava i znanja, i naravno, tolerancija. Ništa u klubu se ne radi zbog novca.</li>
+	<li>Program je tu da financira sekcijske aktivnosti članova.</li>
+	<li>Politici nije mjesto u Klubu.</li>
+	<li>Rad u KSET-u jedno je od najvećih i najboljih životnih iskustava.</li>
+	<li>Iz povijesti se uči.</li>
+      </ol>
+      <span style="margin-left: 140px;">... preuzeto iz <b>monografije 2<sup>5</sup> KSET-a</b>.</span>
+    </p>
+  </div>
+
+  <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Pretraživanje sadržaja ...</h1>
+
+  <form id="form-search" method="GET" action="{% url search %}">
+    <input type="text" style="width: 150px" name="query" /><input type="button" value="&raquo;" />
+  </form>
+  Arhiva: <a href="{% url news-archive %}"><b>Vijesti</b></a> | <a href="{% url events-archive %}"><b>Programa</b></a>
+
+  <div class="vsep"></div>
+
+  <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Socijalno virtualiziranje ...</h1>
+  <div id="social-logos">
+    <a href="http://twitter.com/KSETinfo/" class="logo-twitter" target="blank"></a>
+    <a href="http://www.facebook.com/KSETZg/" class="logo-facebook" target="blank"></a>
+    <a href="http://www.last.fm/user/Klub_KSET/" class="logo-lastfm" target="blank"></a>
+    <a href="http://www.youtube.com/user/KsetVideo" class="logo-youtube" target="blank"></a>
+    <a href="http://www.kset.org/feeds/rss/" class="logo-rss" target="blank"></a>
+    <a href="http://webchat.freenode.net/?channels=kset" class="logo-irc" target="blank"></a>
+  </div>
+
+  <div class="vsep"></div>
+
+
+  <div id="right-right">
+
+    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Za nostalgičare ...</h1>
+
+    <script type="text/javascript" src="/media/js/jquery.query-2.1.7.js"></script>
+    <script type="text/javascript">
+
+      function GetCalendar(year, month)
+      {
+        $("#calendar").load("{% url calendar %}",{'year': year, 'month': month});
+      }
+
+      $(document).ready(function() {
+                          year = ($.query.get('year')) ? $.query.get('year') : 0;
+                          month = ($.query.get('month')) ? $.query.get('month') : 0;
+                          GetCalendar(year,month)
+                        });
+    </script>
+
+    <div id="calendar" class="calendar"></div>
+
+    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Utičnice ...</h1>
+    <p>
+      <a href="http://www.sczg.hr/">Studenski centar</a><br />
+      <a href="http://www.dirtyoldempire.com/">Dirty old shop</a><br />
+      <a href="http://www.mmv-auris.hr/">MMV-Auris</a><br />
+      <a href="http://www.mipro.hr/">MIPRO</a><br />
+      <a href="http://www.radiostudent.fpzg.hr/">Radio Student</a><br />
+      <a href="http://www.muzika.hr/">Muzika.hr</a><br />
+      <a href="http://www.terapija.net/">Terapija.net</a><br />
+      <a href="http://www.linux.hr/">HULK</a><br />
+      <a href="http://www.razmjenavjestina.org/">Razmjena vjestina</a><br />
+      <a href="http://www.carnet.hr/">CARNet</a><br />
+    </p>
+
+
+  </div>
+
+  <div id="right-left">
+
+    {% include 'newsletter-form.html' %}
+
+    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Informacije</h1>
+    <p>
+      <table>
+	<tr>
+	  <td><b>mail:</b></td><td><a href="#">info@kset.org</a><br /><a href="#">booking@kset.org</a></td>
+	</tr>
+	<tr>
+	  <td><b>adr:</b></td><td>Unska 3, 10000 Zagreb</td>
+	</tr>
+	<tr>
+	  <td><b>tel:</b></td><td>+385 1 6129 758</td>
+	</tr>
+	<tr>
+	  <td><b>gdje?!</b></td><td>
+	    <a href="#">GoogleMaps</a><br />
+	    <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
+	  </td>
+	</tr>
+      </table>
+    </p>
+    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Uvijek je tu za nas</h1>
+    <a href="http://www.fer.hr/" class="logo-fer"></a>
+    <p><a href="http://www.fer.hr/">Fakultet elektrotehnike<br />i računarstva</a></p>
+
+   
+  </div>
+
+
+</div>
+
+
+<div id="left">
+
+  {% block leftcolumn %}
+
+  {% endblock %}
+  
+</div>
+
+{% endblock %}

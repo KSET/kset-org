@@ -1,0 +1,26 @@
+{% extends 'program.html' %}
+
+{% block leftcolumn %}
+
+<div class="item">
+
+  <div class="icontent">
+
+    <table>
+      {% for item in news %}
+    
+      {% ifchanged %} </table><h2>{{ item.publish|date:"F Y." }}</h2><table> {% endifchanged %}
+
+      <tr>
+        <td style="width:90px">{{ item.publish|date:"d.m.Y." }} </td>
+        <td><a href="{% url news-slug item.slug %}">{{ item.subject }}</a></td>
+      </tr>
+
+      {% endfor %}
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}
