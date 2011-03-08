@@ -43,11 +43,15 @@ urlpatterns = patterns('',
     url(r'^klub/sekcije/(?P<slug>[-a-zA-Z0-9]+)/$', 'subpages.views.by_slug', name='subpage-slug'),
     url(r'^klub/alumni/$', 'subpages.views.by_slug', {'slug': 'alumni',}, name='alumni'),
     url(r'^klub/$', 'subpages.views.by_slug', name='club'),
+    #url(r'^dezurstva/$','subpages.views.by_slug', name='dezurstva'),
 
 
     ###  MULTIMEDIA                       
 
     url(r'^multimedia/$', 'subpages.views.multimedia', name='multimedia'),
+
+    #### Jebena dezurstva da me prestanu ispitivat stalno svi
+    url(r'^dezurstva/$', 'savjet.views.list_attendance', name='dezurstva')
 
 
 )

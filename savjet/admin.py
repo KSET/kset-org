@@ -14,5 +14,15 @@ class ZapisnikAdmin(admin.ModelAdmin):
       'admin/tinymce_setup/tinymce_content.js',
       )
 
-admin.site.register(Zapisnik, ZapisnikAdmin)
+class DezurstvaAdmin(admin.ModelAdmin):
+    list_display = ('start', 'end', 'content',)
 
+    class Media:
+        js = (
+      'admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
+      'admin/tinymce_setup/tinymce_description.js',
+      'admin/tinymce_setup/tinymce_content.js',
+      )
+
+admin.site.register(Zapisnik, ZapisnikAdmin)
+admin.site.register(Dezurstva, DezurstvaAdmin)

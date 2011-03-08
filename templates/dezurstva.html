@@ -1,0 +1,11 @@
+<html>
+<title>KSET.org - Klub Studenata ElektroTehnike</title>
+<body>
+	{% for at in attendance %}
+	<p>OD <b>{{ at.start }}</b> DO  <b>{{ at.end }}</b></p>
+	<br />
+	<p>{{ at.content|safe }}</p>
+	{% endfor %}
+</body>
+</html>
+

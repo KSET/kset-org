@@ -13,4 +13,10 @@ class Zapisnik(models.Model):
           verbose_name = "Zapisnik"
           verbose_name_plural = "Zapisnici"
 
-
+class Dezurstva(models.Model):
+      start = models.DateField()
+      end = models.DateField()
+      content = models.TextField("Dezurne sekcije", null = False, blank = False)
+      class Meta:
+          verbose_name = "Dezurstvo"
+          verbose_name = "Dezurstva"
