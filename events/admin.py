@@ -9,7 +9,7 @@ make_announced.short_description = "Najavi dogadaje"
 
 class EventAdmin(admin.ModelAdmin):
     fields = ('title', 'slug', 'date', 'time', 'announce', 'thumb', 'tags', 'price', 'description', 'content')
-    list_display = ('title', 'date', 'announce', 'tags',)
+    list_display = ('title', 'date', 'announce', 'tags','slug',)
     ordering = ('-date',)
     search_fields = ('title', 'date', 'description', 'content')
     list_filter = ['tags']

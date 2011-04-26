@@ -3,14 +3,17 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from members.models import Member
+from members.models import Member, Address
 
 
-def list(request):
-    """ ... """
+def red(request):
+    """Print out in html red members addresses."""
 
-    return render_to_response('members.html', {
-        'members', Member.objects.all().order_by('-surname', '-name'),
-        }, context_instance=RequestContext(request))
+    members = Member.objects.filter(groups__id=16).exclude(death__isnull=False).order_by('surname', 'name')
 
+    for member in members:
+        member.addresses = Address.objects.filter(member=member.id)
 
+    return render_to_response('members-red.html', {
+        'members': members,
+        })
