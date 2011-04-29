@@ -42,7 +42,7 @@ class Event(models.Model):
 
     # rss feed uses this
     def get_absolute_url(self):
-        return '/events/id/%i/' % self.id
+        return '/dogadaj/%s/' % self.slug
 
     def __unicode__(self):
         return u'%s %s' % (self.title, self.date)

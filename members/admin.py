@@ -1,11 +1,42 @@
-#coding: utf8
+#coding: utf-8
+
+from datetime import datetime
+import md5
 
 from django.contrib import admin
-from members.models import *
-
 from django import forms
+from django.utils.encoding import smart_str
 
-import md5
+from members.models import *
+from members.membership import InvoiceTemplate
+
+
+def make_bill(modeladmin, request, queryset):
+    """Creates bill (.pdf) with memberships"""
+
+    bill = InvoiceTemplate("/var/www/py/kset/media/uploads/invoice.pdf")
+
+    odd = True
+    for member in queryset:
+        bill.buyer['name'] = smart_str(member.name + " " + member.surname)
+        
+        bill.info['num'] = "2010-1"
+        bill.info['date'] = datetime.now().strftime("%d.%m.%Y.")
+        bill.info['items'] = [['članarina za SSFER', 100.0]]
+
+        bill.populate()
+        bill.hr()
+
+        if not odd:
+            odd = True
+            bill.newPage()
+        else:
+            odd = False
+    
+    bill.create()
+
+make_bill.short_description = "Ispisi clanarine"
+
 
 class MemberForm( forms.ModelForm ):
     resetpw = forms.CharField(widget=forms.PasswordInput, label="Lozinka", required=False)
@@ -57,6 +88,7 @@ class MemberAdmin(admin.ModelAdmin):
     search_fields_verbose = ('Ime', 'Prezime', 'Nadimak',)
     list_filter = ['groups']
     inlines = (MemberAddress, MemberContact, MemberGroup, )
+    actions = [make_bill]
 
     form = MemberForm
 

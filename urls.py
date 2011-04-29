@@ -1,12 +1,18 @@
 from django.conf.urls.defaults import *
+from feed import RssProgramFeed, AtomProgramFeed
 
 from django.contrib import admin
 admin.autodiscover()
 
+feeds = {
+    'rss': RssProgramFeed,
+    'atom': AtomProgramFeed,
+    }
+
 urlpatterns = patterns('',
 
     # feeds
-    #(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
+    (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
 
 
     ### PROGRAM
@@ -49,6 +55,11 @@ urlpatterns = patterns('',
 
     url(r'^multimedia/$', 'subpages.views.multimedia', name='multimedia'),
 
+    #### Jebena dezurstva da me prestanu ispitivat stalno svi
+    url(r'^dezurstva/$', 'savjet.views.list_attendance', name='dezurstva'),
+
+    # ispis crvenih za pozivnice
+    url(r'^crveni/$', 'members.views.red', name='crveni'),
 
 	###	 MEMEBERS
 	
