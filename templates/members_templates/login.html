@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+
+{% block main %}
+    <h2>Login</h2>
+
+    {% if loginFailed %}
+    <p class="message" style="color:red; padding:10px 0px; font-size:14px" >
+        Krivo korisničko ime ili lozinka.
+    </p>
+    {% endif %}
+    <form action="/clanovi/login/" method="post">
+
+    <table style="width:300px">
+        <tr>
+            <td>Username</td>
+            <td> <input name="username"> </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td> <input name="password" type="password"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="submit" value="Prijavi se"> </td>
+        </tr>
+    </table>
+    
+    </form>
+
+    
+    
+    
+{% endblock %}

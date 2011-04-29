@@ -1,0 +1,151 @@
+{% extends "main.html" %}
+
+        {% block leftContent %}		
+			<div class="top">
+				<div class="image">
+					{{member.image}}
+				</div>
+				<div class="basic-info">
+					<div class="name">{{member.name}}</div>
+					<div class="surname">{{member.surname}}</div>
+					<div class="nickname">{{member.nickname}}</div>
+				</div>
+                <div style="clear: both"></div>
+			</div>
+			
+        
+			<div class="bottom">
+            <form id="member-edit-form" action="/clanovi/uredi/submit/" enctype="multipart/form-data" method="post" >
+                    
+				<div class="birth-date bottom-item">
+					<div class="entry-title">Datum rođenja:</div>
+					<div class="value">
+                        <input type="text" name="birth" value="{{member.birth|date:"d.m.Y"|default:""}}" /> (dd.mm.yyyy)
+                    </div>
+				</div>
+				
+				<div class="death-date bottom-item">
+					<div class="entry-title">Datum smrit:</div>
+					<div class="value">{{member.death|date:"d.m.Y"|default:"nepoznato"}}</div>
+				</div>
+				
+				<div class="addresses bottom-item">
+					<div class="entry-title">
+						Adrese
+					</div>
+					<table class="address-list">
+						{% for address in addresses %}
+                        <tr style="text-align: center">
+                            <td>Adresa</td>
+                            <td>Grad</td>
+                            <td>Poštanski broj</td>
+                            <td>Država</td>
+                        </tr>
+						<tr class="address">
+							<td class="street">
+                                <input type="text" name="address[{{address.id}}]['address']" value="{{address.address|default:""}}" />
+                            </td>
+							<td class="city">
+                                <input type="text" name="address[{{address.id}}]['city']" value="{{address.town|default:""}}" />
+                            </td>
+							<td class="zipcode">
+                                <input type="text" name="address[{{address.id}}]['zipcode']" value="{{address.zipcode|default:""}}" />
+                            </td>
+							<td class="country">
+                                <input type="text" name="address[{{address.id}}]['country']" value="{{address.country|default:""}}" />
+                            </td>
+						</tr>
+                        {% endfor %}
+                        <tr class="address">
+							<td class="street">
+                                <input type="text" name="address-new['address']" value="" />
+                            </td>
+							<td class="city">
+                                <input type="text" name="address-new['city']" value="" />
+                            </td>
+							<td class="zipcode">
+                                <input type="text" name="address-new['zipcode']" value="" />
+                            </td>
+							<td class="country">
+                                <input type="text" name="address-new['country']" value="" />
+                            </td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="contacts bottom-item">
+					<div class="entry-title">
+						Kontakti
+					</div>
+					<table class="contacts-list">
+						{% for contact in contacts %}
+                        <tr style="text-align: center">
+                            <td>Tip</td>
+                            <td>Kontakt</td>
+                        </tr>
+						<tr class="contact">
+							<td class="contact-type">
+                                <select name="contact[{{contact.id}}]['contact_type']">
+                                {% for contactType in contactTypes %}
+                                    <option value="{{contactType.id}}" {% if contactType.name == contact.contact_type.name %} selected="selected" {% endif %}>{{contactType.name}}</option>
+                                {% endfor %}
+                                </select>
+                            </td>
+							<td class="contact-value">
+                                <input type="text" name="contact[{{contact.id}}]['contact']" value="{{contact.contact|default:""}}" />
+                            </td>
+						</tr>
+                        {% endfor %}
+                        <tr class="contact">
+							<td class="contact-type">
+                                <select name="contact-new['contact_type']">
+                                {% for contactType in contactTypes %}
+                                    <option value="{{contactType.id}}">{{contactType.name}}</option>
+                                {% endfor %}
+                                </select>
+                            </td>
+							<td class="contact-value">
+                                <input type="text" name="contact-new['contact]" value="" />
+                            </td>
+						</tr>
+					</table>
+				</div>
+            
+                
+				<div class="groups bottom-item">
+					<div class="entry-title">
+						Članstva
+					</div>
+					<table class="groups-list">
+						{% for group in groups %}
+						<tr class="group">
+							<td>
+								{{group.group.name|default:"---"}} od
+								{{group.date_start|default:"?"}} do
+								{{group.date_end|default:"?"}}
+							</td>
+						</tr>
+						{% empty %}
+						<tr class="no-group">
+							<td>nema zapisa</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+				
+				<div class="comment bottom-item">
+					<div class="entry-title">Komentar:</div>
+					<div class="value">{{member.comment|default:"nema"}}</div>
+				</div>
+                
+                <div class="profile-edit-nav bottom-item">
+                    <input type="submit" value="Spremi" name="submit" />
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="Spremi i nastavi uređivati" name="submit-continue" />
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="/clanovi/">Odustani</a>
+                </div>
+                
+			</form>	
+			</div>
+		{% endblock %}

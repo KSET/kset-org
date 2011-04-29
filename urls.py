@@ -50,6 +50,19 @@ urlpatterns = patterns('',
     url(r'^multimedia/$', 'subpages.views.multimedia', name='multimedia'),
 
 
+	###	 MEMEBERS
+	
+	# check!!
+	
+	url(r'^clanovi/$', 'members.views.main', name='members'),
+	url(r'^clanovi/login/$', 'members.views.login', name='members-login'),
+	url(r'^clanovi/logout/$', 'members.views.logout', name='members-logout'),
+	url(r'^clanovi/svi/$', 'members.views.listAll', name='members-list-all'),
+	url(r'^clanovi/clan/([0-9]+)/$', 'members.views.member', name='members-show-member'),
+	#url(r'^clanovi/uredi/$', 'members.views.edit', name='members-edit'),
+	#url(r'^clanovi/uredi/submit/$', 'members.views.submit', name='members-edit-submit'),
+
+
 )
 
 urlpatterns += patterns('',

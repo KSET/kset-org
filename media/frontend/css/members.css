@@ -1,0 +1,77 @@
+#members-main
+{
+	padding: 20px 20px 20px 30px;
+	
+}
+
+#members-main .top
+{
+	margin-bottom: 20px;
+	
+}
+
+#members-main .top .image
+{
+	float: left;
+	width: 170px;
+	height: 200px;
+	background-color: #666;
+}
+
+#members-main .top .basic-info
+{
+	float: right;
+	width: 380px;
+	
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#members-main .top .basic-info .nickname
+{
+	font-weight: normal;
+	font-size: 14px;
+}
+
+#members-main .bottom
+{
+}
+
+#members-main .bottom input[type="text"]
+{
+	width: 120px;
+}
+
+#members-main  .bottom .bottom-item
+{
+	margin-bottom: 20px;
+}
+
+#members-main  .bottom .bottom-item .entry-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/*
+ ===================================================
+ right content
+ ===================================================
+*/
+#members-main .members-rightContent ul
+{
+	list-style: none;
+	padding-left: 10px;
+}
+
+#members-main .members-rightContent .menu ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#members-main .members-rightContent .menu ul li
+{
+	padding: 5px 0px;
+}
