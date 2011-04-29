@@ -97,7 +97,7 @@
 				
 				<div class="comment bottom-item">
 					<div class="entry-title">Komentar:</div>
-					<div class="value">{{member.comment|default:"nema"}}</div>
+					<div class="value">{{member.comment|default:"nema"|safe}}</div>
 				</div>
 				
 				{% if isProfileOwner %}
