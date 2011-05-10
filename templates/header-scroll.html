@@ -15,8 +15,12 @@
     </div>
 
     <div class="item-bottom">
-      <div class="date">{{ event.date|date:"D"}}</div>
-      {{ event.tags }} 
+      <div class="date">{{ event.date|date:"D"}}</div>	
+      {% if event.tags|length < 22 %}
+        {{ event.tags }}
+      {% else %}
+        {{ event.tags|stringformat:".22s" }}...
+      {% endif %} 
       {% if event.price %} &mdash; {{ event.price }} {% endif %}
       {% if event.time %} &mdash; od {{ event.time|time:"H" }}h {% endif %}
     </div>
