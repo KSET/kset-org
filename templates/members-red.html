@@ -1,0 +1,18 @@
+
+{% for member in members %}
+
+{% for address in member.addresses %}
+
+<div style="float: left; border: 1px solid #999; width: 6cm; height: 2cm; padding: 0.25cm">
+
+{{ member.name }} {{ member.surname }}<br />
+{{ address }}<br />
+{{ address.zipcode }} {{ address.town }}<br />
+{% if address.country %} {{ address.country }}<br /> {% endif %}
+<br />
+
+</div>
+
+{% endfor %}
+
+{% endfor %}

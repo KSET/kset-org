@@ -13,15 +13,19 @@ urlpatterns = patterns('',
 
     # feeds
     (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
-
-
+    
     ### PROGRAM
 
     # news - homepage
     url(r'^$', 'news.views.active', name='root'),
     url(r'^arhiva/vijesti/', 'news.views.archive', name='news-archive'), 
     url(r'^vijest/(?P<slug>[-a-zA-Z0-9]+)/$', 'news.views.by_slug', name='news-slug'), 
-                       
+    
+    ## jobfair print cvs to pdf
+    #url(r'^jobfair/$', 'zivpdf.views.get_cvs', name='jobfair-cvs'),
+
+
+                   
     # events
     url(r'^arhiva/dogadaji/(?P<year>\d{4})/', 'events.views.archive', name='events-archive-year'), 
     url(r'^arhiva/dogadaji/', 'events.views.archive', name='events-archive'), 

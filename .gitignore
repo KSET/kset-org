@@ -1,7 +1,5 @@
-/settings.py
-/kset.wsgi
+settings.py
+kset.wsgi
 /__tmp
 *.pyc
-/*/*.pyc
-/*/*/*.pyc
-media/uploads/*
+media/uploads/**/*
