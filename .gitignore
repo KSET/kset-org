@@ -2,4 +2,5 @@ settings.py
 kset.wsgi
 /__tmp
 *.pyc
-media/uploads/**/*
+media/*
+
