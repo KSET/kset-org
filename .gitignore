@@ -3,4 +3,4 @@ kset.wsgi
 /__tmp
 *.pyc
 media/*
-
+local_settings.py
