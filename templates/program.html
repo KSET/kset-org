@@ -53,12 +53,12 @@
 
       function GetCalendar(year, month)
       {
-        $("#calendar").load("{% url calendar %}",{'year': year, 'month': month});
+        jQuery("#calendar").load("{% url calendar %}",{'year': year, 'month': month});
       }
 
-      $(document).ready(function() {
-                          year = ($.query.get('year')) ? $.query.get('year') : 0;
-                          month = ($.query.get('month')) ? $.query.get('month') : 0;
+      jQuery(document).ready(function() {
+                          year = (jQuery.query.get('year')) ? jQuery.query.get('year') : 0;
+                          month = (jQuery.query.get('month')) ? jQuery.query.get('month') : 0;
                           GetCalendar(year,month)
                         });
     </script>
