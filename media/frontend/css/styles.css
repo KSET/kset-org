@@ -659,8 +659,248 @@ a:hover
   font-weight: bold;
   }
 
+/* GALLERY */
+
+/* GALERIJA NASLOVNICA */
+
+.clear {clear:both;}
+
+.m-box {
+  float: left;
+  margin: 12px;
+  width: 400px;
+}
+
+.m-box a {
+	display:block;
+	text-decoration:none!important;
+}
+
+.m-box .dolje {
+	padding:5px 10px 10px;
+}
+
+.m-box a:hover .dolje{
+	background-color:#e5e5e5;
+}
+
+.m-box img{
+	max-width:100%;
+	opacity:0.7;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.6s;
+	-moz-transition-property: opacity;
+	-moz-transition-duration: 0.6s;
+}
+
+.m-box img:hover {
+	opacity:1;
+}
+
+.m-welcome {
+	border-top:1px dashed #333;
+	float:left;
+	width:800px;
+	padding:1em 10px;
+	margin:1em 12px;
+}
+
+.m-welcome p {
+	line-height:1.5em;
+	
+}
+
+.m-welcome p span{
+	float:right;
+	margin-top:-3em;
+}
+
+/* GALERIJA ALBUMI */
+
+.m-album {
+  width: 255px;
+  height: 204px;
+  margin:1em 1em;
+  border: 1px solid #fff;
+  position:relative;
+  float:left;
+  overflow:ellipsis;
+  overflow:hidden;
+  padding:0;
+  -webkit-transition: box-shadow 0.2s;
+  -moz-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  
+  -webkit-box-shadow: 0 0 5px #333;
+  -moz-box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 5px #333;
+  
+  background-color:#fff;
+  
+  
+
+}
+
+.m-album:hover {
+  -wekit-box-shadow: 0 0 15px #111;
+  -moz-box-shadow: 0 0 15px #111;
+  box-shadow: 0 0 15px #111;
+}
+
+.m-album a {
+  display:block;
+  color:#000;
+  
+}
+
+.m-album img {
+
+  width:100%;
+  
+}
+
+.m-album .slika {
+  max-width:100%;
+  float: left; /*orig left*/
+}
 
 
+.m-album .tekst {
+  position:absolute;
+  top:0;
+  left:0;
+  float:left;
+  width:100%;
+  height:100%;
+  display:none;
+  overflow:hidden;
+}
+
+.m-album:hover .tekst{
+  display:block;
+}
+
+.m-album .tekst p {
+  background-color: #000;
+  padding:5px;
+  margin:5px;
+  color:#FE7929;
+}
+
+.m-album .ime {
+  width: 100%;
+  float: left;
+  margin-bottom:5px;
+  
+}
+
+.m-album h2 {
+  color: black;
+  position:relative;
+  padding:5px;
+}
+
+.m-album:hover h2{}
+
+#content {width:850px;}
+
+/* SLIKE */
+
+#m-slike {margin:0 auto;}
+
+.m-slika {
+  float:left;
+  width:380px;
+  border:5px solid #fff;
+  margin:15px;
+  background-color:#fff;
+  -moz-transition:all 0.1s;
+  -webkit-transition:all 0.1s;
+  transition:all 0.1s;
+  
+}
+
+.m-slika a {color:#000;} 
+
+/*.m-slika:hover {
+  box-shadow: 0 0 1px #333;
+}*/
+.m-slika:hover {
+  -wekit-box-shadow: 0 0 15px #111;
+  -moz-box-shadow: 0 0 15px #111;
+  box-shadow: 0 0 15px #111;
+}
+
+.m-slika .slika {
+  max-height:246px;
+  overflow:hidden;
+  /*vertical-align: center;*/
+}
+
+.m-slika img {
+  max-width: 100%;
+  height:auto;
+  padding:0;
+  margin:5px;
+  width:370px;
+  -moz-transition:all 0.1s;
+  -webkit-transition:all 0.1s;
+  transition:all 0.1s;
+  
+}
+
+/*.m-slika img:hover {
+  margin-top:2px;
+  
+}*/
+
+.m-slika .info{
+  text-align:center;
+  margin:0 auto;
+  padding:0.5em 0;
+}
+
+#album-info {
+  width:800px;
+  margin: 0 auto;
+  height:1.5em;
+  padding-top:0.5em;
+  margin-bottom:2em;
+}
 
 
+#album-info > * {
+  float:left;
+  
+}
+
+/*#album-info a {color:#000;}
+
+#album-info .gumb {
+  height:100%;
+  width:100px;
+  margin-right:20px;
+  padding-bottom:1em;
+  text-align:center;
+  background-color:#e5e5e5 //#fe7929;
+} 
+
+#album-info .gumb:hover {
+  
+  background-color:#fe7929;
+}*/
+
+#album-info .gumb {
+  height: 100%;
+  margin-right: 1em;
+  padding: 0 0.7em 1em;
+  text-align: left;
+  background-color: white ;
+  box-shadow: 0 0 1px #333;
+}
+#album-info .gumb a {font-size:0.8em; color:#222;}
+#album-info .gumb:hover {
+  
+  box-shadow: 0 0 2px #000;
+}
 
