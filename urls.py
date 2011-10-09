@@ -59,7 +59,18 @@ urlpatterns = patterns('',
 
     url(r'^multimedia/$', 'subpages.views.multimedia', name='multimedia'),
 
-    #### Jebena dezurstva da me prestanu ispitivat stalno svi
+    url(r'^gallery/$', 'gallery.views.show_gallery'),
+    url(r'^gallery/(?P<cat>live)/$', 'gallery.views.list_albums'),
+    url(r'^gallery/(?P<cat>foto)/$', 'gallery.views.list_albums'),
+    url(r'^gallery/live/(?P<album_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_album'),
+    url(r'^gallery/foto/(?P<album_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_album'),
+    url(r'^gallery/(?P<cat>live)/albumi/(?P<year>\d{4})/$', 'gallery.views.list_albums'),
+    url(r'^gallery/(?P<cat>foto)/albumi/(?P<year>\d{4})/$', 'gallery.views.list_albums'),
+    url(r'^gallery/live/[-_a-zA-Z0-9]+/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image' ),
+    url(r'^gallery/foto/[-_a-zA-Z0-9]+/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image' ),
+
+
+    #### dezurstva
     url(r'^dezurstva/$', 'savjet.views.list_attendance', name='dezurstva'),
 
     # ispis crvenih za pozivnice

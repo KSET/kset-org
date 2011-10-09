@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load fb_versions %}
+
+
+
+{% block content %}
+
+	<!-- ... TU SAM ... -->
+<div id="left">
+  <div class="hMenu">
+    <h3>Odaberi godinu... </h3>
+    {% for year in years %}
+    <a href="/gallery/{{ cat }}/albumi/{{ year|date:'Y' }}">{{ year|date:'Y' }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+{% for a in list %}
+   <div class="m-album">
+     <a href="/gallery/{{ cat }}/{{ a.slug }}">
+        
+        <div class="slika">
+          <!-- slika dimenzije 255x170 -->
+          <img align="middle" src="{% version a.thumb 'gallerytb' %}"/> 
+        </div>
+        <div class="ime">
+          <!--<div class="transparent"></div>-->
+          <h2>{{ a.title }}</h2>
+        </div>
+        <div class="tekst">
+          <p>Datum: {{ a.date_of_event }} </p>
+        </div>
+      </a>
+    </div>
+  
+  {% endfor %}
+  
+  <div class="clear"></div>
+
+{% endblock %}
