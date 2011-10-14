@@ -31,9 +31,11 @@
 					<div class="value">{{member.birth|date:"d.m.Y"|default:"nepoznato"}}</div>
 				</div>
 				
-				<div class="death-date bottom-item">
-					<div class="entry-title">Datum smrit:</div>
-					<div class="value">{{member.death|date:"d.m.Y"|default:"nepoznato"}}</div>
+                                <div class="death-date bottom-item">
+                                        {% if member.death %}
+					<div class="entry-title">Datum smrti:</div>
+                                        <div class="value">{{member.death|date:"d.m.Y"|default:"It is aliveee!"}}</div>
+                                        {% endif %}
 				</div>
 				
 				<div class="addresses bottom-item">
