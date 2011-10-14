@@ -3,3 +3,4 @@ kset.wsgi
 *.pyc
 media/*
 local_settings.py
+templates/zivpdf.bak
