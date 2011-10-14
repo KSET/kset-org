@@ -791,7 +791,9 @@ a:hover
   width: 100%;
   float: left;
   margin-bottom:5px;
-  
+  bottom: 0;
+  position: absolute;
+  background-color: white;
 }
 
 .m-album h2 {
@@ -810,14 +812,15 @@ a:hover
 
 .m-slika {
   float:left;
-  width:380px;
-  border:5px solid #fff;
-  margin:15px;
+  width: 30%;
+  border: 5px solid white;
+  margin: 15px 1%;
   background-color:#fff;
   -moz-transition:all 0.1s;
   -webkit-transition:all 0.1s;
   transition:all 0.1s;
-  
+  position: relative;
+  max-height:183px;
 }
 
 .m-slika a {color:#000;} 
@@ -826,9 +829,9 @@ a:hover
   box-shadow: 0 0 1px #333;
 }*/
 .m-slika:hover {
-  -wekit-box-shadow: 0 0 15px #111;
-  -moz-box-shadow: 0 0 15px #111;
-  box-shadow: 0 0 15px #111;
+  -wekit-box-shadow: 0 0 5px #777;
+  -moz-box-shadow: 0 0 5px #777;
+  box-shadow: 0 0 5px #777;
 }
 
 .m-slika .slika {
@@ -858,6 +861,10 @@ a:hover
   text-align:center;
   margin:0 auto;
   padding:0.5em 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
 }
 
 #album-info {

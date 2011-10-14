@@ -27,7 +27,7 @@ class ImageAdmin(GuardedModelAdmin):
 
 
 class AlbumAdmin(GuardedModelAdmin):
-    fields = ('title', 'date_of_event', 'slug', 'upload_path', 'description', 'thumb','initial','category')
+    fields = ('title', 'date_of_event', 'slug', 'upload_path', 'description', 'thumb','category')
     prepopulated_fields = {'slug': ('date_of_event','title',)}
     list_display = ('title','date_of_event','category')
     ordering = ('-date_of_upload',)

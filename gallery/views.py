@@ -10,7 +10,7 @@ from gallery.models import *
 from django.db.models import Q
 
 def show_gallery(request):
-  return render_to_response('gallery_main.html')
+  return render_to_response('gallery_main.html', context_instance=RequestContext(request))
 
 def list_albums(request, cat, year=datetime.today().year):
 
@@ -27,7 +27,10 @@ def view_album(request, album_slug):
   category = album.category.lower()
   album_title = album.title
   images = album.image_set.all()
-  return render_to_response('gallery_view_album.html', { 'images' : images, 'category': category, 'album_title' : album_title})
+  return render_to_response('gallery_view_album.html', { 'images' : images, 
+    'category': category, 
+    'album_title' : album_title
+    }, context_instance=RequestContext(request))
 
 
 
