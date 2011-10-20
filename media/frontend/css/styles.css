@@ -846,6 +846,7 @@ a:hover
   padding:0;
   margin:5px;
   width:370px;
+  max-height:172px;
   -moz-transition:all 0.1s;
   -webkit-transition:all 0.1s;
   transition:all 0.1s;
