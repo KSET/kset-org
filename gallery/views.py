@@ -14,12 +14,12 @@ def show_gallery(request):
 
 def list_albums(request, cat, year=datetime.today().year):
 
-    years = Album.objects.filter(category=cat.upper()).dates('date_of_event', 'year', order='DESC')
-    return render_to_response('gallery_spec.html', {
-        'list': Album.objects.filter(category=cat.upper(), date_of_event__year=year).order_by('-date_of_event'),
-        'years': years,
-        'cat': cat,
-        }, context_instance=RequestContext(request))
+  years = Album.objects.filter(category=cat.upper()).dates('date_of_event', 'year', order='DESC')
+  return render_to_response('gallery_spec.html', {
+    'list': Album.objects.filter(category=cat.upper(), date_of_event__year=year).order_by('-date_of_event'),
+    'years': years,
+    'cat': cat,
+    }, context_instance=RequestContext(request))
 
 #show content of an album
 def view_album(request, album_slug):
