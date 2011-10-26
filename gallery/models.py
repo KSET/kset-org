@@ -39,7 +39,7 @@ class Album(models.Model):
   date_of_event = models.DateField('Datum događaja')
   date_of_upload = models.DateTimeField(auto_now=True)
   initial = models.BooleanField(default=True)
-  thumb = FileBrowseField( "Sličica", max_length=255, format="Image", directory="gallery/", null=False, blank=False  )
+  thumb = FileBrowseField( "Sličica", max_length=255, directory="gallery/", null=False, blank=False  )
   category = models.CharField("Kategorija", null=False, max_length = 25, choices = (('LIVE', 'LIVE'),('FOTO','FOTO'), ('SCLIVE','SCLIVE')))
   
 
