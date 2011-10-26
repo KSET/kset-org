@@ -26,7 +26,7 @@ def parse_filename(filename):
         filename = str(filename)
         ret['name_full'] = filename
         ret['name'] = filename.split('.')[0]
-        ret['slug'] = slugify(ret['name'])
+        ret['slug'] = slugify(ret['name'][0:50])
         filename = filename.split('_')
         ret['date'] = datetime.strptime(filename[0],"%Y%m%d")
         #ret['photographer'] = str.capitalize(filename[-3]) +  ' ' + str.capitalize(filename[-2])
