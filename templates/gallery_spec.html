@@ -9,12 +9,12 @@
 <div id="left">
   <div class="hMenu">
     {% if years %}
-    <h3>Odaberi godinu...</h3>
+    <h3>Odaberi godinu ...</h3>
     {% else %}
     <h3>Uskoro... </h3>
     {% endif %}
     {% for year in years %}
-    <a href="/gallery/{{ cat }}/albumi/{{ year|date:'Y' }}">{{ year|date:'Y' }}</a>
+    <a href="/gallery/{{ cat }}/albumi/{{ year|date:'Y' }}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
     {% endfor %}
   </div>
 </div>
