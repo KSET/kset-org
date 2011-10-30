@@ -38,6 +38,7 @@ class Album(models.Model):
   description = models.CharField('Kratak opis', max_length=255)
   date_of_event = models.DateField('Datum događaja')
   date_of_upload = models.DateTimeField(auto_now=True)
+  photographer = models.ForeignKey("Photographer", null=True)
   initial = models.BooleanField(default=True)
   thumb = FileBrowseField( "Sličica", max_length=255, directory="gallery/", null=False, blank=False  )
   category = models.CharField("Kategorija", null=False, max_length = 25, choices = (('LIVE', 'LIVE'),('FOTO','FOTO'), ('SCLIVE','SCLIVE')))
