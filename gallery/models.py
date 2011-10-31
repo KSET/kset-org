@@ -71,14 +71,9 @@ class Album(models.Model):
           for filename in images:
             parsed = parse_filename(filename)
             if (parsed):
-              if (not(Photographer.objects.filter(name = parsed['photographer']))):
-                p = Photographer(name = parsed['photographer'])
-                p.save()
-                new_image = Image(title = parsed['name'], slug = parsed['slug'], upload_path = str(self.upload_path) + parsed['name_full'], date_of_event = parsed['date'], photographer = p)
-              else:
-                new_image = Image(title = parsed['name'], slug = parsed['slug'], upload_path = str(self.upload_path) + parsed['name_full'], date_of_event = parsed['date'], photographer = Photographer.objects.get(name = parsed['photographer']))
-                new_image.save()
-                new_image.album.add(self)
+              new_image = Image(title = parsed['name'], slug = parsed['slug'], upload_path = str(self.upload_path) + parsed['name_full'], date_of_event = parsed['date'], photographer = Photographer.objects.get(id = self.photographer.id))
+              new_image.save()
+              new_image.album.add(self)
 
 
   def __unicode__(self):
