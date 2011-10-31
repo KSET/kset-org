@@ -870,7 +870,7 @@ a:hover
 
 #album-info {
   width:800px;
-  margin: 0 auto;
+  margin: 0 auto 0 10px;
   height:1.5em;
   padding-top:0.5em;
   margin-bottom:2em;

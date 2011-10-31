@@ -26,10 +26,14 @@ def view_album(request, album_slug):
   album = Album.objects.get(slug = album_slug)
   category = album.category.lower()
   album_title = album.title
+  photographer = album.photographer
+  description = album.description
   images = album.image_set.all()
   return render_to_response('gallery_view_album.html', { 'images' : images, 
     'category': category, 
-    'album_title' : album_title
+    'album_title' : album_title,
+    'photographer' : photographer,
+    'description' : description
     }, context_instance=RequestContext(request))
 
 
