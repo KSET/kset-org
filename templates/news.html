@@ -18,6 +18,21 @@
 </div>
 {% endif %}
 
+{% if latest %}
+<div id="announce">
+  <h3><span class="orange">&raquo;&nbsp;</span>Najnovije iz galerije:</h3>
+
+  {% for a in latest %}
+    <a href="/gallery/live/{{ a.slug }}" style="background-image: url({% version a.thumb 'thumbnail' %}); background-postion: center;">
+      <div class="date">Fotograf: {{ a.photographer }}</div>
+      <div class="text">{{ a.title }}</div>
+    </a>
+  {% endfor %}
+
+</div>
+
+{% endif %}
+
 
 {% for item in news %}
 

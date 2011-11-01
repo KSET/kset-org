@@ -9,6 +9,11 @@ from datetime import datetime
 from news.models import News
 from events.models import Event
 
+from gallery.models import Album
+from datetime import timedelta
+from datetime import datetime
+from django.db.models import Q
+
 
 def active(request):
     """Renders default/program template:
@@ -17,10 +22,14 @@ def active(request):
 
     news = News.objects.exclude(publish__gte=datetime.now()).exclude(expire__lte=datetime.now()).order_by('-publish') 
     events = Event.objects.filter(date__gte=datetime.now()).filter(announce=True).order_by('date')[:3]
+
+    #get latest albums from gallery
+    latest = Album.objects.filter(category='LIVE', date_of_event__range=(datetime.today() - timedelta(14), datetime.today())).order_by('-date_of_event')[:3]
  
     return render_to_response('news.html', {
         'news': news,
         'events': events,
+        'latest': latest,
         }, context_instance=RequestContext(request))
 
 
