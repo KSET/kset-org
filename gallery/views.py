@@ -47,9 +47,3 @@ def view_image(request, image_slug):
   })
   #return HttpResponseRedirect(image.upload_path)
 
-# TODO
-def get_latest():
-  #find all the albums uploaded in the last 7 days
-  latest_albums = Album.objects.filter(Q(date_of_upload__range(datetime.today() - timedelta(7), datetime.today())))
-  return render_to_response('multimedia.html',{'multimedia.html' : latest_albums})
-
