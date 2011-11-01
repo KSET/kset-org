@@ -16,7 +16,7 @@
     {% for image in images %}
 
     <div class="m-slika">
-      <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]">
+      <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" data-lbcap=":: Copyright {{ photographer }} :: {{ image.caption|default:"" }}">
         <div class="slika">
           <img src="{% version image.upload_path 'gallerytb' %}" />
         </div>
