@@ -26,6 +26,7 @@ def view_album(request, album_slug):
   album = Album.objects.get(slug = album_slug)
   category = album.category.lower()
   album_title = album.title
+  date = album.date_of_event
   photographer = album.photographer
   description = album.description
   images = album.image_set.all()
@@ -33,7 +34,8 @@ def view_album(request, album_slug):
     'category': category, 
     'album_title' : album_title,
     'photographer' : photographer,
-    'description' : description
+    'description' : description,
+    'date'    : date
     }, context_instance=RequestContext(request))
 
 
