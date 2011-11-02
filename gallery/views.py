@@ -29,7 +29,7 @@ def view_album(request, album_slug):
   date = album.date_of_event
   photographer = album.photographer
   description = album.description
-  images = album.image_set.all()
+  images = album.image_set.all().order_by('title')
   return render_to_response('gallery_view_album.html', { 'images' : images, 
     'category': category, 
     'album_title' : album_title,
