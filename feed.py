@@ -8,6 +8,7 @@ class RssProgramFeed(Feed):
     title = "www.KSET.org"
     link = "http://www.kset.org/"
     description = "Klub Studenata ElektroTehnike - Program"
+    description_template = "templates/feed_description.html"
 
     def item_pubdate(self, obj):
 	if (obj.time):
@@ -17,6 +18,12 @@ class RssProgramFeed(Feed):
 
     def items(self):
         return Event.objects.get_forward()
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.content
 
 class AtomProgramFeed(RssProgramFeed):
     feed_type = Atom1Feed
