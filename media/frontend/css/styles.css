@@ -339,6 +339,15 @@ a:hover
     margin-left: 10px;
 }
 
+div.clear + div#left {
+
+  margin: 1.5em 18px 0.25em 12px;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #CCC;
+  width: auto;
+
+}
+
 #left p
 {
     /*text-indent: 20px;*/
