@@ -1,8 +1,5 @@
 from os.path import dirname, join
 
-import ldap
-from django_auth_ldap.config import LDAPSearch, PosixGroupType
-
 PROJECT_DIR = dirname(__file__)
 
 DEBUG = False
