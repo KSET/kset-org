@@ -2,10 +2,10 @@
 	path = django-tagging
 	url = https://github.com/brosner/django-tagging.git
 [submodule "filebrowser"]
-	path = filebrowser
+	path = django-filebrowser
 	url = https://github.com/sehmaschine/django-filebrowser.git
 [submodule "grappelli"]
-	path = grappelli
+	path = django-grappelli
 	url = https://github.com/sehmaschine/django-grappelli.git
 [submodule "django-tagging-autocomplete"]
 	path = django-tagging-autocomplete
