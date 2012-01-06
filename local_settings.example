@@ -21,6 +21,8 @@ DATABASES = {
 }
 
 
+SECRET_KEY = 'generate secret key here'
+
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
 )
 
