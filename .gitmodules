@@ -7,3 +7,6 @@
 [submodule "grappelli"]
 	path = grappelli
 	url = https://github.com/sehmaschine/django-grappelli.git
+[submodule "django-tagging-autocomplete"]
+	path = django-tagging-autocomplete
+	url = https://github.com/alekam/django-tagging-autocomplete.git
