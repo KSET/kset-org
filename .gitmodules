@@ -1,3 +1,6 @@
 [submodule "django-tagging"]
 	path = django-tagging
 	url = https://github.com/brosner/django-tagging.git
+[submodule "filebrowser"]
+	path = filebrowser
+	url = https://github.com/sehmaschine/django-filebrowser.git
