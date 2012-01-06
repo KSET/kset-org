@@ -1,0 +1,15 @@
+KSET.org 
+
+Author: Veljko Dragsic
+
+
+
+Use virtualenv to get things running.
+
+virtualenv --no-site-packages kset.org
+
+cd kset.org 
+source bin/activate
+pip install django django-tinymce django-filebrowser django-tagging django-tagging-autocomplete
+
+
