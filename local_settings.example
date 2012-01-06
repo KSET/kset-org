@@ -1,0 +1,40 @@
+from os.path import dirname, join
+
+import ldap
+from django_auth_ldap.config import LDAPSearch, PosixGroupType
+
+PROJECT_DIR = dirname(__file__)
+
+DEBUG = False
+#TEMPLATE_DEBUG = DEBUG
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'db_name',
+        'USER': 'db_user',
+        'PASSWORD': 'db_password',
+        'HOST': 'db_host',
+        'PORT': 'db_port',
+    }
+}
+
+
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+)
+
+MEDIA_ROOT = join(PROJECT_DIR, 'media/')
+MEDIA_URL = 'http://domain.com/media/'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+TEMPLATE_DIRS = (
+    join(PROJECT_DIR, 'templates'),
+)
+
+FILEBROWSER_URL_TINYMCE = '/url/for/tiny_mce/'
+FILEBROWSER_PATH_TINYMCE = '/full/path/to/tiny_mce/'
+
+TAGGING_AUTOCOMPLETE_JS_BASE_URL = '/media/js/jquery-autocomplete/'
+
+
