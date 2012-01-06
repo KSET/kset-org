@@ -4,3 +4,6 @@
 [submodule "filebrowser"]
 	path = filebrowser
 	url = https://github.com/sehmaschine/django-filebrowser.git
+[submodule "grappelli"]
+	path = grappelli
+	url = https://github.com/sehmaschine/django-grappelli.git
