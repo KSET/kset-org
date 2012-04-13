@@ -20,9 +20,7 @@ class ImageAdmin(GuardedModelAdmin):
 
     class Media:
         js = (
-            'admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
-            'admin/tinymce_setup/tinymce_content.js',
-            'admin/tinymce_setup/tinymce_description.js',
+            '/media/static/tiny_mce/tiny_mce.js',
             )
 
 
@@ -65,9 +63,7 @@ class AlbumAdmin(GuardedModelAdmin):
 
     class Media:
         js = (
-            'admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
-            'admin/tinymce_setup/tinymce_content.js',
-            'admin/tinymce_setup/tinymce_description.js',
+            '/media/static/tiny_mce/tiny_mce.js',
             )
 
 

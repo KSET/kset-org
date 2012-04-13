@@ -93,7 +93,7 @@ class MemberAdmin(admin.ModelAdmin):
     form = MemberForm
 
     class Media:
-        js = ('admin/tinymce/jscripts/tiny_mce/tiny_mce.js','admin/tinymce_setup/tinymce_description.js',)
+        js = ('/media/static/tiny_mce/tiny_mce.js',)
 
     def save_model(self, request, obj, form, change):
 

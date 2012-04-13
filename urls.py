@@ -2,6 +2,9 @@ from django.conf.urls.defaults import *
 from feed import RssProgramFeed, AtomProgramFeed
 
 from django.contrib import admin
+
+from filebrowser.sites import site
+
 admin.autodiscover()
 
 feeds = {
@@ -96,8 +99,8 @@ urlpatterns += patterns('',
     ### ADMIN
 
     (r'^tagging_autocomplete/', include('tagging_autocomplete.urls')),
-                       
-    (r'^admin/filebrowser/', include('filebrowser.urls')),
+
+    url(r'^admin/filebrowser/', include(site.urls)),                       
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/', include(admin.site.urls)),
 )

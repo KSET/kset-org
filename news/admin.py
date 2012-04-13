@@ -10,9 +10,7 @@ class NewsAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            'admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
-            'admin/tinymce_setup/tinymce_content.js',
-            'admin/tinymce_setup/tinymce_description.js',
+            '/media/static/tiny_mce/tiny_mce.js',
             )
 
 admin.site.register(News, NewsAdmin)

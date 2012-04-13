@@ -4,6 +4,7 @@ from django.db import models
 from filebrowser.fields import FileBrowseField
 from tagging.fields import TagField
 from tagging_autocomplete.models import TagAutocompleteField
+from tinymce.models import HTMLField
 
 from datetime import datetime
 
@@ -27,8 +28,8 @@ class Event(models.Model):
     title = models.CharField('naslov', max_length=192)
     date = models.DateField( 'datum' )
     time = models.TimeField( 'vrijeme', null=True, blank=True )
-    description = models.TextField( 'opis', blank=True )
-    content = models.TextField( 'sadržaj', blank=True )
+    description = HTMLField( 'opis', blank=True )
+    content = HTMLField( 'sadržaj', blank=True )
     tags = TagAutocompleteField( blank=True )
     slug = models.SlugField( blank=True, max_length=128 )
     announce = models.BooleanField( 'najavi' )

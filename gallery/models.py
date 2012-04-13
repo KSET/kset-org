@@ -11,6 +11,8 @@ from functions import *
 from datetime import datetime
 import string
 
+from tinymce.models import HTMLField
+
 
 # Create your models here.
 
@@ -35,7 +37,7 @@ class Album(models.Model):
   upload_path = FileBrowseField( "Putanja do albuma", max_length=255, directory="gallery/", null=True, blank=True  )
   title = models.CharField('Ime albuma', max_length=255, unique=False)
   slug = models.SlugField()
-  description = models.CharField('Kratak opis', max_length=255)
+  description = HTMLField('Kratak opis', max_length=255)
   date_of_event = models.DateField('Datum događaja')
   date_of_upload = models.DateTimeField(auto_now=True)
   photographer = models.ForeignKey("Photographer", null=True)

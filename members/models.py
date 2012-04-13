@@ -3,6 +3,7 @@
 from django.db import models
 
 from datetime import datetime
+from tinymce.models import HTMLField
 
 class GroupManager(models.Manager):
 
@@ -46,7 +47,7 @@ class Member(models.Model):
     password = models.CharField("lozinka", max_length=32, null=True, blank=True)
     birth = models.DateField("datum rođenja", null=True, blank=True)
     death = models.DateField("datum smrti", null=True, blank=True)
-    comment = models.TextField("komentar", null=True, blank=True)
+    comment = HTMLField("komentar", null=True, blank=True)
     groups = models.ManyToManyField(Group, through='MemberGroupLink')
     image = models.ImageField(upload_to="/", null=True, blank=True, verbose_name="slika")
     objects = MemberManager()
