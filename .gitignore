@@ -6,3 +6,4 @@ local_settings.py
 templates/zivpdf.bak
 settings/production.*
 baza.db
+media/uploads
