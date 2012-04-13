@@ -120,8 +120,8 @@ in gratitude, TwoHawks
 //  Configurationl
 //
 LightboxOptions = Object.extend({
-    fileLoadingImage:        '/media/js/lightbox/images/loading.gif',     
-    fileBottomNavCloseImage: '/media/js/lightbox/images/closelabel.gif',
+    fileLoadingImage:        '/media/frontend/lightbox/images/loading.gif',     
+    fileBottomNavCloseImage: '/media/frontend/lightbox/images/closelabel.gif',
 
     overlayOpacity: 0.8,   // controls transparency of shadow overlay
 

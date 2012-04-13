@@ -31,8 +31,8 @@ ADD: some have suggested http://outburst.jloop.com/2009/06/19/lightbox-close-but
 /* #prevLink { left: 0; float: left;background: url(/images/prevlabel.gif) left 100% no-repeat; }   persistent button, 15% default position */
 #nextLink { right: 0; float: right;} /*   non-persistent button */
 /*#nextLink { right: 0; float: right;background: url(/images/nextlabel.gif) right 100% no-repeat; } persistent button, 15% default position */
-#prevLink:hover, #prevLink:visited:hover { background: url(/media/js/lightbox/images/prevlabel.gif) left 100% no-repeat; }
-#nextLink:hover, #nextLink:visited:hover { background: url(/media/js/lightbox/images/nextlabel.gif) right 100% no-repeat; }
+#prevLink:hover, #prevLink:visited:hover { background: url(/media/frontend/lightbox/images/prevlabel.gif) left 100% no-repeat; }
+#nextLink:hover, #nextLink:visited:hover { background: url(/media/frontend/lightbox/images/nextlabel.gif) right 100% no-repeat; }
 
 #imageDataContainer{ font: 10px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: hidden; width: 100%	; }
 
