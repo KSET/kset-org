@@ -109,6 +109,45 @@ FILEBROWSER_URL_TINYMCE = '/media/static/tiny_mce/'
 FILEBROWSER_PATH_TINYMCE = join(PROJECT_DIR, 'media/static/tiny_mce/')
 FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
 
+FILEBROWSER_EXTENSIONS = {
+    'Folder': [''],
+    'Image': ['.jpg','.JPG','.JPEG','.jpeg','.gif','.png','.tif','.tiff'],
+    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
+    'Document': ['.pdf','.doc','.rtf','.txt','.xls','.csv'],
+    'Audio': ['.mp3','.mp4','.wav','.aiff','.midi','.m4p'],
+    'Code': ['.html','.py','.js','.css']
+}
+
+FILEBROWSER_SELECT_FORMATS = {
+    'File': ['Folder','Document',],
+    'Image': ['Folder','Image',],
+    'Media': ['Video','Sound'],
+    'Document': ['Document'],
+    # for TinyMCE we can also define lower-case items
+    'image': ['Image'],
+    'file': ['Folder','Image','Document',],
+}
+
+FILEBROWSER_VERSIONS = {
+    'fb_thumb': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop upscale'},
+    'thumbnail': {'verbose_name': 'Thumbnail (140px)', 'width': 140, 'height': '', 'opts': ''},
+    'small': {'verbose_name': 'Small (80x60px)', 'width': 80, 'height': '60', 'opts': 'crop'},
+    'medium': {'verbose_name': 'Medium (100px)', 'width': 100, 'height': '', 'opts': ''},
+    'semibig': {'verbose_name': 'SemiBig (420px)', 'width': 420, 'height': '', 'opts': ''},
+    'big': {'verbose_name': 'Big (465px)', 'width': 465, 'height': '', 'opts': ''},
+    'gallerytb': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 255, 'height': '173', 'opts': 'crop'},
+    'galleryimage': {'verbose_name': 'gallery_image (800x600)', 'width': '', 'height': 600, 'opts': ''},
+
+}
+
+# Versions available within the Admin-Interface.
+FILEBROWSER_ADMIN_VERSIONS = ['thumbnail',       'small', 'medium', 'semibig', 'big']
+# Which Version should be used as Admin-thumbnail.
+FILEBROWSER_ADMIN_THUMBNAIL = 'fb_thumb'
+
+FILEBROWSER_DEFAULT_SORTING_BY = 'filename_lower'
+
+
 TAGGING_AUTOCOMPLETE_JS_BASE_URL = '/media/js/jquery-autocomplete'
 
 
