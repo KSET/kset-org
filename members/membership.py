@@ -26,7 +26,7 @@ class InvoiceTemplate():
 
     # public members
     
-    seller = {'name':        'Savez studenata fakulteta elektrotehnike i računarstva',
+    seller = {'name':        'Savez studenata Fakulteta elektrotehnike i računarstva',
               'address':     'Unska 3, 10000 Zagreb',
               'phone':       '01/6129-758', 
               'email':       'info@kset.org',
@@ -50,9 +50,12 @@ class InvoiceTemplate():
     __pSeller = "<font size=13>{name}</font> <br />{address} <br />Tel: {phone}, E-mail: {email} <br />OIB: {taxnum} <br />ž.r: {bankaccount}"
 #Erste&Steiermärkische Bank d.d.
 
-    __pBuyer = "<font size=13>{name}</font> <br />{address} <br />OIB:{taxnum}"
+    __pBuyer = "<font size=13>{name}</font> <br />{address} <br />Šifra: {taxnum}"
 
     __pInfo = "<font size=16>Račun br. {num}</font> <br /><font size=13>Datum: {date}</font>"
+
+
+    __pSignature = "Odgovorna osoba &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br /><br /><br /><br />MP &nbsp;&nbsp; ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp;"
                 
     __margins = {'top': 1.5*cm,
                  'right': 1.5*cm,
@@ -131,16 +134,18 @@ class InvoiceTemplate():
                                                            taxnum=self.seller['taxnum'],
                                                            bankaccount=self.seller['bankaccount']), self.__styles['Normal']))
 
+        self.__flow.append(Spacer(1,1*cm))
+
         self.__flow.append(Paragraph(self.__pBuyer.format(name=self.buyer['name'], 
                                                           address=self.buyer['address'],
                                                           taxnum=self.buyer['taxnum']), self.__styles['NormalRight']))
 
-        self.__flow.append(Spacer(1,1*cm))
+        self.__flow.append(Spacer(1,2*cm))
 
 
         # info
         self.__flow.append(Paragraph(self.__pInfo.format(num=self.info['num'], date=self.info['date']), self.__styles['NormalCenter']))
-        self.__flow.append(Spacer(1,1*cm))
+        self.__flow.append(Spacer(1,3*cm))
 
         
         # items
@@ -156,9 +161,13 @@ class InvoiceTemplate():
         data.append(['Ukupno:', '', '%.2f kn' % summarum])
 
         self.__flow.append(Table(data, colWidths=(1*cm, 14*cm, 3*cm), style=TableStyle(self.__tStyle)))
-        self.__flow.append(Spacer(1, 0.5*cm))
+        self.__flow.append(Spacer(1, 1*cm))
 
         self.__flow.append(Paragraph(self.info['taxnote'], self.__styles['NormalRight']))
+
+	self.__flow.append(Spacer(1,7*cm))
+
+	self.__flow.append(Paragraph(self.__pSignature, self.__styles['NormalRight']))
 
 
     def create(self):

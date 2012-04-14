@@ -78,6 +78,7 @@ urlpatterns = patterns('',
 
     # ispis crvenih za pozivnice
     url(r'^crveni/$', 'members.views.red', name='crveni'),
+    url(r'^crveni-lista/$', 'members.views.red_list', name='crveni-lista'),
 
 	###	 MEMEBERS
 	

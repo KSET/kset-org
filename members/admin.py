@@ -17,21 +17,21 @@ def make_bill(modeladmin, request, queryset):
     bill = InvoiceTemplate("/var/www/py/kset/media/uploads/invoice.pdf")
 
     odd = True
+    cnt = 437
     for member in queryset:
         bill.buyer['name'] = smart_str(member.name + " " + member.surname)
+	bill.buyer['taxnum'] = member.id
         
-        bill.info['num'] = "2010-1"
-        bill.info['date'] = datetime.now().strftime("%d.%m.%Y.")
+        bill.info['num'] = "2011-" + str(cnt)
+        bill.info['date'] = "04.01.2011."
         bill.info['items'] = [['članarina za SSFER', 100.0]]
 
         bill.populate()
-        bill.hr()
 
-        if not odd:
-            odd = True
-            bill.newPage()
-        else:
-            odd = False
+	cnt = cnt + 1
+
+        bill.newPage()
+
     
     bill.create()
 
@@ -93,7 +93,7 @@ class MemberAdmin(admin.ModelAdmin):
     form = MemberForm
 
     class Media:
-        js = ('/media/static/tiny_mce/tiny_mce.js',)
+        js = ('admin/tinymce/jscripts/tiny_mce/tiny_mce.js','admin/tinymce_setup/tinymce_description.js',)
 
     def save_model(self, request, obj, form, change):
 

@@ -30,10 +30,7 @@ def get_current_user(request):
     
     return Member.objects.get(id=user_id)
 
-#<<<<<<< HEAD
-#=======
 from members.models import Member, Address
-#>>>>>>> 16958a639be2f430e710efb893d196df02cc38e6
 
 def login(request):
     if request.session.get('user_id', False):
@@ -76,8 +73,6 @@ def display_member(request, template, member):
         'groups': MemberGroupLink.objects.filter(member=member.id),
         'isProfileOwner' : isProfileOwner
     }, context_instance=RequestContext(request) )
-
-#<<<<<<< HEAD
 
 @require_auth
 def main(request):
@@ -124,7 +119,6 @@ def submit(request):
         'contactTypes' : contactTypes
     })
     
-#=======
 def red(request):
     """Print out in html red members addresses."""
 
@@ -136,4 +130,14 @@ def red(request):
     return render_to_response('members-red.html', {
         'members': members,
         })
-#>>>>>>> 16958a639be2f430e710efb893d196df02cc38e6
+
+def red_list(request):
+    """Print out in html red members addresses."""
+
+    members = Member.objects.filter(groups__id=16).exclude(death__isnull=False).order_by('surname', 'name')
+
+    return render_to_response('members-red-list.html', {
+        'members': members,
+        })
+
+
