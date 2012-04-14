@@ -14,12 +14,10 @@ Use `virtualenv` to get things running.
 
     git clone git@github.com:KSET/kset-org.git kset
 
-
-
     cp kset/profile.example profile
     source profile
 
-    pip install -r requirements.txt
+    pip install -r kset/requirements.txt
 
 
 ## Requirements
