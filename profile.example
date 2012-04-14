@@ -1,0 +1,6 @@
+export PYTHONPATH=$PWD:$PWD/kset:$PYTHONPATH
+export DJANGO_SETTINGS_MODULE=kset.settings
+
+export DEVELOPMENT=true
+
+source env/bin/activate
