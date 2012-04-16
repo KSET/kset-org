@@ -57,8 +57,8 @@
       }
 
       jQuery(document).ready(function() {
-                          year = (jQuery.query.get('year')) ? jQuery.query.get('year') : 0;
-                          month = (jQuery.query.get('month')) ? jQuery.query.get('month') : 0;
+                          year = (new Date).getFullYear();
+                          month = (new Date).getMonth();
                           GetCalendar(year,month)
                         });
     </script>
