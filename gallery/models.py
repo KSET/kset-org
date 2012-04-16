@@ -6,6 +6,7 @@ from django.db import models
 from filebrowser.fields import FileBrowseField
 from filebrowser import base
 from filebrowser.settings import *
+import settings.base as settings
 
 from functions import *
 from datetime import datetime
@@ -62,7 +63,7 @@ class Album(models.Model):
             filter_re.append(re.compile(exp))
           filtered_images = []
           images = []
-          for image in os.listdir(self.upload_path.path_full):
+          for image in os.listdir(settings.MEDIA_ROOT+self.upload_path.path):
             # EXCLUDE FILES MATCHING VERSIONS_PREFIX OR ANY OF THE EXCLUDE PATTERNS
             for re_prefix in filter_re:
               if re_prefix.search(image):
@@ -73,7 +74,7 @@ class Album(models.Model):
           for filename in images:
             parsed = parse_filename(filename)
             if (parsed):
-              new_image = Image(title = parsed['name'], slug = parsed['slug'], upload_path = str(self.upload_path) + parsed['name_full'], date_of_event = parsed['date'], photographer = Photographer.objects.get(id = self.photographer.id))
+              new_image = Image(title = parsed['name'], slug = parsed['slug'], upload_path = str(self.upload_path.path) + '/' + parsed['name_full'], date_of_event = parsed['date'], photographer = Photographer.objects.get(id = self.photographer.id))
               new_image.save()
               new_image.album.add(self)
 
