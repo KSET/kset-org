@@ -2,6 +2,8 @@
 
 from django.db import models
 from filebrowser.fields import FileBrowseField
+from tinymce.models import HTMLField
+
 
 class Category(models.Model):
     name = models.CharField('naziv', max_length=128 )
@@ -19,8 +21,8 @@ class Subpage(models.Model):
     title = models.CharField('naslov', max_length=128 )
     slug = models.SlugField()
     last_edit = models.DateTimeField('zadnja promjena', auto_now=True )
-    description = models.TextField( 'opis', blank=True )
-    content = models.TextField('sadržaj', blank=True )
+    description = HTMLField( 'opis', blank=True )
+    content = HTMLField('sadržaj', blank=True )
     thumb = FileBrowseField( 'sličica', max_length=255, null=True, blank=True ) 
     category = models.ForeignKey( Category, null=True, blank=True, verbose_name='kategorija' )
     

@@ -8,21 +8,17 @@ class ZapisnikAdmin(admin.ModelAdmin):
     ordering = ('-date',)
 
     class Media:
-            js = (
-      'admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
-      'admin/tinymce_setup/tinymce_description.js',
-      'admin/tinymce_setup/tinymce_content.js',
-      )
+        js = (
+            '/media/static/tiny_mce/tiny_mce.js',
+        )
 
 class DezurstvaAdmin(admin.ModelAdmin):
     list_display = ('start', 'end', 'content',)
 
     class Media:
         js = (
-      'admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
-      'admin/tinymce_setup/tinymce_description.js',
-      'admin/tinymce_setup/tinymce_content.js',
-      )
+            '/media/static/tiny_mce/tiny_mce.js',
+        )
 
 admin.site.register(Zapisnik, ZapisnikAdmin)
 admin.site.register(Dezurstva, DezurstvaAdmin)
