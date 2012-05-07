@@ -100,6 +100,7 @@ urlpatterns += patterns('',
     ### ADMIN
 
     (r'^tagging_autocomplete/', include('tagging_autocomplete.urls')),
+    (r'^tinymce/', include('tinymce.urls')),
 
     url(r'^admin/filebrowser/', include(site.urls)),                       
     (r'^grappelli/', include('grappelli.urls')),

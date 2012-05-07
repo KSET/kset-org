@@ -1,6 +1,13 @@
 from django.contrib import admin
 from events.models import Event
 
+
+from django import forms
+from django.core.urlresolvers import reverse
+from tinymce.widgets import TinyMCE
+from django.contrib.flatpages.admin import FlatPageAdmin
+from django.contrib.flatpages.models import FlatPage
+
 def make_announced(modeladmin, request, queryset):
   queryset.update(announce=True)
 
@@ -20,5 +27,20 @@ class EventAdmin(admin.ModelAdmin):
         js = (
             '/media/static/tiny_mce/tiny_mce.js',
             )
+
+
+
+## mod flatpages
+class TinyMCEFlatPageAdmin(FlatPageAdmin):
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name == 'content':
+            return forms.CharField(widget=TinyMCE(
+                attrs={'cols': 80, 'rows': 30},
+                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
+            ))
+        return super(TinyMCEFlatPageAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+
+admin.site.unregister(FlatPage)
+admin.site.register(FlatPage, TinyMCEFlatPageAdmin)
 
 admin.site.register(Event, EventAdmin)
