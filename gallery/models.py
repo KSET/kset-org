@@ -98,4 +98,5 @@ class Photographer(models.Model):
   class Meta:
     verbose_name = "Fotograf"
     verbose_name_plural = "Fotografi"
+    ordering = ('name',)
 
