@@ -4,6 +4,7 @@
 
 {% block extrahead %}
 <meta property="og:title" content="{{ event.title }}" />
+<meta property="og:description" content="www.kset.org" />
 <meta property="og:image" content="{% if event.thumb %}{% version event.thumb 'medium' %}{% endif %}" />
 {% endblock %}
 
