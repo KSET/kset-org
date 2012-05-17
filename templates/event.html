@@ -4,7 +4,6 @@
 
 {% block extrahead %}
 <meta property="og:title" content="{{ event.title }}" />
-<meta property="og:description" content="{{ event.content|truncatewords_html:"30" }}" />
 <meta property="og:image" content="{% if event.thumb %}{% version event.thumb 'medium' %}{% endif %}" />
 {% endblock %}
 
