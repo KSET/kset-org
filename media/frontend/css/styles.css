@@ -508,6 +508,7 @@ div.clear + div#left {
     width: 200px;
     border-right: 1px dotted #aaa;
     padding-right: 5px;
+    min-height : 400px;
 }
 
 
