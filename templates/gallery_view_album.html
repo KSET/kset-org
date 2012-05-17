@@ -1,5 +1,11 @@
 {% extends 'index.html' %}
 {% load fb_versions %}
+
+{%block extrahead %}
+<meta property="og:title" content="{{ album_title }} - {{ date }}" />
+<meta property="og:description" content="{{ description|safe }} - Copyright by: {{ photographer }}" />
+<meta property="og:image" content="{% version image.upload_path 'gallerytb' %}" />
+{% endblock %}
   
 {% block content %}
     
