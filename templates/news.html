@@ -11,7 +11,7 @@
   {% for event in events %}
     <a href="{% url event-slug event.slug %}" style="background-image: url({% version event.thumb 'thumbnail' %}); background-postion: center;">
       <div class="date">{{ event.date|date:"d.m. l" }}</div>
-      <div class="text">{{ event.title }}</div>
+      <div class="text">{{ event.title|truncatewords_html:"5"}}</div>
     </a>
   {% endfor %}
 
