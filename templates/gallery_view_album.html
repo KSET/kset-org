@@ -15,7 +15,9 @@
     </div>
 
 
-    <div id="left"><h3>Info: {{ description|safe }}</h3></div>
+    <div id="left"><h3>Info: {{ description|safe }}</h3>
+      <span><h3>Copyright by: {% if photographer.url %}<a href='{{ photographer.url }}'>{{ photographer.name }}</a>{% else %}{{ photographer.name }}{% endif %}</h3></span>
+    </div>
 
   
   <div id="m-slike">  
@@ -27,7 +29,7 @@
           <img src="{% version image.upload_path 'gallerytb' %}" />
         </div>
         <div class="info">
-          <h3>Copyright {{ photographer }}</h3>
+          <!--<h3>Copyright {{ photographer }}</h3>-->
         </div>
       </a>
     </div>
