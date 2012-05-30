@@ -68,8 +68,8 @@ class AlbumAdmin(GuardedModelAdmin):
 
 
 class PhotographerAdmin(admin.ModelAdmin):
-    fields = ('name',)
-    list_display = ('name',)
+    fields = ('name','url',)
+    list_display = ('name','url',)
     ordering = ('-name',)
     search_fields = ('name',)
     
