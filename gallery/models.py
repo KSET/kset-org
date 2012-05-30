@@ -91,6 +91,7 @@ class Album(models.Model):
 
 class Photographer(models.Model):
   name = models.CharField('Ime i prezime', max_length=32)
+  url = models.URLField('Home page', max_length=255)
 
   def __unicode__(self):
     return self.name
