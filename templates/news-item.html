@@ -2,6 +2,13 @@
 
 {% load fb_versions %}
 
+{% block extrahead %}
+<meta property="og:title" content="{{ news.subject }}" />
+<meta property="og:description" content="www.kset.org" />
+<meta property="og:image" content="{% if news.thumb %}{% version news.thumb 'medium' %}{% endif %}" />
+{% endblock %}
+
+
 {% block leftcolumn %}
 
 <div class="item">
