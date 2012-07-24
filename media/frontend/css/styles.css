@@ -1,15 +1,22 @@
 /*201F25*/
 
-body 
+body
 {
-    background-color: #333;
+    background: url(../images/bg.png);
     margin: 0px;
     font-family: Verdana,sans-serif,arial;
     font-size: 11px;
+    background-image: -moz-linear-gradient(top,  rgba(69,72,77,0.2) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,0.2)), color-stop(100%,rgba(0,0,0,0.3))),url(../images/bg.png); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top,  rgba(69,72,77,0.2) 0%,rgba(0,0,0,0.3) 100%),url(../images/bg.png); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top,  rgba(69,72,77,0.2) 0%,rgba(0,0,0,0.3) 100%),url(../images/bg.png); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top,  rgba(69,72,77,0.2) 0%,rgba(0,0,0,0.3) 100%),url(../images/bg.png); /* IE10+ */
+    background-image: linear-gradient(to bottom,  rgba(69,72,77,0.2) 0%,rgba(0,0,0,0.3) 100%),url(../images/bg.png); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9945484d', endColorstr='#99000000',GradientType=0 ); /* IE6-9 */
 
 }
 
-td 
+td
 {
     vertical-align: top;
 }
@@ -34,7 +41,7 @@ input
 {
     border: 1px solid #aaa;
     margin: 0px;
-    
+
 }
 
 .vsep
@@ -50,15 +57,11 @@ a:hover
 
 #container
 {
-    width: 850px;
-    margin: 15px auto 30px auto;
-    background-color: #f1f1f1;
-    border: 5px solid #000;
-    border-bottom: 40px solid #000;
-
-    -moz-box-shadow: 0 0 15px #000;
-    -webkit-box-shadow: 0 0 15px #000;
-    box-shadow: 0 0 15px #000;
+    background: #000;
+    width: 960px;
+    margin: 0 auto 40px;
+    padding: 5px 0 0;
+    box-shadow: 0 0 50px -9px #000;
 }
 
 .orange
@@ -68,55 +71,69 @@ a:hover
 
 #footer
 {
-    position: absolute;
-    margin-top: 5px;
-    width: 850px;
+    padding: 5px 0;
     text-align: center;
     color: #bbb;
+    background: #000;
 }
 
 /* --- HEADER ------------------------------------------------------ */
 
 #header
 {
-    background: #000 url(../images/headers/header_bg_trubac.jpg) no-repeat scroll left top;
-    width: 850px;
-    height: 300px;
-    border-bottom: 2px solid #fe7929;
+    position: relative;
+    height: 333px;
     font-family: helvetica, sans-serif, arial;
     letter-spacing: 1px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+#header-pic {
+    position: absolute;
+    top:0;
+    left:10px;
+
 }
 
 #kset-logo
 {
     float:left;
     margin: 10px;
+    position: relative;
+    z-index:2;
 }
 
 /* SCROLL */
 
 #header-scroll
 {
+    position: relative;
     float: right;
     width: 400px;
     height: 285px;
     overflow: hidden;
     margin-top: 5px;
-    margin-right: 13px;
+    margin-right: 10px;
 }
 
 #header-scroll .item
 {
     font-size: 18px;
     color: #ddd;
-    padding: 5px 0px;
-    border-bottom: 1px solid #803d15;
+    padding: 5px 0;
+    border-bottom: 1px dashed #803d15;
 }
 
 #header-scroll .item a
 {
     color: #ddd;
     text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 345px;
+    float: left;
+    overflow: hidden;
 }
 #header-scroll .item a:hover
 {
@@ -156,8 +173,22 @@ a:hover
 
 #header-scroll-arrows
 {
-    position: absolute;   
-    margin: 245px 0px 0px 838px;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}
+
+#header-scroll:hover #header-scroll-arrows {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
 }
 
 #header-scroll-arrows a
@@ -181,13 +212,10 @@ a:hover
 {
     float: left;
     position: absolute;
-    margin-top: 270px;
+    bottom: 0px;
+    width: 100%;
     height: 25px;
-    width: 400px;
-    background-color: #000;
-    padding: 5px 0px 0px 10px;
-    opacity:0.85;
-    filter:alpha(opacity=85); /* IE */
+    padding: 5px 0 0;
     font-size: 14px;
     font-weight: bold;
 }
@@ -208,6 +236,7 @@ a:hover
 #top-menu-prompt
 {
     color: #fe7929;
+    margin-left: 10px;
 }
 
 .prompt-blink
@@ -217,10 +246,14 @@ a:hover
 
 /* --- CONTENT ----------------------------------------------------- */
 
-#content, table
+#content
 {
     font-size: 12px;
     color: #111;
+    background-color: #eee;
+    padding: 5px 0 10px;
+    border-bottom: 2px solid #FE7929;
+    border-top: 2px solid #FE7929;
 }
 
 #content h1
@@ -320,7 +353,7 @@ a:hover
     margin-right: 5px;
     margin-top: -18px;
     background: transparent url(../images/fer.png) no-repeat scroll 0px -60px;
-    
+
     display: block;
     width: 40px;
     height: 60px;
@@ -335,7 +368,7 @@ a:hover
 
 #left
 {
-    width: 468px;
+    width: 60%;
     margin-left: 10px;
 }
 
@@ -386,7 +419,6 @@ div.clear + div#left {
 
 #announce
 {
-    margin-top: 10px;
     padding-top: 3px;
     height: 130px;
 }
@@ -418,7 +450,7 @@ div.clear + div#left {
     padding: 0px 3px;
     color: #fff;
     font-weight: bold;
-    background-color: #000;    
+    background-color: #000;
     opacity:0.85;
     filter:alpha(opacity=85); /* IE */
 }
@@ -598,7 +630,7 @@ div.clear + div#left {
     color: #fff;
     font-weight: bold;
     font-size: 10px;
-    background-color: #000;    
+    background-color: #000;
     opacity:0.85;
     filter:alpha(opacity=85); /* IE */
 }
@@ -613,7 +645,7 @@ div.clear + div#left {
   }
 
 .calendar span
-{ 
+{
   float: left;
   display: block;
   width: 16px;
@@ -625,12 +657,12 @@ div.clear + div#left {
   background-color: #e5e5e5;
   border: 1px solid transparent;
   border-bottom: 1px solid #f7ac7b;
-  
+
   margin-bottom: 2px;
   }
 
 .calendar a
-{ 
+{
   float: left;
 
   display: block;
@@ -644,27 +676,27 @@ div.clear + div#left {
   }
 
 .calendar a:hover
-{ 
+{
   font-weight: bold;
   }
 
 .calendar .reserved
-{ 
+{
   font-weight: bold;
   }
 
 .calendar .out-month
-{ 
+{
   color: #666;
   }
 
 .calendar .today
-{ 
+{
   border: 1px solid #999;
   }
 
 .calendar .month
-{ 
+{
   width: 88px;
   font-weight: bold;
   }
@@ -717,7 +749,7 @@ div.clear + div#left {
 
 .m-welcome p {
 	line-height:1.5em;
-	
+
 }
 
 .m-welcome p span{
@@ -740,14 +772,14 @@ div.clear + div#left {
   -webkit-transition: box-shadow 0.2s;
   -moz-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
-  
+
   -webkit-box-shadow: 0 0 5px #333;
   -moz-box-shadow: 0 0 5px #333;
   box-shadow: 0 0 5px #333;
-  
+
   background-color:#fff;
-  
-  
+
+
 
 }
 
@@ -760,13 +792,13 @@ div.clear + div#left {
 .m-album a {
   display:block;
   color:#000;
-  
+
 }
 
 .m-album img {
 
   width:100%;
-  
+
 }
 
 .m-album .slika {
@@ -814,7 +846,7 @@ div.clear + div#left {
 
 .m-album:hover h2{}
 
-#content {width:850px;}
+/*#content {width:850px;}*/
 
 /* SLIKE */
 
@@ -833,7 +865,7 @@ div.clear + div#left {
   max-height:183px;
 }
 
-.m-slika a {color:#000;} 
+.m-slika a {color:#000;}
 
 /*.m-slika:hover {
   box-shadow: 0 0 1px #333;
@@ -860,12 +892,12 @@ div.clear + div#left {
   -moz-transition:all 0.1s;
   -webkit-transition:all 0.1s;
   transition:all 0.1s;
-  
+
 }
 
 /*.m-slika img:hover {
   margin-top:2px;
-  
+
 }*/
 
 .m-slika .info{
@@ -889,7 +921,7 @@ div.clear + div#left {
 
 #album-info > * {
   float:left;
-  
+
 }
 
 /*#album-info a {color:#000;}
@@ -901,10 +933,10 @@ div.clear + div#left {
   padding-bottom:1em;
   text-align:center;
   background-color:#e5e5e5 //#fe7929;
-} 
+}
 
 #album-info .gumb:hover {
-  
+
   background-color:#fe7929;
 }*/
 
@@ -918,7 +950,7 @@ div.clear + div#left {
 }
 #album-info .gumb a {font-size:0.8em; color:#222;}
 #album-info .gumb:hover {
-  
+
   box-shadow: 0 0 2px #000;
 }
 
