@@ -4,12 +4,11 @@
 
 <div id="right">
 
-  <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Pretraživanje sadržaja ...</h1>
-
   <form id="form-search" method="GET" action="{% url search %}">
-    <input type="text" style="width: 150px" name="query" /><input type="button" value="&raquo;" />
+    <img src="/media/frontend/images/search.png" width="18" height="18"/>
+    <input id="input-search" type="text" name="query" placeholder="Search me"/>
   </form>
-  Arhiva: <a href="{% url news-archive %}"><b>Vijesti</b></a> | <a href="{% url events-archive %}"><b>Programa</b></a>
+
 
   <div class="vsep"></div>
 

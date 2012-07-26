@@ -45,12 +45,11 @@ $( function()
     $('#header-scroll').bind('mousewheel', function(event, delta, deltaX, deltaY) {
 
         if ( event.originalEvent.wheelDelta < 0 ) {
-            header_scroll_down();
+            return header_scroll_down();
         } else {
-            header_scroll_up();
+            return header_scroll_up();
         }
 
-        event.preventDefault();
     });
 
 });
@@ -59,14 +58,18 @@ $( function()
 // functions
 function header_scroll_down()
 {
-    if (current_event < events_count - max_events)
-    jQuery('#event-' + current_event++).stop().slideUp(200); //animate({opacity:0},100).animate({height:'toggle'},100);
+    if (current_event < events_count - max_events) {
+        jQuery('#event-' + current_event++).stop().slideUp(150);  // .animate({opacity:0},100).animate({height:'toggle'},100);
+        return false;
+    }
 }
 
 function header_scroll_up()
 {
-    if (current_event > 0)
-    jQuery('#event-' + --current_event).slideDown(200); //.animate({height:'toggle'},100).animate({opacity:100},100);
+    if (current_event > 0) {
+        jQuery('#event-' + --current_event).slideDown(150); // .animate({height:'toggle'},100).animate({opacity:100},100);
+        return false;
+    }
 }
 
 function flip_element_by_id(id) {

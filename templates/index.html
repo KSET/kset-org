@@ -56,13 +56,16 @@
 
 	<div id="top-menu">
 	  <code id="top-menu-prompt">&gt;</code>
-	  <a href="{% url root %}">program</a>
-	  <a href="{% url club %}">klub / sekcije</a>
-	  <a href="{% url multimedia %}">multimedia</a>
+	  <a href="{% url root %}">NASLOVNICA</a>
+	  <a href="{% url club %}">O KLUBU</a>
+	  <a href="{% url multimedia %}">MULTIMEDIA</a>
+    <a href="{% url news-archive %}"><b>VIJESTI</b></a>
+    <a href="{% url events-archive %}"><b>PROGRAM</b></a>
 
-      <!-- veljko postavio da mu google prije indexera nesto drugo -->
-      <a href="http://www.myindian.se/" style="display:none;">myIndian.se</a>
 
+    <!-- veljko postavio da mu google prije indexera nesto drugo -->
+    <a href="http://www.myindian.se/" style="display:none;">myIndian.se</a>
+    <!-- end veljko -->
 	</div>
 
 	{% include 'header-scroll.html' %}
