@@ -4,14 +4,14 @@
 
 <div id="right">
 
-  <form id="form-search" method="GET" action="{% url search %}">
-    <img src="/media/frontend/images/search.png" width="18" height="18"/>
-    <input id="input-search" type="text" name="query" placeholder="Search me"/>
-  </form>
-
+  <div class="search-box">
+    <form id="form-search" method="GET" action="{% url search %}">
+      <input id="input-search" type="text" name="query" placeholder="Search me"/>
+    </form>
+  </div>
 
   <div class="vsep"></div>
-
+<!--
   <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Socijalno virtualiziranje ...</h1>
   <div id="social-logos">
     <a href="http://twitter.com/KSETinfo/" class="logo-twitter" target="blank"></a>
@@ -23,85 +23,112 @@
   </div>
 
   <div class="vsep"></div>
+-->
+
+    <!--
+    <h1>Za nostalgičare ...</h1>
+    -->
+
+    <div class="calendar-box">
+      <script type="text/javascript">
+
+        function GetCalendar(year, month)
+        {
+          jQuery("#calendar").load("{% url calendar %}",{'year': year, 'month': month});
+        }
+
+        jQuery(document).ready(function() {
+                            year = (new Date).getFullYear();
+                            month = (new Date).getMonth()+1;
+                            GetCalendar(year,month)
+                          });
+      </script>
+
+      <div id="calendar" class="calendar"></div>
+    </div>
+
+    <div class="vsep"></div>
+
+    <div class="gallery-box">
+      <h1>Galerija</h1>
+      <img src="//placehold.it/150x80"/>
+      <p>Lorem ipsum</p>
+      <img src="//placehold.it/150x80"/>
+      <p>Lorem ipsum</p>
+      <img src="//placehold.it/150x80"/>
+      <p>Lorem ipsum</p>
+      <img src="//placehold.it/150x80"/>
+      <p>Lorem ipsum</p>
+    </div>
+
+    <div class="vsep"></div>
+
+    <div class="fer-box">
+        <h1>Uvijek je tu za nas</h1>
+        <a href="http://www.fer.hr/" class="logo-fer"></a>
+        <p><a href="http://www.fer.hr/">Fakultet elektrotehnike<br />i računarstva</a></p>
+    </div>
+
+    <div class="vsep"></div>
+
+    <div class="uticnice-box">
+
+      <h1>Utičnice ...</h1>
+      <p>
+        <a href="http://www.sczg.hr/" target="_blank">Studentski centar</a><br />
+        <a href="http://www.szzg.hr/" target="_blank">Studentski zbor</a><br />
+        <a href="http://www.dirtyoldempire.com/" target="_blank">Dirty old shop</a><br />
+        <a href="http://www.mmv-auris.hr/" target="_blank">MMV-Auris</a><br />
+        <a href="http://www.mipro.hr/" target="_blank">MIPRO</a><br />
+        <a href="http://www.radiostudent.hr/" target="_blank">Radio Student</a><br />
+        <a href="http://www.muzika.hr/" target="_blank">Muzika.hr</a><br />
+        <a href="http://www.terapija.net/" target="_blank">Terapija.net</a><br />
+        <a href="http://www.linux.hr/" target="_blank">HULK</a><br />
+        <a href="http://www.razmjenavjestina.org/" target="_blank">Razmjena vjestina</a><br />
+        <a href="http://www.carnet.hr/" target="_blank">CARNet</a><br />
+        <a href="http://www.rep.hr/" target="_blank">Rep.hr</a><br />
+        <a href="http://www.ciak.hr/" target="_blank">CIAK</a><br />
+        <a href="http://www.naklikaj.com/" target="_blank">Naklikaj.com</a><br />
+        <a href="http://www.idemvan.hr/" target="_blank">Idemvan.hr</a><br />
+        <a href="http://www.ruziona.hr/" target="_blank">Ruziona.hr</a><br />
+          <a href="http://www.tvoj-toner.com/" target="_blank">Tvoj Toner</a><br />
+      </p>
+    </div>
+
+    <div class="vsep"></div>
 
 
-  <div id="right-right">
-
-    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Za nostalgičare ...</h1>
-
-    <script type="text/javascript" src="/media/frontend/js/jquery-1.7.2.min.js" language="javascript"></script>
-    <script type="text/javascript">
-
-      function GetCalendar(year, month)
-      {
-        jQuery("#calendar").load("{% url calendar %}",{'year': year, 'month': month});
-      }
-
-      jQuery(document).ready(function() {
-                          year = (new Date).getFullYear();
-                          month = (new Date).getMonth()+1;
-                          GetCalendar(year,month)
-                        });
-    </script>
-
-    <div id="calendar" class="calendar"></div>
-
-    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Utičnice ...</h1>
-    <p>
-      <a href="http://www.sczg.hr/" target="_blank">Studentski centar</a><br />
-      <a href="http://www.szzg.hr/" target="_blank">Studentski zbor</a><br />
-      <a href="http://www.dirtyoldempire.com/" target="_blank">Dirty old shop</a><br />
-      <a href="http://www.mmv-auris.hr/" target="_blank">MMV-Auris</a><br />
-      <a href="http://www.mipro.hr/" target="_blank">MIPRO</a><br />
-      <a href="http://www.radiostudent.hr/" target="_blank">Radio Student</a><br />
-      <a href="http://www.muzika.hr/" target="_blank">Muzika.hr</a><br />
-      <a href="http://www.terapija.net/" target="_blank">Terapija.net</a><br />
-      <a href="http://www.linux.hr/" target="_blank">HULK</a><br />
-      <a href="http://www.razmjenavjestina.org/" target="_blank">Razmjena vjestina</a><br />
-      <a href="http://www.carnet.hr/" target="_blank">CARNet</a><br />
-      <a href="http://www.rep.hr/" target="_blank">Rep.hr</a><br />
-      <a href="http://www.ciak.hr/" target="_blank">CIAK</a><br />
-      <a href="http://www.naklikaj.com/" target="_blank">Naklikaj.com</a><br />
-      <a href="http://www.idemvan.hr/" target="_blank">Idemvan.hr</a><br />
-      <a href="http://www.ruziona.hr/" target="_blank">Ruziona.hr</a><br />
-        <a href="http://www.tvoj-toner.com/" target="_blank">Tvoj Toner</a><br />
-    </p>
-
-  </div>
-
-  <div id="right-left">
-
-    {% include 'newsletter-form.html' %}
-
-    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Informacije</h1>
-    <p>
-      <table>
-	<tr>
-	  <td><b>mail:</b></td><td><a href="#">info@kset.org</a><br /><a href="#">booking@kset.org</a></td>
-	</tr>
-	<tr>
-	  <td><b>adr:</b></td><td>Unska 3, 10000 Zagreb</td>
-	</tr>
-	<tr>
-	  <td><b>tel:</b></td><td>+385 1 6129 758</td>
-	</tr>
-	<tr>
-	  <td><b>gdje?!</b></td><td>
-	    <a href="#">GoogleMaps</a><br />
-	    <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
-	  </td>
-	</tr>
-      </table>
-    </p>
-    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Uvijek je tu za nas</h1>
-    <a href="http://www.fer.hr/" class="logo-fer"></a>
-    <p><a href="http://www.fer.hr/">Fakultet elektrotehnike<br />i računarstva</a></p>
+    <div class="newsletter-box">
+      {% include 'newsletter-form.html' %}
+    </div>
 
 
-  </div>
-
+  <!--
+      <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Informacije</h1>
+      <p>
+        <table>
+        	<tr>
+        	  <td><b>mail:</b></td><td><a href="#">info@kset.org</a><br /><a href="#">booking@kset.org</a></td>
+        	</tr>
+        	<tr>
+        	  <td><b>adr:</b></td><td>Unska 3, 10000 Zagreb</td>
+        	</tr>
+        	<tr>
+        	  <td><b>tel:</b></td><td>+385 1 6129 758</td>
+        	</tr>
+        	<tr>
+        	  <td><b>gdje?!</b></td><td>
+        	    <a href="#">GoogleMaps</a><br />
+        	    <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
+        	  </td>
+        	</tr>
+        </table>
+      </p>
+  -->
 
 </div>
+
+
 
 
 <div id="left">

@@ -1,6 +1,7 @@
 {% load fb_versions %}
 
 <div id="header-scroll">
+  <div id="header-scroll-viewport">
 
     {% for event in header_events %}
     <div class="item" id="event-{{ forloop.counter0 }}">
@@ -31,9 +32,12 @@
     </div>
     {% endfor %}
 
-    <div id="header-scroll-arrows">
-      <a href="javascript:header_scroll_up()">&uarr;</a>
-      <a href="javascript:header_scroll_down()">&darr;</a>
-    </div>
+  </div>
+
+
+  <div id="header-scroll-arrows">
+    <a href="javascript:header_scroll_up()">&uarr;</a>
+    <a href="javascript:header_scroll_down()">&darr;</a>
+  </div>
 
 </div>

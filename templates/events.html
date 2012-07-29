@@ -8,6 +8,8 @@
 
 <div class="item" style="border: 0px;">
 
+
+
   <h3><span class="orange">&raquo;&nbsp;</span>{{ event.date|date:"l, d. F Y." }} u {{ event.time|time:"H:i" }}</h3>
 
   <a href="http://twitter.com/home?status=http://www.kset.org{% url event-slug event.slug %}" class="shareTw"></a>
@@ -18,9 +20,9 @@
   {% if event.thumb %}
     <img src="{% version event.thumb 'medium' %}" class="thumb" />
   {% endif %}
-  
+
   <div class="icontent">
-    
+
     {{ event.description|safe }}
     {{ event.content|safe }}
 

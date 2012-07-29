@@ -30,52 +30,170 @@
   {% endfor %}
 
 </div>
-
 {% endif %}
 
 
-{% for item in news %}
+<div class="news-box dnevni">
 
-  <div class="item">
-    <h3><span class="orange">&raquo;&nbsp;</span>{{ item.publish|date:"l, d. F Y." }}</h3>
- 
-    <h1>{{ item.subject }}</h1>
+  <h1 class="news-header">Dnevni program</h1>
 
-    {% if item.description %}
+  {% for item in events %}
 
-      <div class="icontent">
-        {% if item.thumb %}
-          <img src="{% version item.thumb 'medium' %}"  class="thumb" />
+    <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+
+
+      {% if item.description %}
+
+        <div class="icontent">
+
+          {% if item.thumb %}
+            <img src="{% version item.thumb 'big' %}"  class="thumb" />
+          {% endif %}
+
+          <h2>{{ item.title }}</h2>
+
+          <h3>{{ item.date|date:"l, d. F Y." }}</h3>
+
+          {{ item.description|safe }}
+
+          <div id="{{ item.slug }}" style="display:none;">
+            {{ item.content|safe }}
+          </div>
+
+        </div>
+
+        {% if item.content %}
+          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
         {% endif %}
 
-        {{ item.description|safe }}
+      {% else %}
 
-        <div id="{{ item.slug }}" style="display:none;">
+        <div class="icontent">
+          {% if item.thumb %}
+            <img src="{% version item.thumb 'medium' %}" class="thumb" />
+          {% endif %}
+
           {{ item.content|safe }}
         </div>
-    
-      </div>
-  
-      {% if item.content %}
-        <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
       {% endif %}
 
-    {% else %}
+      <div class="ifooter">
+      </div>
 
-      <div class="icontent">
-        {% if item.thumb %}
-          <img src="{% version item.thumb 'medium' %}" class="thumb" />
+    </div>
+
+  {% endfor %}
+  <div class="clear"></div>
+
+</div>
+
+<div class="news-box nocni">
+
+  <h1 class="news-header">Noćni program</h1>
+
+  {% for item in events %}
+
+    <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+
+
+      {% if item.description %}
+
+        <div class="icontent">
+
+          {% if item.thumb %}
+            <img src="{% version item.thumb 'big' %}"  class="thumb" />
+          {% endif %}
+
+          <h2>{{ item.title }}</h2>
+
+          <h3>{{ item.date|date:"l, d. F Y." }}</h3>
+
+          {{ item.description|safe }}
+
+          <div id="{{ item.slug }}" style="display:none;">
+            {{ item.content|safe }}
+          </div>
+
+        </div>
+
+        {% if item.content %}
+          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
         {% endif %}
 
-        {{ item.content|safe }}
+      {% else %}
+
+        <div class="icontent">
+          {% if item.thumb %}
+            <img src="{% version item.thumb 'medium' %}" class="thumb" />
+          {% endif %}
+
+          {{ item.content|safe }}
+        </div>
+      {% endif %}
+
+      <div class="ifooter">
       </div>
-    {% endif %}
 
-    <div class="ifooter">
-    </div> 
+    </div>
 
-  </div>
+  {% endfor %}
+  <div class="clear"></div>
 
-{% endfor %}
+</div>
+
+<div class="news-box vijesti">
+
+  <h1 class="news-header">Vijesti</h1>
+
+  {% for item in events %}
+
+    <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+
+
+      {% if item.description %}
+
+        <div class="icontent">
+
+          {% if item.thumb %}
+            <img src="{% version item.thumb 'big' %}"  class="thumb" />
+          {% endif %}
+
+          <h2>{{ item.title }}</h2>
+
+          <h3>{{ item.date|date:"l, d. F Y." }}</h3>
+
+          {{ item.description|safe }}
+
+          <div id="{{ item.slug }}" style="display:none;">
+            {{ item.content|safe }}
+          </div>
+
+        </div>
+
+        {% if item.content %}
+          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+        {% endif %}
+
+      {% else %}
+
+        <div class="icontent">
+          {% if item.thumb %}
+            <img src="{% version item.thumb 'medium' %}" class="thumb" />
+          {% endif %}
+
+          {{ item.content|safe }}
+        </div>
+      {% endif %}
+
+      <div class="ifooter">
+      </div>
+
+    </div>
+
+  {% endfor %}
+  <div class="clear"></div>
+
+</div>
+
 
 {% endblock %}
