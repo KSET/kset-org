@@ -32,6 +32,7 @@
 </div>
 {% endif %}
 
+<!-- DNEVNI -->
 
 <div class="news-box dnevni">
 
@@ -47,10 +48,13 @@
         <div class="icontent">
 
           {% if item.thumb %}
-            <img src="{% version item.thumb 'big' %}"  class="thumb" />
+            <a href="#EVENT-SLUG"><img src="{% version item.thumb 'big' %}"  class="thumb" /></a>
           {% endif %}
 
-          <h2>{{ item.title }}</h2>
+          <!-- share thingys -->
+          <div class="event-share"><span class="share facebook"></span><span class="share twitter"></span></div>
+
+          <h2><a href="#EVENT-SLUG">{{ item.title }}</a></h2>
 
           <h3>{{ item.date|date:"l, d. F Y." }}</h3>
 
@@ -86,6 +90,8 @@
   <div class="clear"></div>
 
 </div>
+
+<!-- NOCNI  -->
 
 <div class="news-box nocni">
 

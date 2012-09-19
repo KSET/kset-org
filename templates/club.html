@@ -3,85 +3,116 @@
 {% load fb_versions %}
 
 {% block content %}
-
-<div id="right" style="width: 400px;" >
+<div id="right" class="club-right" >
 
   <div id="right-col2-klub">
 
-    <img src="/media/frontend/images/kset_logo2.png" style="margin-top:10px;"/>
-    <i>... prvi put otvorio vrata 1976.</i>
+    <img src="/media/frontend/images/kset_logo2.png" style="margin-top:10px;"/> <i>... prvi put otvorio vrata 1976.</i>
 
-    <h1><span class="orange">&raquo;&nbsp;</span>Informacije</h1>
+    <h1>
+      <span class="orange">&raquo;&nbsp;</span>
+      Informacije
+    </h1>
     <table>
       <tr>
-	<td><b>mail:</b></td><td><a href="#">info@kset.org</a><br /><a href="#">booking@kset.org</a></td>
+        <td> <b>mail:</b>
+        </td>
+        <td>
+          <a href="#">info@kset.org</a>
+          <br />
+          <a href="#">booking@kset.org</a>
+        </td>
       </tr>
       <tr>
-	<td><b>adr:</b></td><td>Unska 3, 10000 Zagreb</td>
+        <td> <b>adr:</b>
+        </td>
+        <td>Unska 3, 10000 Zagreb</td>
       </tr>
       <tr>
-	<td><b>tel:</b></td><td>+385 1 6129 758</td>
+        <td>
+          <b>tel:</b>
+        </td>
+        <td>+385 1 6129 758</td>
       </tr>
       <tr>
-	<td><b>gdje?!</b></td><td>
-	  <a href="#">GoogleMaps</a><br />
-	  <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
-	</td>
+        <td>
+          <b>gdje?!</b>
+        </td>
+        <td>
+          <a href="#">GoogleMaps</a>
+          <br />
+          <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
+        </td>
       </tr>
       <tr>
-	<td><b>logotip:</b></td><td><a href="http://www.kset.org/media/images/KSETlogo.zip">logotip.zip</a></td>
+        <td>
+          <b>logotip:</b>
+        </td>
+        <td>
+          <a href="http://www.kset.org/media/images/KSETlogo.zip">logotip.zip</a>
+        </td>
       </tr>
     </table>
 
     <div class="vsep"></div>
 
-    <h1><span class="orange">&raquo;&nbsp;</span>Voditelji</h1>
+    <h1>
+      <span class="orange">&raquo;&nbsp;</span>
+      Voditelji
+    </h1>
     {{ leaders.content|safe }}
     <div class="vsep"></div>
 
-    <h1><span class="orange">&raquo;&nbsp;&nbsp;</span><i>"Vrijedi do sutra ..."</i></h1>
+    <h1>
+      <span class="orange">&raquo;&nbsp;&nbsp;</span> <i>"Vrijedi do sutra ..."</i>
+    </h1>
 
-    <a href="{% url alumni %}"><img src="/media/frontend/images/alumni_link.png" alt="alumni" /></a>
+    <a href="{% url alumni %}">
+      <img src="/media/frontend/images/alumni_link.png" alt="alumni" />
+    </a>
 
   </div>
 
   <div id="right-col1-klub">
 
-    <h1><span class="orange">&raquo;&nbsp;</span>Sekcije</h1>
+    <h1>
+      <span class="orange">&raquo;&nbsp;</span>
+      Sekcije
+    </h1>
 
     <div class="cellmenu" style="min-height: 335px;">
-
       {% for division in divisions %}
-        <a href="{% url subpage-slug division.slug %}" style="background-image: url({% version division.thumb 'small' %});"><div class="text">{{ division.title }}</div></a>
+      <a href="{% url subpage-slug division.slug %}" style="background-image: url({% version division.thumb 'small' %});">
+        <div class="text">{{ division.title }}</div>
+      </a>
       {% endfor %}
-
     </div>
 
     <div class="vsep"></div>
 
-    <h1><span class="orange">&raquo;&nbsp;</span>Projekti </h1>
+    <h1>
+      <span class="orange">&raquo;&nbsp;</span>
+      Projekti
+    </h1>
 
     <div class="cellmenu" style="min-height:200px;">
       {% for project in projects %}
-        <a href="{% url subpage-slug project.slug %}" style="background-image: url({% version project.thumb 'small' %});"><div class="text">{{ project.title }}</div></a>
+      <a href="{% url subpage-slug project.slug %}" style="background-image: url({% version project.thumb 'small' %});">
+        <div class="text">{{ project.title }}</div>
+      </a>
       {% endfor %}
-   </div>
+    </div>
 
   </div>
 
-
 </div>
 
-
-<div id="left" style="width: 420px">
+<div id="left" class="club-left">
 
   <div class="item" style="margin-top: 0px; border: 0px;">
     <h1>{{ subpage.title }}</h1>
-
     {{ subpage.content|safe }}
-
   </div>
 
 </div>
-
 {% endblock %}

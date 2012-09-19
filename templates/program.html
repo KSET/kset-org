@@ -11,7 +11,9 @@
   </div>
 
   <div class="vsep"></div>
-<!--
+
+  <!--
+
   <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Socijalno virtualiziranje ...</h1>
   <div id="social-logos">
     <a href="http://twitter.com/KSETinfo/" class="logo-twitter" target="blank"></a>
@@ -22,42 +24,35 @@
     <a href="http://webchat.freenode.net/?channels=kset" class="logo-irc" target="blank"></a>
   </div>
 
-  <div class="vsep"></div>
--->
-
-    <!--
-    <h1>Za nostalgičare ...</h1>
-    -->
+  -->
 
     <div class="calendar-box">
-      <script type="text/javascript">
-
-        function GetCalendar(year, month)
-        {
-          jQuery("#calendar").load("{% url calendar %}",{'year': year, 'month': month});
-        }
-
-        jQuery(document).ready(function() {
-                            year = (new Date).getFullYear();
-                            month = (new Date).getMonth()+1;
-                            GetCalendar(year,month)
-                          });
-      </script>
-
       <div id="calendar" class="calendar"></div>
     </div>
 
     <div class="vsep"></div>
 
-    <div class="gallery-box">
+    <div class="right-box sticky-news-box">
+      <h1>Obavijesti</h1>
+      <a href="#"><img src="//placehold.it/150x80"/></a>
+      <p>FER Hoodie!</p>
+      <a href="#"><img src="//placehold.it/150x80"/></a>
+      <p>Zabranjeno pusenje u KSET-u</p>
+      <a href="#"><img src="//placehold.it/150x80"/></a>
+      <p>KSET monografija</p>
+    </div>
+
+    <div class="vsep"></div>
+
+    <div class="right-box gallery-box">
       <h1>Galerija</h1>
-      <img src="//placehold.it/150x80"/>
+      <a href="#"><img src="//placehold.it/150x80"/></a>
       <p>Lorem ipsum</p>
-      <img src="//placehold.it/150x80"/>
+      <a href="#"><img src="//placehold.it/150x80"/></a>
       <p>Lorem ipsum</p>
-      <img src="//placehold.it/150x80"/>
+      <a href="#"><img src="//placehold.it/150x80"/></a>
       <p>Lorem ipsum</p>
-      <img src="//placehold.it/150x80"/>
+      <a href="#"><img src="//placehold.it/150x80"/></a>
       <p>Lorem ipsum</p>
     </div>
 
@@ -101,30 +96,6 @@
     <div class="newsletter-box">
       {% include 'newsletter-form.html' %}
     </div>
-
-
-  <!--
-      <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Informacije</h1>
-      <p>
-        <table>
-        	<tr>
-        	  <td><b>mail:</b></td><td><a href="#">info@kset.org</a><br /><a href="#">booking@kset.org</a></td>
-        	</tr>
-        	<tr>
-        	  <td><b>adr:</b></td><td>Unska 3, 10000 Zagreb</td>
-        	</tr>
-        	<tr>
-        	  <td><b>tel:</b></td><td>+385 1 6129 758</td>
-        	</tr>
-        	<tr>
-        	  <td><b>gdje?!</b></td><td>
-        	    <a href="#">GoogleMaps</a><br />
-        	    <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
-        	  </td>
-        	</tr>
-        </table>
-      </p>
-  -->
 
 </div>
 

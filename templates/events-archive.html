@@ -15,14 +15,14 @@
 
   <div class="icontent">
 
-    <table>
+    <table class="archive-table">
       {% for event in events %}
-    
-      {% ifchanged %} </table><h2>{{ event.date|date:"F Y." }}</h2><table> {% endifchanged %}
+
+      {% ifchanged %} </table><h2>{{ event.date|date:"F Y." }}</h2><table class="archive-table"> {% endifchanged %}
 
       <tr>
-        <td style="width:90px">{{ event.date|date:"d.m.Y." }} </td>
-        <td><a href="{% url event-slug event.slug %}">{{ event.title }}</a></td>
+        <td class="archive-date">{{ event.date|date:"d.m.Y." }} </td>
+        <td class="archive-title"><a href="{% url event-slug event.slug %}">{{ event.title }}</a></td>
       </tr>
 
       {% endfor %}

@@ -3,10 +3,12 @@
   <head>
     {% block extrahead %}{% endblock %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <link href="/media/frontend/css/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/media/frontend/lightbox/css/lightbox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/media/frontend/fancybox/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
+
 
     <link rel="icon" type="image/vnd.microsoft.icon" href="/media/frontend/images/favicon.ico" />
     <link rel="icon" type="image/png" href="/media/frontend/images/favicon.png" />
@@ -19,17 +21,25 @@
 
     <script type="text/javascript" src="/media/frontend/js/jquery-1.7.2.min.js" language="javascript"></script>
     <script type="text/javascript" src="/media/frontend/js/jquery.mousewheel.js" language="javascript"></script>
-    <script type="text/javascript" src="/media/frontend/js/custom-functions.js" language="javascript"></script>
+
+   <link href='http://fonts.googleapis.com/css?family=Quando&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 
     <!--
     <script type="text/javascript" src="/media/frontend/js/jquery.masonry.min.js" language="javascript"></script>
-    -->
 
-<!--
+
+
     <script type="text/javascript" src="/media/frontend/lightbox/js/prototype.js"></script>
     <script type="text/javascript" src="/media/frontend/lightbox/js/scriptaculous.js?load=effects,builder"></script>
+
     <script async type="text/javascript" src="/media/frontend/lightbox/js/lightbox.js"></script>
--->
+    -->
+    <script type="text/javascript" src="/media/frontend/fancybox/jquery.fancybox.pack.js"></script>
+
+
+    <script type="text/javascript" src="/media/frontend/js/custom-functions.js" language="javascript"></script>
+
      <!-- Google analytics -->
     <script type="text/javascript">
 
@@ -45,7 +55,8 @@
 
     </script>
 
-	{% block members-css %}{% endblock %}
+	  {% block members-css %}{% endblock %}
+
   </head>
 
   <body>
@@ -53,23 +64,33 @@
     <div id="container">
 
       <div id="header">
-        <img src="/media/frontend/images/headers/{{ header_bg }}" id="header-pic"/>
+        <img src="/media/frontend/images/headers/{{ header_bg }}" id="header-pic" />
 
-	<a href="{% url root %}"><img src="/media/frontend/images/kset_logo.png" id="kset-logo" /></a>
+	<a href="{% url root %}"><img width="230" height="76" src="/media/frontend/images/kset_logo.png" id="kset-logo" /></a>
 
 	<div id="top-menu">
 	  <code id="top-menu-prompt">&gt;</code>
 	  <a href="{% url root %}">NASLOVNICA</a>
 	  <a href="{% url club %}">O KLUBU</a>
 	  <a href="{% url multimedia %}">MULTIMEDIA</a>
-    <a href="{% url news-archive %}"><b>VIJESTI</b></a>
-    <a href="{% url events-archive %}"><b>PROGRAM</b></a>
+    <a href="{% url news-archive %}">VIJESTI</a>
+    <a href="{% url events-archive %}">PROGRAM</a>
 
 
     <!-- veljko postavio da mu google prije indexera nesto drugo -->
     <a href="http://www.myindian.se/" style="display:none;">myIndian.se</a>
     <!-- end veljko -->
 	</div>
+
+  <div id="social-stuff">
+    <a href="#" title="Facebook"></a>
+    <a href="#" title="Twitter"></a>
+    <a href="#" title="Last.fm"></a>
+    <a href="#" title="Github"></a>
+    <a href="#" title="Youtube"></a>
+    <a href="#" title="RSS"></a>
+  </div>
+
 
 	{% include 'header-scroll.html' %}
 
@@ -86,8 +107,8 @@
       </div>
 
       <div id="footer">
-	<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
-	<i>... prvi put otvorio vrata <b>1976.</b></i>
+      	<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
+      	<i>... prvi put otvorio vrata <b>1976.</b></i>
       </div>
 
     </div>
