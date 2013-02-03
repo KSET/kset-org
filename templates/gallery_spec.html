@@ -6,43 +6,42 @@
 {% block content %}
 
 	<!-- ... TU SAM ... -->
-<div id="left">
-  <div class="hMenu">
+<div id="gallery">
+  <div class="gallery-menu">
     {% if years %}
-    <h3>Odaberi godinu ...</h3>
+    <span>Odaberi godinu ...</span>
     {% else %}
-    <h3>Uskoro... </h3>
+    <span>Uskoro... </span>
     {% endif %}
     {% for year in years %}
     <a href="/gallery/{{ cat }}/albumi/{{ year|date:'Y' }}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
     {% endfor %}
   </div>
-</div>
 
-{% for a in list %}
+  {% for a in list %}
 
-{% ifchanged %}<div class="clear"></div> <div id="left"><h2>{{ a.date_of_event|date:"F Y." }}</h2></div><div class="clear"></div>  {% endifchanged %}
-<div class="m-album">
+  {% ifchanged %}<div class="gallery-month"><h2>{{ a.date_of_event|date:"F Y." }}</h2></div>{% endifchanged %}
+  <div class="m-album">
 
-     <a href="/gallery/{{ cat }}/{{ a.slug }}">
-        
-        <div class="slika">
-          <!-- slika dimenzije 255x170 -->
-          <img align="middle" src="{% version a.thumb 'gallerytb' %}"/> 
-        </div>
-        <div class="ime">
-          <!--<div class="transparent"></div>-->
-          <h2>{{ a.title }}</h2>
-        </div>
-        <div class="tekst">
-          <p>Datum: {{ a.date_of_event }}</p>
-          <p>Fotograf: {{ a.photographer }}</p>
-        </div>
-      </a>
-    </div>
-  
-  {% endfor %}
-  
+       <a href="/gallery/{{ cat }}/{{ a.slug }}">
+
+          <div class="slika">
+            <!-- slika dimenzije 255x170 -->
+            <img align="middle" src="{% version a.thumb 'gallerytb' %}"/>
+          </div>
+          <div class="ime">
+            <!--<div class="transparent"></div>-->
+            <h2>{{ a.title }}</h2>
+          </div>
+          <div class="tekst">
+            <p class="gallery-date"> {{ a.date_of_event }}</p>
+            <p class="gallery-author"> {{ a.photographer }}</p>
+          </div>
+        </a>
+      </div>
+
+    {% endfor %}
   <div class="clear"></div>
+</div>
 
 {% endblock %}

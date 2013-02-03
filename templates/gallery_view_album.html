@@ -6,38 +6,46 @@
 <meta property="og:description" content="Copyright by: {{ photographer }}" />
 <meta property="og:image" content="{% version image.upload_path 'gallerytb' %}" />
 {% endblock %}
-  
+
 {% block content %}
-    
-    <div id="album-info">
-      <div class="gumb"><h2><a href="/gallery/{{ category }}">&lt;&lt;</a></h2></div>  
+<div id="gallery-album">
+
+    <div class="album-title">
+      <div class="gumb"><h2><a href="/gallery/{{ category }}"></a></h2></div>
       <span><h2>{{ album_title }} - {{ date }}</h2></span>
     </div>
 
 
-    <div id="left"><h3>Info: {{ description|safe }}</h3>
-      <span><h3>Copyright by: {% if photographer.url %}<a href='{{ photographer.url }}'>{{ photographer.name }}</a>{% else %}{{ photographer.name }}{% endif %}</h3></span>
+    <div class="album-info">
+        {{ description|safe }}
+      <p class="album-author">Copyright by: {% if photographer.url %}<a href='{{ photographer.url }}'>{{ photographer.name }}</a>{% else %}{{ photographer.name }}{% endif %}</p>
     </div>
 
-  
-  <div id="m-slike">  
+
+
+  <div id="m-slike">
     {% for image in images %}
 
     <div class="m-slika">
-      <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" data-lbcap=":: Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} :: {{ image.caption|default:"" }}">
+      <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" title=":: Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} :: {{ image.caption|default:"" }}">
         <div class="slika">
           <img src="{% version image.upload_path 'gallerytb' %}" />
         </div>
-        <div class="info">
-          <!--<h3>Copyright {{ photographer }}</h3>-->
-        </div>
+
+        {% if image.caption %}
+          <div class="info">
+            <p>{{ image.caption|default:"" }}</p>
+          </div>
+        {% endif %}
+
       </a>
     </div>
     {% endfor %}
-     
+
     <div class="clear"></div>
   </div>
-  
+
+</div>
 
 {% endblock %}
 
