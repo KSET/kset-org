@@ -1,4 +1,5 @@
-from django.contrib.syndication.feeds import Feed
+from django.contrib.syndication.views import Feed
+# from django.contrib.syndication.feeds import Feed
 from events.models import Event
 from django.utils.feedgenerator import Atom1Feed
 

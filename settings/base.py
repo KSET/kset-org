@@ -25,7 +25,7 @@ ANONYMOUS_USER_ID = -1
 PREPEND_WWW = True
 
 # Additional locations of static files
-STATICFILES_DIRS = ( 
+STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -33,21 +33,21 @@ STATICFILES_DIRS = (
 
 # List of finder classes that know how to find static files in
 # various locations.
-STATICFILES_FINDERS = ( 
+STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 
-STATIC_ROOT = join(PROJECT_DIR, 'media','static')
+STATIC_ROOT = join(PROJECT_DIR, 'media', 'static')
 STATIC_URL = '/media/static/'
 
 MEDIA_ROOT = join(PROJECT_DIR, 'media/')
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 TEMPLATE_DIRS = (
     join(PROJECT_DIR, 'templates'),
-    join(PROJECT_DIR, 'templates','members_templates'),
+    join(PROJECT_DIR, 'templates', 'members_templates'),
 )
 
 TEMPLATE_LOADERS = (
@@ -137,13 +137,16 @@ FILEBROWSER_VERSIONS = {
     'medium': {'verbose_name': 'Medium (100px)', 'width': 100, 'height': '', 'opts': ''},
     'semibig': {'verbose_name': 'SemiBig (420px)', 'width': 420, 'height': '', 'opts': ''},
     'big': {'verbose_name': 'Big (465px)', 'width': 465, 'height': '', 'opts': ''},
+    'event_big': {'verbose_name': 'Event Thumbnail Big (370px)', 'width': 370, 'height': 370, 'opts': 'crop upscale'},
+    'event_small': {'verbose_name': 'Event Thumbnail Small (70px)', 'width': 70, 'height': 70, 'opts': 'crop upscale'},
     'gallerytb': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 255, 'height': '173', 'opts': 'crop'},
+    'sticky': {'verbose_name': 'Main Page Sticky (150px)', 'width': 150, 'height': 80, 'opts': 'crop'},
     'galleryimage': {'verbose_name': 'gallery_image (800x600)', 'width': '', 'height': 600, 'opts': ''},
 
 }
 
 # Versions available within the Admin-Interface.
-FILEBROWSER_ADMIN_VERSIONS = ['thumbnail',       'small', 'medium', 'semibig', 'big']
+FILEBROWSER_ADMIN_VERSIONS = ['thumbnail', 'small', 'medium', 'semibig', 'big', 'event_small', 'event_big']
 # Which Version should be used as Admin-thumbnail.
 FILEBROWSER_ADMIN_THUMBNAIL = 'fb_thumb'
 
@@ -156,14 +159,14 @@ TAGGING_AUTOCOMPLETE_JS_BASE_URL = '/media/js/jquery-autocomplete'
 # tinymce settings, add/remove buttons and so on
 TINYMCE_DEFAULT_CONFIG = {
 'theme': "advanced",
-'theme_advanced_toolbar_location' : "top",
-'theme_advanced_resizing' : True,
-'plugins' : 'table,contextmenu,paste,autoresize,media,lists,style',
+'theme_advanced_toolbar_location': "top",
+'theme_advanced_resizing': True,
+'plugins': 'table,contextmenu,paste,autoresize,media,lists,style',
 #'height' : 600,
 #'width' : 800,
 #'theme_advanced_resize_horizontal' : True,
-'theme_advanced_buttons1': "style, bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo, image, link",
-'theme_advanced_buttons2': "cleanup,lists,pasteword,table,contextmenu,media",
+'theme_advanced_buttons1': "style, bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo,image,link",
+'theme_advanced_buttons2': "cleanup,lists,pasteword,table,contextmenu,media,code",
 'theme_advanced_buttons3': "",
 }
 

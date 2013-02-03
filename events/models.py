@@ -33,6 +33,7 @@ class Event(models.Model):
     tags = TagAutocompleteField( blank=True )
     slug = models.SlugField( blank=True, max_length=128 )
     announce = models.BooleanField( 'najavi' )
+    daytime = models.BooleanField('Dnevni')
     price = models.CharField('cijena', max_length=16, null=True, blank=True )
     thumb = FileBrowseField( 'sličica', max_length=255, null=True, blank=True )
     objects = EventManager()
