@@ -19,7 +19,7 @@
     {% if news.thumb %}
       <img src="{% version news.thumb 'big' %}"  class="thumb" />
     {% endif %}
-    <h3>{{ news.publish|date:"l, d. F Y." }}</h3>
+    <h3>{{ news.created_at|date:"l, d. F Y." }}</h3>
   </div>
 
   <div class="icontent">

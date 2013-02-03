@@ -9,10 +9,10 @@
     <table class="archive-table">
       {% for item in news %}
 
-      {% ifchanged %} </table><h2>{{ item.publish|date:"F Y." }}</h2><table class="archive-table"> {% endifchanged %}
+      {% ifchanged %} </table><h2>{{ item.created_at|date:"F Y." }}</h2><table class="archive-table"> {% endifchanged %}
 
       <tr>
-        <td class="archive-date">{{ item.publish|date:"d.m.Y." }} </td>
+        <td class="archive-date">{{ item.created_at|date:"d.m.Y." }} </td>
         <td class="archive-title"><a href="{% url news-slug item.slug %}">{{ item.subject }}</a></td>
       </tr>
 

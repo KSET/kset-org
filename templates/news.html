@@ -4,41 +4,17 @@
 
 {% block leftcolumn %}
 
-{% if events %}
-<div id="announce">
-  <h3><span class="orange">&raquo;&nbsp;</span>Posebno najavljujemo!</h3>
-
-  {% for event in events %}
-    <a href="{% url event-slug event.slug %}" style="background-image: url({% version event.thumb 'thumbnail' %}); background-postion: center;">
-      <div class="date">{{ event.date|date:"d.m. l" }}</div>
-      <div class="text">{{ event.title|truncatewords_html:"5"}}</div>
-    </a>
-  {% endfor %}
-
-</div>
-{% endif %}
-
-{% if latest %}
-<div id="announce">
-  <h3><span class="orange">&raquo;&nbsp;</span>Najnovije iz galerije:</h3>
-
-  {% for a in latest %}
-    <a href="/gallery/live/{{ a.slug }}" style="background-image: url({% version a.thumb 'thumbnail' %}); background-postion: center;">
-      <div class="date">Fotograf: {{ a.photographer }}</div>
-      <div class="text">{{ a.title }}</div>
-    </a>
-  {% endfor %}
-
-</div>
-{% endif %}
 
 <!-- DNEVNI -->
 
 <div class="news-box dnevni">
 
   <h1 class="news-header">Dnevni program</h1>
+  {% if not daytime_events %}
+   <p><strong>...</strong></p>
+  {% endif %}
 
-  {% for item in events %}
+  {% for item in daytime_events %}
 
     <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
@@ -48,13 +24,13 @@
         <div class="icontent">
 
           {% if item.thumb %}
-            <a href="#EVENT-SLUG"><img src="{% version item.thumb 'big' %}"  class="thumb" /></a>
+            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
           {% endif %}
 
           <!-- share thingys -->
           <div class="event-share"><span class="share facebook"></span><span class="share twitter"></span></div>
 
-          <h2><a href="#EVENT-SLUG">{{ item.title }}</a></h2>
+          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
 
           <h3>{{ item.date|date:"l, d. F Y." }}</h3>
 
@@ -74,8 +50,12 @@
 
         <div class="icontent">
           {% if item.thumb %}
-            <img src="{% version item.thumb 'medium' %}" class="thumb" />
+            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_small' %}" class="thumb" /></a>
           {% endif %}
+
+          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
+
+          <h3>{{ item.date|date:"l, d. F Y." }}</h3>
 
           {{ item.content|safe }}
         </div>
@@ -107,10 +87,10 @@
         <div class="icontent">
 
           {% if item.thumb %}
-            <img src="{% version item.thumb 'big' %}"  class="thumb" />
+            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
           {% endif %}
 
-          <h2>{{ item.title }}</h2>
+          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
 
           <h3>{{ item.date|date:"l, d. F Y." }}</h3>
 
@@ -130,8 +110,12 @@
 
         <div class="icontent">
           {% if item.thumb %}
-            <img src="{% version item.thumb 'medium' %}" class="thumb" />
+            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_small' %}" class="thumb" /></a>
           {% endif %}
+
+          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
+
+          <h3>{{ item.date|date:"l, d. F Y." }}</h3>
 
           {{ item.content|safe }}
         </div>
@@ -150,8 +134,10 @@
 <div class="news-box vijesti">
 
   <h1 class="news-header">Vijesti</h1>
-
-  {% for item in events %}
+    {% if not news %}
+      <p><strong>...</strong></p>
+    {% endif %}
+  {% for item in news %}
 
     <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
@@ -161,12 +147,12 @@
         <div class="icontent">
 
           {% if item.thumb %}
-            <img src="{% version item.thumb 'big' %}"  class="thumb" />
+            <a href="/vijest/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
           {% endif %}
 
-          <h2>{{ item.title }}</h2>
+          <h2><a href="/vijest/{{ item.slug }}">{{ item.subject }}</a></h2>
 
-          <h3>{{ item.date|date:"l, d. F Y." }}</h3>
+          <h3>{{ item.created_at|date:"l, d. F Y." }}</h3>
 
           {{ item.description|safe }}
 
@@ -184,8 +170,12 @@
 
         <div class="icontent">
           {% if item.thumb %}
-            <img src="{% version item.thumb 'medium' %}" class="thumb" />
+            <a href="/vijest/{{ item.slug }}"><img src="{% version item.thumb 'event_small' %}" class="thumb" /></a>
           {% endif %}
+
+          <h2><a href="/vijest/{{ item.slug }}">{{ item.subject }}</a></h2>
+
+          <h3>{{ item.created_at|date:"l, d. F Y." }}</h3>
 
           {{ item.content|safe }}
         </div>
