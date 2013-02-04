@@ -33,6 +33,7 @@
 
     <div class="vsep"></div>
 
+{% if sticky_news %}
     <div class="right-box sticky-news-box">
       <h1>Obavijesti</h1>
       {% for news in sticky_news %}
@@ -40,9 +41,10 @@
         <a href="/vijest/{{ news.slug }}"><img src="{% version news.thumb 'sticky' %}"/></a>
       {% endfor %}
     </div>
-
     <div class="vsep"></div>
+{% endif %}
 
+{% if latest %}
     <div class="right-box gallery-box">
       <h1>Galerija</h1>
         {% if latest %}
@@ -54,6 +56,7 @@
     </div>
 
     <div class="vsep"></div>
+{% endif %}
 
     <div class="fer-box">
         <h1>Uvijek je tu za nas</h1>
