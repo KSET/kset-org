@@ -20,11 +20,11 @@ def active(request):
        - The list of all active (published and not yet expired) news,
     """
 
-    news = News.objects.filter(created_at__range=(datetime.today() - timedelta(60), datetime.today())).order_by('-created_at').exclude(sticky=True)[:3]
-    events = Event.objects.filter(date__gte=datetime.now()).filter(announce=True).order_by('date')[:3]
-    daytime_events = Event.objects.filter(date__gte=datetime.now()).filter(announce=True, daytime=True).order_by('date')[:3]
+    news = News.get_frontpage_news()
+    events = Event.get_frontpage_events()
+    daytime_events = Event.get_frontpage_daytime_events()
 
-    sticky_news = News.objects.filter(sticky=True).order_by('-created_at')
+    sticky_news = News.get_sticky_news()
 
     #get latest albums from gallery
     latest = Album.objects.filter(category='LIVE',

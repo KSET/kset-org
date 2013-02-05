@@ -49,3 +49,10 @@ class Event(models.Model):
     def __unicode__(self):
         return u'%s %s' % (self.title, self.date)
 
+    @staticmethod
+    def get_frontpage_events():
+        return Event.objects.filter(date__gte=datetime.now()).filter(announce=True).order_by('date')[:3]
+
+    @staticmethod
+    def get_frontpage_daytime_events():
+        return Event.objects.filter(date__gte=datetime.now()).filter(announce=True, daytime=True).order_by('date')[:3]
