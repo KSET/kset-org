@@ -20,7 +20,7 @@ def active(request):
        - The list of all active (published and not yet expired) news,
     """
 
-    news = News.objects.filter(created_at__range=(datetime.today() - timedelta(60), datetime.today())).order_by('-created_at')[:3]
+    news = News.objects.filter(created_at__range=(datetime.today() - timedelta(60), datetime.today())).order_by('-created_at').exclude(sticky=True)[:3]
     events = Event.objects.filter(date__gte=datetime.now()).filter(announce=True).order_by('date')[:3]
     daytime_events = Event.objects.filter(date__gte=datetime.now()).filter(announce=True, daytime=True).order_by('date')[:3]
 
