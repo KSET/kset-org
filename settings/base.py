@@ -139,7 +139,7 @@ FILEBROWSER_VERSIONS = {
     'big': {'verbose_name': 'Big (465px)', 'width': 465, 'height': '', 'opts': ''},
     'event_big': {'verbose_name': 'Event Thumbnail Big (370px)', 'width': 370, 'height': 370, 'opts': 'crop upscale'},
     'event_small': {'verbose_name': 'Event Thumbnail Small (70px)', 'width': 70, 'height': 70, 'opts': 'crop upscale'},
-    'gallerytb': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 255, 'height': '173', 'opts': 'crop'},
+    'gallerytb': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 255, 'height': 173, 'opts': 'crop'},
     'sticky': {'verbose_name': 'Main Page Sticky (150px)', 'width': 150, 'height': 80, 'opts': 'crop'},
     'galleryimage': {'verbose_name': 'gallery_image (800x600)', 'width': '', 'height': 600, 'opts': ''},
 
