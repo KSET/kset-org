@@ -34,7 +34,7 @@ def search(request):
                 query_events &= Q(title__icontains=word) | Q(description__icontains=word) | Q(content__icontains=word)
             
         # fetch data
-        response_dict['news'] =  News.objects.filter(query_news).order_by('-publish')
+        response_dict['news'] =  News.objects.filter(query_news).order_by('-created_at')
         response_dict['events'] = Event.objects.filter(query_events).order_by('-date')
 
     else:
