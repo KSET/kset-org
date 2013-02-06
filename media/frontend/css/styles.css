@@ -389,7 +389,6 @@ a:hover
     height: 25px;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 #header-scroll .item-top .date
