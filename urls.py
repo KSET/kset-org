@@ -7,15 +7,11 @@ from filebrowser.sites import site
 
 admin.autodiscover()
 
-feeds = {
-    'rss': RssProgramFeed,
-    'atom': AtomProgramFeed,
-    }
-
 urlpatterns = patterns('',
 
     # feeds
-    (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed', {'feed_dict': feeds}),
+    (r'^feeds/rss/$', RssProgramFeed()),
+    (r'^feeds/atom/$', AtomProgramFeed()),
     
     ### PROGRAM
 

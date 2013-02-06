@@ -12,7 +12,7 @@ class RssProgramFeed(Feed):
     description_template = "templates/feed_description.html"
 
     def item_pubdate(self, obj):
-	if (obj.time):
+        if (obj.time):
             return datetime.datetime(obj.date.year, obj.date.month, obj.date.day, obj.time.hour, obj.time.minute)
         else:
             return datetime.datetime(obj.date.year, obj.date.month, obj.date.day)
