@@ -1691,7 +1691,6 @@ and (max-width : 650px) {
 
     body {
         background: #444;
-        font-family: 'open-sans', Verdana, Helvetica, sans-serif;
     }
 
     #container {
