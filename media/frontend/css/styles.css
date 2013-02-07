@@ -1341,6 +1341,17 @@ OLD STUFF
   text-align: center;
 }
 
+.stream {
+    float: center;
+    margin-top: 1%;
+    text-align: center;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 .m-box a {
 	display:block;
 	text-decoration:none!important;

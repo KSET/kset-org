@@ -1,28 +1,41 @@
 {% extends 'index.html' %}
+{% load fb_versions %}
 
 {% block content %}
 
+   <div class="m-box">
+    <a href="/gallery/live/" title="KSET live!">
+      <!-- <img src="http://placehold.it/400x272" class="quimby_search_image"> -->
+      <img src="/media/images/gallery/live.jpg" class="quimby_search_image">
+      <div class="dolje">
+        <h2 class="m-naslov">KSET.live!</h2>
+        <h3>galerija fotografija s koncerata održanih u KSET-u</h3>
+      </div>
+    </a>
+  </div>
 
-<div id="right">
-  <h1><span class="orange">&raquo;</span> Galerija </h1>
-  <a href="/gallery/"><img src="/media/images/design/fotogalerija.jpg" /></a>
-  <h1><span class="orange">&raquo;</span> Kratki filmovi</h1>
-</div>
+  <div class="m-box">
+    <a href="/gallery/foto/" title="KSET.foto">
+      <!--<img src="http://placehold.it/400x272" class="quimby_search_image">-->
+      <img src="/media/images/gallery/foto.jpg" class="quimby_search_image">
+      <div class="dolje">
+        <h2 class="m-naslov">KSET.foto</h2>
+        <h3>galerija fotografija članova foto sekcije</h3>
+      </div>
+    </a>
+  </div>
+  <div class="clear"></div>
 
-
-<div id="left">
-
+<div class="stream">
   <h1>Live video stream</h1>
 
   <!-- 720x576 : 468x374.4 --> 
 
-  <video controls width="468" height="374">
+  <video controls width="720" height="576">
     <source src="http://zaphod.kset.org:8000/consume/streamatkset" type="video/webm">
     Your browser does not support the <code>video</code> element.
   </video>
-
-  <p></p>
-
 </div>
+
 
 {% endblock %} 
