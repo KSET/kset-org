@@ -1759,11 +1759,6 @@ and (max-width : 650px) {
         right: -5px;
         top: 22px;
         font-size: 28px;
-        -webkit-transition: 0.2s ease-out;
-        -moz-transition: 0.2s ease-out;
-        -o-transition: 0.2s ease-out;
-        -ms-transition: 0.2s ease-out;
-        transition: 0.2s ease-out;
     }
 
     #top-menu.open-menu #top-menu-prompt {
