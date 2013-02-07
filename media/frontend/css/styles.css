@@ -1768,7 +1768,6 @@ and (max-width : 650px) {
     #top-menu-prompt.prompt-blink {
         background: none;
         color: black;
-        padding-right: 5px;
     }
 
 
