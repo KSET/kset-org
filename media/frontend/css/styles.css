@@ -482,6 +482,7 @@ a:hover
     color: #eee;
     padding: 3px 6px 6px;
     text-decoration: none;
+    vertical-align: middle;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
