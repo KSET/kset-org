@@ -1,9 +1,9 @@
 kset.wsgi
 /__tmp
 *.pyc
-media/*
 local_settings.py
 templates/zivpdf.bak
 settings/production.*
 baza.db
+media/*
 media/uploads

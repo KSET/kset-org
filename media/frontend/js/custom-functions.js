@@ -23,9 +23,10 @@ $( function()
         event.stopPropagation();
     });
 
+    var $topMenuPrompt = $('#top-menu-prompt');
     // top menu prompt blink
     window.setInterval(function(){
-        $('#top-menu-prompt').toggleClass('prompt-blink');
+        $topMenuPrompt.toggleClass('prompt-blink');
     }, 500);
 
     events_count = $('#header-scroll .item').length;
