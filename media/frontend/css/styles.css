@@ -482,6 +482,7 @@ a:hover
     color: #eee;
     padding: 3px 6px 6px;
     text-decoration: none;
+    vertical-align: middle;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
@@ -1691,7 +1692,6 @@ and (max-width : 650px) {
 
     body {
         background: #444;
-        font-family: 'open-sans', Verdana, Helvetica, sans-serif;
     }
 
     #container {
@@ -1760,11 +1760,6 @@ and (max-width : 650px) {
         right: -5px;
         top: 22px;
         font-size: 28px;
-        -webkit-transition: 0.2s ease-out;
-        -moz-transition: 0.2s ease-out;
-        -o-transition: 0.2s ease-out;
-        -ms-transition: 0.2s ease-out;
-        transition: 0.2s ease-out;
     }
 
     #top-menu.open-menu #top-menu-prompt {
@@ -1774,7 +1769,6 @@ and (max-width : 650px) {
     #top-menu-prompt.prompt-blink {
         background: none;
         color: black;
-        padding-right: 5px;
     }
 
 
