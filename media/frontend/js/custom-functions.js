@@ -75,6 +75,15 @@ $( function()
 
     // FANCYBOX
     $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").attr('rel', 'gallery').fancybox();
+
+    // HAXORZ
+    $(document).keypress(function(e){
+        if (e.target.nodeName ==='INPUT') return;
+        if (e.keyCode == 106)
+            header_scroll_down();
+        else if (e.keyCode == 107)
+            header_scroll_up();
+    });
 });
 
 
