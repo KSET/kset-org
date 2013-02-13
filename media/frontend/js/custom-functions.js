@@ -79,9 +79,9 @@ $( function()
     // HAXORZ
     $(document).keypress(function(e){
         if (e.target.nodeName ==='INPUT') return;
-        if (e.keyCode == 106)
+        if (e.which == 106)
             header_scroll_down();
-        else if (e.keyCode == 107)
+        else if (e.which == 107)
             header_scroll_up();
     });
 });
