@@ -51,7 +51,7 @@ class Event(models.Model):
 
     @staticmethod
     def get_frontpage_events():
-        return Event.objects.filter(date__gte=datetime.now()).filter(announce=True).order_by('date')[:3]
+        return Event.objects.filter(date__gte=datetime.now()).filter(daytime=False,announce=True).order_by('date')[:3]
 
     @staticmethod
     def get_frontpage_daytime_events():
