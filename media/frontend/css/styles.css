@@ -567,48 +567,6 @@ h3
 
 /* LOGOS */
 
-.logo-twitter
-{
-    background-position: 0px -26px;
-    width: 75px;
-}
-.logo-twitter:hover { background-position: 0px 0px; }
-
-.logo-lastfm
-{
-    background-position: -160px -26px;
-    width: 65px;
-}
-.logo-lastfm:hover { background-position: -160px 0px; }
-
-.logo-facebook
-{
-    background-position: -75px -26px;
-    width: 85px;
-}
-.logo-facebook:hover { background-position: -75px 0px; }
-
-.logo-youtube
-{
-    background-position: -225px -26px;
-    width: 55px;
-}
-.logo-youtube:hover { background-position: -225px 0px; }
-
-.logo-rss
-{
-    background-position: -285px -26px;
-    width: 35px;
-}
-.logo-rss:hover { background-position: -285px 0px; }
-
-.logo-irc
-{
-    background-position: -320px -26px;
-    width: 25px;
-}
-.logo-irc:hover { background-position: -320px 0px; }
-
 .logo-fer
 {
     float: right;
