@@ -7,7 +7,7 @@
 
 <!-- DNEVNI -->
 
-<div class="news-box dnevni">
+<div class="news-box dnevni clearfix">
 
   <h1 class="news-header">Dnevni program</h1>
   {% if not daytime_events %}
@@ -67,13 +67,12 @@
     </div>
 
   {% endfor %}
-  <div class="clear"></div>
 
 </div>
 
 <!-- NOCNI  -->
 
-<div class="news-box nocni">
+<div class="news-box nocni clearfix">
 
   <h1 class="news-header">Večernji program</h1>
 
@@ -127,11 +126,10 @@
     </div>
 
   {% endfor %}
-  <div class="clear"></div>
 
 </div>
 
-<div class="news-box vijesti">
+<div class="news-box vijesti clearfix">
 
   <h1 class="news-header">Vijesti</h1>
     {% if not news %}
@@ -187,7 +185,6 @@
     </div>
 
   {% endfor %}
-  <div class="clear"></div>
 
 </div>
 
