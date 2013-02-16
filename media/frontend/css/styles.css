@@ -547,7 +547,7 @@ a:hover
 
 #left p {
     margin: 0.3em 0;
-    line-height: 26px;
+    line-height: 22px;
     font-size: 15px;
     text-shadow: 0 1px 2px rgba(20, 20, 20, 0.12);
 }
@@ -572,7 +572,7 @@ h3
     color: #555;
     margin: 0;
     font-weight: normal;
-    padding: 3px 2px 5px;
+    padding: 5px 2px 2px;
     text-shadow: 1px 1px 1px #fff;
 }
 
@@ -643,7 +643,6 @@ div.clear + div#left {
 
 .news-box {
     position: relative;
-    border-bottom: 1px dashed #ddd;
 }
 
 .news-header {
@@ -715,28 +714,37 @@ div.clear + div#left {
     color: #282828;
     text-transform: uppercase;
     font-weight: bold;
-    line-height: 26px;
+    line-height: 24px;
     border-bottom: 1px solid #F7AC7B;
-    padding: 3px 0 5px;
+    padding: 3px 0 6px;
+    letter-spacing: -1px;
 }
 
 .news-item h2 a {
     color: inherit;
+    display: block;
+}
+
+.news-item h2 a:hover {
+    text-decoration: none;
+}
+
+.news-item h2:hover {
+    background: rgba(0, 0, 0, 0.03);
 }
 
 .news-item-0,
 .news-item.even:last-child {
     width: 100%;
     margin-right: 2%;
-    border-bottom: 1px dashed #ddd;
     padding-bottom: 15px;
 }
 
 .news-item .thumb
 {
     float: left;
-    margin: 10px 10px 5px 0px;
-    width:70px;
+    margin: 0 10px 5px 0px;
+    width: 80px;
     border-radius: 0 15px 15px 15px;
     -webkit-transition: 0.2s linear;
     -moz-transition: 0.2s linear;
