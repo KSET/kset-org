@@ -728,7 +728,8 @@ div.clear + div#left {
     color: inherit;
 }
 
-.news-item-0 {
+.news-item-0,
+.news-item.even:last-child {
     width: 100%;
     margin-right: 2%;
     border-bottom: 1px dashed #ddd;
@@ -752,7 +753,8 @@ div.clear + div#left {
 .news-item .thumb:hover {
 }
 
-.news-item-0 .thumb {
+.news-item-0 .thumb,
+.news-item.even:last-child .thumb {
     width:48%;
     margin-right: 3%;
 }
