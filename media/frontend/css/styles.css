@@ -328,7 +328,6 @@ a:hover
     -o-transition:0.2s ease-out;
     -ms-transition:0.2s ease-out;
     transition:0.2s ease-out;
-    cursor:ns-resize;
 }
 
 #header-scroll .item
@@ -363,9 +362,10 @@ a:hover
     height: 47px;
     border-bottom: 1px solid #803d15;
     border-radius: 3px  0 0 0;
-    width: 48px;
+    width: 47px;
     opacity: 1;
-    left: -48px;
+    left: -47px;
+    background: #171717;
 }
 
 #header-scroll .item a
