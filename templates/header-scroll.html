@@ -9,6 +9,8 @@
 
       {% if event.thumb %}
         <a href="/dogadaj/{{ event.slug }}"><img src="{% version event.thumb 'fb_thumb' %}" class="scroll-thumb" /></a>
+      {% else %}
+        <a href="/dogadaj/{{ event.slug }}"><img src="/media/images/nopicture.png" class="scroll-thumb" /></a>
       {% endif %}
 
       <div class="item-top">
