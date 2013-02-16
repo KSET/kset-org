@@ -567,22 +567,6 @@ h3
 
 /* LOGOS */
 
-#social-logos
-{
-    width: 345px;
-    height: 26px;
-}
-
-#social-logos a
-{
-    display: block;
-    height: 26px;
-    float: left;
-    background-image: url(../images/social.png);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-}
-
 .logo-twitter
 {
     background-position: 0px -26px;
