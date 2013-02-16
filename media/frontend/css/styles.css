@@ -718,10 +718,6 @@ div.clear + div#left {
     line-height: 26px;
     border-bottom: 1px solid #F7AC7B;
     padding: 3px 0 5px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 26px;
 }
 
 .news-item h2 a {
