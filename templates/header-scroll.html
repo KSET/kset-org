@@ -22,7 +22,7 @@
       </div>
 
       <div class="item-bottom">
-        <div class="date">{{ event.date|date:"D"}}</div>
+        <div class="date"><span class="fontello">&#x1F4C5;</span> {{ event.date|date:"D"}}</div>
         <span class="tags">
           {% if event.tags|length < 22 %}
             {{ event.tags }}

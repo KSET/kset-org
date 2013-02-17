@@ -196,6 +196,12 @@ input
     outline: none;
 }
 
+.fontello {
+    font-family: fontello;
+    position: relative;
+    top: -1px;
+}
+
 .vsep
 {
     clear: both;
@@ -443,17 +449,13 @@ a:hover
 {
     float: left;
     width: 36px;
-    text-align: left;
     padding-right: 18px;
     padding-left: 7px;
+    white-space: nowrap;
 }
 
-#header-scroll .item-bottom .date:before {
-    font-family: 'fontello';
-    content: '\1F4C5 ';
-    padding-right: 5px;
-    padding-left: 1px;
-    text-align: left;
+#header-scroll .item-bottom .date span {
+    padding-right: 2px;
 }
 
 #header-scroll .item-bottom .tags:before {
@@ -600,7 +602,7 @@ h3
 
 .icontent h3:before {
     font-family: 'fontello';
-    content:'\1F4C5 ';
+    content:'📅';
     padding-right: 2px;
 }
 
@@ -967,7 +969,7 @@ OLD STUFF
 
 .single-thumb h3:before {
     font-family: 'fontello';
-    content:'\1F4C5';
+    content:'📅';
     text-shadow: 0 0 2px #000;
     font-size: 16px;
     padding-right: 6px;
