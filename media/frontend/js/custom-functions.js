@@ -16,11 +16,16 @@ $( function()
     $('#top-menu').bind('touchend', function() { $(this).toggleClass('open-menu'); });
 
     // header scroll expand on click - mobile
-    $('#header-scroll').bind('touchend', function(e) {
+    $('#header-scroll-control').bind('touchstart', function(e) {
         e.preventDefault();
-        $('#header-scroll').toggleClass('scroll-expanded');
+        var open = $('#header-scroll').toggleClass('scroll-expanded').hasClass('scroll-expanded');
+        if (open) {
+            $(this).html('-');
+        } else {
+            $(this).html('+');
+        }
     });
-    $('#header-scroll a, #top-menu a').bind('touchend',function(event){
+    $('#top-menu a').bind('touchend',function(event){
         event.stopPropagation();
     });
 
