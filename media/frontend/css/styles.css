@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*201F25*/
 
 @font-face {
@@ -124,8 +126,8 @@
     font-family: 'fontello';
     src: url('../fonts/fontello.eot');
     src: url('../fonts/fontello.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/fontello.ttf') format('truetype'),
          url('../fonts/fontello.woff') format('woff'),
+         url('../fonts/fontello.ttf') format('truetype'),
          url('../fonts/fontello.svg#iconic') format('svg');
     font-weight: normal; font-style: normal; }
 
@@ -403,7 +405,6 @@ a:hover
 #header-scroll .item a:hover
 {
     color: #fff;
-    text-decoration: underline;
 }
 
 #header-scroll .item-top
@@ -416,11 +417,17 @@ a:hover
 #header-scroll .item-top .date
 {
     font-weight: bold;
-    width: 40px;
+    width: 50px;
     height: 22px;
-    margin-right: 10px;
-    text-align: center;
+    text-align: left;
+    padding-left: 7px;
     display: inline-block;
+}
+
+.item-top .date small {
+    font-size: 10px;
+    color: #666;
+    margin-right: -4px;
 }
 
 #header-scroll .item-bottom
@@ -435,14 +442,23 @@ a:hover
 #header-scroll .item-bottom .date
 {
     float: left;
-    width: 40px;
-    text-align: center;
-    padding-right: 13px;
+    width: 36px;
+    text-align: left;
+    padding-right: 18px;
+    padding-left: 7px;
+}
+
+#header-scroll .item-bottom .date:before {
+    font-family: 'fontello';
+    content: '\1F4C5 ';
+    padding-right: 5px;
+    padding-left: 1px;
+    text-align: left;
 }
 
 #header-scroll .item-bottom .tags:before {
     font-family: 'fontello';
-    content: '\E70D';
+    content: '\E70D ';
     font-size: 11px;
 }
 
@@ -584,7 +600,7 @@ h3
 
 .icontent h3:before {
     font-family: 'fontello';
-    content:'\1F4C5';
+    content:'\1F4C5 ';
     padding-right: 2px;
 }
 
@@ -682,15 +698,15 @@ div.clear + div#left {
 }
 
 .dnevni .news-header:after {
-    content:'\263C';
+    content:'\263C ';
 }
 
 .nocni .news-header:after {
-    content:'\E7A0';
+    content:'\E7A0 ';
 }
 
 .vijesti .news-header:after {
-    content:'\E734';
+    content:'\E734 ';
 }
 
 .news-box:hover .news-header:after {
@@ -874,7 +890,7 @@ OLD STUFF
     padding-right: 10px;
     font-weight: bold;
     color: #E48145;
-    padding-top: 10px;
+    padding-top: 17px;
 }
 
 .share-text {
@@ -922,15 +938,19 @@ OLD STUFF
 
 .single-title {
     font-size: 24px;
-    color: #1f1f1f;
+    color: #1F1F1F;
     text-transform: uppercase;
+    border-left: 6px solid #F7AC7B;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    background: #f5f5f5;
 }
 
 .single-thumb {
     position: relative;
     float: left;
-    margin: 15px 30px 10px 0;
-    max-width: 350px;
+    margin: 6px 30px 10px 0;
+    max-width: 50%;
 }
 
 .single-thumb h3 {
