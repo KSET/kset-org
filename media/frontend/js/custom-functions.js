@@ -13,13 +13,14 @@ $( function()
     loadCalendar();
 
     // top menu open on click - mobile
-    $('#top-menu').click(function() { $(this).toggleClass('open-menu'); });
+    $('#top-menu').bind('touchend', function() { $(this).toggleClass('open-menu'); });
 
     // header scroll expand on click - mobile
-    $('#header-scroll').click(function() {
-      $('#header-scroll').toggleClass('scroll-expanded');
+    $('#header-scroll').bind('touchend', function(e) {
+        e.preventDefault();
+        $('#header-scroll').toggleClass('scroll-expanded');
     });
-    $('#header-scroll a').click(function(event){
+    $('#header-scroll a, #top-menu a').bind('touchend',function(event){
         event.stopPropagation();
     });
 
