@@ -1818,8 +1818,8 @@ and (max-width : 650px) {
         right: 10px;
         top: 7px;
         padding: 10px;
-        background: #191919;
-        border-radius: 5px;
+        background: #222;
+        border-radius: 10px;
         color: white;
         width: 30px;
         text-align: center;
@@ -1845,7 +1845,8 @@ and (max-width : 650px) {
 
     #header-scroll .item:hover {
         background: none;
-        border:0;
+        border-bottom: 1px solid #191919;
+        margin-left: 0;
     }
 
     #header-scroll.scroll-expanded .item {
@@ -1855,6 +1856,11 @@ and (max-width : 650px) {
 
     #header-scroll #event-0{
         display: block;
+        padding-right: 3em;
+    }
+
+    #header-scroll #event-0 a{
+        width: 80%;
     }
 
     #header-scroll .item-top {
