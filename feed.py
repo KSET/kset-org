@@ -5,6 +5,7 @@ from django.utils.feedgenerator import Atom1Feed
 
 import datetime
 
+
 class RssProgramFeed(Feed):
     title = "www.KSET.org"
     link = "http://www.kset.org/"
@@ -13,7 +14,8 @@ class RssProgramFeed(Feed):
 
     def item_pubdate(self, obj):
         if (obj.time):
-            return datetime.datetime(obj.date.year, obj.date.month, obj.date.day, obj.time.hour, obj.time.minute)
+            return datetime.datetime(obj.date.year, obj.date.month, obj.date.day,
+                obj.time.hour, obj.time.minute)
         else:
             return datetime.datetime(obj.date.year, obj.date.month, obj.date.day)
 
@@ -24,7 +26,8 @@ class RssProgramFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.content
+        return item.description + item.content
+
 
 class AtomProgramFeed(RssProgramFeed):
     feed_type = Atom1Feed
