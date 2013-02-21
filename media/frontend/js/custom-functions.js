@@ -13,13 +13,19 @@ $( function()
     loadCalendar();
 
     // top menu open on click - mobile
-    $('#top-menu').click(function() { $(this).toggleClass('open-menu'); });
+    $('#top-menu').bind('touchend', function() { $(this).toggleClass('open-menu'); });
 
     // header scroll expand on click - mobile
-    $('#header-scroll').click(function() {
-      $('#header-scroll').toggleClass('scroll-expanded');
+    $('#header-scroll-control').bind('touchstart', function(e) {
+        e.preventDefault();
+        var open = $('#header-scroll').toggleClass('scroll-expanded').hasClass('scroll-expanded');
+        if (open) {
+            $(this).html('-');
+        } else {
+            $(this).html('+');
+        }
     });
-    $('#header-scroll a').click(function(event){
+    $('#top-menu a').bind('touchend',function(event){
         event.stopPropagation();
     });
 
@@ -79,9 +85,9 @@ $( function()
     // HAXORZ
     $(document).keypress(function(e){
         if (e.target.nodeName ==='INPUT') return;
-        if (e.keyCode == 106)
+        if (e.which == 106)
             header_scroll_down();
-        else if (e.keyCode == 107)
+        else if (e.which == 107)
             header_scroll_up();
     });
 });
