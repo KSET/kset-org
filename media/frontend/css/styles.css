@@ -213,7 +213,7 @@ a:hover
 #social-stuff a {
     margin-bottom: 9px;
     padding: 7px;
-    display: inline-block;
+    display: block;
     color: #666;
     overflow: hidden;
     line-height: 26px;
