@@ -580,6 +580,7 @@ a:hover
     max-width: 50%;
     float: left;
     margin-right: 30px;
+    height: auto;
 }
 
 h1
