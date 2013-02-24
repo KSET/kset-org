@@ -308,12 +308,6 @@ a:hover
     margin-left: 50px;
 }
 
-#header-scroll .item:hover .scroll-thumb {
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: alpha(opacity=100);
-
-}
-
 .scroll-thumb {
     position: absolute;
     top: 0 ;
