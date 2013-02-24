@@ -326,7 +326,7 @@ a:hover
     background: #171717;
 }
 
-#header-scroll .item a
+#header-scroll .item-top a
 {
     color: #ddd;
     text-decoration: none;
@@ -336,7 +336,7 @@ a:hover
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-#header-scroll .item a:hover
+#header-scroll .item-top a:hover
 {
     color: #fff;
 }
