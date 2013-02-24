@@ -305,7 +305,18 @@ a:hover
 #header-scroll .item:hover {
     background: #171717;
     border-bottom: 1px solid #803d15;
+}
+
+.modern-no-csstransforms #header-scroll .item:hover {
     margin-left: 50px;
+}
+
+.modern-csstransforms #header-scroll .item:hover {
+    -webkit-transform: translate(50px, 0);
+    -moz-transform: translate(50px, 0);
+    -ms-transform: translate(50px, 0);
+    -o-transform: translate(50px, 0);
+    transform: translate(50px, 0);
 }
 
 .scroll-thumb {
