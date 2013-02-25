@@ -709,11 +709,6 @@ div.clear + div#left {
     margin: 0 10px 5px 0px;
     width: 80px;
     border-radius: 0 15px 15px 15px;
-    -webkit-transition: 0.2s linear;
-    -moz-transition: 0.2s linear;
-    -o-transition: 0.2s linear;
-    -ms-transition: 0.2s linear;
-    transition: 0.2s linear;
     box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
@@ -1291,7 +1286,7 @@ video {
 }
 
 .m-box a {
-	display:block;
+	display: inline-block;
 	text-decoration:none!important;
 }
 
@@ -1304,12 +1299,12 @@ video {
 }
 
 .m-box img{
-	width: 100%;
 	opacity:0.7;
-	-webkit-transition-property: opacity;
-	-webkit-transition-duration: 0.6s;
-	-moz-transition-property: opacity;
-	-moz-transition-duration: 0.6s;
+    -webkit-transition: opacity 0.6s ease-out;
+    -moz-transition: opacity 0.6s ease-out;
+    -ms-transition: opacity 0.6s ease-out;
+    -o-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
 }
 
 .m-box img:hover {
