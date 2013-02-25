@@ -267,11 +267,11 @@ a:hover
     background: rgba(255,255,255,0);
     height: 100%;
     z-index: 100;
-    -webkit-transition: 0.2s ease-out;
-    -moz-transition: 0.2s ease-out;
-    -o-transition: 0.2s ease-out;
-    -ms-transition: 0.2s ease-out;
-    transition: 0.2s ease-out;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    transition: 0.2s linear;
 }
 
 #header-scroll:hover #header-scrollbar {
@@ -281,11 +281,11 @@ a:hover
 #header-scroll-viewport {
     position: relative;
     top: 0;
-    -webkit-transition:0.2s ease-out;
-    -moz-transition:0.2s ease-out;
-    -o-transition:0.2s ease-out;
-    -ms-transition:0.2s ease-out;
-    transition:0.2s ease-out;
+    -webkit-transition: top 0.2s;
+    -moz-transition: top 0.2s;
+    -o-transition: top 0.2s;
+    -ms-transition: top 0.2s;
+    transition: top 0.2s;
 }
 
 #header-scroll .item
@@ -295,11 +295,11 @@ a:hover
     padding: 2px 0 2px;
     border-bottom: 1px solid #000;
     position: relative;
-    -webkit-transition: 0.2s ease-out;
-    -moz-transition:  0.2s ease-out;
-    -o-transition:  0.2s ease-out;
-    -ms-transition:  0.2s ease-out;
-    transition:  0.2s ease-out;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    -ms-transition: -ms-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+    transition: transform 0.2s;
 }
 
 #header-scroll .item:hover {
@@ -312,11 +312,11 @@ a:hover
 }
 
 .modern-csstransforms #header-scroll .item:hover {
-    -webkit-transform: translate(50px, 0);
-    -moz-transform: translate(50px, 0);
-    -ms-transform: translate(50px, 0);
-    -o-transform: translate(50px, 0);
-    transform: translate(50px, 0);
+    -webkit-transform: translate3d(50px, 0, 0);
+    -moz-transform: translate3d(50px, 0, 0);
+    -ms-transform: translate3d(50px, 0, 0);
+    -o-transform: translate3d(50px, 0, 0);
+    transform: translate3d(50px, 0, 0);
 }
 
 .scroll-thumb {
