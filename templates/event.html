@@ -10,7 +10,7 @@
 
 {% block leftcolumn %}
 
-<div class="item clearfix">
+<article class="item clearfix">
 
 
   <div class="share-buttons">
@@ -21,21 +21,21 @@
 
   <h1 class="single-title">{{ event.title }}</h1>
 
-  <div class="single-thumb">
+  <section class="single-thumb">
     {% if event.thumb %}
       <img src="{% version event.thumb 'semibig' %}" class="thumb" />
     {% endif %}
     <h3>{{ event.date|date:"l, d. F Y." }} u {{ event.time|time:"H:i" }}</h3>
-  </div>
+  </section>
 
-  <div class="icontent">
+  <section class="icontent">
 
     {{ event.description|safe }}
     {{ event.content|safe }}
     <span class="single-tags"><b>tags:</b> {{ event.tags }} </span>
 
-  </div>
+  </section>
 
-</div>
+</article>
 
 {% endblock %}
