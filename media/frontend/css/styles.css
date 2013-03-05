@@ -725,58 +725,6 @@ OLD STUFF
 }
 
 
-
-/* ANNOUNCE */
-
-#announce
-{
-    padding-top: 3px;
-    height: 130px;
-    display: none;
-}
-
-#announce a
-{
-    display: block;
-    float: left;
-    width: 140px;
-    height: 105px;
-    border: 1px solid #ccc;
-    margin: 5px 0px 9px 12px;
-    position: relative;
-}
-
-#announce a:hover
-{
-    text-decoration: none;
-    border: 1px solid #fe7929;
-}
-
-#announce .text
-{
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0px 3px;
-    color: #fff;
-    font-weight: bold;
-    background-color: #000;
-    opacity:0.85;
-    filter:alpha(opacity=85); /* IE */
-}
-
-#announce .date
-{
-    color: #fff;
-    font-size: 10px;
-    padding: 0px 5px;
-    background-color: #000;
-    opacity:0.85;
-    filter:alpha(opacity=85); /* IE */
-}
-
 /* SINGLE EVENT VIEW */
 
 .single-item + .single-item {
