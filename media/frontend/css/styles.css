@@ -143,7 +143,7 @@ a:hover
     text-decoration: underline;
 }
 
-#container
+.page-container
 {
     background: #000;
     width: 90%;
@@ -162,7 +162,7 @@ a:hover
     color: #fe7929;
 }
 
-#footer
+.footer
 {
     padding: 5px 0;
     text-align: center;
@@ -172,7 +172,7 @@ a:hover
 
 /* --- HEADER ------------------------------------------------------ */
 
-#header
+.page-header
 {
     position: relative;
     height: 300px;
@@ -182,14 +182,14 @@ a:hover
 
 }
 
-#header-pic {
+.header-pic {
     position: absolute;
     top: 5px;
     left: 0px;
     border-radius: 20px 0 0 0;
 }
 
-#kset-logo
+.logo
 {
     float:left;
     margin: 10px;
@@ -199,7 +199,7 @@ a:hover
 
 /* SOCIAL STUFF */
 
-#social-stuff {
+.header-social-links {
     font-family: fontello;
     font-size: 24px;
     position: absolute;
@@ -210,7 +210,7 @@ a:hover
     z-index: 100;
 }
 
-#social-stuff a {
+.header-social-links a {
     margin-bottom: 9px;
     padding: 7px;
     display: block;
@@ -231,7 +231,7 @@ a:hover
     transition: 0.2s ease-in;
 }
 
-#social-stuff a:hover {
+.header-social-links a:hover {
     text-decoration: none;
     color: #fff;
     font-size: 24px;
@@ -242,7 +242,7 @@ a:hover
 
 /* SCROLL */
 
-#header-scroll
+.header-scroll
 {
     position: relative;
     float: right;
@@ -259,7 +259,7 @@ a:hover
     z-index: 150;
 }
 */
-#header-scrollbar {
+.header-scrollbar {
     position: absolute;
     top:0;
     right: 0px;
@@ -274,11 +274,11 @@ a:hover
     transition: 0.2s ease-in-out;
 }
 
-#header-scroll:hover #header-scrollbar {
+.header-scroll:hover .header-scrollbar {
     background: rgba(255,255,255,0.5);
 }
 
-#header-scroll-viewport {
+.header-scroll-viewport {
     position: relative;
     top: 0;
     -webkit-transition: all 0.2s ease-out;
@@ -288,7 +288,7 @@ a:hover
     transition: all 0.2s ease-out;
 }
 
-#header-scroll .item
+.header-scroll .item
 {
     font-size: 17px;
     color: #ddd;
@@ -302,7 +302,7 @@ a:hover
     transition: 0.2s ease-out;
 }
 
-#header-scroll .item:hover {
+.header-scroll .item:hover {
     background: #171717;
     border-bottom: 1px solid #803d15;
 }
@@ -331,7 +331,7 @@ a:hover
     background: #171717;
 }
 
-#header-scroll .item-top a
+.header-scroll .item-top a
 {
     color: #ddd;
     text-decoration: none;
@@ -341,19 +341,19 @@ a:hover
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-#header-scroll .item-top a:hover
+.header-scroll .item-top a:hover
 {
     color: #fff;
 }
 
-#header-scroll .item-top
+.header-scroll .item-top
 {
     height: 25px;
     overflow: hidden;
     white-space: nowrap;
 }
 
-#header-scroll .item-top .date
+.header-scroll .item-top .date
 {
     font-weight: bold;
     width: 50px;
@@ -370,7 +370,7 @@ a:hover
     margin-right: -4px;
 }
 
-#header-scroll .item-bottom
+.header-scroll .item-bottom
 {
     height: 18px;
     font-size: 12px;
@@ -379,7 +379,7 @@ a:hover
 
 
 
-#header-scroll .item-bottom .date
+.header-scroll .item-bottom .date
 {
     float: left;
     width: 36px;
@@ -388,60 +388,25 @@ a:hover
     white-space: nowrap;
 }
 
-#header-scroll .item-bottom .date span {
+.header-scroll .item-bottom .date span {
     padding-right: 2px;
     padding-left: 2px;
 }
 
-#header-scroll .item-bottom .tags:before {
+.header-scroll .item-bottom .tags:before {
     font-family: 'fontello';
     content: '\E70D ';
     font-size: 11px;
 }
 
-#header-scroll-control {
+.header-scroll-control {
     display: none;
-}
-
-#header-scroll-arrows
-{
-    display: none;
-    filter: alpha(opacity=70);
-    opacity: 0.7;
-    position: absolute;
-    bottom: 2px;
-    right: 0;
-    -webkit-transition: all 0.4s linear;
-    -moz-transition: all 0.4s linear;
-    -o-transition: all 0.4s linear;
-    -ms-transition: all 0.4s linear;
-    transition: all 0.4s linear;
-}
-
-#header-scroll:hover #header-scroll-arrows {
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: alpha(opacity=100);
-    opacity: 1;
-}
-
-#header-scroll-arrows a
-{
-    width: 9px;
-    height: 23px;
-    display: block;
-    font-size: 20px;
-}
-
-#header-scroll-arrows a:hover
-{
-    text-decoration: none;
-    color: #FE7929;
 }
 
 
 /* TOP MENU */
 
-#top-menu
+.page-nav
 {
     position: absolute;
     bottom: 0;
@@ -456,7 +421,7 @@ a:hover
     text-align: center;
 }
 
-#top-menu a
+.page-nav a
 {
     color: #eee;
     padding: 3px 6px 6px;
@@ -469,13 +434,13 @@ a:hover
     transition: all 0.2s;
 }
 
-#top-menu a:hover
+.page-nav a:hover
 {
     color: #fe7929;
     text-decoration: none;
 }
 
-#top-menu-prompt
+.top-menu-prompt
 {
     color: #fe7929;
     margin-left: 10px;
@@ -489,7 +454,7 @@ a:hover
 
 /* --- CONTENT ----------------------------------------------------- */
 
-#content
+.main
 {
     background: #f5f5f5 url(../images/content-bg.png);
     font-size: 12px;
@@ -546,7 +511,7 @@ h3
     padding-right: 2px;
 }
 
-#content .hMenu
+.main .hMenu
 {
     margin-top: 10px;
 }
