@@ -7,7 +7,7 @@
 
 <!-- DNEVNI -->
 
-<div class="news-box dnevni clearfix">
+<section class="news-box dnevni clearfix">
 
   <h1 class="news-header">Dnevni program</h1>
   {% if not daytime_events %}
@@ -16,7 +16,7 @@
 
   {% for item in daytime_events %}
 
-    <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+    <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
 
       {% if item.description %}
@@ -64,21 +64,21 @@
       <div class="ifooter">
       </div>
 
-    </div>
+    </article>
 
   {% endfor %}
 
-</div>
+</section>
 
 <!-- NOCNI  -->
 
-<div class="news-box nocni clearfix">
+<section class="news-box nocni clearfix">
 
   <h1 class="news-header">Večernji program</h1>
 
   {% for item in events %}
 
-    <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+    <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
 
       {% if item.description %}
@@ -123,13 +123,13 @@
       <div class="ifooter">
       </div>
 
-    </div>
+    </article>
 
   {% endfor %}
 
-</div>
+</section>
 
-<div class="news-box vijesti clearfix">
+<section class="news-box vijesti clearfix">
 
   <h1 class="news-header">Vijesti</h1>
     {% if not news %}
@@ -137,7 +137,7 @@
     {% endif %}
   {% for item in news %}
 
-    <div class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+    <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
 
       {% if item.description %}
@@ -182,11 +182,11 @@
       <div class="ifooter">
       </div>
 
-    </div>
+    </article>
 
   {% endfor %}
 
-</div>
+</section>
 
 
 {% endblock %}
