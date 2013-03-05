@@ -1451,7 +1451,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
 
 /* SLIKE */
 
-#m-slike {
+.m-slike {
     margin:0 auto;
 }
 
