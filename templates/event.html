@@ -10,7 +10,7 @@
 
 {% block leftcolumn %}
 
-<article class="item clearfix">
+<article class="item clearfix" itemscope itemtype="http://schema.org/Event">
 
 
   <section class="share-buttons">
@@ -19,18 +19,18 @@
     <a href="http://www.facebook.com/sharer.php?u=http://www.kset.org{% url event-slug event.slug %}" class="share-btn shareFb"></a>
   </section>
 
-  <h1 class="single-title">{{ event.title }}</h1>
+  <h1 class="single-title" itemprop="name">{{ event.title }}</h1>
 
   <section class="single-thumb">
     {% if event.thumb %}
       <img src="{% version event.thumb 'semibig' %}" class="thumb" />
     {% endif %}
-    <h3>{{ event.date|date:"l, d. F Y." }} u {{ event.time|time:"H:i" }}</h3>
+    <h3><time itemprop="startDate" datetime="{{ event.date|date:"Y-m-d" }}T{{ event.time|time:"H:i" }}" >{{ event.date|date:"l, d. F Y." }} u {{ event.time|time:"H:i" }}</time></h3>
   </section>
 
   <section class="icontent">
 
-    {{ event.description|safe }}
+    <div itemprop="description">{{ event.description|safe }}</div>
     {{ event.content|safe }}
     <span class="single-tags"><b>tags:</b> {{ event.tags }} </span>
 
