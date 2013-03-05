@@ -1530,7 +1530,7 @@ and (max-width : 850px) {
 @media only screen
 and (max-width : 650px) {
 
-    #top-menu {
+    .page-nav {
         max-width: 49%;
     }
 
@@ -1538,18 +1538,18 @@ and (max-width : 650px) {
         background: #444;
     }
 
-    #container {
+    .page-container {
         width: auto;
         border:0;
         margin: 0;
         border-radius: 0;
     }
 
-    #header-pic {
+    .header-pic {
         display: none;
     }
 
-    #header {
+    .page-header {
         padding: 0;
         width: 100%;
         height: auto;
@@ -1558,7 +1558,7 @@ and (max-width : 650px) {
     }
 
 
-    #top-menu {
+    .top-menu {
         right: 70px;
         top: 0;
         width: 0;
@@ -1572,7 +1572,7 @@ and (max-width : 650px) {
         overflow: visible;
     }
 
-    #top-menu.open-menu {
+    .top-menu.open-menu {
         right: 70px;
         width: auto;
         left: 0;
@@ -1580,7 +1580,7 @@ and (max-width : 650px) {
         padding-top: 88px;
     }
 
-    #top-menu:before {
+    .top-menu:before {
         content: '\E734';
         color: #fe7929;
         font-family: fontello;
@@ -1595,29 +1595,29 @@ and (max-width : 650px) {
         text-align: right;
     }
 
-    #top-menu.open-menu:before {
+    .top-menu.open-menu:before {
         color: #fff;
     }
 
-    #top-menu-prompt {
+    .top-menu-prompt {
         position: absolute;
         right: -5px;
         top: 22px;
         font-size: 28px;
     }
 
-    #top-menu.open-menu #top-menu-prompt {
+    .top-menu.open-menu #top-menu-prompt {
         display: none;
     }
 
-    #top-menu-prompt.prompt-blink {
+    .top-menu-prompt.prompt-blink {
         background: none;
         color: black;
     }
 
 
 
-    #top-menu a {
+    .top-menu a {
         color: #FE7929;
         position: relative;
         display: none;
@@ -1630,20 +1630,20 @@ and (max-width : 650px) {
         text-shadow: none;
     }
 
-    #top-menu-prompt + a {
+    .top-menu-prompt + a {
         border-top:1px solid #444;
     }
 
-    #top-menu.open-menu a{
+    .top-menu.open-menu a{
         display: block;
     }
 
-    #kset-logo {
+    .logo {
         margin:5px 10px 8px;
         z-index: 200;
     }
 
-    #header-scroll {
+    .header-scroll {
         height: auto;
         float: none;
         width: auto;
@@ -1654,7 +1654,7 @@ and (max-width : 650px) {
         background: #191919;
     }
 
-    #header-scroll-control {
+    .header-scroll-control {
         display: block;
         position: absolute;
         z-index: 100;
@@ -1673,13 +1673,13 @@ and (max-width : 650px) {
         text-align: center;
     }
 
-    #header-scroll.scroll-expanded #header-scroll-control {
+    .header-scroll.scroll-expanded .header-scroll-control {
         background: #333;
         color: #eee;
     }
 
 
-    #header-scroll .item {
+    .header-scroll .item {
         display: none;
         font-size: 20px;
         margin: 0;
@@ -1692,37 +1692,37 @@ and (max-width : 650px) {
                 transition: none;
     }
 
-    #header-scroll .item:hover {
+    .header-scroll .item:hover {
         background: none;
         border-bottom: 1px solid #191919;
         margin-left: 0;
     }
 
-    #header-scroll.scroll-expanded .item {
+    .header-scroll.scroll-expanded .item {
         display: block;
     }
 
-    #header-scroll .item img {
+    .header-scroll .item img {
         top: 3px;
         border-bottom: 0;
         height: 42px;
         width: 42px;
     }
 
-    #header-scroll #event-0{
+    .header-scroll #event-0{
         display: block;
         padding-right: 3em;
     }
 
-    #header-scroll #event-0 a{
+    .header-scroll #event-0 a{
         width: 80%;
     }
 
-    #header-scroll .item-top {
+    .header-scroll .item-top {
         height: 30px;
     }
 
-    #header-scroll-viewport {
+    .header-scroll-viewport {
         margin: 0;
     }
 
@@ -1768,11 +1768,11 @@ and (max-width : 650px) {
         width: 100%;
     }
 
-    #input-search {
+    .input-search {
         width: 90%;
     }
 
-    #input-search:focus {
+    .input-search:focus {
         font-size: 16px;
         color: #000;
         width: 90%;
@@ -1794,14 +1794,14 @@ and (max-width : 650px) {
         width: 93.6%;
     }
 
-    #social-stuff {
+    .header-social-links {
         display: none;
     }
 
 }
 
 @media screen and (max-width : 850px) and (orientation:landscape) {
-    #header-scroll .item {
+    .header-scroll .item {
         margin-left: 58px;
     }
 }
