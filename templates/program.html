@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div id="right">
+<aside id="right" class="right-column">
 
   <div class="search-box">
     <form id="form-search" method="GET" action="{% url search %}">
@@ -83,17 +83,17 @@
       {% include 'newsletter-form.html' %}
     </div>
 
-</div>
+</aside>
 
 
 
 
-<div id="left">
+<section id="left" class="left-column">
 
   {% block leftcolumn %}
 
   {% endblock %}
 
-</div>
+</section>
 
 {% endblock %}

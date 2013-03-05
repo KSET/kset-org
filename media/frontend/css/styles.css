@@ -502,14 +502,14 @@ a:hover
 .icontent {
 }
 
-#left p {
+.left-column p {
     margin: 0.3em 0;
     line-height: 22px;
     font-size: 15px;
     text-shadow: 0 1px 2px rgba(20, 20, 20, 0.12);
 }
 
-#left p img {
+.left-column p img {
     max-width: 50%;
     float: left;
     margin-right: 30px;
@@ -571,7 +571,7 @@ h3
 
 /* LEFT COLUMN */
 
-#left
+.left-column
 {
     margin-right: 180px;
     padding: 15px;
@@ -580,7 +580,7 @@ h3
     box-shadow: 5px 0 15px -5px #e7e7e7;
 }
 
-#left h1 {
+.left-column h1 {
     letter-spacing: -1px;
 }
 
@@ -589,14 +589,14 @@ h3
     padding-right: 10px;
 }
 
-#left.club-left p {
+.left-column.club-left p {
     margin: 0.7em 0;
     font-size: 13px;
     line-height: 22px;
 }
 
 
-div.clear + div#left {
+div.clear + div.left-column {
 
   margin: 1.5em 18px 0.25em 12px;
   padding-bottom: 0.5em;
@@ -1814,7 +1814,7 @@ and (max-width : 650px) {
         margin: 0;
     }
 
-    #left {
+    .left-column {
         margin: 0;
         padding: 0 10px;
         clear: left;
@@ -1824,7 +1824,7 @@ and (max-width : 650px) {
         max-width: 100%;
     }
 
-    #left table {
+    .left-column table {
         font-size: 1.6em;
         margin-bottom: 15px;
     }
