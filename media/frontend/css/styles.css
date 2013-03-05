@@ -1023,13 +1023,13 @@ OLD STUFF
 /* RIGHT COLUMN - FORMS */
 
 
-#form-search {
+.form-search {
     line-height: 20px;
     background: #E5E5E5;
     border: 1px solid #ccc;
 }
 
-#input-search {
+.input-search {
     background: url(/media/frontend/images/search.png) no-repeat 5px 4px;
     color: #222;
     padding: 5px 5px 5px 29px;
@@ -1044,22 +1044,19 @@ OLD STUFF
     transition: all 0.3s;
 }
 
-#input-search:focus {
+.input-search:focus {
     background-position: -30px 4px;
     padding-left: 5px;
     width: 149px;
 }
 
-#form-search img {
+.form-search img {
     vertical-align: text-top;
     padding: 0 3px;
 }
 
-#form-newsletter
-{
-}
 
-#newsletter-subscription {
+.newsletter-subscription {
     width: 120px;
     color: #666;
     padding-left: 5px;
