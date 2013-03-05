@@ -8,9 +8,9 @@
 
     <h1>Vijesti</h1>
     {% if news %}
-      <table>
+      <table class="archive-table">
         {% for item in news %}
-    
+
         <tr>
           <td style="width:90px">{{ item.publish|date:"d.m.Y." }} </td>
           <td><a href="{% url news-slug item.slug %}">{{ item.subject }}</a></td>
@@ -25,9 +25,9 @@
 
     <h1>Program</h1>
     {% if events %}
-      <table>
+      <table class="archive-table">
         {% for event in events %}
-    
+
         <tr>
           <td style="width:90px">{{ event.date|date:"d.m.Y." }} </td>
          <td><a href="{% url event-slug event.slug %}">{{ event.title }}</a></td>
