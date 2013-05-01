@@ -6,41 +6,32 @@
 
 {% for event in events %}
 
-<div class="item single-item clearfix">
+<article class="item single-item clearfix">
 
-
-<!--
-  <h3><span class="orange">&raquo;&nbsp;</span>{{ event.date|date:"l, d. F Y." }} u {{ event.time|time:"H:i" }}</h3>
-
-  <a href="http://twitter.com/home?status=http://www.kset.org{% url event-slug event.slug %}" class="shareTw"></a>
-  <a href="http://www.facebook.com/sharer.php?u=http://www.kset.org{% url event-slug event.slug %}" class="shareFb"></a>
--->
-
-
-  <div class="share-buttons">
+  <section class="share-buttons">
     <span class="share-text">Proslijedi:</span>
     <a href="http://twitter.com/home?status=http://www.kset.org{% url event-slug event.slug %}" class="share-btn shareTw"></a>
     <a href="http://www.facebook.com/sharer.php?u=http://www.kset.org{% url event-slug event.slug %}" class="share-btn shareFb"></a>
-  </div>
+  </section>
 
   <h1 class="single-title">{{ event.title }}</h1>
 
-  <div class="single-thumb">
+  <section class="single-thumb">
     {% if event.thumb %}
       <img src="{% version event.thumb 'semibig' %}" class="thumb" />
     {% endif %}
     <h3>{{ event.date|date:"l, d. F Y." }} u {{ event.time|time:"H:i" }}</h3>
-  </div>
+  </section>
 
-  <div class="icontent">
+  <section class="icontent">
 
     {{ event.description|safe }}
     {{ event.content|safe }}
 
-  </div>
+  </section>
 
 
-</div>
+</article>
 
 {% endfor %}
 

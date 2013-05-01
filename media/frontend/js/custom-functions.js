@@ -124,8 +124,15 @@ function loadCalendar() {
 function header_scroll_down()
 {
     if (current_event < events_count - max_events) {
-        scrollViewport.css({'top': (- (++current_event) * 48) });
-        scrollBar.css('top', (current_event/(events_count))*100 + '%' );
+        var viewportTop = (- (++current_event) * 48);
+        var scrollbarTop = (current_event/events_count);
+        if (Modernizr.csstransforms) {
+            scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
+            scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
+        } else { 
+            scrollViewport.css({ 'top': viewportTop });
+            scrollBar.css({ 'top': scrollbarTop*100 + '%' });
+        }
         return false;
     }
 }
@@ -133,8 +140,15 @@ function header_scroll_down()
 function header_scroll_up()
 {
     if (current_event > 0) {
-        scrollViewport.css({'top': (- (--current_event) * 48)} );
-        scrollBar.css('top', (current_event/(events_count))*100 + '%' );
+        var viewportTop = (- (--current_event) * 48);
+        var scrollbarTop = (current_event/events_count);
+        if (Modernizr.csstransforms) {
+            scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
+            scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
+        } else { 
+            scrollViewport.css({ 'top': viewportTop });
+            scrollBar.css({ 'top': scrollbarTop*100 + '%' });
+        }
         return false;
     }
 }

@@ -8,25 +8,27 @@
 {% endblock %}
 
 {% block content %}
-<div id="gallery-album">
+<section id="gallery-album">
 
-    <div class="album-title">
-      <div class="gumb"><h2><a href="/gallery/{{ category }}"></a></h2></div>
-      <span><h2>{{ album_title }} - {{ date }}</h2></span>
-    </div>
-
-
-    <div class="album-info">
-        {{ description|safe }}
-      <p class="album-author">Copyright by: {% if photographer.url %}<a href='{{ photographer.url }}'>{{ photographer.name }}</a>{% else %}{{ photographer.name }}{% endif %}</p>
-    </div>
+    <header>
+        <div class="album-title">
+          <div class="gumb"><h2><a href="/gallery/{{ category }}"></a></h2></div>
+          <span><h2>{{ album_title }} - {{ date }}</h2></span>
+        </div>
 
 
+        <div class="album-info">
+            {{ description|safe }}
+          <p class="album-author">Copyright by: {% if photographer.url %}<a href='{{ photographer.url }}'>{{ photographer.name }}</a>{% else %}{{ photographer.name }}{% endif %}</p>
+        </div>
+    </header>
 
-  <div id="m-slike">
+
+
+  <section id="m-slike" class="m-slike clearfix">
     {% for image in images %}
 
-    <div class="m-slika">
+    <article class="m-slika">
       <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" title=":: {{ forloop.counter }}/{{ images.count }} :: Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} :: {{ image.caption|default:"" }}">
         <div class="slika">
           <img src="{% version image.upload_path 'gallerytb' %}" />
@@ -39,13 +41,12 @@
         {% endif %}
 
       </a>
-    </div>
+    </article>
     {% endfor %}
 
-    <div class="clear"></div>
-  </div>
+  </section>
 
-</div>
+</section>
 
 {% endblock %}
 

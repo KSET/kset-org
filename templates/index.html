@@ -1,11 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
+<html class="no-js">
   <head>
-    {% block extrahead %}{% endblock %}
+
+    {% block extrahead %}
+        <meta property="og:url" content="http://www.kset.org/" />
+        <meta property="og:title" content="www.KSET.org" />
+        <meta property="og:description" content="Klub Studenata Elektrotehnike" />
+        <meta property="og:image" content="http://www.kset.org/media/frontend/images/kset_logo.png" />
+
+        <meta property="og:latitude" content="45.80154"/>
+        <meta property="og:longitude" content="15.97166"/>
+        <meta property="og:street-address" content="Unska 3"/>
+        <meta property="og:locality" content="Zagreb"/>
+        <meta property="og:region" content="Zagreb"/>
+        <meta property="og:postal-code" content="10000"/>
+        <meta property="og:country-name" content="Croatia"/>
+    {% endblock %}
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <link href="/media/frontend/css/styles.css?1" rel="stylesheet" type="text/css" />
+    <link href="/media/frontend/css/styles.css?2" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/media/frontend/lightbox/css/lightbox.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/media/frontend/fancybox/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
 
@@ -19,12 +34,13 @@
     <link rel="alternate" type="application/rss+xml" title="Public Feeds" href="/feeds/rss/" />
     {% endblock feeds %}
 
-    <script type="text/javascript" src="/media/frontend/js/jquery-1.7.2.min.js" language="javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.3.min.js">\x3C/script>')</script>
     <script type="text/javascript" src="/media/frontend/js/jquery.mousewheel.js" language="javascript"></script>
 
     <script type="text/javascript" src="/media/frontend/fancybox/jquery.fancybox.pack.js"></script>
 
-
+    <script type="text/javascript" src="/media/frontend/js/modernizr.custom.js" language="javascript"></script>
     <script type="text/javascript" src="/media/frontend/js/custom-functions.js" language="javascript"></script>
 
      <!-- Google analytics -->
@@ -48,54 +64,54 @@
 
   <body>
 
-    <div id="container">
+    <div id="container" class="page-container">
 
-      <div id="header">
-        <img src="/media/frontend/images/headers/{{ header_bg }}" id="header-pic" />
+        <header id="header" class="page-header">
+            <img src="/media/frontend/images/headers/{{ header_bg }}" id="header-pic" class="header-pic" />
 
-	<a href="{% url root %}"><img width="230" height="76" src="/media/frontend/images/kset_logo.png" id="kset-logo" /></a>
+            <a href="{% url root %}">
+                <img width="230" height="76" src="/media/frontend/images/kset_logo.png" id="kset-logo" class="logo"/>
+            </a>
 
-	<div id="top-menu">
-	  <code id="top-menu-prompt">&gt;</code>
-	  <a href="{% url root %}">NASLOVNICA</a>
-	  <a href="{% url club %}">O KLUBU</a>
-	  <a href="{% url multimedia %}">MULTIMEDIA</a>
-    <a href="{% url news-archive %}">VIJESTI</a>
-    <a href="{% url events-archive %}">PROGRAM</a>
+        	<nav id="top-menu" class="page-nav">
+                <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
+                <a href="{% url root %}">NASLOVNICA</a>
+                <a href="{% url club %}">O KLUBU</a>
+                <a href="{% url multimedia %}">MULTIMEDIA</a>
+                <a href="{% url news-archive %}">VIJESTI</a>
+                <a href="{% url events-archive %}">PROGRAM</a>
 
+                <!-- veljko postavio da mu google prije indexera nesto drugo -->
+                <a href="http://www.myindian.se/" style="display:none;">myIndian.se</a>
+                <!-- end veljko -->
+        	</nav>
 
-    <!-- veljko postavio da mu google prije indexera nesto drugo -->
-    <a href="http://www.myindian.se/" style="display:none;">myIndian.se</a>
-    <!-- end veljko -->
-	</div>
-
-  <div id="social-stuff">
-    <a href="http://www.facebook.com/KSETZg" title="Facebook"></a>
-    <a href="http://twitter.com/KSETinfo" title="Twitter"></a>
-    <a href="http://www.last.fm/user/Klub_KSET" title="Last.fm"></a>
-    <a href="http://webchat.freenode.net/?channels=kset" title="IRC"></a>
-    <a href="http://www.youtube.com/user/KsetVideo" title="Youtube"></a>
-    <a href="http://www.kset.org/feeds/rss/" title="RSS"></a>
-  </div>
-
-
-	{% include 'header-scroll.html' %}
-
-      </div>
-
-      <div id="content" class="clearfix">
-
-        {% block content %}
-
-        {% endblock %}
+            <section id="social-stuff" class="header-social-links">
+                <a href="http://www.facebook.com/KSETZg" title="Facebook"></a>
+                <a href="http://twitter.com/KSETinfo" title="Twitter"></a>
+                <a href="http://www.last.fm/user/Klub_KSET" title="Last.fm"></a>
+                <a href="http://webchat.freenode.net/?channels=kset" title="IRC"></a>
+                <a href="http://www.youtube.com/user/KsetVideo" title="Youtube"></a>
+                <a href="http://www.kset.org/feeds/rss/" title="RSS"></a>
+            </section>
 
 
-      </div>
+        	{% include 'header-scroll.html' %}
 
-      <div id="footer">
-      	<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
-      	<i>... prvi put otvorio vrata <b>1976.</b></i>
-      </div>
+        </header>
+
+        <section role="main" id="content" class="main clearfix">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </section>
+
+        <footer id="footer" class="footer">
+          	<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
+          	<i>... prvi put otvorio vrata <b>1976.</b></i>
+        </footer>
 
     </div>
 

@@ -3,29 +3,15 @@
 
 {% block content %}
 
-<div id="right">
+<aside id="right" class="right-column">
 
   <div class="search-box">
-    <form id="form-search" method="GET" action="{% url search %}">
-      <input id="input-search" type="text" name="query" placeholder="Search me"/>
+    <form id="form-search" class="form-search" method="GET" action="{% url search %}">
+      <input id="input-search" class="input-search" type="text" name="query" placeholder="Search me"/>
     </form>
   </div>
 
   <div class="vsep"></div>
-
-  <!--
-
-  <h1><span class="orange">&raquo;&nbsp;&nbsp;</span>Socijalno virtualiziranje ...</h1>
-  <div id="social-logos">
-    <a href="http://twitter.com/KSETinfo/" class="logo-twitter" target="blank"></a>
-    <a href="http://www.facebook.com/KSETZg/" class="logo-facebook" target="blank"></a>
-    <a href="http://www.last.fm/user/Klub_KSET/" class="logo-lastfm" target="blank"></a>
-    <a href="http://www.youtube.com/user/KsetVideo" class="logo-youtube" target="blank"></a>
-    <a href="http://www.kset.org/feeds/rss/" class="logo-rss" target="blank"></a>
-    <a href="http://webchat.freenode.net/?channels=kset" class="logo-irc" target="blank"></a>
-  </div>
-
-  -->
 
     <div class="calendar-box">
       <div id="calendar" class="calendar"></div>
@@ -97,17 +83,17 @@
       {% include 'newsletter-form.html' %}
     </div>
 
-</div>
+</aside>
 
 
 
 
-<div id="left">
+<section id="left" class="left-column">
 
   {% block leftcolumn %}
 
   {% endblock %}
 
-</div>
+</section>
 
 {% endblock %}

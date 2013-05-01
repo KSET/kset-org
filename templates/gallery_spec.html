@@ -6,42 +6,45 @@
 {% block content %}
 
 	<!-- ... TU SAM ... -->
-<div id="gallery">
-  <div class="gallery-menu">
-    {% if years %}
-    <span>Odaberi godinu ...</span>
-    {% else %}
-    <span>Uskoro... </span>
-    {% endif %}
-    {% for year in years %}
-    <a href="/gallery/{{ cat }}/albumi/{{ year|date:'Y' }}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
+<section id="gallery" class="gallery clearfix">
+    <nav class="gallery-menu">
+        {% if years %}
+            <span>Odaberi godinu ...</span>
+        {% else %}
+            <span>Uskoro... </span>
+        {% endif %}
+        {% for year in years %}
+            <a href="/gallery/{{ cat }}/albumi/{{ year|date:'Y' }}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </nav>
+
+    {% for a in list %}
+
+        {% ifchanged %}
+            <header class="gallery-month"><h2>{{ a.date_of_event|date:"F Y." }}</h2></header>
+        {% endifchanged %}
+
+        <article class="m-album">
+
+           <a href="/gallery/{{ cat }}/{{ a.slug }}">
+
+              <div class="slika">
+                <!-- slika dimenzije 255x170 -->
+                <img align="middle" src="{% version a.thumb 'gallerytb' %}"/>
+              </div>
+              <div class="ime">
+                <!--<div class="transparent"></div>-->
+                <h2>{{ a.title }}</h2>
+              </div>
+              <section class="tekst">
+                <p class="gallery-date"> {{ a.date_of_event }}</p>
+                <p class="gallery-author"> {{ a.photographer }}</p>
+              </section>
+            </a>
+        </article>
+
     {% endfor %}
-  </div>
 
-  {% for a in list %}
-
-  {% ifchanged %}<div class="gallery-month"><h2>{{ a.date_of_event|date:"F Y." }}</h2></div>{% endifchanged %}
-  <div class="m-album">
-
-       <a href="/gallery/{{ cat }}/{{ a.slug }}">
-
-          <div class="slika">
-            <!-- slika dimenzije 255x170 -->
-            <img align="middle" src="{% version a.thumb 'gallerytb' %}"/>
-          </div>
-          <div class="ime">
-            <!--<div class="transparent"></div>-->
-            <h2>{{ a.title }}</h2>
-          </div>
-          <div class="tekst">
-            <p class="gallery-date"> {{ a.date_of_event }}</p>
-            <p class="gallery-author"> {{ a.photographer }}</p>
-          </div>
-        </a>
-      </div>
-
-    {% endfor %}
-  <div class="clear"></div>
-</div>
+</section>
 
 {% endblock %}
