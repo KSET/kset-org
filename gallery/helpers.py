@@ -1,14 +1,11 @@
-#coding : utf8
+# -*- coding: utf-8 -*-
 
-import os
-import sys
-import string
-from PIL import Image
-from PIL.ExifTags import TAGS
 from datetime import datetime
+
 from django.template.defaultfilters import slugify
 
-### some helper functions
+from PIL import Image
+from PIL.ExifTags import TAGS
 
 
 def get_exif(filename):
@@ -20,16 +17,15 @@ def get_exif(filename):
         ret[decoded] = value
     return ret
 
+
 def parse_filename(filename):
     ret = {}
-    if (len(filename.split('_'))>=5):
+    if (len(filename.split('_')) >= 5):
         filename = str(filename)
         ret['name_full'] = filename
         ret['name'] = filename.split('.')[0]
         ret['slug'] = slugify(ret['name'][0:50])
         filename = filename.split('_')
-        ret['date'] = datetime.strptime(filename[0],"%Y%m%d")
-        #ret['photographer'] = str.capitalize(filename[-3]) +  ' ' + str.capitalize(filename[-2])
+        ret['date'] = datetime.strptime(filename[0], "%Y%m%d")
         ret['photographer'] = 'KSET'
     return ret
-
