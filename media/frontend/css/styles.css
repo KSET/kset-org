@@ -999,6 +999,7 @@ OLD STUFF
     border-bottom: 1px solid #d8d8d8;
     padding: 0px 3px 10px 5px;
 
+    border-top: 1px solid #d1d1d1;
 }
 
 .right-column-col1-klub
@@ -1009,6 +1010,11 @@ OLD STUFF
     border-left: 1px solid #e1e1e1;
     border-bottom: 1px solid #e1e1e1;
     padding: 0px 3px 10px 5px;
+    border-top: 1px solid #d1d1d1;
+}
+
+.right-column-col1-klub .vsep {
+    clear: left;
 }
 
 .right-column-klub table
