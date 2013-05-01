@@ -25,7 +25,7 @@
     {% if event.thumb %}
       <img src="{% version event.thumb 'semibig' %}" class="thumb" />
     {% endif %}
-    <h3><time itemprop="startDate" datetime="{{ event.date|date:"Y-m-d" }}T{{ event.time|time:"H:i" }}" >{{ event.date|date:"l, d. F Y." }} u {{ event.time|time:"H:i" }}</time></h3>
+    <h3><time itemprop="startDate" datetime="{{ event.date|date:"Y-m-d" }}T{{ event.time|time:"H:i" }}" >{{ event.date|date:"l, j. E Y." }} u {{ event.time|time:"H:i" }}</time></h3>
   </section>
 
   <section class="icontent">
