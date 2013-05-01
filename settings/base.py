@@ -4,8 +4,8 @@ from os.path import abspath, join, dirname
 PROJECT_DIR = abspath(join(dirname(__file__), '..'))
 
 ADMINS = (
-  ('Veljko Dragsic', 'veljko@kset.org'),
-  ('Deni Bertovic', 'deni@kset.org')
+    ('Veljko Dragsic', 'veljko@kset.org'),
+    ('Deni Bertovic', 'deni@kset.org')
 )
 
 MANAGERS = ADMINS
@@ -36,7 +36,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 
@@ -53,7 +52,6 @@ TEMPLATE_DIRS = (
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,7 +103,7 @@ INSTALLED_APPS = (
 )
 
 GRAPPELLI_ADMIN_TITLE = 'kset.org'
-GRAPPELLI_INDEX_DASHBOARD = 'kset.dashboard.CustomIndexDashboard'
+GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 
 FILEBROWSER_URL_TINYMCE = '/media/static/tiny_mce/'
 FILEBROWSER_PATH_TINYMCE = join(PROJECT_DIR, 'media/static/tiny_mce/')
@@ -113,21 +111,21 @@ FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
 
 FILEBROWSER_EXTENSIONS = {
     'Folder': [''],
-    'Image': ['.jpg','.JPG','.JPEG','.jpeg','.gif','.png','.tif','.tiff'],
-    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
-    'Document': ['.pdf','.doc','.rtf','.txt','.xls','.csv'],
-    'Audio': ['.mp3','.mp4','.wav','.aiff','.midi','.m4p'],
-    'Code': ['.html','.py','.js','.css']
+    'Image': ['.jpg', '.JPG', '.JPEG', '.jpeg', '.gif', '.png', '.tif', '.tiff'],
+    'Video': ['.mov', '.wmv', '.mpeg', '.mpg', '.avi', '.rm'],
+    'Document': ['.pdf', '.doc', '.rtf', '.txt', '.xls', '.csv'],
+    'Audio': ['.mp3', '.mp4', '.wav', '.aiff', '.midi', '.m4p'],
+    'Code': ['.html', '.py', '.js', '.css']
 }
 
 FILEBROWSER_SELECT_FORMATS = {
-    'File': ['Folder','Document',],
-    'Image': ['Folder','Image',],
-    'Media': ['Video','Sound'],
+    'File': ['Folder', 'Document'],
+    'Image': ['Folder', 'Image'],
+    'Media': ['Video', 'Sound'],
     'Document': ['Document'],
     # for TinyMCE we can also define lower-case items
     'image': ['Image'],
-    'file': ['Folder','Image','Document',],
+    'file': ['Folder', 'Image', 'Document'],
 }
 
 FILEBROWSER_VERSIONS = {
@@ -158,16 +156,13 @@ TAGGING_AUTOCOMPLETE_JS_BASE_URL = '/media/js/jquery-autocomplete'
 
 # tinymce settings, add/remove buttons and so on
 TINYMCE_DEFAULT_CONFIG = {
-'theme': "advanced",
-'theme_advanced_toolbar_location': "top",
-'theme_advanced_resizing': True,
-'plugins': 'table,contextmenu,paste,autoresize,media,lists,style',
-#'height' : 600,
-#'width' : 800,
-#'theme_advanced_resize_horizontal' : True,
-'theme_advanced_buttons1': "style, bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo,image,link",
-'theme_advanced_buttons2': "cleanup,lists,pasteword,table,contextmenu,media,code",
-'theme_advanced_buttons3': "",
+    'theme': "advanced",
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_resizing': True,
+    'plugins': 'table,contextmenu,paste,autoresize,media,lists,style',
+    'theme_advanced_buttons1': "style, bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo,image,link",
+    'theme_advanced_buttons2': "cleanup,lists,pasteword,table,contextmenu,media,code",
+    'theme_advanced_buttons3': "",
 }
 
 
@@ -193,5 +188,3 @@ LOGGING = {
         },
     }
 }
-
-
