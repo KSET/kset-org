@@ -25,10 +25,6 @@ class EventAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('date', 'title',)}
     actions = [make_announced]
 
-    class Media:
-        js = (
-            '/media/static/tiny_mce/tiny_mce.js')
-
 
 class TinyMCEFlatPageAdmin(FlatPageAdmin):
     def formfield_for_dbfield(self, db_field, **kwargs):

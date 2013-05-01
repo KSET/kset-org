@@ -1,4 +1,4 @@
-#coding: utf8
+# -*- coding: utf-8 -*-
 
 from datetime import datetime
 
@@ -25,17 +25,17 @@ class EventManager(models.Manager):
 
 
 class Event(models.Model):
-    title = models.CharField('Naslov', max_length=192)
-    date = models.DateField('Datum')
-    time = models.TimeField('Vrijeme', null=True, blank=True)
-    description = HTMLField('Opis', blank=True)
-    content = HTMLField('Sadržaj', blank=True)
+    title = models.CharField(u'Naslov', max_length=192)
+    date = models.DateField(u'Datum')
+    time = models.TimeField(u'Vrijeme', null=True, blank=True)
+    description = HTMLField(u'Opis', blank=True)
+    content = HTMLField(u'Sadržaj', blank=True)
     tags = TagAutocompleteField(blank=True)
     slug = models.SlugField(blank=True, max_length=128)
-    announce = models.BooleanField('Najavi')
-    daytime = models.BooleanField('Dnevni')
-    price = models.CharField('Cijena', max_length=16, null=True, blank=True)
-    thumb = FileBrowseField('Sličica', max_length=255, null=True, blank=True)
+    announce = models.BooleanField(u'Najavi')
+    daytime = models.BooleanField(u'Dnevni')
+    price = models.CharField(u'Cijena', max_length=16, null=True, blank=True)
+    thumb = FileBrowseField(u'Sličica', max_length=255, null=True, blank=True)
     objects = EventManager()
 
     class Meta:
