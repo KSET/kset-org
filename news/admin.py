@@ -10,8 +10,4 @@ class NewsAdmin(admin.ModelAdmin):
     search_fields = ('subject', 'created_at')
     prepopulated_fields = {'slug': ('subject',)}
 
-    class Media:
-        js = (
-            '/media/static/tiny_mce/tiny_mce.js')
-
 admin.site.register(News, NewsAdmin)
