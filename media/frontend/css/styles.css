@@ -1527,7 +1527,7 @@ and (max-width : 850px) {
         margin-right: 0;
     }
 
-    #top-menu {
+    .top-menu {
         max-width: 49%;
     }
 }
