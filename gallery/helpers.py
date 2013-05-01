@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
+import re
+import os
 
 from django.template.defaultfilters import slugify
 
+import filebrowser.settings as fb_settings
 from PIL import Image
 from PIL.ExifTags import TAGS
 
@@ -29,3 +32,18 @@ def parse_filename(filename):
         ret['date'] = datetime.strptime(filename[0], "%Y%m%d")
         ret['photographer'] = 'KSET'
     return ret
+
+
+def exclude_fb_versions(album_dir):
+    filter_re = [re.compile(exp) for exp in fb_settings.EXCLUDE]
+    for exp in fb_settings.EXCLUDE:
+        filter_re.append(re.compile(exp))
+    for k, v in fb_settings.VERSIONS.iteritems():
+        exp = (r'_%s(%s)') % (k, '|'.join(fb_settings.EXTENSION_LIST))
+        filter_re.append(re.compile(exp))
+
+    images = os.listdir(album_dir)
+    for image in images:
+        # EXCLUDE FILES MATCHING VERSIONS_PREFIX OR ANY OF THE EXCLUDE PATTERNS
+        if not any(prefix.search(image) for prefix in filter_re):
+            yield image

@@ -2,9 +2,9 @@
 {% load fb_versions %}
 
 {%block extrahead %}
-<meta property="og:title" content="{{ album_title }} - {{ date }}" />
-<meta property="og:description" content="Copyright by: {{ photographer }}" />
-<meta property="og:image" content="{% version image.upload_path 'gallerytb' %}" />
+<meta property="og:title" content="{{ album.title }} - {{ album.date_of_event }}" />
+<meta property="og:description" content="Copyright by: {{ album.photographer }}" />
+<meta property="og:image" content="{% version album.thumb 'gallerytb' %}" />
 {% endblock %}
 
 {% block content %}
@@ -13,13 +13,13 @@
     <header>
         <div class="album-title">
           <div class="gumb"><h2><a href="/gallery/{{ category }}"></a></h2></div>
-          <span><h2>{{ album_title }} - {{ date }}</h2></span>
+          <span><h2>{{ album.title }} - {{ album.date_of_event }}</h2></span>
         </div>
 
 
         <div class="album-info">
-            {{ description|safe }}
-          <p class="album-author">Copyright by: {% if photographer.url %}<a href='{{ photographer.url }}'>{{ photographer.name }}</a>{% else %}{{ photographer.name }}{% endif %}</p>
+            {{ album.description|safe }}
+          <p class="album-author">Copyright by: {% if album.photographer.url %}<a href='{{ album.photographer.url }}'>{{ album.photographer.name }}</a>{% else %}{{ album.photographer.name }}{% endif %}</p>
         </div>
     </header>
 
