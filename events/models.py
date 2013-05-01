@@ -1,12 +1,13 @@
 #coding: utf8
 
-from django.db import models
-from filebrowser.fields import FileBrowseField
-from tagging.fields import TagField
-from tagging_autocomplete.models import TagAutocompleteField
-from tinymce.models import HTMLField
-
 from datetime import datetime
+
+from django.db import models
+
+from filebrowser.fields import FileBrowseField
+from tinymce.models import HTMLField
+from tagging_autocomplete.models import TagAutocompleteField
+
 
 class EventManager(models.Manager):
 
@@ -23,19 +24,18 @@ class EventManager(models.Manager):
             return False
 
 
-
 class Event(models.Model):
-    title = models.CharField('naslov', max_length=192)
-    date = models.DateField( 'datum' )
-    time = models.TimeField( 'vrijeme', null=True, blank=True )
-    description = HTMLField( 'opis', blank=True )
-    content = HTMLField( 'sadržaj', blank=True )
-    tags = TagAutocompleteField( blank=True )
-    slug = models.SlugField( blank=True, max_length=128 )
-    announce = models.BooleanField( 'najavi' )
+    title = models.CharField('Naslov', max_length=192)
+    date = models.DateField('Datum')
+    time = models.TimeField('Vrijeme', null=True, blank=True)
+    description = HTMLField('Opis', blank=True)
+    content = HTMLField('Sadržaj', blank=True)
+    tags = TagAutocompleteField(blank=True)
+    slug = models.SlugField(blank=True, max_length=128)
+    announce = models.BooleanField('Najavi')
     daytime = models.BooleanField('Dnevni')
-    price = models.CharField('cijena', max_length=16, null=True, blank=True )
-    thumb = FileBrowseField( 'sličica', max_length=255, null=True, blank=True )
+    price = models.CharField('Cijena', max_length=16, null=True, blank=True)
+    thumb = FileBrowseField('Sličica', max_length=255, null=True, blank=True)
     objects = EventManager()
 
     class Meta:
@@ -51,8 +51,10 @@ class Event(models.Model):
 
     @staticmethod
     def get_frontpage_events():
-        return Event.objects.filter(date__gte=datetime.now()).filter(daytime=False,announce=True).order_by('date')[:3]
+        return Event.objects.filter(date__gte=datetime.now()).filter(
+            daytime=False, announce=True).order_by('date')[:3]
 
     @staticmethod
     def get_frontpage_daytime_events():
-        return Event.objects.filter(date__gte=datetime.now()).filter(announce=True, daytime=True).order_by('date')[:3]
+        return Event.objects.filter(date__gte=datetime.now()).filter(
+            announce=True, daytime=True).order_by('date')[:3]
