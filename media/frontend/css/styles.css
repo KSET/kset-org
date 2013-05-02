@@ -674,6 +674,7 @@ div.clear + div.left-column {
     width: 80px;
     border-radius: 0 15px 15px 15px;
     box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    -webkit-backface-visibility: hidden;
 }
 
 .news-item .thumb:hover {
