@@ -289,6 +289,7 @@ a:hover
 
 .header-scroll .item
 {
+    display: block;
     font-size: 17px;
     color: #ddd;
     padding: 2px 0 2px;
@@ -304,6 +305,7 @@ a:hover
 .header-scroll .item:hover {
     background: #171717;
     border-bottom: 1px solid #803d15;
+    text-decoration: none;
 }
 
 .modern-no-csstransforms #header-scroll .item:hover {
@@ -330,7 +332,7 @@ a:hover
     background: #171717;
 }
 
-.header-scroll .item-top a
+.header-scroll .item-top-title
 {
     color: #ddd;
     text-decoration: none;
@@ -340,7 +342,7 @@ a:hover
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.header-scroll .item-top a:hover
+.header-scroll .item:hover .item-top-title
 {
     color: #fff;
 }
@@ -1720,7 +1722,7 @@ and (max-width : 650px) {
         padding-right: 3em;
     }
 
-    .header-scroll #event-0 a{
+    .header-scroll #event-0 .item-top-title{
         width: 80%;
     }
 
