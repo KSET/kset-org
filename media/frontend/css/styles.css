@@ -1512,6 +1512,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
 .album-description {
 }
 
+.attendances-text {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px dashed #bbb;
+    padding-left: 2em;
+}
+
 /* RESPONSIVE ! */
 
 @media only screen
