@@ -61,7 +61,7 @@
 
 body
 {
-    font-family: 'Open Sans', Verdana,sans-serif,arial;
+    font-family: 'Open Sans', 'Droid Sans', Verdana,sans-serif,arial;
     margin: 0;
     font-size: 11px;
     background: #111 url(../images/bg.png);/*
@@ -448,7 +448,7 @@ a:hover
     display: inline;
 }
 
-.prompt-blink
+.fontface .prompt-blink
 {
     background-color: #fe7929;
 }
@@ -1580,19 +1580,20 @@ and (max-width : 650px) {
         left: auto;
         bottom: auto;
         padding-bottom: 0;
-        z-index:100;
-        background: rgba(25,25,25,1);
+        z-index:90;
+        background: #000;
         border-radius: 0 0 15px 0;
         border: 1px solid #111;
         overflow: visible;
     }
 
-    .top-menu.open-menu {
+    .open-menu {
         right: 70px;
         width: auto;
         left: 0;
-        max-width: none;
-        padding-top: 88px;
+        max-width: 100%;
+        padding-top: 72px;
+        background: #191919;
     }
 
     .top-menu:before {
@@ -1602,7 +1603,7 @@ and (max-width : 650px) {
         position: absolute;
         width: 30px;
         right: -70px;
-        padding: 18px 19px;
+        padding: 0.30em 19px;
         top: 0;
         z-index:100;
         font-size: 210%;
@@ -1610,24 +1611,55 @@ and (max-width : 650px) {
         text-align: right;
     }
 
-    .top-menu.open-menu:before {
+    .no-touch .top-menu:before {
+        content: 'MENI';
+        font-family: 'Open Sans', 'Droid Sans', sans-serif;
+        right: 10px;
+        top: -2px;
+    }
+
+    .no-touch .open-menu:before {
+        content: '-';
+        right: 15px;
+    }
+
+    .open-menu:before {
         color: #fff;
     }
 
     .top-menu-prompt {
         position: absolute;
         right: -5px;
-        top: 22px;
+        top: 12px;
         font-size: 28px;
     }
 
     .top-menu.open-menu #top-menu-prompt {
-        display: none;
+        visibility: hidden;
     }
 
-    .top-menu-prompt.prompt-blink {
+    .fontface .top-menu-prompt.prompt-blink {
         background: none;
         color: black;
+    }
+
+    .no-touch .top-menu {
+        width: 70px;
+        height: 60px;
+        right: 10px;
+        top: -5px;
+    }
+
+    .no-touch .open-menu {
+        width: auto;
+        height: auto;
+    }
+
+    .no-touch .top-menu-prompt {
+        font-size: 58px;
+        right: 100%;
+        top: 9px;
+        z-index: 200;
     }
 
 
@@ -1656,6 +1688,8 @@ and (max-width : 650px) {
     .logo {
         margin:5px 10px 8px;
         z-index: 200;
+        max-height: 60px;
+        width: auto;
     }
 
     .header-scroll {
