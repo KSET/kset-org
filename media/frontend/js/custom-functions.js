@@ -12,11 +12,25 @@ $( function()
     // load calendar
     loadCalendar();
 
+    // opera mini detection
+    var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1)
+
+    // user modernizr to check if device supports touch and is small (mobile)
+    // adjust event names accordingly
+    var touchend = 'touchend';
+    var touchstart = 'touchstart';
+    if ((!Modernizr.touch) && Modernizr.mq('(max-width: 650px)')) {
+        touchend = (touchstart = 'click');
+    }
+
     // top menu open on click - mobile
-    $('#top-menu').bind('touchend', function() { $(this).toggleClass('open-menu'); });
+    $('#top-menu').on(touchend, function(e) {
+        e.preventDefault();
+        $('#top-menu').toggleClass('open-menu');
+    });
 
     // header scroll expand on click - mobile
-    $('#header-scroll-control').bind('touchstart', function(e) {
+    $('#header-scroll-control').bind(touchstart, function(e) {
         e.preventDefault();
         var open = $('#header-scroll').toggleClass('scroll-expanded').hasClass('scroll-expanded');
         if (open) {
@@ -25,15 +39,17 @@ $( function()
             $(this).html('+');
         }
     });
-    $('#top-menu a').bind('touchend',function(event){
+    $('#top-menu a').bind(touchend, function(event){
         event.stopPropagation();
     });
 
     var $topMenuPrompt = $('#top-menu-prompt');
     // top menu prompt blink
-    window.setInterval(function(){
-        $topMenuPrompt.toggleClass('prompt-blink');
-    }, 500);
+    if (!isOperaMini) {
+        setInterval(function(){
+            $topMenuPrompt.toggleClass('prompt-blink');
+        }, 500);
+    }
 
     events_count = $('#header-scroll .item').length;
     scrollViewport = jQuery('#header-scroll-viewport');
@@ -129,7 +145,7 @@ function header_scroll_down()
         if (Modernizr.csstransforms) {
             scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
             scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
-        } else { 
+        } else {
             scrollViewport.css({ 'top': viewportTop });
             scrollBar.css({ 'top': scrollbarTop*100 + '%' });
         }
@@ -145,7 +161,7 @@ function header_scroll_up()
         if (Modernizr.csstransforms) {
             scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
             scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
-        } else { 
+        } else {
             scrollViewport.css({ 'top': viewportTop });
             scrollBar.css({ 'top': scrollbarTop*100 + '%' });
         }
