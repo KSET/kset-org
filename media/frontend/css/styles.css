@@ -308,11 +308,11 @@ a:hover
     text-decoration: none;
 }
 
-.modern-no-csstransforms #header-scroll .item:hover {
+.no-csstransforms #header-scroll .item:hover {
     margin-left: 50px;
 }
 
-.modern-csstransforms #header-scroll .item:hover {
+#header-scroll .item:hover {
     -webkit-transform: translate3d(50px, 0, 0);
     -moz-transform: translate3d(50px, 0, 0);
     -ms-transform: translate3d(50px, 0, 0);
