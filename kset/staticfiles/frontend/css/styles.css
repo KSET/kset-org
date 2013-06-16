@@ -381,6 +381,27 @@ a:hover
     transform: translate3d(50px, 0, 0);
 }
 
+.scroll-today {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    top: -28px;
+    margin-left: -5px;
+    background-color: #F16F18;
+    color: #000;
+    font-size: 12px;
+    padding: 0 3px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.7);
+    -webkit-border-radius: 1px;
+            border-radius: 1px;
+    -webkit-transform: translate( 3px, 42px) rotate(-25deg);
+       -moz-transform: translate( 3px, 42px) rotate(-25deg);
+        -ms-transform: translate( 3px, 42px) rotate(-25deg);
+         -o-transform: translate( 3px, 42px) rotate(-25deg);
+            transform: translate( 3px, 42px) rotate(-25deg);
+}
+
 .scroll-thumb {
     position: absolute;
     top: 0 ;
@@ -1138,6 +1159,39 @@ OLD STUFF
 }
 
 /* CALENDAR */
+
+.calendar-box {
+    position: relative;
+}
+
+.calendar-tooltip {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #111;
+    background: rgba(0,0,0,0.9);
+    border-left: 2px solid #E48145;
+    padding: 5px 7px;
+    color: #fff;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.calendar-tooltip:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: -5px;
+    margin-left: -2px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgba(0,0,0,0.9);
+}
 
 .calendar
 {

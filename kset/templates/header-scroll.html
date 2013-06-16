@@ -14,7 +14,7 @@
       {% endif %}
 
       <div class="item-top">
-        <span class="date">{{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small></span>
+        <span class="date">{% if today_active and forloop.first %}<span class="scroll-today">Danas</span>{% endif %}{{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small></span>
         <span class="item-top-title">{{ event.title }}</span>
       </div>
 
