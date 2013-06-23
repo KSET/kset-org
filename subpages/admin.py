@@ -1,6 +1,7 @@
 from django.contrib import admin
 from subpages.models import Subpage, Category
 
+
 class SubpageAdmin(admin.ModelAdmin):
     fields = ('title', 'slug', 'category', 'thumb', 'description', 'content')
     list_display = ('title', 'slug', 'category', 'last_edit')
@@ -11,7 +12,8 @@ class SubpageAdmin(admin.ModelAdmin):
     class Media:
         js = (
             '/media/static/tiny_mce/tiny_mce.js',
-            )        
+        )
+
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
