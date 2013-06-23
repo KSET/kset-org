@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from kset.savjet.models import Post
 
 urlpatterns = patterns('django.views.generic.date_based',

@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from feed import RssProgramFeed, AtomProgramFeed
 
 from django.contrib import admin
