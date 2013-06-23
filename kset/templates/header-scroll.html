@@ -17,7 +17,7 @@
       <div class="item-top">
 
         <span class="date">{{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small></span>
-        <a href="{% url event-slug event.slug %}" title="{{ event.title }}">
+        <a href="{% url 'event-slug' event.slug %}" title="{{ event.title }}">
             {{ event.title }}
         </a>
       </div>

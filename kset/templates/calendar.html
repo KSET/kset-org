@@ -12,6 +12,6 @@
 
 {% for day, class in dates %}
 
-<a href="{% url events-date day|date:"Y-m-d" %}" class="date-{{ day|date:"Y-m-d" }} {{ class }}">{{ day|date:"j" }}</a>
+<a href="{% url 'events-date' day|date:"Y-m-d" %}" class="date-{{ day|date:"Y-m-d" }} {{ class }}">{{ day|date:"j" }}</a>
 
 {% endfor %}
