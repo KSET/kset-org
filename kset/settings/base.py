@@ -116,7 +116,6 @@ INSTALLED_APPS = (
     'members',
     'newsletter',
     'savjet',
-    'zivpdf',
     'gallery',
 
 )

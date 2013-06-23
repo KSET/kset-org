@@ -20,11 +20,6 @@ urlpatterns = patterns('',
     url(r'^arhiva/vijesti/', 'news.views.archive', name='news-archive'),
     url(r'^vijest/(?P<slug>[-a-zA-Z0-9]+)/$', 'news.views.by_slug', name='news-slug'),
 
-    ## jobfair print cvs to pdf
-    #url(r'^jobfair/$', 'zivpdf.views.get_cvs', name='jobfair-cvs'),
-
-
-
     # events
     url(r'^arhiva/dogadaji/(?P<year>\d{4})/', 'events.views.archive', name='events-archive-year'),
     url(r'^arhiva/dogadaji/', 'events.views.archive', name='events-archive'),
@@ -37,7 +32,7 @@ urlpatterns = patterns('',
 
     # newsletter
     url(r'^newsletter/$', 'events.views.newsletter', name='newsletter'),
-    url(r'^subscribe/$', 'newsletter.views.subscribe',name='subscribe'),
+    url(r'^subscribe/$', 'newsletter.views.subscribe', name='subscribe'),
     #url(r'^unsubscribe/$', 'newsletter.views.unsubscribe',name='unsubscribe'),
     #url(r'^listsubscriptions/$','newsletter.views.list_subscriptions',name='listsubscriptions'),
 
@@ -50,7 +45,7 @@ urlpatterns = patterns('',
     #url(r'^klub/clanovi/$', 'members.views.list', name='members'),
 
     url(r'^klub/sekcije/(?P<slug>[-a-zA-Z0-9]+)/$', 'subpages.views.by_slug', name='subpage-slug'),
-    url(r'^klub/alumni/$', 'subpages.views.by_slug', {'slug': 'alumni',}, name='alumni'),
+    url(r'^klub/alumni/$', 'subpages.views.by_slug', {'slug': 'alumni'}, name='alumni'),
     url(r'^klub/$', 'subpages.views.by_slug', name='club'),
 
 
@@ -65,8 +60,8 @@ urlpatterns = patterns('',
     url(r'^gallery/foto/(?P<album_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_album'),
     url(r'^gallery/(?P<category>live)/albumi/(?P<year>\d{4})/$', 'gallery.views.list_albums'),
     url(r'^gallery/(?P<category>foto)/albumi/(?P<year>\d{4})/$', 'gallery.views.list_albums'),
-    url(r'^gallery/live/[-_a-zA-Z0-9]+/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image' ),
-    url(r'^gallery/foto/[-_a-zA-Z0-9]+/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image' ),
+    url(r'^gallery/live/[-_a-zA-Z0-9]+/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image'),
+    url(r'^gallery/foto/[-_a-zA-Z0-9]+/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image'),
 
 
     #### dezurstva
