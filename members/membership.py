@@ -1,9 +1,12 @@
 #coding: utf-8
 
 import sys
+import os
 from datetime import date
 from decimal import *
 from copy import copy
+
+from django.conf import settings
 
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
@@ -15,20 +18,20 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
 
-pdfmetrics.registerFont(TTFont('Arial', '/usr/share/fonts/truetype/msttcorefonts/arial.ttf'))
+pdfmetrics.registerFont(TTFont('Arial', os.path.join(settings.MEDIA_ROOT, 'frontend', 'fonts', 'Arial.ttf')))
 
 
 class InvoiceTemplate():
-    """Invoice document class. 
-       
+    """Invoice document class.
+
        Defines seller, buyer, info (no, date, etc) and items.
     """
 
     # public members
-    
+
     seller = {'name':        'Savez studenata Fakulteta elektrotehnike i računarstva',
               'address':     'Unska 3, 10000 Zagreb',
-              'phone':       '01/6129-758', 
+              'phone':       '01/6129-758',
               'email':       'info@kset.org',
               'taxnum':      '14504100762',
               'bankaccount': '2402006-1100582760'}
@@ -38,7 +41,7 @@ class InvoiceTemplate():
              'taxnum':  ''}
 
     info = {'num':         'YYYY-RB',
-            'date':        date.today().strftime('%d.%m.%Y.'),            
+            'date':        date.today().strftime('%d.%m.%Y.'),
             'items':       [],
             'taxnote':     'Porez na dodanu vrijednost nije zaračunat na temelju čl. 22. Zakona o PDV-u.'}
 
@@ -56,14 +59,14 @@ class InvoiceTemplate():
 
 
     __pSignature = "Odgovorna osoba &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br /><br /><br /><br />MP &nbsp;&nbsp; ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp;"
-                
+
     __margins = {'top': 1.5*cm,
                  'right': 1.5*cm,
                  'bottom': 1.5*cm,
                  'left': 1.5*cm}
 
 
-    __tStyle = [('FONT',(0,0),(-1,-1),'Arial'), 
+    __tStyle = [('FONT',(0,0),(-1,-1),'Arial'),
                 ('LINEABOVE', (0,1), (-1, 1), 1, colors.black),
                 ('LINEABOVE', (0,-1), (-1, -1), 1, colors.black),
                 ('LINEABOVE', (0,2), (-1, -2), 0.25, colors.black),
@@ -79,27 +82,27 @@ class InvoiceTemplate():
 
         # creat document from template
         self.doc = SimpleDocTemplate(filename, pagesize=A4, topMargin=1.0*cm, rightMargin=1.0*cm, bottomMargin=1.0*cm, leftMargin=1.0*cm, title='', author='' )
-        
-    
+
+
     def __set_styles(self):
         """Prepares document styles."""
 
         #self.__styles = getSampleStyleSheet()
-        
+
         #self.__styles['Normal'].fontName = 'Arial'
         #self.__styles['Normal'].fontSize = 10
         #self.__styles['Normal'].leading = 14
 
         self.__styles = {}
         self.__styles['Normal'] = ParagraphStyle('Normal')
-        self.__styles['Normal'].fontName = 'Arial'        
+        self.__styles['Normal'].fontName = 'Arial'
 
         self.__styles['NormalCenter'] = copy(self.__styles['Normal'])
         self.__styles['NormalCenter'].alignment = 1
 
         self.__styles['NormalRight'] = copy(self.__styles['Normal'])
         self.__styles['NormalRight'].alignment = 2
-        
+
 
     def hr(self):
         """Inserts horizontal rule into document flow."""
@@ -125,9 +128,9 @@ class InvoiceTemplate():
              - footer:  none
 
         """
-        
+
         # header
-        self.__flow.append(Paragraph(self.__pSeller.format(name=self.seller['name'], 
+        self.__flow.append(Paragraph(self.__pSeller.format(name=self.seller['name'],
                                                            address=self.seller['address'],
                                                            phone=self.seller['phone'],
                                                            email=self.seller['email'],
@@ -136,7 +139,7 @@ class InvoiceTemplate():
 
         self.__flow.append(Spacer(1,1*cm))
 
-        self.__flow.append(Paragraph(self.__pBuyer.format(name=self.buyer['name'], 
+        self.__flow.append(Paragraph(self.__pBuyer.format(name=self.buyer['name'],
                                                           address=self.buyer['address'],
                                                           taxnum=self.buyer['taxnum']), self.__styles['NormalRight']))
 
@@ -147,7 +150,7 @@ class InvoiceTemplate():
         self.__flow.append(Paragraph(self.__pInfo.format(num=self.info['num'], date=self.info['date']), self.__styles['NormalCenter']))
         self.__flow.append(Spacer(1,3*cm))
 
-        
+
         # items
         data = [['', 'Stavka', 'Iznos']]
 
@@ -157,7 +160,7 @@ class InvoiceTemplate():
             n += 1
             summarum += item[1]
             data.append([str(n), item[0], '%.2f kn' % item[1]])
-        
+
         data.append(['Ukupno:', '', '%.2f kn' % summarum])
 
         self.__flow.append(Table(data, colWidths=(1*cm, 14*cm, 3*cm), style=TableStyle(self.__tStyle)))
@@ -176,7 +179,7 @@ class InvoiceTemplate():
         self.doc.build(self.__flow)
 
 
-        
+
 if __name__ == '__main__':
     bill = InvoiceTemplate()
 
@@ -194,7 +197,7 @@ if __name__ == '__main__':
     ###
 
     bill.buyer['name'] = "Veljko Dragšić 2"
-    
+
     bill.info['num'] = "2010-2"
     bill.info['date'] = "25.04.2011."
     bill.info['items'].append(['Članarina za SSFER', 100.0])
@@ -209,7 +212,7 @@ if __name__ == '__main__':
     ###
 
     bill.buyer['name'] = "Veljko Dragšić 3"
-    
+
     bill.info['num'] = "2010-3"
     bill.info['date'] = "25.04.2011."
     bill.info['items'].append(['Članarina za SSFER', 100.0])
@@ -219,5 +222,5 @@ if __name__ == '__main__':
 
     ###
 
-    
+
     bill.create()
