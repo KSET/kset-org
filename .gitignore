@@ -1,4 +1,3 @@
-kset.wsgi
 /__tmp
 *.pyc
 local_settings.py
@@ -7,3 +6,5 @@ settings/production.*
 baza.db
 media/*
 media/uploads
+dev.db
+requirements/local.txt
