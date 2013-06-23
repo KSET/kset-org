@@ -2,6 +2,7 @@ import calendar as cal
 from datetime import date, datetime, timedelta
 
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 from django.db import connection
 
 from .models import Event
@@ -50,6 +51,7 @@ def newsletter(request):
         {'from_date': from_date, 'till_date': till_date, 'events': events})
 
 
+@csrf_exempt
 def calendar(request):
     """
     Renders calendar for events (dates & styles).
