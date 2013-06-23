@@ -1,6 +1,7 @@
 from django.contrib import admin
 from savjet.models import *
 
+
 class ZapisnikAdmin(admin.ModelAdmin):
     list_display = ('title', 'date', 'author',)
     search_fields = ('title', 'content', )
@@ -11,6 +12,7 @@ class ZapisnikAdmin(admin.ModelAdmin):
         js = (
             '/media/static/tiny_mce/tiny_mce.js',
         )
+
 
 class DezurstvaAdmin(admin.ModelAdmin):
     list_display = ('start', 'end', 'content',)
