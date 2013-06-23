@@ -1,7 +1,13 @@
 # Django settings for kset project.
-from os.path import abspath, join, dirname
+from django.conf import global_settings
+import os
 
-PROJECT_DIR = abspath(join(dirname(__file__), '..'))
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+PROJECT_NAME = os.path.basename(ROOT_DIR)
+
+
+def ABS_PATH(*args):
+    return os.path.join(ROOT_DIR, *args)
 
 ADMINS = (
     ('Veljko Dragsic', 'veljko@kset.org'),
@@ -18,9 +24,8 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 
-ROOT_URLCONF = 'kset.urls'
-
 ANONYMOUS_USER_ID = -1
+USE_TZ = True
 
 PREPEND_WWW = True
 
@@ -39,14 +44,19 @@ STATICFILES_FINDERS = (
 )
 
 
-STATIC_ROOT = join(PROJECT_DIR, 'media', 'static')
+STATIC_ROOT = ABS_PATH('media', 'static')
 STATIC_URL = '/media/static/'
 
-MEDIA_ROOT = join(PROJECT_DIR, 'media/')
+
+MEDIA_ROOT = ABS_PATH('media')
+
+MEDIA_URL = '/media/'
+
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
+
 TEMPLATE_DIRS = (
-    join(PROJECT_DIR, 'templates'),
-    join(PROJECT_DIR, 'templates', 'members_templates'),
+    ABS_PATH('templates'),
+    ABS_PATH('templates', 'members_templates'),
 )
 
 TEMPLATE_LOADERS = (
@@ -57,21 +67,33 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = PROJECT_NAME + '.urls'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.request',
-    'django.core.context_processors.i18n',
-    'django.contrib.messages.context_processors.messages',
-    'ctx.header',
-)
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS +\
+    ('django.core.context_processors.request',
+     'ctx.header')
+
+
+def ensure_secret_key_file():
+    """Checks that secret.py exists in settings dir. If not, creates one
+    with a random generated SECRET_KEY setting."""
+    secret_path = os.path.join(ABS_PATH('settings'), 'secret.py')
+    if not os.path.exists(secret_path):
+        from django.utils.crypto import get_random_string
+        secret_key = get_random_string(50,
+            'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)')
+        with open(secret_path, 'w') as f:
+            f.write("SECRET_KEY = " + repr(secret_key) + "\n")
+
+# Import the secret key
+ensure_secret_key_file()
+from secret import SECRET_KEY
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -81,9 +103,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
-    'tagging',
     'tinymce',
-    'tagging_autocomplete',
     'grappelli.dashboard',
     'grappelli',
     'filebrowser',
@@ -105,7 +125,7 @@ GRAPPELLI_ADMIN_TITLE = 'kset.org'
 GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 
 FILEBROWSER_URL_TINYMCE = '/media/static/tiny_mce/'
-FILEBROWSER_PATH_TINYMCE = join(PROJECT_DIR, 'media/static/tiny_mce/')
+FILEBROWSER_PATH_TINYMCE = ABS_PATH('media', 'static', 'tiny_mce')
 FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
 
 FILEBROWSER_EXTENSIONS = {
@@ -165,17 +185,18 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
-LOGGING = {
+BASE_LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
+            'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
@@ -187,3 +208,5 @@ LOGGING = {
         },
     }
 }
+
+LOGGING = BASE_LOGGING
