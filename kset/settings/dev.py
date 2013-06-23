@@ -4,6 +4,8 @@ from .base import *
 
 DEBUG = TEMPLATE_DEBUG = True
 
+PREPEND_WWW = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
