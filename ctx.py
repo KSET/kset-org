@@ -1,22 +1,22 @@
+from datetime import datetime
 import os
 import random
-import settings
 
-from datetime import datetime
+from django.conf import settings
 
 from events.models import Event
 from subpages.models import Subpage
+
 
 def header(request):
 
     ctx = {}
 
     try:
-      files = os.listdir(settings.MEDIA_ROOT + "frontend/images/headers/")
-      ctx['header_bg'] = random.choice(files)
-    except:
-      pass
-
+        files = os.listdir(os.path.join(settings.MEDIA_ROOT, 'frontend', 'images', 'headers'))
+        ctx['header_bg'] = random.choice(files)
+    except Exception as e:
+        pass
 
     ctx['header_events'] = Event.objects.filter(date__gte=datetime.now()).order_by('date')
 
@@ -26,5 +26,3 @@ def header(request):
         ctx['projects'] = Subpage.objects.filter(category__slug='projekti').order_by('title')
 
     return ctx
-
-
