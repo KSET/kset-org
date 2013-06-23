@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Subpage
 
 
 def by_slug(request, slug='klub'):
 
+    subpage = get_object_or_404(Subpage, slug=slug)
+
     return render(request, 'club.html', {
-        'subpage': Subpage.objects.get(slug=slug),
+        'subpage': subpage,
     })
 
 
