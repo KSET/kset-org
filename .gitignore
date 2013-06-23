@@ -3,6 +3,7 @@
 local_settings.py
 templates/zivpdf.bak
 kset/settings/production.*
+kset/settings/local.*
 baza.db
 kset/media/*
 kset/media/uploads
