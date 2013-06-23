@@ -3,7 +3,6 @@ from datetime import date, datetime, timedelta
 
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from django.db import connection
 
 from .models import Event
 
@@ -20,9 +19,7 @@ def by_date(request, date):
 
 def archive(request, year=datetime.today().year):
     # get distinct years
-    cursor = connection.cursor()
-    cursor.execute("SELECT DISTINCT to_char(date, 'YYYY') AS year FROM events_event ORDER BY year DESC;")
-    years = cursor.fetchall()
+    years = Event.objects.dates('date', 'year', order='DESC')
 
     events = Event.objects.filter(date__year=year).order_by('-date')
 

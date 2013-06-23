@@ -6,7 +6,7 @@
 
   <h3>Odaberi godinu ...</h3>
   {% for year in years %}
-    <a href="{% url 'events-archive-year' year.0 %}">{{ year.0 }}</a>{% if not forloop.last %}, {% endif %}
+    <a href="{% url 'events-archive-year' year.year %}">{{ year.year }}</a>{% if not forloop.last %}, {% endif %}
   {% endfor %}
 
 </nav>
