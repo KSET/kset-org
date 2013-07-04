@@ -3,7 +3,7 @@
 <section id="header-scroll" class="header-scroll">
   <a id="header-scroll-control" class="header-scroll-control">+</a>
   <div id="header-scrollbar" class="header-scrollbar"></div>
-  <div id="header-scroll-viewport" class="header-scroll-viewport">
+  <div id="header-scroll-viewport" class="header-scroll-viewport {% if not header_events %} header-scroll-viewport-empty {% endif %}">
 
     {% for event in header_events %}
     <a class="item" id="event-{{ forloop.counter0 }}" href="{% url event-slug event.slug %}" title="{{ event.title }}">
