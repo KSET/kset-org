@@ -109,6 +109,8 @@ INSTALLED_APPS = (
     'filebrowser',
     'django.contrib.admin',
 
+    'south',
+
     'events',
     'news',
     'subpages',
