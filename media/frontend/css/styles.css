@@ -287,6 +287,18 @@ a:hover
     transition: all 0.2s ease-out;
 }
 
+
+.header-scroll-viewport-empty:before {
+    position: absolute;
+    content: '☹';
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #111;
+    font-size: 200px;
+}
+
 .header-scroll .item
 {
     display: block;
@@ -1698,9 +1710,17 @@ and (max-width : 650px) {
         width: auto;
         clear: both;
         max-width: 100%;
+        min-height: 45px;
         border-top: 1px solid #333;
         padding: 5px 0 10px;
         background: #191919;
+    }
+
+    .header-scroll-viewport-empty:before {
+        content: ':(';  /* mobile unicode is bad */
+        font-size: 20px;
+        color: #999;
+        font-weight: bold;
     }
 
     .header-scroll-control {
