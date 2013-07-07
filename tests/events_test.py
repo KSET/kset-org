@@ -17,5 +17,4 @@ class EventsViewTest(TestCase):
         #     password='foobar')
 
         response = self.client.get('events-archive')
-        print response
         self.assertEquals(200, response.status_code)
