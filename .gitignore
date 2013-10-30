@@ -2,10 +2,11 @@
 *.pyc
 local_settings.py
 templates/zivpdf.bak
-kset/settings/production.*
-kset/settings/local.*
+/kset/settings/production.*
+/kset/settings/local.*
+/kset/settings/secret.*
 baza.db
-kset/media/*
-kset/media/uploads
+/kset/media/*
+/kset/media/uploads
 dev.db
-requirements/local.txt
+/requirements/local.txt
