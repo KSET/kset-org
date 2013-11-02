@@ -6,7 +6,7 @@
   <div id="header-scroll-viewport" class="header-scroll-viewport {% if not header_events %} header-scroll-viewport-empty {% endif %}">
 
     {% for event in header_events %}
-    <a class="item" id="event-{{ forloop.counter0 }}" href="{% url event-slug event.slug %}" title="{{ event.title }}">
+    <a class="item" id="event-{{ forloop.counter0 }}" href="{% url 'event-slug' event.slug %}" title="{{ event.title }}">
 
       {% if event.thumb %}
         <img src="{% version event.thumb 'fb_thumb' %}" class="scroll-thumb" />
