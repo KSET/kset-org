@@ -31,9 +31,7 @@ PREPEND_WWW = True
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    ABS_PATH('staticfiles'),
 )
 
 # List of finder classes that know how to find static files in
@@ -44,8 +42,8 @@ STATICFILES_FINDERS = (
 )
 
 
-STATIC_ROOT = ABS_PATH('media', 'static')
-STATIC_URL = '/media/static/'
+STATIC_ROOT = ABS_PATH('static')
+STATIC_URL = '/static/'
 
 
 MEDIA_ROOT = ABS_PATH('media')
@@ -185,13 +183,15 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_buttons3': "",
 }
 
-
 BASE_LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
         }
     },
     'handlers': {
@@ -199,6 +199,11 @@ BASE_LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler'
         }
     },
     'loggers': {
