@@ -123,7 +123,7 @@ INSTALLED_APPS = (
 GRAPPELLI_ADMIN_TITLE = 'kset.org'
 GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 
-FILEBROWSER_URL_TINYMCE = '/media/static/tiny_mce/'
+FILEBROWSER_URL_TINYMCE = '/static/tiny_mce/'
 FILEBROWSER_PATH_TINYMCE = ABS_PATH('media', 'static', 'tiny_mce')
 FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
 
@@ -167,9 +167,6 @@ FILEBROWSER_ADMIN_VERSIONS = ['thumbnail', 'small', 'medium', 'semibig', 'big', 
 FILEBROWSER_ADMIN_THUMBNAIL = 'fb_thumb'
 
 FILEBROWSER_DEFAULT_SORTING_BY = 'filename_lower'
-
-
-TAGGING_AUTOCOMPLETE_JS_BASE_URL = '/media/js/jquery-autocomplete'
 
 
 # tinymce settings, add/remove buttons and so on
