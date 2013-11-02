@@ -104,23 +104,6 @@ def edit(request):
     })
 
 
-@require_auth
-def submit(request):
-    member = get_current_user(request)
-    addresses = Address.objects.filter(member=member.id)
-    contacts = Contact.objects.filter(member=member.id)
-    groups = MemberGroupLink.objects.filter(member=member.id)
-    contactTypes = ContactType.objects.all()
-
-    return render(request, 'edit-profile.html', {
-        'member': member,
-        'addresses': addresses,
-        'contacts': contacts,
-        'groups': groups,
-        'contactTypes': contactTypes
-    })
-
-
 def red(request):
     """Print out in html red members addresses."""
 
