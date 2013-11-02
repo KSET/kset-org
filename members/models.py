@@ -61,7 +61,10 @@ class Member(models.Model):
         """Returns division name. --> Hardcoded group ID!"""
 
         try:
-            return MemberGroupLink.objects.filter(member=self.id).filter(group__parent=1).values('group__name')[0]["group__name"]
+            return MemberGroupLink.objects.filter(
+                member=self.id).filter(
+                group__parent=1).values(
+                'group__name')[0]["group__name"]
         except:
             return u'---'
 
@@ -69,7 +72,10 @@ class Member(models.Model):
         """Returns card. --> Hardcoded group ID!"""
 
         try:
-            return MemberGroupLink.objects.filter(member=self.id).filter(group__parent=2).values('group__name')[0]["group__name"]
+            return MemberGroupLink.objects.filter(
+                member=self.id).filter(
+                group__parent=2).values(
+                'group__name')[0]["group__name"]
         except:
             return u'---'
 
@@ -121,9 +127,12 @@ class Contact(models.Model):
 class Address(models.Model):
     member = models.ForeignKey(Member, verbose_name="član")
     address = models.CharField("adresa", max_length=64)
-    town = models.CharField("grad", default="Zagreb", max_length=32, null=True, blank=True)
-    zipcode = models.CharField("poštanski broj", default="10000", max_length=16, null=True, blank=True)
-    country = models.CharField("država", default="Hrvatska", max_length=32, null=True, blank=True)
+    town = models.CharField("grad", default="Zagreb",
+        max_length=32, null=True, blank=True)
+    zipcode = models.CharField("poštanski broj",
+        default="10000", max_length=16, null=True, blank=True)
+    country = models.CharField("država", default="Hrvatska",
+        max_length=32, null=True, blank=True)
 
     class Meta:
         verbose_name = "adresa"

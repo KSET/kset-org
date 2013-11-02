@@ -10,7 +10,9 @@ def show_gallery(request):
 
 
 def list_albums(request, category, year=datetime.today().year):
-    years = Album.objects.filter(category=category.upper()).dates('date_of_event', 'year', order='DESC')
+    years = Album.objects.filter(
+        category=category.upper()).dates(
+        'date_of_event', 'year', order='DESC')
     albums = Album.objects.filter(category=category.upper(),
         date_of_event__year=year).order_by('-date_of_event')
 

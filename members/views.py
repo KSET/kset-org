@@ -124,7 +124,9 @@ def submit(request):
 def red(request):
     """Print out in html red members addresses."""
 
-    members = Member.objects.filter(groups__id=16).exclude(death__isnull=False).order_by('surname', 'name')
+    members = Member.objects.filter(
+        groups__id=16).exclude(
+        death__isnull=False).order_by('surname', 'name')
 
     for member in members:
         member.addresses = Address.objects.filter(member=member.id)
@@ -137,7 +139,9 @@ def red(request):
 def red_list(request):
     """Print out in html red members addresses."""
 
-    members = Member.objects.filter(groups__id=16).exclude(death__isnull=False).order_by('surname', 'name')
+    members = Member.objects.filter(
+        groups__id=16).exclude(
+        death__isnull=False).order_by('surname', 'name')
 
     return render(request, 'members-red-list.html', {
         'members': members,

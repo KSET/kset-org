@@ -82,7 +82,8 @@ class MemberContact(admin.TabularInline):
 class MemberAdmin(admin.ModelAdmin):
     fieldsets = [
         ("Korisnički račun", {'fields': ['username', 'resetpw', 'resetpw2']}),
-        ("Osobni podaci", {'fields': ['name', 'surname', 'nickname', 'birth', 'death', 'image', 'comment']}),
+        ("Osobni podaci", {'fields': ['name', 'surname', 'nickname', 'birth',
+                                        'death', 'image', 'comment']}),
     ]
     list_display = ('name', 'surname', 'nickname', 'division', 'card', )
     ordering = ('surname', 'name')
@@ -95,13 +96,15 @@ class MemberAdmin(admin.ModelAdmin):
     form = MemberForm
 
     class Media:
-        js = ('admin/tinymce/jscripts/tiny_mce/tiny_mce.js', 'admin/tinymce_setup/tinymce_description.js',)
+        js = ('admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
+            'admin/tinymce_setup/tinymce_description.js',)
 
     def save_model(self, request, obj, form, change):
 
         if (len(form['resetpw'].data) == 0):
             if (change):
-                obj.password = Member.objects.get(username=request.POST["username"]).password
+                obj.password = Member.objects.get(
+                    username=request.POST["username"]).password
             else:
                 obj.password = "!"
         else:

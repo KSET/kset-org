@@ -92,7 +92,6 @@ def calendar(request):
         'current_date': current_date, 'next_date': next_date})
 
 
-# veljko @ 2009-11-24 - samo za Jagya ;-)
 def events_rdf(request):
     """ Returns Rss1.0 (rdf). """
 
