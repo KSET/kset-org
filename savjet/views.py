@@ -1,5 +1,6 @@
-from savjet.models import Dezurstva
 from django.shortcuts import render
+
+from .models import Dezurstva
 
 
 def list_attendance(request):

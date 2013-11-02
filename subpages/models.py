@@ -5,6 +5,8 @@ from django.db import models
 from filebrowser.fields import FileBrowseField
 from tinymce.models import HTMLField
 
+__all__ = ['Category', 'Subpage']
+
 
 class Category(models.Model):
     name = models.CharField('naziv', max_length=128)

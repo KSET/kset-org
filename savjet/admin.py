@@ -1,5 +1,7 @@
 from django.contrib import admin
-from savjet.models import *
+
+
+from .models import *
 
 
 class ZapisnikAdmin(admin.ModelAdmin):

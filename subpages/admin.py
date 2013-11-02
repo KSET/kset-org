@@ -1,5 +1,6 @@
 from django.contrib import admin
-from subpages.models import Subpage, Category
+
+from .models import Subpage, Category
 
 
 class SubpageAdmin(admin.ModelAdmin):

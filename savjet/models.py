@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 
 
+__all__ = ['Zapisnik', 'Dezurstva']
+
+
 class Zapisnik(models.Model):
     author = models.ForeignKey(User)
     date = models.DateTimeField()
