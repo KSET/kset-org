@@ -77,9 +77,9 @@ def main(request):
 
 
 @require_auth
-def member(request, memberId):
+def member(request, id):
     try:
-        member = Member.objects.get(id=memberId)
+        member = Member.objects.get(id=id)
     except:
         raise Http404
     return display_member(request, 'main.html', member)

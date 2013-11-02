@@ -9,10 +9,10 @@
 <div id="members-main">
 
 	{% block main %}
-		
+
 		<div class="members-leftContent" style="width:75%; float: left;">
 		{% block leftContent %}
-		
+
 			<div class="top">
 				<div class="image">
 					{{member.image}}
@@ -24,20 +24,20 @@
 				</div>
 				<div style="clear: both"></div>
 			</div>
-			
+
 			<div class="bottom">
 				<div class="birth-date bottom-item">
 					<div class="entry-title">Datum rođenja:</div>
 					<div class="value">{{member.birth|date:"d.m.Y"|default:"nepoznato"}}</div>
 				</div>
-				
+
                                 <div class="death-date bottom-item">
                                         {% if member.death %}
 					<div class="entry-title">Datum smrti:</div>
                                         <div class="value">{{member.death|date:"d.m.Y"|default:"It is aliveee!"}}</div>
                                         {% endif %}
 				</div>
-				
+
 				<div class="addresses bottom-item">
 					<div class="entry-title">
 						Adrese
@@ -57,7 +57,7 @@
 						{% endfor %}
 					</table>
 				</div>
-				
+
 				<div class="contacts bottom-item">
 					<div class="entry-title">
 						Kontakti
@@ -75,7 +75,7 @@
 						{% endfor %}
 					</table>
 				</div>
-				
+
 				<div class="groups bottom-item">
 					<div class="entry-title">
 						Članstva
@@ -96,18 +96,18 @@
 						{% endfor %}
 					</table>
 				</div>
-				
+
 				<div class="comment bottom-item">
 					<div class="entry-title">Komentar:</div>
 					<div class="value">{{member.comment|default:"nema"|safe}}</div>
 				</div>
-				
+
 				{% if isProfileOwner %}
 				<!--<div class="profile-edit-nav bottom-item">
 					<a href="/clanovi/uredi/">Uredi profil</a>
 				</div>-->
 				{% endif %}
-				
+
 			</div>
 		{% endblock %}
 		</div>
@@ -116,9 +116,9 @@
 		{% block rightContent %}
 			<div class="menu">
 				<ul>
-					<li><a href="/clanovi/">Profil</a></li>
-					<li><a href="/clanovi/svi/">Svi članovi</a></li>
-					<li><a href="/clanovi/logout/">Odjava</a> <br /></li>
+					<li><a href="{% url 'members' %}">Profil</a></li>
+					<li><a href="{% url 'members_list_all' %}">Svi članovi</a></li>
+					<li><a href="{% url 'members_logout' %}">Odjava</a> <br /></li>
 				</ul>
 			</div>
 			<div>
@@ -148,7 +148,7 @@
 			</div>
 		{% endblock %}
 		</div>
-		
+
 		<div style="clear:both; height: 20px;"></div>
 	{% endblock %}
 

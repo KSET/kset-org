@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 
-        {% block leftContent %}		
+        {% block leftContent %}
 			<div class="top">
 				<div class="image">
 					{{member.image}}
@@ -12,25 +12,25 @@
 				</div>
                 <div style="clear: both"></div>
 			</div>
-			
-        
+
+
 			<div class="bottom">
             <form id="member-edit-form" action="/clanovi/uredi/submit/" enctype="multipart/form-data" method="post" >
-                    
+
 				<div class="birth-date bottom-item">
 					<div class="entry-title">Datum rođenja:</div>
 					<div class="value">
                         <input type="text" name="birth" value="{{member.birth|date:"d.m.Y"|default:""}}" /> (dd.mm.yyyy)
                     </div>
 				</div>
-				
+
                                 <div class="death-date bottom-item">
                                         {% if member.death %}
 					<div class="entry-title">Datum smrti:</div>
                                         <div class="value">{{member.death|date:"d.m.Y"|default:"nepoznato"}}</div>
                                         {% endif %}
 				</div>
-				
+
 				<div class="addresses bottom-item">
 					<div class="entry-title">
 						Adrese
@@ -74,7 +74,7 @@
 						</tr>
 					</table>
 				</div>
-				
+
 				<div class="contacts bottom-item">
 					<div class="entry-title">
 						Kontakti
@@ -112,8 +112,8 @@
 						</tr>
 					</table>
 				</div>
-            
-                
+
+
 				<div class="groups bottom-item">
 					<div class="entry-title">
 						Članstva
@@ -134,20 +134,20 @@
 						{% endfor %}
 					</table>
 				</div>
-				
+
 				<div class="comment bottom-item">
 					<div class="entry-title">Komentar:</div>
 					<div class="value">{{member.comment|default:"nema"}}</div>
 				</div>
-                
+
                 <div class="profile-edit-nav bottom-item">
                     <input type="submit" value="Spremi" name="submit" />
                     &nbsp;&nbsp;&nbsp;
                     <input type="submit" value="Spremi i nastavi uređivati" name="submit-continue" />
                     &nbsp;&nbsp;&nbsp;
-                    <a href="/clanovi/">Odustani</a>
+                    <a href="{% url 'members' %}">Odustani</a>
                 </div>
-                
-			</form>	
+
+			</form>
 			</div>
 		{% endblock %}
