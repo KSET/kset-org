@@ -1,5 +1,6 @@
-from django.conf.urls import *
-from kset.savjet.models import Post
+from django.conf.urls import patterns
+
+from .models import Post
 
 urlpatterns = patterns('django.views.generic.date_based',
     (r'^$', 'archive_index', {

@@ -1,8 +1,7 @@
-from django.conf.urls import *
-from feed import RssProgramFeed, AtomProgramFeed
-
+from django.conf.urls import url, patterns, include
 from django.contrib import admin
 
+from feed import RssProgramFeed, AtomProgramFeed
 from filebrowser.sites import site
 
 admin.autodiscover()
