@@ -1,11 +1,21 @@
-<html>
-<title>KSET.org - Klub Studenata ElektroTehnike</title>
-<body>
-	{% for at in attendance %}
-	<p>OD <b>{{ at.start }}</b> DO  <b>{{ at.end }}</b></p>
-	<br />
-	<p>{{ at.content|safe }}</p>
-	{% endfor %}
-</body>
-</html>
+{% extends 'program.html' %}
 
+{% load fb_versions %}
+
+{% block leftcolumn %}
+
+<div class="attendances">
+<h1 class="single-title">Dežurstva</h1>
+
+    {% for at in attendance reversed %}
+    <h2><em>OD</em> {{ at.start }} <em>DO</em>  {{ at.end }}</h2>
+
+    <section class="attendances-text">
+        {{ at.content|safe }}
+    </section>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
