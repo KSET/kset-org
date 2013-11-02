@@ -45,18 +45,18 @@ $( function()
        {
        $.post(
            "/subscribe/",
-           { subscription: $('#newsletter-subscription').val()},
+           { email: $('#newsletter-subscription').val()},
            function (data) {
            $('#newsletter-message').html(data);
            $('#newsletter-message').show();
            }
        );
     });
-    // da enter bude isto sto i ok
+    // use enter key as well
     $('#form-newsletter').submit( function (event){
         $.post(
                "/subscribe/",
-               { subscription: $('#newsletter-subscription').val()},
+               { email: $('#newsletter-subscription').val()},
                function (data) {
                $('#newsletter-message').html(data);
                $('#newsletter-message').show();
@@ -129,7 +129,7 @@ function header_scroll_down()
         if (Modernizr.csstransforms) {
             scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
             scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
-        } else { 
+        } else {
             scrollViewport.css({ 'top': viewportTop });
             scrollBar.css({ 'top': scrollbarTop*100 + '%' });
         }
@@ -145,7 +145,7 @@ function header_scroll_up()
         if (Modernizr.csstransforms) {
             scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
             scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
-        } else { 
+        } else {
             scrollViewport.css({ 'top': viewportTop });
             scrollBar.css({ 'top': scrollbarTop*100 + '%' });
         }

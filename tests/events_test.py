@@ -18,3 +18,7 @@ class EventsViewTest(TestCase):
 
         response = self.client.get('events-archive')
         self.assertEquals(200, response.status_code)
+
+    def test_get_newsletter(self):
+        response = self.client.get('newsletter')
+        self.assertEquals(200, response.status_code)
