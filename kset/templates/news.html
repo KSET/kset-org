@@ -22,13 +22,13 @@
         <div class="icontent">
 
           {% if item.thumb %}
-            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
           {% endif %}
 
           <!-- share thingys -->
           <div class="event-share"><span class="share facebook"></span><span class="share twitter"></span></div>
 
-          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
 
           <h3>{{ item.date|date:"l, j. E Y." }}</h3>
 
@@ -48,10 +48,10 @@
 
         <div class="icontent">
           {% if item.thumb %}
-            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
           {% endif %}
 
-          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
 
           <h3>{{ item.date|date:"l, j. E Y." }}</h3>
 
@@ -85,10 +85,10 @@
         <div class="icontent">
 
           {% if item.thumb %}
-            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
           {% endif %}
 
-          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
 
           <h3>{{ item.date|date:"l, j. E Y." }}</h3>
 
@@ -108,10 +108,10 @@
 
         <div class="icontent">
           {% if item.thumb %}
-            <a href="/dogadaj/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
           {% endif %}
 
-          <h2><a href="/dogadaj/{{ item.slug }}">{{ item.title }}</a></h2>
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
 
           <h3>{{ item.date|date:"l, j. E Y." }}</h3>
 
@@ -145,10 +145,10 @@
         <div class="icontent">
 
           {% if item.thumb %}
-            <a href="/vijest/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
+            <a href="{% url 'news_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
           {% endif %}
 
-          <h2><a href="/vijest/{{ item.slug }}">{{ item.subject }}</a></h2>
+          <h2><a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a></h2>
 
           <h3>{{ item.created_at|date:"l, j. E Y." }}</h3>
 
@@ -168,10 +168,10 @@
 
         <div class="icontent">
           {% if item.thumb %}
-            <a href="/vijest/{{ item.slug }}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
+            <a href="{% url 'news_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
           {% endif %}
 
-          <h2><a href="/vijest/{{ item.slug }}">{{ item.subject }}</a></h2>
+          <h2><a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a></h2>
 
           <h3>{{ item.created_at|date:"l, j. E Y." }}</h3>
 

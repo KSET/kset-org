@@ -4,9 +4,8 @@
 {% block content %}
 
     <section class="m-box">
-        <a href="/gallery/live/" title="KSET live!">
-            <!-- <img src="http://placehold.it/400x272" class="quimby_search_image"> -->
-            <img src="/media/images/gallery/live.jpg" class="quimby_search_image">
+        <a href="{% url 'gallery_category_albums' category='live' %}" title="KSET live!">
+            <img src="{{ MEDIA_URL }}images/gallery/live.jpg" class="quimby_search_image">
             <hgroup class="dolje">
                 <h2 class="m-naslov">KSET.live!</h2>
                 <h3>galerija fotografija s koncerata održanih u KSET-u</h3>
@@ -15,9 +14,8 @@
     </section>
 
     <section class="m-box">
-        <a href="/gallery/foto/" title="KSET.foto">
-            <!--<img src="http://placehold.it/400x272" class="quimby_search_image">-->
-            <img src="/media/images/gallery/foto.jpg" class="quimby_search_image">
+        <a href="{% url 'gallery_category_albums' category='foto' %}" title="KSET.foto">
+            <img src="{{ MEDIA_URL }}images/gallery/foto.jpg" class="quimby_search_image">
             <hgroup class="dolje">
                 <h2 class="m-naslov">KSET.foto</h2>
                 <h3>galerija fotografija članova foto sekcije</h3>

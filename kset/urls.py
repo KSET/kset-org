@@ -9,8 +9,10 @@ admin.autodiscover()
 urlpatterns = patterns('',
 
     # feeds
-    (r'^feeds/rss/$', RssProgramFeed()),
-    (r'^feeds/atom/$', AtomProgramFeed()),
+    url(r'^feeds/rss/$', RssProgramFeed(),
+        name='feed_rss'),
+    url(r'^feeds/atom/$', AtomProgramFeed(),
+        name='feed_atom'),
 
     # news - homepage
     url(r'^$', 'news.views.active',

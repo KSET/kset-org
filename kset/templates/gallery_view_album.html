@@ -12,7 +12,7 @@
 
     <header>
         <div class="album-title">
-          <div class="gumb"><h2><a href="/gallery/{{ category }}"></a></h2></div>
+          <div class="gumb"><h2><a href="{% url 'gallery_category_albums' category=category %}"></a></h2></div>
           <span><h2>{{ album.title }} - {{ album.date_of_event }}</h2></span>
         </div>
 

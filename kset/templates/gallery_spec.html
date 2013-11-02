@@ -14,7 +14,7 @@
             <span>Uskoro... </span>
         {% endif %}
         {% for year in years %}
-            <a href="/gallery/{{ category }}/albumi/{{ year|date:'Y' }}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
+            <a href="{% url 'gallery_category_albums_by_year' category=category year=year|date:'Y' %}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
         {% endfor %}
     </nav>
 
@@ -26,7 +26,7 @@
 
         <article class="m-album">
 
-           <a href="/gallery/{{ category }}/{{ a.slug }}">
+           <a href="{% url 'gallery_view_album' album_slug=album.slug %}">
 
               <div class="slika">
                 <!-- slika dimenzije 255x170 -->
