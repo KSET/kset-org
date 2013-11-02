@@ -16,7 +16,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.styles import ParagraphStyle
 
 
-pdfmetrics.registerFont(TTFont('Arial', os.path.join(settings.MEDIA_ROOT, 'frontend', 'fonts', 'Arial.ttf')))
+pdfmetrics.registerFont(TTFont('Arial', os.path.join(settings.STATIC_ROOT, 'frontend', 'fonts', 'Arial.ttf')))
 
 
 class InvoiceTemplate():

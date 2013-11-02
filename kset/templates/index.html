@@ -6,7 +6,7 @@
         <meta property="og:url" content="http://www.kset.org/" />
         <meta property="og:title" content="www.KSET.org" />
         <meta property="og:description" content="Klub Studenata Elektrotehnike" />
-        <meta property="og:image" content="http://www.kset.org/media/frontend/images/kset_logo.png" />
+        <meta property="og:image" content="http://www.kset.org/{{ STATIC_URL }}frontend/images/kset_logo.png" />
 
         <meta property="og:latitude" content="45.80154"/>
         <meta property="og:longitude" content="15.97166"/>
@@ -20,13 +20,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <link href="{{ MEDIA_URL }}frontend/css/styles.css?3" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}frontend/lightbox/css/lightbox.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{ MEDIA_URL}}frontend/fancybox/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
+    <link href="{{ STATIC_URL }}frontend/css/styles.css?3" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ STAIC_URL }}frontend/lightbox/css/lightbox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ STATIC_URL}}frontend/fancybox/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
 
 
-    <link rel="icon" type="image/vnd.microsoft.icon" href="{{ MEDIA_URL}}frontend/images/favicon.ico" />
-    <link rel="icon" type="image/png" href="{{ MEDIA_URL}}frontend/images/favicon.png" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{{ STATIC_URL}}frontend/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="{{ STATIC_URL}}frontend/images/favicon.png" />
 
     <title>KSET.org - Klub Studenata ElektroTehnike</title>
 
@@ -36,12 +36,12 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
     <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.3.min.js">\x3C/script>')</script>
-    <script type="text/javascript" src="/media/frontend/js/jquery.mousewheel.js" language="javascript"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/jquery.mousewheel.js" language="javascript"></script>
 
-    <script type="text/javascript" src="/media/frontend/fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/fancybox/jquery.fancybox.pack.js"></script>
 
-    <script type="text/javascript" src="/media/frontend/js/modernizr.custom.js" language="javascript"></script>
-    <script type="text/javascript" src="/media/frontend/js/custom-functions.js" language="javascript"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/modernizr.custom.js" language="javascript"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/custom-functions.js" language="javascript"></script>
 
      <!-- Google analytics -->
     <script type="text/javascript">
@@ -67,10 +67,10 @@
     <div id="container" class="page-container">
 
         <header id="header" class="page-header">
-            <img src="/media/frontend/images/headers/{{ header_bg }}" id="header-pic" class="header-pic" />
+            <img src="{{ STATIC_URL }}frontend/images/headers/{{ header_bg }}" id="header-pic" class="header-pic" />
 
             <a href="{% url 'index' %}">
-                <img width="230" height="76" src="/media/frontend/images/kset_logo.png" id="kset-logo" class="logo"/>
+                <img width="230" height="76" src="{{ STATIC_URL }}frontend/images/kset_logo.png" id="kset-logo" class="logo"/>
             </a>
 
         	<nav id="top-menu" class="page-nav top-menu">

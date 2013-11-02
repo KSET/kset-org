@@ -13,7 +13,7 @@ def header(request):
     ctx = {}
 
     try:
-        files = os.listdir(os.path.join(settings.MEDIA_ROOT, 'frontend', 'images', 'headers'))
+        files = os.listdir(os.path.join(settings.STATIC_ROOT, 'frontend', 'images', 'headers'))
         ctx['header_bg'] = random.choice(files)
     except Exception as e:
         pass
