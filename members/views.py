@@ -4,7 +4,6 @@ import hashlib
 from django.http import Http404
 from django.shortcuts import render, redirect
 
-
 from .forms import *
 from .models import *
 

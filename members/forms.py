@@ -6,6 +6,9 @@ from django import forms
 from .models import Member
 
 
+__all__ = ['LoginForm', 'EditProfileForm']
+
+
 class LoginForm(forms.Form):
     username = forms.CharField(label="Korisničko ime:", max_length=32)
     password = forms.CharField(widget=forms.PasswordInput,

@@ -5,6 +5,9 @@ from django.db import models
 from tinymce.models import HTMLField
 
 
+__all__ = ['Group', 'Member', 'Contact', 'ContactType', 'Address', 'MemberGroupLink']
+
+
 class GroupManager(models.Manager):
 
     def tree(self, id=None):
