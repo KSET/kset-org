@@ -13,7 +13,7 @@ def require_auth(view):
     def wrapper(request, *args):
 
         if not request.session.get('user_id', False):
-            return redirect('members-login')
+            return redirect('members_login')
 
         return view(request, *args)
     return wrapper
@@ -52,7 +52,7 @@ def logout(request):
     if request.session.get('user_id', False):
         request.session.flush()
 
-    return redirect('members-login')
+    return redirect('members_login')
 
 
 def display_member(request, template, member):

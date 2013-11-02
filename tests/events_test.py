@@ -16,7 +16,7 @@ class EventsViewTest(TestCase):
         # self.client.login(username='super_user',
         #     password='foobar')
 
-        response = self.client.get('events-archive')
+        response = self.client.get('events_archive')
         self.assertEquals(200, response.status_code)
 
     def test_get_newsletter(self):

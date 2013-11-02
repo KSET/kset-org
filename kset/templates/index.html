@@ -69,17 +69,17 @@
         <header id="header" class="page-header">
             <img src="/media/frontend/images/headers/{{ header_bg }}" id="header-pic" class="header-pic" />
 
-            <a href="{% url 'root' %}">
+            <a href="{% url 'index' %}">
                 <img width="230" height="76" src="/media/frontend/images/kset_logo.png" id="kset-logo" class="logo"/>
             </a>
 
         	<nav id="top-menu" class="page-nav top-menu">
                 <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
-                <a href="{% url 'root' %}">NASLOVNICA</a>
+                <a href="{% url 'index' %}">NASLOVNICA</a>
                 <a href="{% url 'club' %}">O KLUBU</a>
                 <a href="{% url 'multimedia' %}">MULTIMEDIA</a>
-                <a href="{% url 'news-archive' %}">VIJESTI</a>
-                <a href="{% url 'events-archive' %}">PROGRAM</a>
+                <a href="{% url 'news_archive' %}">VIJESTI</a>
+                <a href="{% url 'events_archive' %}">PROGRAM</a>
 
                 <!-- veljko postavio da mu google prije indexera nesto drugo -->
                 <a href="http://www.myindian.se/" style="display:none;">myIndian.se</a>

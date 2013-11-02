@@ -13,7 +13,7 @@
 
         <tr>
           <td style="width:90px">{{ item.publish|date:"d.m.Y." }} </td>
-          <td><a href="{% url 'news-slug' item.slug %}">{{ item.subject }}</a></td>
+          <td><a href="{% url 'news_slug' item.slug %}">{{ item.subject }}</a></td>
         </tr>
 
         {% endfor %}
@@ -30,7 +30,7 @@
 
         <tr>
           <td style="width:90px">{{ event.date|date:"d.m.Y." }} </td>
-         <td><a href="{% url 'event-slug' event.slug %}">{{ event.title }}</a></td>
+         <td><a href="{% url 'event_slug' event.slug %}">{{ event.title }}</a></td>
         </tr>
 
         {% endfor %}

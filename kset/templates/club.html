@@ -82,7 +82,7 @@
 
     <div class="cellmenu" style="min-height: 335px;">
       {% for division in divisions %}
-      <a href="{% url 'subpage-slug' division.slug %}" style="background-image: url({% version division.thumb 'small' %});">
+      <a href="{% url 'subpage_slug' division.slug %}" style="background-image: url({% version division.thumb 'small' %});">
         <div class="text">{{ division.title }}</div>
       </a>
       {% endfor %}
@@ -97,7 +97,7 @@
 
     <div class="cellmenu" style="min-height:200px;">
       {% for project in projects %}
-      <a href="{% url 'subpage-slug' project.slug %}" style="background-image: url({% version project.thumb 'small' %});">
+      <a href="{% url 'subpage_slug' project.slug %}" style="background-image: url({% version project.thumb 'small' %});">
         <div class="text">{{ project.title }}</div>
       </a>
       {% endfor %}

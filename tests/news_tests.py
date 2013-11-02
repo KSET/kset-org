@@ -16,15 +16,15 @@ class NewsViewTest(TestCase):
 
     def test_get_news_by_slug(self):
         news = NewsFactory()
-        response = self.client.get('news-slug', slug=news.slug)
+        response = self.client.get('news_slug', slug=news.slug)
         self.assertEquals(200, response.status_code)
 
     def test_get_homepage(self):
         news = NewsFactory()
-        response = self.client.get('root')
+        response = self.client.get('index')
         self.assertEquals(200, response.status_code)
 
     def test_get_news_archive(self):
         news = NewsFactory()
-        response = self.client.get('news-archive')
+        response = self.client.get('news_archive')
         self.assertEquals(200, response.status_code)
