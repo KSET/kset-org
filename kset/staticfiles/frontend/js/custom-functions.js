@@ -63,10 +63,14 @@ $( function()
            "/subscribe/",
            { email: $('#newsletter-subscription').val()},
            function (data) {
-           $('#newsletter-message').html(data);
-           $('#newsletter-message').show();
+             $('#newsletter-subscription').val(''); // clear form
+             $('#newsletter-message').html(data);
+             $('#newsletter-message').show();
            }
-       );
+       ).fail(function(data) {
+                $('#newsletter-message').html(data.responseText);
+                $('#newsletter-message').show();
+        });
     });
     // use enter key as well
     $('#form-newsletter').submit( function (event){
@@ -74,10 +78,14 @@ $( function()
                "/subscribe/",
                { email: $('#newsletter-subscription').val()},
                function (data) {
-               $('#newsletter-message').html(data);
-               $('#newsletter-message').show();
+                 $('#newsletter-subscription').val(''); // clear form
+                 $('#newsletter-message').html(data);
+                 $('#newsletter-message').show();
                }
-           );
+           ).fail(function(data) {
+                 $('#newsletter-message').html(data.responseText);
+                 $('#newsletter-message').show();
+           });
         event.preventDefault();
     });
 

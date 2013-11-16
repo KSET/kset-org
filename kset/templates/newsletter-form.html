@@ -2,6 +2,8 @@
 <h1>Newsletter</h1>
 <form id="form-newsletter">
 
+  {% csrf_token %}
+
   <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription" value="vaša e-mail adresa" />
   <input type="button" id="newsletter-submit" value="OK" />
   <!-- TODO: CAPTCHA -->

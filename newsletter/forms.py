@@ -10,6 +10,8 @@ class SubscriptionForm(forms.ModelForm):
         model = Subscription
 
     def clean_email(self):
+        if not self.cleaned_data.get('email'):
+            raise forms.ValidationError('Molimo unesite email adresu.')
         if Subscription.objects.filter(email=self.cleaned_data.get('email')):
             raise forms.ValidationError('Email adresa je već pretplaćena.')
         return self.cleaned_data.get('email')
