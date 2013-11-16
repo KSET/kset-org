@@ -3,13 +3,19 @@ MANAGE=python manage.py
 SETTINGS=--settings=$(PROJECT_NAME).settings.test
 LESS_PATH="utils/static/less"
 
+DOCKER_VERSION=0.6.6
+DATA_DIR="__data"
+POSTGRES_VERSION=9.1
+PORT=5432
 
-.PHONY: all test coverage clean requirements requirements-dev setup-test css
+
+.PHONY: all test coverage clean requirements requirements-dev setup-test css \
+	docker-check docker-version postgres
 
 all: coverage
 
 test:
-	$(MANAGE) test --where=. --processes=4 $(SETTINGS)
+	$(MANAGE) test --where=. $(SETTINGS)
 
 coverage:
 	$(MANAGE) test --where=. $(SETTINGS) \
@@ -66,3 +72,32 @@ restart: deploy
 
 lint:
 	flake8 --exclude=.git,migrations --max-complexity=10 .
+
+docker-check:
+	@command -v docker >/dev/null 2>&1 || \
+		{ echo >&2 "Docker needs to be installed and on your PATH.  Aborting."; exit 1; }
+
+docker-version: docker-check
+	@if ! docker version | grep "Server version" | grep $(DOCKER_VERSION) > /dev/null; \
+		then \
+			echo "ERROR: Wrong docker version. Recommended version: $(DOCKER_VERSION)"; \
+			exit 1; \
+	fi
+
+postgres: docker-version
+	@if nmap -PS localhost | grep -q $(PORT); then \
+		echo "ERROR: Port $(PORT) is already in use..."; \
+		echo "Maybe Postgres is already running?!"; \
+		exit 1; \
+	fi
+	@if [ ! -d $(DATA_DIR)/postgresql ]; then \
+		echo 'Preparing Postgres persistent data storage...'; \
+		mkdir -p $(DATA_DIR); \
+		docker run -v $$PWD/$(DATA_DIR):/tmp/$(DATA_DIR) -i -t \
+			denibertovic/postgres:$(POSTGRES_VERSION)\
+			/bin/bash -c "cp -rp var/lib/postgresql /tmp/$(DATA_DIR)"; \
+	fi
+	@echo "Persistent data storage found.";
+	@echo "Starting postgres...";
+	@docker run -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -d -p $(PORT):$(PORT) \
+		denibertovic/postgres:$(POSTGRES_VERSION) /usr/local/bin/start_postgres.sh;
