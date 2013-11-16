@@ -1,10 +1,10 @@
-Django==1.5.5
-Pillow==2.0.0
-South==0.8.2
-django-filebrowser==3.5.2
-django-grappelli==2.4.7
-django-tinymce==1.5.1
+Django==1.6
+Pillow==2.2.1
+South==0.8.3
+-e git+https://github.com/sehmaschine/django-filebrowser.git@343176867ba332f189f8326f6c0e2f8e9a10740a#egg=django_filebrowser-master
+
+django-grappelli==2.4.8
+
+django-tinymce==1.5.2
 feedparser==5.1.3
 reportlab==2.7
-argparse==1.2.1
-wsgiref==0.1.2
