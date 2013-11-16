@@ -28,3 +28,11 @@ class NewsViewTest(TestCase):
         news = NewsFactory()
         response = self.client.get('news_archive')
         self.assertEquals(200, response.status_code)
+
+    def test_rss_feed(self):
+        response = self.client.get('feed_rss')
+        self.assertEquals(200, response.status_code)
+
+    def test_atom_feed(self):
+        response = self.client.get('feed_atom')
+        self.assertEquals(200, response.status_code)
