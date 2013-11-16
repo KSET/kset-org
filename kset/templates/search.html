@@ -6,13 +6,17 @@
 
   <div class="icontent">
 
+    {% if form.errors.query %}
+      <h1>Error:</h1> <p class="error">{{ form.errors.query }}</p>
+    {% endif %}
+
     <h1>Vijesti</h1>
     {% if news %}
       <table class="archive-table">
         {% for item in news %}
 
         <tr>
-          <td style="width:90px">{{ item.publish|date:"d.m.Y." }} </td>
+          <td style="width:90px">{{ item.created_at|date:"d.m.Y." }} </td>
           <td><a href="{% url 'news_slug' item.slug %}">{{ item.subject }}</a></td>
         </tr>
 

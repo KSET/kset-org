@@ -1,41 +1,23 @@
 #coding: utf8
 
 from django.shortcuts import render
-from django.db.models import Q
 
-from news.models import News
-from events.models import Event
+from .forms import SearchForm
 
 
 def search(request):
     """Returns results of search query on news & events."""
 
-    # quick fix!
-    error_msg = "Neispravan unos! (za pretragu su potrebna minimalno 3 znaka!)"
+    news = []
+    events = []
 
-    response_dict = {}
+    form = SearchForm(request.GET or None)
 
-    # check if query exists and its length
-    #if 'query' in request.GET and len(request.GET['query']) >= 3 and len(request.GET['query']) <= 32:
-    if 'query' in request.GET and 3 <= len(request.GET['query']) <= 32:
+    if form.is_valid():
+        news, events = form.get_results()
 
-       # search titles -> chain words in query
-        query_news = Q()
-        query_events = Q()
-
-        # append every word to chain
-        for word in request.GET['query'].split():
-
-            # exclude words with 1 or 2 characters
-            if len(word) >= 3:
-                query_news &= Q(subject__icontains=word) | Q(description__icontains=word) | Q(content__icontains=word)
-                query_events &= Q(title__icontains=word) | Q(description__icontains=word) | Q(content__icontains=word)
-
-        # fetch data
-        response_dict['news'] = News.objects.filter(query_news).order_by('-created_at')
-        response_dict['events'] = Event.objects.filter(query_events).order_by('-date')
-
-    else:
-        response_dict['error_msg'] = "Neispravan unos! (za pretragu su potrebna minimalno 3 znaka!)"
-
-    return render(request, 'search.html', response_dict)
+    return render(request, 'search.html', {
+            'form': form,
+            'news': news,
+            'events': events
+        })

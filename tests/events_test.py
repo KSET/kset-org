@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from django.test import TestCase
 
 from .base import BaseTestClient
-from .factories import EventFactory
+from .factories import EventFactory, NewsFactory
 from newsletter.models import Subscription
 
 
@@ -63,3 +63,22 @@ class EventsViewTest(TestCase):
         self.assertEquals(200, response.status_code)
 
         self.assertEquals(1, Subscription.objects.count())
+
+    def test_search_funcionality(self):
+        NewsFactory(subject='Test Search')
+        EventFactory(title='Test Search')
+        response = self.client.get('search', {'query': 'search'})
+        self.assertEquals(200, response.status_code)
+
+        self.assertEquals(1, len(response.context['news']))
+        self.assertEquals(1, len(response.context['events']))
+
+        response = self.client.post('search', {'query': '1'})
+
+        from search.forms import SearchForm
+
+        form = SearchForm({'query': '1234'})
+        self.assertTrue(form.is_valid())
+
+        form = SearchForm({'query': '1'})
+        self.assertFalse(form.is_valid())
