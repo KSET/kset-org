@@ -147,22 +147,33 @@ FILEBROWSER_SELECT_FORMATS = {
 }
 
 FILEBROWSER_VERSIONS = {
-    'fb_thumb': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop upscale'},
-    'thumbnail': {'verbose_name': 'Thumbnail (140px)', 'width': 140, 'height': '', 'opts': ''},
-    'small': {'verbose_name': 'Small (80x60px)', 'width': 80, 'height': '60', 'opts': 'crop'},
-    'medium': {'verbose_name': 'Medium (100px)', 'width': 100, 'height': '', 'opts': ''},
-    'semibig': {'verbose_name': 'SemiBig (420px)', 'width': 420, 'height': '', 'opts': ''},
+    'fb_thumb': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60,
+        'opts': 'crop upscale'},
+    'thumbnail': {'verbose_name': 'Thumbnail (140px)', 'width': 140,
+        'height': '', 'opts': ''},
+    'small': {'verbose_name': 'Small (80x60px)', 'width': 80,
+        'height': '60', 'opts': 'crop'},
+    'medium': {'verbose_name': 'Medium (100px)', 'width': 100,
+        'height': '', 'opts': ''},
+    'semibig': {'verbose_name': 'SemiBig (420px)', 'width': 420,
+        'height': '', 'opts': ''},
     'big': {'verbose_name': 'Big (465px)', 'width': 465, 'height': '', 'opts': ''},
-    'event_big': {'verbose_name': 'Event Thumbnail Big (370px)', 'width': 370, 'height': 370, 'opts': 'crop upscale'},
-    'event_small': {'verbose_name': 'Event Thumbnail Small (70px)', 'width': 70, 'height': 70, 'opts': 'crop upscale'},
-    'gallerytb': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 255, 'height': 173, 'opts': 'crop'},
-    'sticky': {'verbose_name': 'Main Page Sticky (150px)', 'width': 150, 'height': 80, 'opts': 'crop'},
-    'galleryimage': {'verbose_name': 'gallery_image (800x600)', 'width': '', 'height': 600, 'opts': ''},
+    'event_big': {'verbose_name': 'Event Thumbnail Big (370px)', 'width': 370,
+        'height': 370, 'opts': 'crop upscale'},
+    'event_small': {'verbose_name': 'Event Thumbnail Small (70px)',
+        'width': 70, 'height': 70, 'opts': 'crop upscale'},
+    'gallerytb': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 255,
+        'height': 173, 'opts': 'crop'},
+    'sticky': {'verbose_name': 'Main Page Sticky (150px)', 'width': 150,
+        'height': 80, 'opts': 'crop'},
+    'galleryimage': {'verbose_name': 'gallery_image (800x600)',
+        'width': '', 'height': 600, 'opts': ''},
 
 }
 
 # Versions available within the Admin-Interface.
-FILEBROWSER_ADMIN_VERSIONS = ['thumbnail', 'small', 'medium', 'semibig', 'big', 'event_small', 'event_big']
+FILEBROWSER_ADMIN_VERSIONS = ['thumbnail', 'small', 'medium', 'semibig',
+    'big', 'event_small', 'event_big']
 # Which Version should be used as Admin-thumbnail.
 FILEBROWSER_ADMIN_THUMBNAIL = 'fb_thumb'
 
@@ -175,7 +186,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_toolbar_location': "top",
     'theme_advanced_resizing': True,
     'plugins': 'table,contextmenu,paste,autoresize,media,lists,style',
-    'theme_advanced_buttons1': "style, bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo,image,link",
+    'theme_advanced_buttons1': str("style,bold,italic,underline,separator,"
+        "bullist,separator,outdent,indent,separator,undo,redo,image,link"),
     'theme_advanced_buttons2': "cleanup,lists,pasteword,table,contextmenu,media,code",
     'theme_advanced_buttons3': "",
 }
