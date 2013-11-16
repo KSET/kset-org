@@ -35,7 +35,7 @@
       <h1>Galerija</h1>
         {% if latest %}
           {% for a in latest %}
-            <a href="{% url 'gallery_view_album' slug=a.slug %}"><img src="{% version a.thumb 'sticky' %}"/></a>
+            <a href="{% url 'gallery_view_album' album_slug=a.slug %}"><img src="{% version a.thumb 'sticky' %}"/></a>
             <p>{{ a.title }}</p>
           {% endfor %}
         {% endif %}
