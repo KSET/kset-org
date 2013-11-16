@@ -12,7 +12,7 @@ class ZapisnikAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            '/media/static/tiny_mce/tiny_mce.js',
+            '/static/tiny_mce/tiny_mce.js',
         )
 
 
@@ -21,7 +21,7 @@ class DezurstvaAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            '/media/static/tiny_mce/tiny_mce.js',
+            '/static/tiny_mce/tiny_mce.js',
         )
 
 admin.site.register(Zapisnik, ZapisnikAdmin)

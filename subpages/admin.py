@@ -12,7 +12,7 @@ class SubpageAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-            '/media/static/tiny_mce/tiny_mce.js',
+            '/static/tiny_mce/tiny_mce.js',
         )
 
 
