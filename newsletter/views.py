@@ -15,4 +15,4 @@ def subscribe(request):
         form.save()
         return HttpResponse('Uspješno ste se pretplatili!')
     else:
-        return HttpResponse(form.errors.values())
+        return HttpResponse(form.errors.values(), status=400)
