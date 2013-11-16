@@ -15,7 +15,7 @@ PORT=5432
 all: coverage
 
 test:
-	$(MANAGE) test --where=. $(SETTINGS)
+	$(MANAGE) test --where=. $(SETTINGS) --nocapture
 
 coverage:
 	$(MANAGE) test --where=. $(SETTINGS) \
