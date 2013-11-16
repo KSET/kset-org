@@ -48,7 +48,6 @@ def newsletter(request):
         {'from_date': from_date, 'till_date': till_date, 'events': events})
 
 
-@csrf_exempt
 def calendar(request):
     """
     Renders calendar for events (dates & styles).
@@ -72,6 +71,7 @@ def calendar(request):
         return (date, style)
 
     # try POST data, otherwise use current year-month
+    ## FIXME: Use a form here not raw POST data
     try:
         current_date = date(int(request.POST.get('year')),
             int(request.POST.get('month')), 1)
