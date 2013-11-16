@@ -1,8 +1,14 @@
+from datetime import datetime
+
 from django.contrib.auth import get_user_model
 
 import factory
 
 from news.models import News
+from events.models import Event
+
+
+__all__ = ['UserFactory', 'NewsFactory', 'EventFactory']
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -36,3 +42,20 @@ class NewsFactory(factory.django.DjangoModelFactory):
 
     subject = factory.Sequence(lambda n: 'TestNews%s' % n)
     slug = factory.Sequence(lambda n: 'test-news-%s' % n)
+
+
+class EventFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Event
+
+    title = factory.Sequence(lambda n: 'TestEvent%s' % n)
+    slug = factory.Sequence(lambda n: 'test-event-%s' % n)
+
+    date = datetime.now()
+    time = datetime.now()
+
+    content = 'Test Event Content'
+    tags = 'test'
+    announce = False
+    daytime = False
+    price = '0kn'
+    thumb = None
