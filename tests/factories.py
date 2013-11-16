@@ -6,9 +6,11 @@ import factory
 
 from news.models import News
 from events.models import Event
+from subpages.models import Subpage, Category
 
 
-__all__ = ['UserFactory', 'NewsFactory', 'EventFactory']
+__all__ = ['UserFactory', 'NewsFactory', 'EventFactory', 'SubpageCategoryFactory',
+    'SubpageFactory']
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -59,3 +61,23 @@ class EventFactory(factory.django.DjangoModelFactory):
     daytime = False
     price = '0kn'
     thumb = None
+
+
+class SubpageCategoryFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Category
+
+    name = factory.Sequence(lambda n: 'TestCategory%s' % n)
+    slug = factory.Sequence(lambda n: 'test-category-%s' % n)
+    parent = None
+
+
+class SubpageFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Subpage
+
+    title = factory.Sequence(lambda n: 'TestSubpage%s' % n)
+    slug = factory.Sequence(lambda n: 'test-subpage-%s' % n)
+
+    description = 'Test Description'
+    content = 'Test Content'
+    thumb = None
+    category = factory.SubFactory(SubpageCategoryFactory)
