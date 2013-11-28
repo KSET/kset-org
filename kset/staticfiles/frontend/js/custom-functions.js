@@ -90,16 +90,9 @@ $( function()
     });
 
     // header scroll
-    $('#header-scroll').bind('mousewheel', function(event, delta, deltaX, deltaY) {
+    var $headerScroll = $('#header-scroll')
+    $headerScroll.perfectScrollbar({ wheelSpeed: 20 });
 
-        if (( event.originalEvent.wheelDelta < 0 ) || (deltaY < 0)) {
-            header_scroll_down();
-            return false;
-        } else {
-            return header_scroll_up();
-        }
-
-    });
     // set scrollbar height
     $('#header-scrollbar').css('height', (max_events/events_count)*100+ '%');
 
@@ -110,9 +103,9 @@ $( function()
     $(document).keypress(function(e){
         if (e.target.nodeName ==='INPUT') return;
         if (e.which == 106)
-            header_scroll_down();
+            $headerScroll.animate({scrollTop: $headerScroll.scrollTop() + 48}, 120);
         else if (e.which == 107)
-            header_scroll_up();
+            $headerScroll.animate({scrollTop: $headerScroll.scrollTop() - 48}, 120);
     });
 });
 
@@ -147,34 +140,14 @@ function loadCalendar() {
 
 function header_scroll_down()
 {
-    if (current_event < events_count - max_events) {
-        var viewportTop = (- (++current_event) * 48);
-        var scrollbarTop = (current_event/events_count);
-        if (Modernizr.csstransforms) {
-            scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
-            scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
-        } else {
-            scrollViewport.css({ 'top': viewportTop });
-            scrollBar.css({ 'top': scrollbarTop*100 + '%' });
-        }
-        return false;
-    }
+  scrollViewport.scrollTop(48);
+  return false;
 }
 
 function header_scroll_up()
 {
-    if (current_event > 0) {
-        var viewportTop = (- (--current_event) * 48);
-        var scrollbarTop = (current_event/events_count);
-        if (Modernizr.csstransforms) {
-            scrollViewport.css({ 'transform': 'translate3d(0,' + viewportTop+ 'px,0)' });
-            scrollBar.css({ 'transform': 'translate(0,' + scrollbarTop*285 + 'px)' });
-        } else {
-            scrollViewport.css({ 'top': viewportTop });
-            scrollBar.css({ 'top': scrollbarTop*100 + '%' });
-        }
-        return false;
-    }
+    scrollViewport.scrollTop(48);
+    return false;
 }
 
 function flip_element_by_id(id) {

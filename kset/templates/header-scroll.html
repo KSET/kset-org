@@ -2,7 +2,6 @@
 
 <section id="header-scroll" class="header-scroll">
   <a id="header-scroll-control" class="header-scroll-control">+</a>
-  <div id="header-scrollbar" class="header-scrollbar"></div>
   <div id="header-scroll-viewport" class="header-scroll-viewport {% if not header_events %} header-scroll-viewport-empty {% endif %}">
 
     {% for event in header_events %}
@@ -16,9 +15,7 @@
 
       <div class="item-top">
         <span class="date">{{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small></span>
-        <a href="{% url 'event_slug' event.slug %}" title="{{ event.title }}">
-            <span class="item-top-title">{{ event.title }}</span>
-        </a>
+        <span class="item-top-title">{{ event.title }}</span>
       </div>
 
       <div class="item-bottom">
