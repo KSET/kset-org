@@ -11,9 +11,9 @@ def show_gallery(request):
 
 def list_albums(request, category, year=datetime.today().year):
     years = Album.objects.filter(
-        category=category.upper()).dates(
+        category=category).dates(
         'date_of_event', 'year', order='DESC')
-    albums = Album.objects.filter(category=category.upper(),
+    albums = Album.objects.filter(category=category,
         date_of_event__year=year).order_by('-date_of_event')
 
     return render(request, 'gallery_spec.html', {
@@ -22,7 +22,7 @@ def list_albums(request, category, year=datetime.today().year):
 
 def view_album(request, category, album_slug):
     album = get_object_or_404(Album, slug=album_slug)
-    category = album.category.lower()
+    category = album.category
     images = album.images.order_by('title')
 
     return render(request, 'gallery_view_album.html',
