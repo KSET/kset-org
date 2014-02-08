@@ -62,9 +62,9 @@ urlpatterns = patterns('',
         name='gallery_category_albums'),
     url(r'^gallery/(?P<category>\w+)/(?P<year>\d{4})/$', 'gallery.views.list_albums',
         name='gallery_category_albums_by_year'),
-    url(r'^gallery/(?P<album_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_album',
+    url(r'^gallery/(?P<category>\w+)/(?P<album_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_album',
         name='gallery_view_album'),
-    url(r'^gallery/image/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image',
+    url(r'^gallery/(?P<category>\w+)/image/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image',
         name='gallery_view_image'),
 
 

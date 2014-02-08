@@ -20,7 +20,7 @@ def list_albums(request, category, year=datetime.today().year):
         'list': albums, 'years': years, 'category': category})
 
 
-def view_album(request, album_slug):
+def view_album(request, category, album_slug):
     album = get_object_or_404(Album, slug=album_slug)
     category = album.category.lower()
     images = album.images.order_by('title')
@@ -29,6 +29,6 @@ def view_album(request, album_slug):
         {'images': images, 'category': category, 'album': album})
 
 
-def view_image(request, image_slug):
+def view_image(request, category, image_slug):
     image = get_object_or_404(Image, slug=image_slug)
     return render(request, 'gallery_view_image.html', {'image': image})

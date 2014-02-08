@@ -26,7 +26,7 @@
 
         <article class="m-album">
 
-           <a href="{% url 'gallery_view_album' album_slug=album.slug %}">
+           <a href="{% url 'gallery_view_album' category=a.category album_slug=a.slug %}">
 
               <div class="slika">
                 <!-- slika dimenzije 255x170 -->
