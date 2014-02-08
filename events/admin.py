@@ -7,6 +7,7 @@ from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
 
 from .models import Event
+from .forms import EventAdminForm
 
 
 def make_announced(modeladmin, request, queryset):
@@ -16,9 +17,10 @@ make_announced.short_description = "Najavi dogadaje"
 
 
 class EventAdmin(admin.ModelAdmin):
+    form = EventAdminForm
     fields = ('title', 'slug', 'date', 'time', 'announce', 'daytime', 'thumb',
         'tags', 'price', 'description', 'content')
-    list_display = ('title', 'date', 'announce', 'daytime', 'tags', 'slug',)
+    list_display = ('title', 'date', 'announce', 'daytime', 'tags_to_str', 'slug',)
     ordering = ('-date',)
     search_fields = ('title', 'date', 'description', 'content')
     list_filter = ['tags']

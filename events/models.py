@@ -33,7 +33,8 @@ class Event(models.Model):
     time = models.TimeField(u'Vrijeme', null=True, blank=True)
     description = HTMLField(u'Opis', blank=True)
     content = HTMLField(u'Sadržaj', blank=True)
-    tags = ArrayField(dbtype="text")
+    tags = ArrayField(dbtype="text",
+        help_text='OBAVEZNO odvojiti tagove zarezon ali *BEZ* razmaka. Primjer: tag1,tag2,tag3')
     slug = models.SlugField(blank=True, max_length=128)
     announce = models.BooleanField(u'Najavi')
     daytime = models.BooleanField(u'Dnevni')
@@ -60,3 +61,10 @@ class Event(models.Model):
     def get_frontpage_daytime_events():
         return Event.objects.filter(date__gte=datetime.now()).filter(
             announce=True, daytime=True).order_by('date')[:3]
+
+    def tags_to_str(self):
+        """
+        Using this for list_display in admin because if tags is a list
+        unicodes get messed up, but a string shows up fine
+        """
+        return ','.join(self.tags)
