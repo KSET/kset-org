@@ -1,5 +1,6 @@
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
+from django.conf import settings
 
 from feed import RssProgramFeed, AtomProgramFeed
 from filebrowser.sites import site
@@ -102,3 +103,12 @@ urlpatterns += patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/', include(admin.site.urls)),
 )
+
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT}),
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.STATIC_ROOT}),
+    )
