@@ -7,7 +7,7 @@ from django.db import models
 class Migration(DataMigration):
 
     def forwards(self, orm):
-        "Write your forwards methods here."
+        "Just converts category names to lowercase."
         orm.Album.objects.filter(category='LIVE').update(category='live')
         orm.Album.objects.filter(category='FOTO').update(category='foto')
         orm.Album.objects.filter(category='SCLIVE').update(category='sclive')
