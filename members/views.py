@@ -2,35 +2,25 @@
 import hashlib
 
 from django.http import Http404
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import *
 from .models import *
+from .decorators import require_auth
 
 
-def require_auth(view):
-    """Custom decorator, checks if user is logged in."""
-    def wrapper(request, *args):
-
-        if not request.session.get('user_id', False):
-            return redirect('members_login')
-
-        return view(request, *args)
-    return wrapper
-
-
-def get_current_user(request):
-    """Gets Member object of currently logged in user."""
-    user_id = request.session.get('user_id', False)
-
-    return Member.objects.get(id=user_id)
+@require_auth
+def index(request):
+    member = get_object_or_404(Member, id=request.session.get('members_user_id'))
+    return display_member(request, 'main.html', member)
 
 
 def login(request):
-    if request.session.get('user_id', False):
-        return redirect('members')
+    if request.session.get('members_user_id'):
+        return redirect('members_index')
     else:
         # check if form data is posted
+        ## FIXME: use form instead of raw POST data
         if (request.method == 'POST'):
             username = request.POST.get("username")
             password = request.POST.get("password")
@@ -40,8 +30,9 @@ def login(request):
             try:
                 member = Member.objects.get(password=pwhash, username=username)
 
-                request.session['user_id'] = member.id
-                return redirect('members')
+                request.session['members_user_id'] = member.id
+                request.session.save()
+                return redirect('members_index')
             except:
                 return render(request, 'login.html', {'loginFailed': True})
         else:
@@ -49,35 +40,24 @@ def login(request):
 
 
 def logout(request):
-    if request.session.get('user_id', False):
+    if request.session.get('members_user_id'):
         request.session.flush()
 
     return redirect('members_login')
 
 
 def display_member(request, template, member):
-    if request.session.get('user_id', False) == member.id:
-        isProfileOwner = True
-    else:
-        isProfileOwner = False
 
     return render(request, template, {
         'member': member,
         'addresses': Address.objects.filter(member=member.id),
         'contacts': Contact.objects.filter(member=member.id),
         'groups': MemberGroupLink.objects.filter(member=member.id),
-        'isProfileOwner': isProfileOwner
     })
 
 
 @require_auth
-def main(request):
-    member = get_current_user(request)
-    return display_member(request, 'main.html', member)
-
-
-@require_auth
-def member(request, id):
+def get_member(request, id):
     try:
         member = Member.objects.get(id=id)
     except:
@@ -86,25 +66,13 @@ def member(request, id):
 
 
 @require_auth
-def listAll(request):
+def list_all(request):
     members = Member.objects.order_by('surname', 'name')
     return render(request, 'members-list.html', {
         'members': members})
 
 
-@require_auth
-def edit(request):
-    member = get_current_user(request)
-    return render(request, 'edit-profile.html', {
-        'member': member,
-        'addresses': Address.objects.filter(member=member.id),
-        'contacts': Contact.objects.filter(member=member.id),
-        'groups': MemberGroupLink.objects.filter(member=member.id),
-        'contactTypes': ContactType.objects.all()
-    })
-
-
-def red(request):
+def red_table(request):
     """Print out in html red members addresses."""
 
     members = Member.objects.filter(

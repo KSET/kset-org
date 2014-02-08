@@ -5,6 +5,8 @@ from django.conf import settings
 from feed import RssProgramFeed, AtomProgramFeed
 from filebrowser.sites import site
 
+import members.urls
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -72,24 +74,7 @@ urlpatterns = patterns('',
     url(r'^dezurstva/$', 'savjet.views.list_attendance',
         name='dezurstva'),
 
-    # ispis crvenih za pozivnice
-    url(r'^crveni/$', 'members.views.red',
-        name='crveni'),
-    url(r'^crveni-lista/$', 'members.views.red_list',
-        name='crveni_lista'),
-
-    url(r'^clanovi/$', 'members.views.main',
-        name='members'),
-    url(r'^clanovi/login/$', 'members.views.login',
-        name='members_login'),
-    url(r'^clanovi/logout/$', 'members.views.logout',
-        name='members_logout'),
-    url(r'^clanovi/svi/$', 'members.views.listAll',
-        name='members_list_all'),
-    url(r'^clanovi/clan/(?P<id>\d+)/$', 'members.views.member',
-        name='members_show_member'),
-    url(r'^clanovi/uredi/$', 'members.views.edit',
-        name='members_edit'),
+    url(r'^members/', include(members.urls)),
 
 
 )

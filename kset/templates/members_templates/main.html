@@ -116,12 +116,12 @@
 		{% block rightContent %}
 			<div class="menu">
 				<ul>
-					<li><a href="{% url 'members' %}">Profil</a></li>
+					<li><a href="{% url 'members_index' %}">Profil</a></li>
 					<li><a href="{% url 'members_list_all' %}">Svi članovi</a></li>
 					<li><a href="{% url 'members_logout' %}">Odjava</a> <br /></li>
 				</ul>
 			</div>
-			<div>
+			<!--<div>
 				<p>Sekcije</p>
 				<ul>
 					<li><input type="checkbox" value="bike" /> Bike</li>
@@ -145,7 +145,7 @@
 			</div>
 			<div>
 				<input type="submit" value="Submit" />
-			</div>
+			</div>-->
 		{% endblock %}
 		</div>
 
