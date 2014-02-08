@@ -6,9 +6,11 @@ from django.db import models
 
 from filebrowser.fields import FileBrowseField
 from tinymce.models import HTMLField
+from djorm_expressions.models import ExpressionManager
+from djorm_pgarray.fields import ArrayField
 
 
-class EventManager(models.Manager):
+class EventManager(ExpressionManager):
 
     def get_today(self):
         return self.filter(date=datetime.now())
@@ -24,18 +26,19 @@ class EventManager(models.Manager):
 
 
 class Event(models.Model):
+    objects = EventManager()
+
     title = models.CharField(u'Naslov', max_length=192)
     date = models.DateField(u'Datum')
     time = models.TimeField(u'Vrijeme', null=True, blank=True)
     description = HTMLField(u'Opis', blank=True)
     content = HTMLField(u'Sadržaj', blank=True)
-    tags = models.CharField(max_length=255, blank=True)
+    tags = ArrayField(dbtype="text")
     slug = models.SlugField(blank=True, max_length=128)
     announce = models.BooleanField(u'Najavi')
     daytime = models.BooleanField(u'Dnevni')
     price = models.CharField(u'Cijena', max_length=16, null=True, blank=True)
     thumb = FileBrowseField(u'Sličica', max_length=255, null=True, blank=True)
-    objects = EventManager()
 
     class Meta:
         verbose_name = 'događaj'
