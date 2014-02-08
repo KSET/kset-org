@@ -24,9 +24,9 @@ class Photographer(models.Model):
 
 class Album(models.Model):
 
-    LIVE = 'LIVE'
-    FOTO = 'FOTO'
-    SCLIVE = 'SCLIVE'
+    LIVE = 'live'
+    FOTO = 'foto'
+    SCLIVE = 'sclive'
 
     CATEGORIES = (
         (LIVE, 'LIVE'),
