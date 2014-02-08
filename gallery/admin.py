@@ -10,7 +10,7 @@ class ImageAdmin(admin.ModelAdmin):
     list_display = ('title', 'photographer', 'caption', 'date_of_event',
         'photographer')
     ordering = ('-date_of_upload',)
-    search_fields = ('title', 'date_of_event', 'caption', 'photographer')
+    search_fields = ('title', 'date_of_event', 'caption')
 
 
 class AlbumAdmin(admin.ModelAdmin):
