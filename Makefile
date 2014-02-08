@@ -3,7 +3,7 @@ MANAGE=python manage.py
 SETTINGS=--settings=$(PROJECT_NAME).settings.test
 LESS_PATH="utils/static/less"
 
-DOCKER_VERSION=0.6.6
+DOCKER_VERSION=0.7
 DATA_DIR="__data"
 POSTGRES_VERSION=9.1
 PORT=5432
