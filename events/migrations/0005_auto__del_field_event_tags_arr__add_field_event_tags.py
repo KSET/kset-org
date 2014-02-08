@@ -8,23 +8,12 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Deleting field 'Event.tags_arr'
-        db.delete_column(u'events_event', 'tags_arr')
-
-        # Adding field 'Event.tags'
-        db.add_column(u'events_event', 'tags',
-                      self.gf('djorm_pgarray.fields.ArrayField')(default=None, dbtype='text', null=True, blank=True),
-                      keep_default=False)
-
+        # Rename tags_arr to tags'
+        db.rename_column('events_event', 'tags_arr', 'tags')
 
     def backwards(self, orm):
-        # Adding field 'Event.tags_arr'
-        db.add_column(u'events_event', 'tags_arr',
-                      self.gf('djorm_pgarray.fields.ArrayField')(default=None, dbtype='text', null=True, blank=True),
-                      keep_default=False)
-
-        # Deleting field 'Event.tags'
-        db.delete_column(u'events_event', 'tags')
+        # Rename tags to tags_arr
+        db.rename_column('events_event', 'tags', 'tags_arr')
 
 
     models = {
