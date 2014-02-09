@@ -1,9 +1,19 @@
 # -*- coding: utf-8 -*-
 
+from itertools import chain
+
 from django import forms
+from django.db.models import Q
+
+from djorm_expressions.base import SqlExpression
 
 from events.models import Event
 from news.models import News
+
+
+def flatten(list_of_lists):
+    "Flatten one level of nesting"
+    return chain.from_iterable(list_of_lists)
 
 
 class SearchForm(forms.Form):
@@ -18,7 +28,14 @@ class SearchForm(forms.Form):
     def get_results(self):
         news = News.objects.filter(
             subject__icontains=self.cleaned_data['query']).order_by('-created_at')
-        events = Event.objects.filter(
-            title__icontains=self.cleaned_data['query']).order_by('-date')
+
+        query_string_args = self.cleaned_data['query'].split(':')
+
+        if query_string_args[0] == 'tags':
+            tags = map(lambda t: t.strip(), flatten(map(lambda t: t.split(','), query_string_args[1:])))
+            events = Event.objects.where(SqlExpression("tags", "@>", tags))
+        else:
+            events = Event.objects.filter(
+                title__icontains=self.cleaned_data['query']).order_by('-date')
 
         return news, events
