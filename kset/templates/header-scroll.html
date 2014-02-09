@@ -21,10 +21,10 @@
       <div class="item-bottom">
         <div class="date"><span class="fontello">&#x1F4C5;</span> {{ event.date|date:"D"}}</div>
         <span class="tags">
-          {% if event.tags|length < 22 %}
-            {{ event.tags }}
+          {% if event.tags_to_str|length < 22 %}
+            {{ event.tags_to_str }}
           {% else %}
-            {{ event.tags|stringformat:".22s" }}...
+            {{ event.tags_to_str|stringformat:".22s" }}...
           {% endif %}
         </span>
         {% if event.price %} &mdash; {{ event.price }} {% endif %}

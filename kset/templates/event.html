@@ -32,7 +32,7 @@
 
     <div itemprop="description">{{ event.description|safe }}</div>
     {{ event.content|safe }}
-    <span class="single-tags"><b>tags:</b> {{ event.tags }} </span>
+    <span class="single-tags"><b>tags:</b> {{ event.tags_to_str }} </span>
 
   </section>
 
