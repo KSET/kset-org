@@ -18,25 +18,14 @@ def index(request):
 def login(request):
     if request.session.get('members_user_id'):
         return redirect('members_index')
+    form = LoginForm(request.POST or None)
+    if form.is_valid():
+
+        request.session['members_user_id'] = form.cleaned_data['member']
+        request.session.save()
+        return redirect('members_index')
     else:
-        # check if form data is posted
-        ## FIXME: use form instead of raw POST data
-        if (request.method == 'POST'):
-            username = request.POST.get("username")
-            password = request.POST.get("password")
-            pwhash = hashlib.md5(password).hexdigest()
-            # check username + password
-
-            try:
-                member = Member.objects.get(password=pwhash, username=username)
-
-                request.session['members_user_id'] = member.id
-                request.session.save()
-                return redirect('members_index')
-            except:
-                return render(request, 'login.html', {'loginFailed': True})
-        else:
-            return render(request, 'login.html')
+        return render(request, 'login.html', {'form': form})
 
 
 def logout(request):
