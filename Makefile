@@ -1,7 +1,6 @@
 PROJECT_NAME=kset
 MANAGE=python manage.py
 SETTINGS=--settings=$(PROJECT_NAME).settings.test
-LESS_PATH="utils/static/less"
 
 DOCKER_VERSION=0.7
 DATA_DIR="__data"
@@ -9,7 +8,7 @@ POSTGRES_VERSION=9.1
 PORT=5432
 
 
-.PHONY: all test coverage clean requirements requirements-dev setup-test css \
+.PHONY: all test coverage clean requirements requirements-dev setup-test \
 	docker-check docker-version postgres
 
 all: coverage
@@ -50,25 +49,19 @@ setup-dev:
 	$(MAKE) test
 	[ ! -f $(PROJECT_NAME)/settings/local.py ] && \
 		echo 'from .dev import *' > $(PROJECT_NAME)/settings/local.py
-	python manage.py syncdb --all
-	python manage.py migrate --fake
+	python manage.py syncdb
+	python manage.py migrate
 	echo "Now run: python manage.py runserver and visit http://localhost:8000/"
 
-deploy: css
+update:
 		git pull
+		$(MAKE) clean
 		$(MAKE) requirements
 		python manage.py migrate
 		python manage.py collectstatic --noinput
 
-
-css:
-		for f in $(LESS_PATH)/*.less ; do \
-		  fname=$${f##*/}; \
-		  lessc $$f utils/static/css/"$${fname%.less}.css" ; \
-		done
-
-restart: deploy
-		sudo restart $(PROJECT_NAME)-web
+deploy: update
+		sudo supervisorctl restart $(PROJECT_NAME)-org
 
 lint:
 	flake8 --exclude=.git,migrations --max-complexity=10 .
