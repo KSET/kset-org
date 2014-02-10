@@ -10,11 +10,6 @@ class SubpageAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description')
     list_filter = ['category']
 
-    class Media:
-        js = (
-            '/static/tiny_mce/tiny_mce.js',
-        )
-
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
