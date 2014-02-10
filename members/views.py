@@ -3,16 +3,27 @@ import hashlib
 
 from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 from .forms import *
 from .models import *
 from .decorators import require_auth
 
 
+def _display_member(request, template, member):
+
+    return render(request, template, {
+        'member': member,
+        'addresses': Address.objects.filter(member=member.id),
+        'contacts': Contact.objects.filter(member=member.id),
+        'groups': MemberGroupLink.objects.filter(member=member.id).order_by('date_start'),
+    })
+
+
 @require_auth
 def index(request):
     member = get_object_or_404(Member, id=request.session.get('members_user_id'))
-    return display_member(request, 'main.html', member)
+    return _display_member(request, 'main.html', member)
 
 
 def login(request):
@@ -30,19 +41,9 @@ def login(request):
 
 def logout(request):
     if request.session.get('members_user_id'):
-        request.session.flush()
+        request.session['members_user_id'] = None
 
     return redirect('members_login')
-
-
-def display_member(request, template, member):
-
-    return render(request, template, {
-        'member': member,
-        'addresses': Address.objects.filter(member=member.id),
-        'contacts': Contact.objects.filter(member=member.id),
-        'groups': MemberGroupLink.objects.filter(member=member.id).order_by('date_start'),
-    })
 
 
 @require_auth
@@ -51,7 +52,7 @@ def get_member(request, id):
         member = Member.objects.get(id=id)
     except:
         raise Http404
-    return display_member(request, 'main.html', member)
+    return _display_member(request, 'main.html', member)
 
 
 @require_auth
@@ -61,6 +62,7 @@ def list_all(request):
         'members': members})
 
 
+@login_required
 def red_table(request):
     """Print out in html red members addresses."""
 
@@ -76,6 +78,7 @@ def red_table(request):
     })
 
 
+@login_required
 def red_list(request):
     """Print out in html red members addresses."""
 

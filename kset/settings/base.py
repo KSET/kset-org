@@ -192,6 +192,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_buttons3': "",
 }
 
+LOGIN_URL = '/admin/'
+
 BASE_LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

@@ -16,7 +16,7 @@ urlpatterns = patterns('members.views',
 
     # ispis crvenih za pozivnice
     url(r'^red/table/$', 'red_table',
-        name='red_table'),
+        name='members_red_table'),
     url(r'^red/list/$', 'red_list',
-        name='red_list'),
+        name='members_red_list'),
 )

@@ -7,10 +7,11 @@ import factory
 from news.models import News
 from events.models import Event
 from subpages.models import Subpage, Category
+from members.models import Group, Member, MemberGroupLink
 
 
 __all__ = ['UserFactory', 'NewsFactory', 'EventFactory', 'SubpageCategoryFactory',
-    'SubpageFactory']
+    'SubpageFactory', 'MemberFactory', 'GroupFactory', 'MemberGroupLinkFactory']
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -81,3 +82,37 @@ class SubpageFactory(factory.django.DjangoModelFactory):
     content = 'Test Content'
     thumb = None
     category = factory.SubFactory(SubpageCategoryFactory)
+
+
+class GroupFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Group
+
+    name = factory.Sequence(lambda n: 'TestGroup%s' % n)
+    slug = factory.Sequence(lambda n: 'test-group-%s' % n)
+    parent = None
+    description = 'Test Description'
+
+
+class MemberFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Member
+
+    card_id = factory.Sequence(lambda n: 'CardID-%s' % n)
+    name = factory.Sequence(lambda n: 'TestName%s' % n)
+    surname = factory.Sequence(lambda n: 'TestSurname%s' % n)
+    slug = factory.Sequence(lambda n: 'test-member-%s' % n)
+    nickname = factory.Sequence(lambda n: 'TestNickname%s' % n)
+    username = factory.Sequence(lambda n: 'testusername%s' % n)
+    password = None
+    birth = None
+    death = None
+    comment = None
+    image = None
+
+
+class MemberGroupLinkFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = MemberGroupLink
+
+    member = factory.SubFactory(MemberFactory)
+    group = factory.SubFactory(GroupFactory)
+    date_start = None
+    date_end = None
