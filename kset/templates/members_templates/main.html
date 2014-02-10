@@ -18,9 +18,8 @@
 					{{member.image}}
 				</div>
 				<div class="basic-info">
-					<div class="name">{{member.name}}</div>
-					<div class="surname">{{member.surname}}</div>
-					<div class="nickname">{{member.nickname}}</div>
+					<div class="name">{{member.name}} {{member.surname}}</div>
+					<div class="nickname">{% if member.nickname %}- <i>{{member.nickname}}</i>{% endif %}</div>
 				</div>
 				<div style="clear: both"></div>
 			</div>
@@ -65,8 +64,8 @@
 					<table class="contacts-list">
 						{% for contact in contacts %}
 						<tr class="contact">
-							<td class="contact-type">{{contact.contact_type.name|default:"---"}}</td>
-							<td class="contact-value">{{contact.contact|default:"nepoznato"}}</td>
+							<td class="contact-type">{{contact.get_contact_type_display}}:</td>
+							<td class="contact-value">{{contact.contact}}<td>
 						</tr>
 						{% empty %}
 						<tr class="no-contact">
@@ -84,9 +83,10 @@
 						{% for group in groups %}
 						<tr class="group">
 							<td>
-								{{group.group.name|default:"---"}} od
-								{{group.date_start|default:"?"}} do
-								{{group.date_end|default:"?"}}
+								{% if group.group.name %}
+									{{ group.group.name }}
+									{{ group.date_start|default:"" }}
+								{% endif %}
 							</td>
 						</tr>
 						{% empty %}

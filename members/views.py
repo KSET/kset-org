@@ -41,7 +41,7 @@ def display_member(request, template, member):
         'member': member,
         'addresses': Address.objects.filter(member=member.id),
         'contacts': Contact.objects.filter(member=member.id),
-        'groups': MemberGroupLink.objects.filter(member=member.id),
+        'groups': MemberGroupLink.objects.filter(member=member.id).order_by('date_start'),
     })
 
 

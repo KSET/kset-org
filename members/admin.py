@@ -1,14 +1,14 @@
 #coding: utf-8
 
-import hashlib
 import os
 
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from django.conf import settings
-from django import forms
 from django.utils.encoding import smart_str
 
 from .models import *
+from .forms import *
 from .membership import InvoiceTemplate
 
 
@@ -38,20 +38,6 @@ def make_bill(modeladmin, request, queryset):
 make_bill.short_description = "Ispisi clanarine"
 
 
-class MemberForm(forms.ModelForm):
-    resetpw = forms.CharField(
-        widget=forms.PasswordInput,
-        label="Lozinka",
-        required=False)
-    resetpw2 = forms.CharField(
-        widget=forms.PasswordInput,
-        label="Ponovi lozinku",
-        required=False)
-
-    class Meta:
-        model = Member
-
-
 class MemberGroup(admin.TabularInline):
     model = MemberGroupLink
     fk_name = "member"
@@ -79,39 +65,38 @@ class MemberContact(admin.TabularInline):
     #allow_add = True
 
 
-class MemberAdmin(admin.ModelAdmin):
+class MemberAdmin(UserAdmin):
+    add_form_template = 'admin/auth/user/add_form.html'
+    change_user_password_template = None
+    add_form = MemberCreationForm
+    form = MemberChangeForm
+
     fieldsets = [
-        ("Korisnički račun", {'fields': ['username', 'resetpw', 'resetpw2']}),
+        ("Korisnički račun", {'fields': ['username', 'password']}),
         ("Osobni podaci", {'fields': ['name', 'surname', 'nickname', 'birth',
                                         'death', 'image', 'comment']}),
     ]
-    list_display = ('name', 'surname', 'nickname', 'division', 'card', )
+    list_display = ('username', 'name', 'surname', 'nickname', 'division', 'card', )
     ordering = ('surname', 'name')
-    search_fields = ('name', 'surname', 'nickname',)
+    search_fields = ('name', 'surname', 'nickname', 'username')
     search_fields_verbose = ('Ime', 'Prezime', 'Nadimak',)
     list_filter = ['groups']
-    inlines = (MemberAddress, MemberContact, MemberGroup, )
+
     actions = [make_bill]
+    filter_horizontal = ()
 
-    form = MemberForm
+    add_fieldsets = (
+        (None, {"classes": ("wide",),
+        "fields": ("username", "password1", "password2")}),
+    )
 
-    class Media:
-        js = ('/static/admin/tinymce/jscripts/tiny_mce/tiny_mce.js',
-            '/static/admin/tinymce_setup/tinymce_description.js',)
-
-    def save_model(self, request, obj, form, change):
-
-        if (len(form['resetpw'].data) == 0):
-            if (change):
-                obj.password = Member.objects.get(
-                    username=request.POST["username"]).password
-            else:
-                obj.password = "!"
+    def get_fieldsets(self, request, obj=None):
+        self.inlines = ()
+        if not obj:
+            return self.add_fieldsets
         else:
-            if (len(form['resetpw'].data) >= 5 and form['resetpw'].data == form['resetpw2'].data):
-                obj.password = hashlib.md5(form['resetpw'].data).hexdigest()
-
-        obj.save()
+            self.inlines = (MemberAddress, MemberContact, MemberGroup, )
+        return super(MemberAdmin, self).get_fieldsets(request, obj)
 
 
 class GroupAdmin(admin.ModelAdmin):
@@ -121,4 +106,3 @@ class GroupAdmin(admin.ModelAdmin):
 
 admin.site.register(Group, GroupAdmin)
 admin.site.register(Member, MemberAdmin)
-admin.site.register(ContactType)
