@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 from django.conf import settings
 from django.db import models
 
@@ -57,20 +59,20 @@ class Album(models.Model):
         permissions = (
             ('view_album', 'View Album'),)
 
-    def save(self):
-        super(Album, self).save()
+    def save(self, *args, **kwargs):
+        super(Album, self).save(*args, **kwargs)
         if (self.initial):
-            if (not self.upload_path.is_empty):
+            if (self.upload_path and not self.upload_path.is_empty):
                 self.initial = False
                 super(Album, self).save()
-                full_path_to_album = settings.MEDIA_ROOT+self.upload_path.path
+                full_path_to_album = os.path.join(settings.MEDIA_ROOT, self.upload_path.path)
 
                 for filename in exclude_fb_versions(full_path_to_album):
                     parsed = parse_filename(filename)
                     if (parsed):
                         new_image = Image.objects.create(title=parsed['name'],
                             slug=parsed['slug'],
-                            upload_path=str(self.upload_path.path) + '/' + parsed['name_full'],
+                            upload_path=os.path.join(self.upload_path.path, parsed['name_full']),
                             date_of_event=parsed['date'],
                             photographer=self.photographer)
                         new_image.album.add(self)

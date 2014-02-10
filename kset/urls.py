@@ -6,6 +6,7 @@ from feed import RssProgramFeed, AtomProgramFeed
 from filebrowser.sites import site
 
 import members.urls
+import gallery.urls
 
 admin.autodiscover()
 
@@ -55,27 +56,14 @@ urlpatterns = patterns('',
     url(r'^klub/$', 'subpages.views.by_slug',
         name='club'),
 
-
     url(r'^multimedia/$', 'subpages.views.multimedia',
         name='multimedia'),
-
-    url(r'^gallery/$', 'gallery.views.show_gallery',
-        name='gallery_index'),
-    url(r'^gallery/(?P<category>\w+)/$', 'gallery.views.list_albums',
-        name='gallery_category_albums'),
-    url(r'^gallery/(?P<category>\w+)/(?P<year>\d{4})/$', 'gallery.views.list_albums',
-        name='gallery_category_albums_by_year'),
-    url(r'^gallery/(?P<category>\w+)/(?P<album_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_album',
-        name='gallery_view_album'),
-    url(r'^gallery/(?P<category>\w+)/[-_a-zA-Z0-9]+/(?P<image_slug>[-_a-zA-Z0-9]+)/$', 'gallery.views.view_image',
-        name='gallery_view_image'),
-
 
     url(r'^dezurstva/$', 'savjet.views.list_attendance',
         name='dezurstva'),
 
+    url(r'^gallery/', include(gallery.urls)),
     url(r'^members/', include(members.urls)),
-
 
 )
 

@@ -18,7 +18,7 @@
         {% endfor %}
     </nav>
 
-    {% for a in list %}
+    {% for a in albums %}
 
         {% ifchanged %}
             <header class="gallery-month"><h2>{{ a.date_of_event|date:"F Y." }}</h2></header>

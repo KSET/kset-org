@@ -8,10 +8,12 @@ from news.models import News
 from events.models import Event
 from subpages.models import Subpage, Category
 from members.models import Group, Member, MemberGroupLink
+from gallery.models import Photographer, Album, Image
 
 
 __all__ = ['UserFactory', 'NewsFactory', 'EventFactory', 'SubpageCategoryFactory',
-    'SubpageFactory', 'MemberFactory', 'GroupFactory', 'MemberGroupLinkFactory']
+    'SubpageFactory', 'MemberFactory', 'GroupFactory', 'MemberGroupLinkFactory',
+    'PhotographerFactory', 'AlbumFactory', 'ImageFactory']
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -116,3 +118,30 @@ class MemberGroupLinkFactory(factory.django.DjangoModelFactory):
     group = factory.SubFactory(GroupFactory)
     date_start = None
     date_end = None
+
+
+class PhotographerFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Photographer
+
+    name = factory.Sequence(lambda n: 'Test Photographer %s' % n)
+    url = 'http://myfaketestphotogallery.com'
+
+
+class AlbumFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Album
+
+    title = factory.Sequence(lambda n: 'Fake Album %s' % n)
+    slug = factory.Sequence(lambda n: 'fake-album-%s' % n)
+    description = 'Fake description'
+    date_of_event = datetime.now()
+    photographer = factory.SubFactory(PhotographerFactory)
+    category = Album.LIVE
+
+
+class ImageFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Image
+
+    title = factory.Sequence(lambda n: 'Fake Image %s' % n)
+    slug = factory.Sequence(lambda n: 'fake-image-%s' % n)
+    photographer = factory.SubFactory(PhotographerFactory)
+    date_of_event = datetime.now()
