@@ -8,21 +8,18 @@ class ZapisnikAdmin(admin.ModelAdmin):
     list_display = ('title', 'date', 'author',)
     search_fields = ('title', 'content', )
     list_filter = ('author', 'date', )
+    fields = ('date', 'title', 'content')
     ordering = ('-date',)
 
-    class Media:
-        js = (
-            '/static/tiny_mce/tiny_mce.js',
-        )
+    def save_model(self, request, obj, form, change):
+        """When creating a new object, set the author field."""
+        if not change:
+            obj.author = request.user
+        obj.save()
 
 
 class DezurstvaAdmin(admin.ModelAdmin):
     list_display = ('start', 'end', 'content',)
-
-    class Media:
-        js = (
-            '/static/tiny_mce/tiny_mce.js',
-        )
 
 admin.site.register(Zapisnik, ZapisnikAdmin)
 admin.site.register(Dezurstva, DezurstvaAdmin)
