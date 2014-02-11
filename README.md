@@ -1,6 +1,8 @@
 KSET.org 
 ========
 
+[![Build Status](https://secure.travis-ci.org/KSET/kset-org.png?branch=master)](http://travis-ci.org/KSET/kset-org)
+
 Public repo of www.kset.org
 
 
