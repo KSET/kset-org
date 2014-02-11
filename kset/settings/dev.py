@@ -44,5 +44,4 @@ except ImportError:
     pass
 
 
-# Don't use Sentry logging even if configured for production
 LOGGING = BASE_LOGGING
