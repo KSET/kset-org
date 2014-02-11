@@ -16,7 +16,9 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.styles import ParagraphStyle
 
 
-pdfmetrics.registerFont(TTFont('Arial', os.path.join(settings.STATIC_ROOT, 'frontend', 'fonts', 'Arial.ttf')))
+font_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+            'assets', 'fonts', 'nimbus_sans_becker_lcon.ttf')
+pdfmetrics.registerFont(TTFont('NimbusSans', font_path))
 
 
 class InvoiceTemplate():
@@ -61,7 +63,7 @@ class InvoiceTemplate():
                  'bottom': 1.5*cm,
                  'left': 1.5*cm}
 
-    __tStyle = [('FONT', (0, 0), (-1, -1), 'Arial'),
+    __tStyle = [('FONT', (0, 0), (-1, -1), 'NimbusSans'),
                 ('LINEABOVE', (0, 1), (-1, 1), 1, colors.black),
                 ('LINEABOVE', (0, -1), (-1, -1), 1, colors.black),
                 ('LINEABOVE', (0, 2), (-1, -2), 0.25, colors.black),
@@ -83,7 +85,7 @@ class InvoiceTemplate():
 
         self.__styles = {}
         self.__styles['Normal'] = ParagraphStyle('Normal')
-        self.__styles['Normal'].fontName = 'Arial'
+        self.__styles['Normal'].fontName = 'NimbusSans'
 
         self.__styles['NormalCenter'] = copy(self.__styles['Normal'])
         self.__styles['NormalCenter'].alignment = 1
