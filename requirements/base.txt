@@ -2,7 +2,7 @@ Django==1.6.2
 Pillow==2.2.1
 South==0.8.4
 django-grappelli==2.5.1
-django-filebrowser==2.5.3
+django-filebrowser==3.5.3
 
 django-tinymce==1.5.2
 feedparser==5.1.3
