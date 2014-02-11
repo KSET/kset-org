@@ -106,7 +106,8 @@ class GalleryTest(TestCase):
         self.assertEquals(2, Image.objects.all().count())
         self.assertEquals(1, Photographer.objects.all().count())
 
-        images = Image.objects.all()
+        images = Image.objects.all().order_by('title')
+
         self.assertEquals(images[0].title, '20081222_some_made_up_band_cb_name_surname_01')
         self.assertEquals(images[1].title, '20081222_some_made_up_band_cb_name_surname_02')
 
