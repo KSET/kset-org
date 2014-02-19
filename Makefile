@@ -2,14 +2,13 @@ PROJECT_NAME=kset
 MANAGE=python manage.py
 SETTINGS=--settings=$(PROJECT_NAME).settings.test
 
-DOCKER_VERSION=0.7
 DATA_DIR="__data"
 POSTGRES_VERSION=9.1
 PORT=5432
 
 
 .PHONY: all test coverage clean requirements requirements-dev setup-test \
-	docker-check docker-version postgres
+	docker-check postgres
 
 all: coverage
 
@@ -70,14 +69,7 @@ docker-check:
 	@command -v docker >/dev/null 2>&1 || \
 		{ echo >&2 "Docker needs to be installed and on your PATH.  Aborting."; exit 1; }
 
-docker-version: docker-check
-	@if ! docker version | grep "Server version" | grep $(DOCKER_VERSION) > /dev/null; \
-		then \
-			echo "ERROR: Wrong docker version. Recommended version: $(DOCKER_VERSION)"; \
-			exit 1; \
-	fi
-
-postgres: docker-version
+postgres: docker-check
 	@if nmap -PS localhost | grep -q $(PORT); then \
 		echo "ERROR: Port $(PORT) is already in use..."; \
 		echo "Maybe Postgres is already running?!"; \
