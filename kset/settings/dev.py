@@ -13,6 +13,14 @@ DATABASES = {
     }
 }
 
+# We need to use Postgres because of PG Array support
+try:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config(
+        default='postgres://kset:kset@localhost:5432/ksetdb')}
+except ImportError:
+    pass
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
