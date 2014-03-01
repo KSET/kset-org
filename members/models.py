@@ -24,6 +24,10 @@ class GroupManager(models.Manager):
 
 
 class Group(models.Model):
+    CARD = 'iskaznica'
+    DIVISION = 'sekcija'
+    STATUS = 'status'
+
     name = models.CharField("naziv", max_length=32)
     slug = models.SlugField()
     parent = models.ForeignKey('self', null=True, blank=True, verbose_name="nad-grupa")

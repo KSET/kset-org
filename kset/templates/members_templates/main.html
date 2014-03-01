@@ -116,36 +116,10 @@
 		{% block rightContent %}
 			<div class="menu">
 				<ul>
-					<li><a href="{% url 'members_index' %}">Profil</a></li>
-					<li><a href="{% url 'members_list_all' %}">Svi članovi</a></li>
-					<li><a href="{% url 'members_logout' %}">Odjava</a> <br /></li>
+					<li><h1><a href="{% url 'members_index' %}">Profil</a> | <a href="{% url 'members_logout' %}">Odjava</a></h1></li>
+					<li><a href="{% url 'members_list_all' %}">Lista svih članova</a></li>
 				</ul>
 			</div>
-			<!--<div>
-				<p>Sekcije</p>
-				<ul>
-					<li><input type="checkbox" value="bike" /> Bike</li>
-					<li><input type="checkbox" value="disco" /> Disco</li>
-					<li><input type="checkbox" value="dramska" /> Dramska</li>
-					<li><input type="checkbox" value="foto" /> Foto</li>
-					<li><input type="checkbox" value="glazbena" /> Glazbena</li>
-					<li><input type="checkbox" value="pijandure" /> Pijandure</li>
-					<li><input type="checkbox" value="racunarska" /> Računarska</li>
-					<li><input type="checkbox" value="tehnicka" /> Tehnička</li>
-					<li><input type="checkbox" value="video" />Video</li>
-				</ul>
-			</div>
-			<div>
-				<p>Iskaznice</p>
-				<ul>
-					<li><input type="checkbox" value="plava" /> Plava</li>
-					<li><input type="checkbox" value="narancasta" /> Narančasta</li>
-					<li><input type="checkbox" value="crvena" /> Crvena</li>
-				</ul>
-			</div>
-			<div>
-				<input type="submit" value="Submit" />
-			</div>-->
 		{% endblock %}
 		</div>
 

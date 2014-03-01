@@ -58,8 +58,13 @@ def get_member(request, id):
 @require_auth
 def list_all(request):
     members = Member.objects.order_by('surname', 'name')
+    filter_form = MemberFilterForm(request.POST or None)
+    if filter_form.is_valid():
+        members = filter_form.filter()
+
     return render(request, 'members-list.html', {
-        'members': members})
+        'members': members,
+        'filter_form': filter_form})
 
 
 @login_required

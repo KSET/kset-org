@@ -5,10 +5,10 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.conf import settings
 
-from .models import Member
+from .models import Member, Group
 
 
-__all__ = ['LoginForm', 'MemberCreationForm', 'MemberChangeForm']
+__all__ = ['LoginForm', 'MemberCreationForm', 'MemberChangeForm', 'MemberFilterForm']
 
 
 class LoginForm(forms.Form):
@@ -86,3 +86,36 @@ class MemberChangeForm(forms.ModelForm):
         # the field, because the field does not have access
         # to the initial value
         return self.initial["password"]
+
+
+class MemberFilterForm(forms.Form):
+    division = forms.ModelChoiceField(
+        queryset=Group.objects.filter(parent__name=Group.DIVISION).order_by('name'),
+        empty_label='Sekcija',
+        required=False)
+    card = forms.ModelChoiceField(
+        queryset=Group.objects.filter(parent__name=Group.CARD).order_by('name'),
+        empty_label='Iskaznica',
+        required=False)
+    status = forms.ModelChoiceField(
+        queryset=Group.objects.filter(parent__name=Group.STATUS).order_by('name'),
+        empty_label='Status',
+        required=False)
+
+    def filter(self):
+        self.is_valid()  # force validation just in case
+        division = self.cleaned_data.get('division')
+        card = self.cleaned_data.get('card')
+        status = self.cleaned_data.get('status')
+
+        # This will build the query based on supplied filters
+        # NOTE: it executes just one query at the end
+        members = Member.objects.all()
+        if division:
+            members = members.filter(groups=division)
+        if card:
+            members = members.filter(groups=card)
+        if status:
+            members = members.filter(groups=status)
+
+        return members.order_by('surname', 'name')
