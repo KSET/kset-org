@@ -1,118 +1,21 @@
-{% extends 'index.html' %}
+{% extends "subpage.html" %}
 
-{% load fb_versions %}
-
-{% block content %}
-<div id="right" class="right-column club-right" >
-
-  <div id="right-col2-klub" class="right-column-col2-klub">
-
-    <img src="{{ STATIC_URL }}frontend/images/kset_logo2.png" style="margin-top:10px;"/> <i>... prvi put otvorio vrata 1976.</i>
-
-    <h1>
-      <span class="orange">&raquo;&nbsp;</span>
-      Informacije
-    </h1>
-    <table>
-      <tr>
-        <td> <b>mail:</b>
-        </td>
-        <td>
-          <a href="#">info@kset.org</a>
-          <br />
-          <a href="#">booking@kset.org</a>
-        </td>
-      </tr>
-      <tr>
-        <td> <b>adr:</b>
-        </td>
-        <td>Unska 3, 10000 Zagreb</td>
-      </tr>
-      <tr>
-        <td>
-          <b>tel:</b>
-        </td>
-        <td>+385 1 6129 758</td>
-      </tr>
-      <tr>
-        <td>
-          <b>gdje?!</b>
-        </td>
-        <td>
-          <a href="https://maps.google.com/maps?q=Zagreb+Unska+3&hl=en&sll=45.801616,15.971576&sspn=0.001034,0.002642&hnear=Unska+ulica+3,+10000,+Zagreb,+Croatia&t=m&z=16">GoogleMaps</a>
-          <br />
-          <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <b>logotip:</b>
-        </td>
-        <td>
-          <a href="{{ STATIC_URL }}images/KSETlogo.zip">logotip.zip</a>
-        </td>
-      </tr>
-    </table>
-
-    <div class="vsep"></div>
-
-    <h1>
-      <span class="orange">&raquo;&nbsp;</span>
-      Voditelji
-    </h1>
-    {{ leaders.content|safe }}
-    <div class="vsep"></div>
-
-    <h1>
-      <span class="orange">&raquo;&nbsp;&nbsp;</span> <i>"Vrijedi do sutra ..."</i>
-    </h1>
-
-    <a href="{% url 'alumni' %}">
-      <img src="{{ STATIC_URL }}frontend/images/alumni_link.png" alt="alumni" />
-    </a>
-
-  </div>
-
-  <div id="right-col1-klub" class="right-column-col1-klub">
-
-    <h1>
-      <span class="orange">&raquo;&nbsp;</span>
-      Sekcije
-    </h1>
-
-    <div class="cellmenu" style="min-height: 335px;">
-      {% for division in divisions %}
-      <a href="{% url 'subpage_slug' division.slug %}" style="background-image: url({% version division.thumb 'small' %});">
-        <div class="text">{{ division.title }}</div>
-      </a>
-      {% endfor %}
-    </div>
-
-    <div class="vsep"></div>
-
-    <h1>
-      <span class="orange">&raquo;&nbsp;</span>
-      Projekti
-    </h1>
-
-    <div class="cellmenu" style="min-height:200px;">
-      {% for project in projects %}
-      <a href="{% url 'subpage_slug' project.slug %}" style="background-image: url({% version project.thumb 'small' %});">
-        <div class="text">{{ project.title }}</div>
-      </a>
-      {% endfor %}
-    </div>
-
-  </div>
-
-</div>
-
-<div id="left" class="left-column club-left">
+{% block subpage_content %}
 
   <div class="item" style="margin-top: 0px; border: 0px;">
-    <h1>{{ subpage.title }}</h1>
-    {{ subpage.content|safe }}
-  </div>
+    <h1>KSET - Klub Studenata ElektroTehnike</h1>
 
-</div>
-{% endblock %}
+    <p>To je bivša <strong>kotlovnica</strong> smještena na sjeveroistočnom uglu najboljeg fakulteta na svijetu (i pored C zgrade FER-a). Neki ljudi tvrde da je <strong>"Rupa"</strong> unatoč brojnim nelogičnostima te izjave. Za početak, Rupa je mjesto u sjeverozapadnoj Hrvatskoj na granici sa Slovenijom.</p>
+
+    <p>U današnjem obliku <strong>Klub postoji već 37 godina.</strong> On funkcionira vrlo dobro, hvala na pitanju, i broji <strong>9 sekcija</strong>: <strong>bike</strong> (profesionalni obožavatelji međunožnog gurala), <strong>disco</strong> (navodno za muziku), <strong>dramska</strong> (misle da znaju glumiti), <strong>računarska</strong> (za geekove i geekice), <strong>tehnička</strong> (za manualni rad), <strong>glazbena</strong> (za propale glazbenike koji su se bacili u opremanje, ma imaju oni i bend), <strong>planinarska</strong> a.k.a. P.I.J.A.N.D.U.R.E. (s redovitim gubljenjem po šumama upoznaju prirodu i svoj unutrašnji mir), <strong>video</strong> (snimaju i opskrbljuju KSET onim prekrasnim bićima koje nazivamo žene) i <strong>foto</strong> (za umjetnike s pravim aparatima). Više o njima možete saznati kasnije ili navratite do KSET-a i pitajte prvu osobu na koju naiđete.
+    </p>
+    <img src="{{ STATIC_URL }}frontend/images/kset-dvorana_01.jpg" alt="kset">
+
+    <p>Sada koja riječ o nekim administrativni stvarima. <strong>KSET je klub volontera.</strong> To znači da sve što radimo je rezultat činjenice da nemamo pametnijeg posla u životu. Zašto bi to itko radio? <strong>Jer je zabavno.</strong> KSET postane mjesto na kojem možete <strong>popiti kavu</strong>, sjesti s <strong>prijateljima</strong> i <strong>kartati</strong> ili <strong>surfati</strong> u pauzama između predavanja ili se na kraju dana opustiti uz <strong>šah ili dobar film.</strong></p>
+
+    <p>Za vrijeme ispita Klub se pretvara u mjesto u kojem svi uče, ali će članovi uvijek izdvojiti vremena da vam pokažu zadatak koji ne znate riješiti ili pojasniti nešto što vam je jasno kao i poljoprivreda Eskimu. U svakoj sekciji može se <strong>primijeniti ili proširiti znanje</strong> stečeno na fakultetu (čak i u planinarskoj) i skupiti hrpu prijatelja.</p>
+
+    <p><strong>Članarina</strong> u KSET-u iznosi 100 kn, uz članstvo dobijete mogućnost konzumiranja pića na šanku po <strong>studenskim cijenama</strong> (kava 3 kn, sok 3,5...), besplatne upade srijedom na različite slušaonice... Čitajte dalje ili dođite petkom između 13 i 14h u Klub i saznajte sami...</p>
+
+  </div>
+{% endblock subpage_content %}
