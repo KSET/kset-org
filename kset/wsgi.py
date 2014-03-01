@@ -11,18 +11,10 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
-from os import environ
-from os.path import basename, dirname
-
-settings_module = basename(dirname(__file__)) + '.settings'
-environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
+PROJECT_NAME = 'kset'
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
 from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
-
-# Apply WSGI middleware here.
-# from helloworld.wsgi import HelloWorldApplication
-# application = HelloWorldApplication(application)
+kset = get_wsgi_application()
