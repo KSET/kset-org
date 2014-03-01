@@ -4,6 +4,7 @@ import hashlib
 from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .forms import *
 from .models import *
@@ -44,6 +45,32 @@ def logout(request):
         request.session['members_user_id'] = None
 
     return redirect('members_login')
+
+
+def forgot_password(request):
+    form = MemberForgotPasswordForm(request.POST or None)
+    if form.is_valid():
+        form.send_password_reset_email()
+        messages.success(request, 'Uskoro ćete dobiti email sa uputama kako resetirati lozinku.')
+        return redirect('members_login')
+    return render(request, 'forgot_password.html', {'form': form})
+
+
+def reset_password(request, link):
+    try:
+        rpl = ResetPasswordLink.objects.get(unique_link=link)
+        if not rpl.is_still_valid():
+            messages.error(request, 'Link za resetiranje passworda je istekao.')
+            return redirect('members_login')
+    except ResetPasswordLink.DoesNotExist:
+        messages.error(request, 'Nije valjan link za reset lozinke.')
+        return redirect('members_login')
+    form = ResetPasswordForm(request.POST or None)
+    if form.is_valid():
+        form.set_new_password(rpl=rpl)
+        messages.success(request, 'Uspješno ste resetirali lozinku. Sada se ulogirajte se.')
+        return redirect('members_login')
+    return render(request, 'reset_password.html', {'form': form})
 
 
 @require_auth
