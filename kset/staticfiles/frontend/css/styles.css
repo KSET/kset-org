@@ -69,7 +69,7 @@ body
 {
     font-family: 'Open Sans', 'Droid Sans', Verdana,sans-serif,arial;
     margin: 0;
-    font-size: 11px;
+    font-size: 14px;
     background: #111 url(../images/bg.png);/*
     background-image: -webkit-linear-gradient(to bottom,rgba(0,0,0,0.6) 0,  rgba(69,72,77,0.3) 100%),url(../images/bg.png);
     background-image: -moz-linear-gradient(to bottom,rgba(0,0,0,0.6) 0,  rgba(69,72,77,0.3) 100%),url(../images/bg.png);
