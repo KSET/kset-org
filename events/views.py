@@ -72,6 +72,7 @@ def calendar(request):
 
     # try POST data, otherwise use current year-month
     ## FIXME: Use a form here not raw POST data
+    ## while we're at it there's not reason this shouldn't get a GET request
     try:
         current_date = date(int(request.POST.get('year')),
             int(request.POST.get('month')), 1)
