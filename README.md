@@ -1,29 +1,34 @@
 KSET.org 
 ========
 
-Author: [Veljko Dragsic](https://github.com/veljkodragsic)
+[![Build Status](https://secure.travis-ci.org/KSET/kset-org.png?branch=master)](http://travis-ci.org/KSET/kset-org)
+
+Public repo of www.kset.org
 
 
+## Quick Guide for devs
 
-## Quick Guide
+Use `virtualenvwrapper` to get things running.
 
-Use `virtualenv` to get things running.
+    
+    mkvirtualenv kset
+    git clone git@github.com:KSET/kset-org.git && cd kset-org
 
-    mkdir kset-org && cd kset-org
-    virtualenv --no-site-packages env
-
-    git clone git@github.com:KSET/kset-org.git kset
-
-    cp kset/profile.example profile
-    source profile
-
-    pip install -r kset/requirements.txt
+    make setup-dev
 
 
 ## Requirements
-  *  `python2.7` 
-  *  `python2.7-dev` 
-  *  `virtualenv` 
-  *  `python-pip` 
-  *  `libjpeg`, `libpng`, `libgif` (with `-dev` packages)
+  
+  *  `python2.7+` 
+  *  `python2.7-dev+` 
+  *  `virtualenvwrapper`
+  *  `python-pip`
+  *  `libjpeg8-dev`
+  *  `zlib1g-dev`
+  *  `libtiff4-dev`
+  *  `libfreetype6-dev`
+  *  `liblcms2-dev`
+  *  `libwebp-dev`
+  *  `libtk-img-dev`
   *  `libsasl` (with `-dev`)
+  *  `libpq-dev` (for psycopg2)

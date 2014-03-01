@@ -1,14 +1,16 @@
-#coding: utf8
-
-from django.db import models
-from filebrowser.fields import FileBrowseField
-from tagging.fields import TagField
-from tagging_autocomplete.models import TagAutocompleteField
-from tinymce.models import HTMLField
+# -*- coding: utf-8 -*-
 
 from datetime import datetime
 
-class EventManager(models.Manager):
+from django.db import models
+
+from filebrowser.fields import FileBrowseField
+from tinymce.models import HTMLField
+from djorm_expressions.models import ExpressionManager
+from djorm_pgarray.fields import ArrayField
+
+
+class EventManager(ExpressionManager):
 
     def get_today(self):
         return self.filter(date=datetime.now())
@@ -23,20 +25,21 @@ class EventManager(models.Manager):
             return False
 
 
-
 class Event(models.Model):
-    title = models.CharField('naslov', max_length=192)
-    date = models.DateField( 'datum' )
-    time = models.TimeField( 'vrijeme', null=True, blank=True )
-    description = HTMLField( 'opis', blank=True )
-    content = HTMLField( 'sadržaj', blank=True )
-    tags = TagAutocompleteField( blank=True )
-    slug = models.SlugField( blank=True, max_length=128 )
-    announce = models.BooleanField( 'najavi' )
-    daytime = models.BooleanField('Dnevni')
-    price = models.CharField('cijena', max_length=16, null=True, blank=True )
-    thumb = FileBrowseField( 'sličica', max_length=255, null=True, blank=True )
     objects = EventManager()
+
+    title = models.CharField(u'Naslov', max_length=192)
+    date = models.DateField(u'Datum')
+    time = models.TimeField(u'Vrijeme', null=True, blank=True)
+    description = HTMLField(u'Opis', blank=True)
+    content = HTMLField(u'Sadržaj', blank=True)
+    tags = ArrayField(dbtype="text",
+        help_text='OBAVEZNO odvojiti tagove zarezon ali *BEZ* razmaka. Primjer: tag1,tag2,tag3')
+    slug = models.SlugField(blank=True, max_length=128)
+    announce = models.BooleanField(u'Najavi')
+    daytime = models.BooleanField(u'Dnevni')
+    price = models.CharField(u'Cijena', max_length=16, null=True, blank=True)
+    thumb = FileBrowseField(u'Sličica', max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name = 'događaj'
@@ -51,8 +54,17 @@ class Event(models.Model):
 
     @staticmethod
     def get_frontpage_events():
-        return Event.objects.filter(date__gte=datetime.now()).filter(daytime=False,announce=True).order_by('date')[:3]
+        return Event.objects.filter(date__gte=datetime.now()).filter(
+            daytime=False, announce=True).order_by('date')[:3]
 
     @staticmethod
     def get_frontpage_daytime_events():
-        return Event.objects.filter(date__gte=datetime.now()).filter(announce=True, daytime=True).order_by('date')[:3]
+        return Event.objects.filter(date__gte=datetime.now()).filter(
+            announce=True, daytime=True).order_by('date')[:3]
+
+    def tags_to_str(self):
+        """
+        Using this for list_display in admin because if tags is a list
+        unicodes get messed up, but a string shows up fine
+        """
+        return ','.join(self.tags)

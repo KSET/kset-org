@@ -1,0 +1,191 @@
+{% extends 'program.html' %}
+
+{% load fb_versions %}
+
+{% block leftcolumn %}
+
+
+<!-- NEWS -->
+{% if news %}
+<section class="news-box vijesti clearfix">
+
+  <h1 class="news-header">Vijesti</h1>
+
+  {% for item in news %}
+
+    <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+
+
+      {% if item.description %}
+
+        <div class="icontent">
+
+          {% if item.thumb %}
+            <a href="{% url 'news_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
+          {% endif %}
+
+          <h2><a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a></h2>
+
+          <h3>{{ item.created_at|date:"l, j. E Y." }}</h3>
+
+          {{ item.description|safe }}
+
+          <div id="{{ item.slug }}" style="display:none;">
+            {{ item.content|safe }}
+          </div>
+
+        </div>
+
+        {% if item.content %}
+          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+        {% endif %}
+
+      {% else %}
+
+        <div class="icontent">
+          {% if item.thumb %}
+            <a href="{% url 'news_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
+          {% endif %}
+
+          <h2><a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a></h2>
+
+          <h3>{{ item.created_at|date:"l, j. E Y." }}</h3>
+
+          {{ item.content|safe }}
+        </div>
+      {% endif %}
+
+      <div class="ifooter">
+      </div>
+
+    </article>
+
+  {% endfor %}
+
+</section>
+{% endif %}
+
+<!-- DNEVNI -->
+{% if daytime_events %}
+<section class="news-box dnevni clearfix">
+
+  <h1 class="news-header">Dnevni program</h1>
+
+  {% for item in daytime_events %}
+
+    <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+
+
+      {% if item.description %}
+
+        <div class="icontent">
+
+          {% if item.thumb %}
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
+          {% endif %}
+
+          <!-- share thingys -->
+          <div class="event-share"><span class="share facebook"></span><span class="share twitter"></span></div>
+
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
+
+          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
+
+          {{ item.description|safe }}
+
+          <div id="{{ item.slug }}" style="display:none;">
+            {{ item.content|safe }}
+          </div>
+
+        </div>
+
+        {% if item.content %}
+          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+        {% endif %}
+
+      {% else %}
+
+        <div class="icontent">
+          {% if item.thumb %}
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
+          {% endif %}
+
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
+
+          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
+
+          {{ item.content|safe }}
+        </div>
+      {% endif %}
+
+      <div class="ifooter">
+      </div>
+
+    </article>
+
+  {% endfor %}
+
+</section>
+{% endif %}
+
+<!-- NOCNI  -->
+{% if events %}
+<section class="news-box nocni clearfix">
+
+  <h1 class="news-header">Večernji program</h1>
+
+  {% for item in events %}
+
+    <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
+
+
+      {% if item.description %}
+
+        <div class="icontent">
+
+          {% if item.thumb %}
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
+          {% endif %}
+
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
+
+          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
+
+          {{ item.description|safe }}
+
+          <div id="{{ item.slug }}" style="display:none;">
+            {{ item.content|safe }}
+          </div>
+
+        </div>
+
+        {% if item.content %}
+          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+        {% endif %}
+
+      {% else %}
+
+        <div class="icontent">
+          {% if item.thumb %}
+            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
+          {% endif %}
+
+          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
+
+          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
+
+          {{ item.content|safe }}
+        </div>
+      {% endif %}
+
+      <div class="ifooter">
+      </div>
+
+    </article>
+
+  {% endfor %}
+
+</section>
+{% endif %}
+
+{% endblock %}

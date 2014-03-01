@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load fb_versions %}
+
+
+
+{% block content %}
+
+	<!-- ... TU SAM ... -->
+<section id="gallery" class="gallery clearfix">
+    <nav class="gallery-menu">
+        {% if years %}
+            <span>Odaberi godinu ...</span>
+        {% else %}
+            <span>Uskoro... </span>
+        {% endif %}
+        {% for year in years %}
+            <a href="{% url 'gallery_category_albums_by_year' category=category year=year|date:'Y' %}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </nav>
+
+    {% for a in albums %}
+
+        {% ifchanged %}
+            <header class="gallery-month"><h2>{{ a.date_of_event|date:"F Y." }}</h2></header>
+        {% endifchanged %}
+
+        <article class="m-album">
+
+           <a href="{% url 'gallery_view_album' category=a.category album_slug=a.slug %}">
+
+              <div class="slika">
+                <!-- slika dimenzije 255x170 -->
+                <img align="middle" src="{% version a.thumb 'gallerytb' %}"/>
+              </div>
+              <div class="ime">
+                <!--<div class="transparent"></div>-->
+                <h2>{{ a.title }}</h2>
+              </div>
+              <section class="tekst">
+                <p class="gallery-date"> {{ a.date_of_event }}</p>
+                <p class="gallery-author"> {{ a.photographer }}</p>
+              </section>
+            </a>
+        </article>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

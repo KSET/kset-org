@@ -1,0 +1,158 @@
+{% extends "index.html" %}
+
+{% block members-css %}
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}frontend/css/members.css"
+{% endblock %}
+
+{% block content %}
+
+<div id="members-main">
+
+	{% block main %}
+
+		<div class="members-leftContent" style="width:75%; float: left;">
+		{% block leftContent %}
+
+			<div class="top">
+				<div class="image">
+					{{member.image}}
+				</div>
+				<div class="basic-info">
+					<div class="name">{{member.name}} {{member.surname}}</div>
+					<div class="nickname">{% if member.nickname %}- <i>{{member.nickname}}</i>{% endif %}</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+
+			<div class="bottom">
+				<div class="birth-date bottom-item">
+					<div class="entry-title">Datum rođenja:</div>
+					<div class="value">{{member.birth|date:"d.m.Y"|default:"nepoznato"}}</div>
+				</div>
+
+                                <div class="death-date bottom-item">
+                                        {% if member.death %}
+					<div class="entry-title">Datum smrti:</div>
+                                        <div class="value">{{member.death|date:"d.m.Y"|default:"It is aliveee!"}}</div>
+                                        {% endif %}
+				</div>
+
+				<div class="addresses bottom-item">
+					<div class="entry-title">
+						Adrese
+					</div>
+					<table class="address-list">
+						{% for address in addresses %}
+						<tr class="address">
+							<td class="street">{{address.address|default:"nepoznato"}}</td>
+							<td class="city">{{address.town|default:"nepoznato"}}</td>
+							<td class="zipcode">{{address.zipcode|default:"nepoznato"}}</td>
+							<td class="country">{{address.country|default:"nepoznato"}}</td>
+						</tr>
+						{% empty %}
+						<tr class="no-address">
+							<td>nema zapisa</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+
+				<div class="contacts bottom-item">
+					<div class="entry-title">
+						Kontakti
+					</div>
+					<table class="contacts-list">
+						{% for contact in contacts %}
+						<tr class="contact">
+							<td class="contact-type">{{contact.get_contact_type_display}}:</td>
+							<td class="contact-value">{{contact.contact}}<td>
+						</tr>
+						{% empty %}
+						<tr class="no-contact">
+							<td>nema zapisa</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+
+				<div class="groups bottom-item">
+					<div class="entry-title">
+						Članstva
+					</div>
+					<table class="groups-list">
+						{% for group in groups %}
+						<tr class="group">
+							<td>
+								{% if group.group.name %}
+									{{ group.group.name }}
+									{{ group.date_start|default:"" }}
+								{% endif %}
+							</td>
+						</tr>
+						{% empty %}
+						<tr class="no-group">
+							<td>nema zapisa</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+
+				<div class="comment bottom-item">
+					<div class="entry-title">Komentar:</div>
+					<div class="value">{{member.comment|default:"nema"|safe}}</div>
+				</div>
+
+				{% if isProfileOwner %}
+				<!--<div class="profile-edit-nav bottom-item">
+					<a href="/clanovi/uredi/">Uredi profil</a>
+				</div>-->
+				{% endif %}
+
+			</div>
+		{% endblock %}
+		</div>
+
+		<div class="members-rightContent" style="width: 20%; float: right;">
+		{% block rightContent %}
+			<div class="menu">
+				<ul>
+					<li><a href="{% url 'members_index' %}">Profil</a></li>
+					<li><a href="{% url 'members_list_all' %}">Svi članovi</a></li>
+					<li><a href="{% url 'members_logout' %}">Odjava</a> <br /></li>
+				</ul>
+			</div>
+			<!--<div>
+				<p>Sekcije</p>
+				<ul>
+					<li><input type="checkbox" value="bike" /> Bike</li>
+					<li><input type="checkbox" value="disco" /> Disco</li>
+					<li><input type="checkbox" value="dramska" /> Dramska</li>
+					<li><input type="checkbox" value="foto" /> Foto</li>
+					<li><input type="checkbox" value="glazbena" /> Glazbena</li>
+					<li><input type="checkbox" value="pijandure" /> Pijandure</li>
+					<li><input type="checkbox" value="racunarska" /> Računarska</li>
+					<li><input type="checkbox" value="tehnicka" /> Tehnička</li>
+					<li><input type="checkbox" value="video" />Video</li>
+				</ul>
+			</div>
+			<div>
+				<p>Iskaznice</p>
+				<ul>
+					<li><input type="checkbox" value="plava" /> Plava</li>
+					<li><input type="checkbox" value="narancasta" /> Narančasta</li>
+					<li><input type="checkbox" value="crvena" /> Crvena</li>
+				</ul>
+			</div>
+			<div>
+				<input type="submit" value="Submit" />
+			</div>-->
+		{% endblock %}
+		</div>
+
+		<div style="clear:both; height: 20px;"></div>
+	{% endblock %}
+
+</div>
+
+{% endblock %}
+

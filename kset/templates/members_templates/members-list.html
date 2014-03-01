@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block leftContent %}
+    <div class="members-list">
+		{% for member in members %}
+			<div class="members-list-item">
+				<div class="members-list-member">
+					<a href="{% url 'members_get_member' id=member.id %}">{{member.name}} {{member.surname}}</a>
+				</div>
+			</div>
+		{% empty %}
+		{% endfor %}
+	</div>
+{% endblock %}

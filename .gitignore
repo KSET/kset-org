@@ -1,9 +1,13 @@
-kset.wsgi
 /__tmp
 *.pyc
 local_settings.py
 templates/zivpdf.bak
-settings/production.*
+/kset/settings/production.*
+/kset/settings/local.*
+/kset/settings/secret.*
 baza.db
-media/*
-media/uploads
+/kset/media/*
+/kset/static/*
+/kset/media/uploads
+dev.db
+/requirements/local.txt

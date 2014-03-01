@@ -1,46 +1,18 @@
 #coding: utf8
 
-from django.shortcuts import render_to_response
-from django.template.loader import render_to_string
-from django.http import HttpResponseRedirect, HttpResponse
-from django.template import Context, Template
+from django.http import HttpResponse
+from django.views.decorators.http import require_POST
 
-from django.core.exceptions import ValidationError
-
-from newsletter.models import Subscription
+from .forms import SubscriptionForm
 
 
+@require_POST
 def subscribe(request):
-    if 'subscription' in request.POST:
-        subscription = Subscription(email = request.POST['subscription'])
-        subscriptions = Subscription.objects.filter(email = request.POST['subscription'])
-
-        try:
-            subscription.full_clean()
-            subscription.save()
-            return HttpResponse('Uspješno ste se pretplatili!')
-        except ValidationError, e:
-            if (subscriptions.count() != 0):
-              return HttpResponse('E-mail adresa je vec pretplacena!')
-            else:
-              return HttpResponse('Došlo je do pogreške!')
+    form = SubscriptionForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponse('Uspješno ste se pretplatili!')
     else:
-        return HttpRedirect('http://www.kset.org/');
-
-
-### OLD
-
-def list_subscriptions(request):
-    subscriptions = Subscription.objects.all()
-    return render_to_response('list.html', {'subs' : subscriptions})
-
-#nema gumba jos
-def unsubscribe(request):
-	if 'subscription_email' in request.POST:
-		subscription = Subscription.objects.filter(email = request.POST['subscription_email'])
-		if subscription:
-			subscription.delete()
-			return HttpResponse('E-mail uspjesno obrisan!')
-		else:
-			return HttpResponse('Failed!')
- 
+        return HttpResponse(
+            form.errors.get('email', 'Oops! Something went wrong.'),
+            status=400)

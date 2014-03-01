@@ -1,143 +1,91 @@
 #coding: utf8
 import hashlib
-import string
 
-from members.models import *
-from members import forms
-
-from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404
-from django.core.urlresolvers import reverse
-from django.shortcuts import render_to_response
-from django.template import Context, RequestContext
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+
+from .forms import *
+from .models import *
+from .decorators import require_auth
 
 
+def _display_member(request, template, member):
 
-def require_auth(view):
-    """Custom decorator, checks if user is logged in."""
-    def wrapper(request, *args):
-        
-        if not request.session.get('user_id', False):
-            return HttpResponseRedirect("/clanovi/login/")
-            
-        return view(request, *args)    
-    return wrapper
+    return render(request, template, {
+        'member': member,
+        'addresses': Address.objects.filter(member=member.id),
+        'contacts': Contact.objects.filter(member=member.id),
+        'groups': MemberGroupLink.objects.filter(member=member.id).order_by('date_start'),
+    })
 
 
-def get_current_user(request):
-    """Gets Member object of currently logged in user."""    
-    user_id = request.session.get('user_id', False)
-    
-    return Member.objects.get(id=user_id)
+@require_auth
+def index(request):
+    member = get_object_or_404(Member, id=request.session.get('members_user_id'))
+    return _display_member(request, 'main.html', member)
 
-from members.models import Member, Address
 
 def login(request):
-    if request.session.get('user_id', False):
-        return HttpResponseRedirect("/clanovi/")
+    if request.session.get('members_user_id'):
+        return redirect('members_index')
+    form = LoginForm(request.POST or None)
+    if form.is_valid():
+
+        request.session['members_user_id'] = form.cleaned_data['member']
+        request.session.save()
+        return redirect('members_index')
     else:
-        # check if form data is posted
-        if (request.method == 'POST'):
-            username = request.POST.get("username")
-            password = request.POST.get("password")
-            pwhash = hashlib.md5(password).hexdigest() 
-            # check username + password
-            
-            try:
-                member = Member.objects.get(password=pwhash, username=username)
-                
-                request.session['user_id'] = member.id
-                #return render_to_response('main.html')
-                return HttpResponseRedirect("/clanovi/")
-            except:
-                return render_to_response('login.html', { 'loginFailed' : True } )
-        else:
-            return render_to_response('login.html')
-            
+        return render(request, 'login.html', {'form': form})
+
+
 def logout(request):
-    if request.session.get('user_id', False):
-        request.session.flush()
-        
-    return HttpResponseRedirect(reverse("members-login"))
-    
-def display_member(request, template, member):
-    if request.session.get('user_id', False) == member.id:
-        isProfileOwner = True
-    else:
-        isProfileOwner = False
-        
-    return render_to_response(template, {
-        'member' : member,
-        'addresses': Address.objects.filter(member=member.id),
-        'contacts': Contact.objects.filter(member=member.id),
-        'groups': MemberGroupLink.objects.filter(member=member.id),
-        'isProfileOwner' : isProfileOwner
-    }, context_instance=RequestContext(request) )
+    if request.session.get('members_user_id'):
+        request.session['members_user_id'] = None
+
+    return redirect('members_login')
+
 
 @require_auth
-def main(request):
-    member = get_current_user(request)
-    return display_member(request, 'main.html', member)
-
-@require_auth
-def member(request, memberId):
+def get_member(request, id):
     try:
-        member = Member.objects.get(id=memberId)
+        member = Member.objects.get(id=id)
     except:
         raise Http404
-    return display_member(request, 'main.html', member)
+    return _display_member(request, 'main.html', member)
 
-@require_auth    
-def listAll(request):
+
+@require_auth
+def list_all(request):
     members = Member.objects.order_by('surname', 'name')
-    return render_to_response('members-list.html', { 'members' : members })
-    
-@require_auth
-def edit(request):
-    member = get_current_user(request)
-    return render_to_response('edit-profile.html', {
-        'member' : member,
-        'addresses': Address.objects.filter(member=member.id),
-        'contacts': Contact.objects.filter(member=member.id),
-        'groups': MemberGroupLink.objects.filter(member=member.id),
-        'contactTypes' : ContactType.objects.all()
-    })
-    
-@require_auth
-def submit(request):
-    member = get_current_user(request)
-    addresses = Address.objects.filter(member=member.id)
-    contacts = Contact.objects.filter(member=member.id)
-    groups = MemberGroupLink.objects.filter(member=member.id)
-    contactTypes = ContactType.objects.all()
-    
-    return render_to_response('edit-profile.html', {
-        'member' : member,
-        'addresses': addresses,
-        'contacts': contacts,
-        'groups': groups,
-        'contactTypes' : contactTypes
-    })
-    
-def red(request):
+    return render(request, 'members-list.html', {
+        'members': members})
+
+
+@login_required
+def red_table(request):
     """Print out in html red members addresses."""
 
-    members = Member.objects.filter(groups__id=16).exclude(death__isnull=False).order_by('surname', 'name')
+    members = Member.objects.filter(
+        groups__id=16).exclude(
+        death__isnull=False).order_by('surname', 'name')
 
     for member in members:
         member.addresses = Address.objects.filter(member=member.id)
 
-    return render_to_response('members-red.html', {
+    return render(request, 'members-red.html', {
         'members': members,
-        })
+    })
 
+
+@login_required
 def red_list(request):
     """Print out in html red members addresses."""
 
-    members = Member.objects.filter(groups__id=16).exclude(death__isnull=False).order_by('surname', 'name')
+    members = Member.objects.filter(
+        groups__id=16).exclude(
+        death__isnull=False).order_by('surname', 'name')
 
-    return render_to_response('members-red-list.html', {
+    return render(request, 'members-red-list.html', {
         'members': members,
-        })
-
-
+    })
