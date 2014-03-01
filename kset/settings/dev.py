@@ -6,12 +6,6 @@ DEBUG = TEMPLATE_DEBUG = True
 
 PREPEND_WWW = False
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'dev.db',
-    }
-}
 
 # We need to use Postgres because of PG Array support
 try:
