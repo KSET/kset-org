@@ -7,6 +7,7 @@ from filebrowser.sites import site
 
 import members.urls
 import gallery.urls
+import subpages.urls
 
 admin.autodiscover()
 
@@ -49,21 +50,12 @@ urlpatterns = patterns('',
     url(r'^trazi/$', 'search.views.search',
         name='search'),
 
-    url(r'^klub/sekcije/(?P<slug>[-a-zA-Z0-9]+)/$', 'subpages.views.by_slug',
-        name='subpage_slug'),
-    url(r'^klub/alumni/$', 'subpages.views.by_slug', {'slug': 'alumni'},
-        name='alumni'),
-    url(r'^klub/$', 'subpages.views.by_slug',
-        name='club'),
-
-    url(r'^multimedia/$', 'subpages.views.multimedia',
-        name='multimedia'),
-
     url(r'^dezurstva/$', 'savjet.views.list_attendance',
         name='dezurstva'),
 
     url(r'^gallery/', include(gallery.urls)),
     url(r'^members/', include(members.urls)),
+    url(r'^club/', include(subpages.urls)),
 
 )
 

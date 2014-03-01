@@ -6,13 +6,12 @@ import factory
 
 from news.models import News
 from events.models import Event
-from subpages.models import Subpage, Category
 from members.models import Group, Member, MemberGroupLink
 from gallery.models import Photographer, Album, Image
 
 
-__all__ = ['UserFactory', 'NewsFactory', 'EventFactory', 'SubpageCategoryFactory',
-    'SubpageFactory', 'MemberFactory', 'GroupFactory', 'MemberGroupLinkFactory',
+__all__ = ['UserFactory', 'NewsFactory', 'EventFactory',
+    'MemberFactory', 'GroupFactory', 'MemberGroupLinkFactory',
     'PhotographerFactory', 'AlbumFactory', 'ImageFactory']
 
 
@@ -64,26 +63,6 @@ class EventFactory(factory.django.DjangoModelFactory):
     daytime = False
     price = '0kn'
     thumb = None
-
-
-class SubpageCategoryFactory(factory.django.DjangoModelFactory):
-    FACTORY_FOR = Category
-
-    name = factory.Sequence(lambda n: 'TestCategory%s' % n)
-    slug = factory.Sequence(lambda n: 'test-category-%s' % n)
-    parent = None
-
-
-class SubpageFactory(factory.django.DjangoModelFactory):
-    FACTORY_FOR = Subpage
-
-    title = factory.Sequence(lambda n: 'TestSubpage%s' % n)
-    slug = factory.Sequence(lambda n: 'test-subpage-%s' % n)
-
-    description = 'Test Description'
-    content = 'Test Content'
-    thumb = None
-    category = factory.SubFactory(SubpageCategoryFactory)
 
 
 class GroupFactory(factory.django.DjangoModelFactory):

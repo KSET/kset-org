@@ -5,7 +5,6 @@ import random
 from django.conf import settings
 
 from events.models import Event
-from subpages.models import Subpage
 
 
 def header(request):
@@ -24,13 +23,5 @@ def header(request):
             ctx['today_active'] = True
     except:
         pass
-
-    if request.path[1:].split('/')[0] == 'klub':
-        try:
-            ctx['divisions'] = Subpage.objects.filter(category__slug='sekcije').order_by('title')
-            ctx['leaders'] = Subpage.objects.get(slug='voditelji')
-            ctx['projects'] = Subpage.objects.filter(category__slug='projekti').order_by('title')
-        except:
-            pass
 
     return ctx
