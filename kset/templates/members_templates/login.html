@@ -3,13 +3,11 @@
 {% block main %}
     <h2>Login</h2>
 
-    <form action="{% url 'members_login' %}" method="POST">
-        {% csrf_token %}
+    {% for message in messages %}
+        <p class="{{ message.tags }}">{{ message|safe}}</p>
+    {% endfor %}
 
-        {{ form.as_p }}
-
-        <input type="submit" value="Prijavi se">
-
-    </form>
+    {% include "partials/form.html" with form=form method="POST" %}
+    <a href="{% url 'members_forgot_password' %}">Forgot Password?</a>
 
 {% endblock %}

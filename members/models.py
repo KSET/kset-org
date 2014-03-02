@@ -1,14 +1,17 @@
 #coding: utf8
 
 import hashlib
+from uuid import uuid4
+from datetime import datetime
 
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 
 from tinymce.models import HTMLField
 
 
-__all__ = ['Group', 'Member', 'Contact', 'Address', 'MemberGroupLink']
+__all__ = ['Group', 'Member', 'Contact', 'Address', 'MemberGroupLink', 'ResetPasswordLink']
 
 
 class GroupManager(models.Manager):
@@ -24,6 +27,10 @@ class GroupManager(models.Manager):
 
 
 class Group(models.Model):
+    CARD = 'iskaznica'
+    DIVISION = 'sekcija'
+    STATUS = 'status'
+
     name = models.CharField("naziv", max_length=32)
     slug = models.SlugField()
     parent = models.ForeignKey('self', null=True, blank=True, verbose_name="nad-grupa")
@@ -123,7 +130,7 @@ class Contact(models.Model):
         (TYPE_PHONE, 'Telefon'),
         (TYPE_CELL, 'Mobitel')
     )
-    member = models.ForeignKey(Member, verbose_name="član")
+    member = models.ForeignKey(Member, verbose_name="član", related_name='contacts')
     contact = models.CharField("kontakt", max_length=64)
     contact_type = models.CharField('Tip', max_length=255, choices=TYPES, null=True)
 
@@ -151,3 +158,19 @@ class Address(models.Model):
 
     def __unicode__(self):
         return self.address
+
+
+class ResetPasswordLink(models.Model):
+    MAX_VALID_DAYS = 3
+
+    member = models.ForeignKey(Member, unique=True)
+    unique_link = models.CharField(unique=True, max_length=255, default=uuid4().get_hex())
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def is_still_valid(self):
+        now = timezone.now()
+        diff = (now - self.created_at).days
+        if diff > self.MAX_VALID_DAYS:
+            return False
+        else:
+            return True

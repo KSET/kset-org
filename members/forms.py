@@ -5,15 +5,21 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.conf import settings
 
-from .models import Member
+from .models import Member, Group, Contact, ResetPasswordLink, Address
+from .helpers import send_template_email
 
 
-__all__ = ['LoginForm', 'MemberCreationForm', 'MemberChangeForm']
+__all__ = ['LoginForm', 'MemberCreationForm', 'MemberChangeForm', 'MemberFilterForm',
+    'MemberForgotPasswordForm', 'ResetPasswordForm', 'AddAddressForm', 'AddContactForm']
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label="Username", max_length=32)
-    password = forms.CharField(widget=forms.PasswordInput,
+    username = forms.CharField(
+        label="Username",
+        max_length=32,
+        widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),
         label="Password",
         max_length=32)
 
@@ -86,3 +92,105 @@ class MemberChangeForm(forms.ModelForm):
         # the field, because the field does not have access
         # to the initial value
         return self.initial["password"]
+
+
+class MemberFilterForm(forms.Form):
+    division = forms.ModelChoiceField(
+        queryset=Group.objects.filter(parent__name=Group.DIVISION).order_by('name'),
+        empty_label='Sekcija',
+        required=False)
+    card = forms.ModelChoiceField(
+        queryset=Group.objects.filter(parent__name=Group.CARD).order_by('name'),
+        empty_label='Iskaznica',
+        required=False)
+    status = forms.ModelChoiceField(
+        queryset=Group.objects.filter(parent__name=Group.STATUS).order_by('name'),
+        empty_label='Status',
+        required=False)
+
+    def filter(self):
+        self.is_valid()  # force validation just in case
+        division = self.cleaned_data.get('division')
+        card = self.cleaned_data.get('card')
+        status = self.cleaned_data.get('status')
+
+        # This will build the query based on supplied filters
+        # NOTE: it executes just one query at the end
+        members = Member.objects.all()
+        if division:
+            members = members.filter(groups=division)
+        if card:
+            members = members.filter(groups=card)
+        if status:
+            members = members.filter(groups=status)
+
+        return members.order_by('surname', 'name')
+
+
+class MemberForgotPasswordForm(forms.Form):
+    email = forms.EmailField()
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        member_id = None
+        if email:
+            member_contacts = Contact.objects.filter(
+                contact_type=Contact.TYPE_EMAIL).values('contact', 'member_id')
+            found_contacts = [c for c in member_contacts if c['contact'] == email]
+
+            # We need to match exactly *one*) contact
+            if len(found_contacts) != 1:
+                raise forms.ValidationError('Nije pronađen član sa navedenom email adresom.')
+            member_id = found_contacts[0]['member_id']
+        return email, member_id
+
+    def send_password_reset_email(self):
+        member_email, member_id = self.cleaned_data['email']
+        member = Member.objects.get(id=member_id)
+
+        # delete all existing reset request
+        ResetPasswordLink.objects.filter(member=member).delete()
+
+        # create new reset link
+        rpl = ResetPasswordLink.objects.create(member=member)
+
+        send_template_email(
+            member_email=member_email,
+            member_name=member.name,
+            reset_password_link=rpl.unique_link)
+
+
+class ResetPasswordForm(forms.Form):
+    password1 = forms.CharField(
+        label='Nova Lozinka',
+        widget=forms.PasswordInput())
+    password2 = forms.CharField(
+        label='Ponovite Lozinku',
+        widget=forms.PasswordInput())
+
+    def clean(self):
+        p1 = self.cleaned_data.get('password1')
+        p2 = self.cleaned_data.get('password2')
+        if p1 != p2:
+            raise forms.ValidationError('Upisane lozinke se moraju podudarati.')
+        if len(p1) < 8:
+            raise forms.ValidationError('Molimo unesite lozinku od najmanje 8 znakova.')
+        return self.cleaned_data
+
+    def set_new_password(self, rpl):
+        member = rpl.member
+        member.set_password(self.cleaned_data['password1'])
+        member.save()
+        rpl.delete()
+
+
+class AddAddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        exclude = ('member',)
+
+
+class AddContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        exclude = ('member',)
