@@ -29,7 +29,7 @@
     {% for image in images %}
 
     <article class="m-slika">
-      <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" title=":: {{ forloop.counter }}/{{ images.count }} :: Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} :: {{ image.caption|default:"" }}">
+      <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" title="Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} {% if image.caption %} :: {{ image.caption|striptags|default:"" }}{% endif %}">
         <div class="slika">
           <img src="{% version image.upload_path 'gallerytb' %}" />
         </div>

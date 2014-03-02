@@ -1,66 +1,50 @@
-{% extends 'program.html' %}
-
-{% load fb_versions %}
-
-{% block leftcolumn %}
+{% extends 'program.html' %} {% load fb_versions %} {% block leftcolumn %}
 
 
 <!-- NEWS -->
 {% if news %}
 <section class="news-box vijesti clearfix">
 
-  <h1 class="news-header">Vijesti</h1>
+    <h1 class="news-header">Vijesti</h1>
 
-  {% for item in news %}
+    {% for item in news %}
 
     <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
-
-      {% if item.description %}
-
-        <div class="icontent">
-
-          {% if item.thumb %}
-            <a href="{% url 'news_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
-          {% endif %}
-
-          <h2><a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a></h2>
-
-          <h3>{{ item.created_at|date:"l, j. E Y." }}</h3>
-
-          {{ item.description|safe }}
-
-          <div id="{{ item.slug }}" style="display:none;">
-            {{ item.content|safe }}
-          </div>
-
+        {% if item.thumb %}
+        <div class="news-item-thumb">
+            <a href="{% url 'news_slug' slug=item.slug %}">
+                <img src="{% version item.thumb 'event_big' %}" class="thumb" />
+            </a>
         </div>
-
-        {% if item.content %}
-          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
         {% endif %}
 
-      {% else %}
 
-        <div class="icontent">
-          {% if item.thumb %}
-            <a href="{% url 'news_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
-          {% endif %}
+        <h2 class="news-item-title">
+            <a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a>
+            </h2>
+        <div class="news-item-description">
+            <h3 class="news-item-date">{{ item.created_at|date:"l, j. E" }}</h3>
 
-          <h2><a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a></h2>
+            <div class="news-item-text">
 
-          <h3>{{ item.created_at|date:"l, j. E Y." }}</h3>
+                {{ item.description|safe }}
 
-          {{ item.content|safe }}
+                <div id="{{ item.slug }}" class="{% if item.description %}hide{% endif %}">
+                    {{ item.content|safe }}
+                </div>
+
+                {% if item.content and item.description %}
+                <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+                {% endif %}
+            </div>
+
         </div>
-      {% endif %}
 
-      <div class="ifooter">
-      </div>
 
     </article>
 
-  {% endfor %}
+    {% endfor %}
 
 </section>
 {% endif %}
@@ -69,61 +53,43 @@
 {% if daytime_events %}
 <section class="news-box dnevni clearfix">
 
-  <h1 class="news-header">Dnevni program</h1>
+    <h1 class="news-header">Dnevni program</h1>
 
-  {% for item in daytime_events %}
+    {% for item in daytime_events %}
 
     <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
-
-      {% if item.description %}
-
-        <div class="icontent">
-
-          {% if item.thumb %}
-            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
-          {% endif %}
-
-          <!-- share thingys -->
-          <div class="event-share"><span class="share facebook"></span><span class="share twitter"></span></div>
-
-          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
-
-          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
-
-          {{ item.description|safe }}
-
-          <div id="{{ item.slug }}" style="display:none;">
-            {{ item.content|safe }}
-          </div>
-
+        {% if item.thumb %}
+        <div class="news-item-thumb">
+            <a href="{% url 'event_slug' slug=item.slug %}">
+                <img src="{% version item.thumb 'event_big' %}" class="thumb" />
+            </a>
         </div>
-
-        {% if item.content %}
-          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
         {% endif %}
 
-      {% else %}
+        <h2 class="news-item-title">
+            <a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a>
+        </h2>
+        <div class="news-item-description">
+            <h3 class="news-item-date">{{ item.date|date:"l, j. E" }}</h3>
 
-        <div class="icontent">
-          {% if item.thumb %}
-            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
-          {% endif %}
 
-          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
+            {{ item.description|safe }}
 
-          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
+            <div id="{{ item.slug }}" class="{% if item.description %}hide{% endif %}">
+                {{ item.content|safe }}
+            </div>
 
-          {{ item.content|safe }}
+            {% if item.content and item.description %}
+            <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+            {% endif %}
+
         </div>
-      {% endif %}
 
-      <div class="ifooter">
-      </div>
 
     </article>
 
-  {% endfor %}
+    {% endfor %}
 
 </section>
 {% endif %}
@@ -132,60 +98,46 @@
 {% if events %}
 <section class="news-box nocni clearfix">
 
-  <h1 class="news-header">Večernji program</h1>
+    <h1 class="news-header">Večernji program</h1>
 
-  {% for item in events %}
+    {% for item in events %}
 
     <article class="news-item news-item-{{ forloop.counter0 }} {% cycle 'odd' 'even' %}">
 
-
-      {% if item.description %}
-
-        <div class="icontent">
-
-          {% if item.thumb %}
-            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}"  class="thumb" /></a>
-          {% endif %}
-
-          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
-
-          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
-
-          {{ item.description|safe }}
-
-          <div id="{{ item.slug }}" style="display:none;">
-            {{ item.content|safe }}
-          </div>
-
+        {% if item.thumb %}
+        <div class="news-item-thumb">
+            <a href="{% url 'news_slug' slug=item.slug %}">
+                <img src="{% version item.thumb 'event_big' %}" class="thumb" />
+            </a>
         </div>
-
-        {% if item.content %}
-          <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
         {% endif %}
 
-      {% else %}
 
-        <div class="icontent">
-          {% if item.thumb %}
-            <a href="{% url 'event_slug' slug=item.slug %}"><img src="{% version item.thumb 'event_big' %}" class="thumb" /></a>
-          {% endif %}
+        <h2 class="news-item-title">
+            <a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a>
+        </h2>
+        <div class="news-item-description">
+            <h3 class="news-item-date">{{ item.date|date:"l, j. E" }}</h3>
 
-          <h2><a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a></h2>
+            <div class="news-item-text">
 
-          <h3>{{ item.date|date:"l, j. E Y." }}</h3>
+                {{ item.description|safe }}
 
-          {{ item.content|safe }}
+                <div id="{{ item.slug }}" class="{% if item.description %}hide{% endif %}">
+                    {{ item.content|safe }}
+                </div>
+
+                {% if item.content and item.description %}
+                <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+                {% endif %}
+
+            </div>
         </div>
-      {% endif %}
 
-      <div class="ifooter">
-      </div>
 
     </article>
 
-  {% endfor %}
+    {% endfor %}
 
 </section>
-{% endif %}
-
-{% endblock %}
+{% endif %} {% endblock %}

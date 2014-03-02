@@ -96,8 +96,14 @@ $( function()
     // set scrollbar height
     $('#header-scrollbar').css('height', (max_events/events_count)*100+ '%');
 
-    // FANCYBOX
-    $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").attr('rel', 'gallery').fancybox();
+    // GALLERY POPUP
+    $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").attr('rel', 'gallery').magnificPopup({
+        type: 'image',
+        gallery: {
+            enabled: true,
+            preload: [1, 2]
+        }
+    });
 
     // HAXORZ
     $(document).keypress(function(e){
