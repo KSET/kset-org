@@ -1,8 +1,12 @@
 {% extends "index.html" %}
 
 {% block members-css %}
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}frontend/css/members.css"
-{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}frontend/css/members.css">
+{% endblock members-css %}
+
+{% block members-jss %}
+{% endblock members-jss %}
+
 
 {% block content %}
 
@@ -41,38 +45,56 @@
 					<div class="entry-title">
 						Adrese
 					</div>
-					<table class="address-list">
-						{% for address in addresses %}
-						<tr class="address">
-							<td class="street">{{address.address|default:"nepoznato"}}</td>
-							<td class="city">{{address.town|default:"nepoznato"}}</td>
-							<td class="zipcode">{{address.zipcode|default:"nepoznato"}}</td>
-							<td class="country">{{address.country|default:"nepoznato"}}</td>
-						</tr>
-						{% empty %}
-						<tr class="no-address">
-							<td>nema zapisa</td>
-						</tr>
-						{% endfor %}
-					</table>
+					<div class="table-container">
+					    <table class="datatable deletable-row" cellpadding="0" cellspacing="0">
+					        <tbody>
+					            {% for address in addresses %}
+					                <tr class="ctrl-smart-row">
+					                    <td>{{address.address|default:"nepoznato"}}</td>
+					                    <td>{{address.town|default:"nepoznato"}}</td>
+					                    <td>{{address.zipcode|default:"nepoznato"}}</td>
+					                    <td>{{address.country|default:"nepoznato"}}</td>
+					                    {% if is_owner %}<td><a class="icononly" data-method="post" href="{% url 'members_delete_address' address.id %}" data-should-prompt="Jeste li sigurni?"/>X</a></td>{% endif %}
+					                </tr>
+					            {% empty %}
+									<tr class="no-contact">
+										<td>Nema zapisa...</td>
+									</tr>
+					            {% endfor %}
+					        </tbody>
+					    </table>
+					</div>
+					{% if is_owner %}
+						Dodaj novu adresu:
+						{% include "partials/form.html" with form=address_form method="POST" %}
+					{% endif %}
 				</div>
 
 				<div class="contacts bottom-item">
 					<div class="entry-title">
 						Kontakti
 					</div>
-					<table class="contacts-list">
-						{% for contact in contacts %}
-						<tr class="contact">
-							<td class="contact-type">{{contact.get_contact_type_display}}:</td>
-							<td class="contact-value">{{contact.contact}}<td>
-						</tr>
-						{% empty %}
-						<tr class="no-contact">
-							<td>nema zapisa</td>
-						</tr>
-						{% endfor %}
-					</table>
+					<div class="table-container">
+					    <table class="datatable deletable-row" cellpadding="0" cellspacing="0">
+					        <tbody>
+					            {% for contact in contacts %}
+					                <tr class="ctrl-smart-row">
+					                    <td>{{contact.get_contact_type_display}}:</td>
+					                    <td>{{contact.contact}}</td>
+					                    {% if is_owner %}<td><a class="icononly" data-method="post" href="{% url 'members_delete_contact' contact.id %}" data-should-prompt="Jeste li sigurni?"/>X</a></td>{% endif %}
+					                </tr>
+					             {% empty %}
+									<tr class="no-contact">
+										<td>Nema zapisa...</td>
+									</tr>
+					            {% endfor %}
+					        </tbody>
+					    </table>
+					</div>
+					{% if is_owner %}
+					    Dodaj novi kontakt:
+						{% include "partials/form.html" with form=contact_form method="POST" %}
+					{% endif %}
 				</div>
 
 				<div class="groups bottom-item">
@@ -91,7 +113,7 @@
 						</tr>
 						{% empty %}
 						<tr class="no-group">
-							<td>nema zapisa</td>
+							<td>Nema zapisa...</td>
 						</tr>
 						{% endfor %}
 					</table>

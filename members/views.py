@@ -4,27 +4,43 @@ import hashlib
 from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.contrib import messages
+from django.core.exceptions import PermissionDenied
 
 from .forms import *
 from .models import *
 from .decorators import require_auth
 
 
-def _display_member(request, template, member):
+def _display_member(request, template, member, address_form=None, contact_form=None):
 
     return render(request, template, {
         'member': member,
+        'is_owner': member.id == request.session['members_user_id'],
         'addresses': Address.objects.filter(member=member.id),
         'contacts': Contact.objects.filter(member=member.id),
         'groups': MemberGroupLink.objects.filter(member=member.id).order_by('date_start'),
+        'address_form': address_form,
+        'contact_form': contact_form
     })
 
 
 @require_auth
 def index(request):
     member = get_object_or_404(Member, id=request.session.get('members_user_id'))
-    return _display_member(request, 'main.html', member)
+    address = Address(member=member)
+    contact = Contact(member=member)
+    address_form = AddAddressForm(request.POST or None, instance=address)
+    contact_form = AddContactForm(request.POST or None, instance=contact)
+    if request.method == 'POST':
+        if address_form.is_valid():
+            address_form.save()
+            return redirect('members_index')
+        if contact_form.is_valid():
+            contact_form.save()
+            return redirect('members_index')
+    return _display_member(request, 'main.html', member, address_form, contact_form)
 
 
 def login(request):
@@ -75,10 +91,7 @@ def reset_password(request, link):
 
 @require_auth
 def get_member(request, id):
-    try:
-        member = Member.objects.get(id=id)
-    except:
-        raise Http404
+    member = get_object_or_404(Member, id=id)
     return _display_member(request, 'main.html', member)
 
 
@@ -92,6 +105,30 @@ def list_all(request):
     return render(request, 'members-list.html', {
         'members': members,
         'filter_form': filter_form})
+
+
+@require_auth
+@require_POST
+def delete_address(request, id):
+    member = get_object_or_404(Member, id=request.session['members_user_id'])
+    address = get_object_or_404(Address, id=id)
+    if member.id == address.memer_id:
+        address.delete()
+        return redirect('members_index')
+    else:
+        raise PermissionDenied()
+
+
+@require_auth
+@require_POST
+def delete_contact(request, id):
+    member = get_object_or_404(Member, id=request.session['members_user_id'])
+    contact = get_object_or_404(contact, id=id)
+    if member.id == contact.memer_id:
+        contact.delete()
+        return redirect('members_index')
+    else:
+        raise PermissionDenied()
 
 
 @login_required

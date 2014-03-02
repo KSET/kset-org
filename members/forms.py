@@ -5,12 +5,12 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.conf import settings
 
-from .models import Member, Group, Contact, ResetPasswordLink
+from .models import Member, Group, Contact, ResetPasswordLink, Address
 from .helpers import send_template_email
 
 
 __all__ = ['LoginForm', 'MemberCreationForm', 'MemberChangeForm', 'MemberFilterForm',
-    'MemberForgotPasswordForm', 'ResetPasswordForm']
+    'MemberForgotPasswordForm', 'ResetPasswordForm', 'AddAddressForm', 'AddContactForm']
 
 
 class LoginForm(forms.Form):
@@ -182,3 +182,15 @@ class ResetPasswordForm(forms.Form):
         member.set_password(self.cleaned_data['password1'])
         member.save()
         rpl.delete()
+
+
+class AddAddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        exclude = ('member',)
+
+
+class AddContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        exclude = ('member',)

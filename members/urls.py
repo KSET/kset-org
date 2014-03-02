@@ -15,8 +15,10 @@ urlpatterns = patterns('members.views',
         name='members_forgot_password'),
     url(r'^reset-password/(?P<link>[-a-zA-Z0-9]{32})/$', 'reset_password',
         name='members_reset_password'),
-    # url(r'^edit/$', 'edit_profile',
-    #     name='members_edit'),
+    url(r'^address/delete/(?P<id>\d+)/$', 'delete_address',
+        name='members_delete_address'),
+    url(r'^contact/delete/(?P<id>\d+)/$', 'delete_contact',
+        name='members_delete_contact'),
 
     # ispis crvenih za pozivnice
     url(r'^red/table/$', 'red_table',
