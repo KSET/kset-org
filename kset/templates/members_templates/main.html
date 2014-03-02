@@ -66,11 +66,13 @@
 					<img src="{{member.image}}" alt="Avatar">
 				</div>
 				{% endif %}
-				<div id="file-uploader">
-			        <noscript>
-			            <p>Please enable JavaScript to use file uploader.</p>
-			        </noscript>
-			    </div>
+				{% if is_owner %}
+					<div id="file-uploader">
+				        <noscript>
+				            <p>Please enable JavaScript to use file uploader.</p>
+				        </noscript>
+				    </div>
+				{% endif %}
 				<div class="basic-info">
 					<div class="name">{{member.name}} {{member.surname}}</div>
 					<div class="nickname">{% if member.nickname %}- <i>{{member.nickname}}</i>{% endif %}</div>
