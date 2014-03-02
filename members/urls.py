@@ -19,6 +19,10 @@ urlpatterns = patterns('members.views',
         name='members_delete_address'),
     url(r'^contact/delete/(?P<id>\d+)/$', 'delete_contact',
         name='members_delete_contact'),
+    url(r'avatar/ajax-upload/$', 'import_uploader',
+        name="members_avatar_upload"),
+    url(r'avatar/ajax-upload/update/$', 'update_avatar',
+        name="members_avatar_update"),
 
     # ispis crvenih za pozivnice
     url(r'^red/table/$', 'red_table',

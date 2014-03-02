@@ -70,7 +70,7 @@ class Member(models.Model):
     death = models.DateField("datum smrti", null=True, blank=True)
     comment = HTMLField("komentar", null=True, blank=True)
     groups = models.ManyToManyField(Group, through='MemberGroupLink')
-    image = models.ImageField(upload_to="/", null=True, blank=True, verbose_name="slika")
+    image = models.ImageField(upload_to="members/avatars/", null=True, blank=True, verbose_name="slika")
     objects = MemberManager()
 
     def __init__(self, *args, **kwargs):

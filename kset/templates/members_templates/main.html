@@ -5,6 +5,48 @@
 {% endblock members-css %}
 
 {% block members-jss %}
+ <script src="{{ STATIC_URL }}ajaxuploader/js/fileuploader.js" ></script>
+ <link href="{{ STATIC_URL }}ajaxuploader/css/fileuploader.css" media="screen" rel="stylesheet" type="text/css" />
+   <script>
+    jQuery(function(){
+        var uploader = new qq.FileUploader({
+            action: "{% url 'members_avatar_upload' %}",
+            element: $('#file-uploader')[0],
+            multiple: false,
+            disableCancelForFormUploads: true,
+            allowedExtensions: ['jpg', 'jpeg', 'png', 'gif'],
+            sizeLimit: 5242880,
+            onComplete: function(id, fileName, responseJSON) {
+                if(responseJSON.success) {
+                    // alert("success!");
+                    // $("#upload-button").removeAttr("disabled");
+                    // $("#upload-button").removeClass("btn-inverse");
+                    // $("#upload-button").addClass("btn-primary");
+
+                } else {
+                    alert("Upload failed!");
+                }
+            },
+            onAllComplete: function(uploads) {
+                // uploads is an array of maps
+                // the maps look like this: {file: FileObject, response: JSONServerResponse}
+                var path = uploads[0].response.path
+                jQuery.ajax({
+				  type: "POST",
+				  url: "{% url 'members_avatar_update' %}",
+				  data: {'filename': path}
+				});
+				location.reload();
+            },
+            params: {
+                'csrf_token': '{{ csrf_token }}',
+                'csrf_name': 'csrfmiddlewaretoken',
+                'csrf_xname': 'X-CSRFToken',
+            },
+        });
+    });
+</script>
+
 {% endblock members-jss %}
 
 
@@ -18,9 +60,17 @@
 		{% block leftContent %}
 
 			<div class="top">
-				<div class="image">
-					{{member.image}}
+
+				{% if member.image %}
+				<div id="member_avatar" class="image">
+					<img src="{{member.image}}" alt="Avatar">
 				</div>
+				{% endif %}
+				<div id="file-uploader">
+			        <noscript>
+			            <p>Please enable JavaScript to use file uploader.</p>
+			        </noscript>
+			    </div>
 				<div class="basic-info">
 					<div class="name">{{member.name}} {{member.surname}}</div>
 					<div class="nickname">{% if member.nickname %}- <i>{{member.nickname}}</i>{% endif %}</div>
