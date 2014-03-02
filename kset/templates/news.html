@@ -106,7 +106,7 @@
 
         {% if item.thumb %}
         <div class="news-item-thumb">
-            <a href="{% url 'news_slug' slug=item.slug %}">
+            <a href="{% url 'event_slug' slug=item.slug %}">
                 <img src="{% version item.thumb 'event_big' %}" class="thumb" />
             </a>
         </div>
