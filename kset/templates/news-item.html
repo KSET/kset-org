@@ -13,23 +13,35 @@
 
 <div class="item clearfix">
 
-  <h1 class="single-title">{{ news.subject }}</h1>
+  <section class="single-description">
 
-  <div class="single-thumb">
+    <h1 class="single-title" itemprop="name">{{ news.subject }}</h1>
+
+
+
+    <div itemprop="description">
+      {{ news.description|safe }}
+      {{ news.content|safe }}
+    </div>
+
+  </section>
+
+
+
+
+  <section class="single-thumb">
     {% if news.thumb %}
-      <img src="{% version news.thumb 'big' %}"  class="thumb" />
+      <img src="{% version event.thumb 'semibig' %}" class="thumb" />
     {% endif %}
-    <h3>{{ news.created_at|date:"l, j. E Y." }}</h3>
-  </div>
 
-  <div class="icontent">
-    {{ news.description|safe }}
 
-    {{ news.content|safe }}
+    <div class="single-date single-details">
+        <div class="single-date-day">{{ news.created_at|date:"l" }}</div>
+        <div class="single-date-date">{{ news.created_at|date:"j. E" }}</div>
+        <div>{{ news.created_at|time:"H:i" }}</div>
+    </div>
 
-    <div class="ifooter"></div>
-
-  </div>
+  </section>
 
 </div>
 

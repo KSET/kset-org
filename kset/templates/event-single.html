@@ -1,0 +1,45 @@
+{% load fb_versions %}
+
+<article class="item clearfix" itemscope itemtype="http://schema.org/Event">
+
+  <section class="single-description">
+
+    <h1 class="single-title" itemprop="name">{{ event.title }}</h1>
+
+
+
+    <div itemprop="description">
+      {{ event.description|safe }}
+      {{ event.content|safe }}
+    </div>
+
+  </section>
+
+
+
+
+  <section class="single-thumb">
+    {% if event.thumb %}
+      <img src="{% version event.thumb 'semibig' %}" class="thumb" />
+    {% endif %}
+
+
+    <div class="single-date single-details">
+      <time itemprop="startDate" datetime="{{ event.date|date:"Y-m-d" }}T{{ event.time|time:"H:i" }}" >
+        <div class="single-date-day">{{ event.date|date:"l" }}</div>
+        <div class="single-date-date">{{ event.date|date:"j. E" }}</div>
+        <div>{{ event.time|time:"H:i" }}</div>
+      </time>
+    </div>
+
+    <div class="single-tags single-details">{{ event.tags_to_str }} </div>
+
+    <section class="share-buttons">
+
+      <a href="http://twitter.com/home?status=http://www.kset.org{% url 'event_slug' event.slug %}" class="share-btn shareTw single-details">Twitter</a>
+      <a href="http://www.facebook.com/sharer.php?u=http://www.kset.org{% url 'event_slug' event.slug %}" class="share-btn shareFb single-details">Facebook</a>
+    </section>
+
+  </section>
+
+</article>
