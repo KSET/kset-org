@@ -82,11 +82,10 @@ $( function()
     });
 
     // header scroll
-    var $headerScroll = $('#header-scroll')
-    $headerScroll.perfectScrollbar({ wheelSpeed: 20 });
-
-    // set scrollbar height
-    $('#header-scrollbar').css('height', (max_events/events_count)*100+ '%');
+    var $headerScroll = $('#header-scroll');
+    if ($(window).width() >= 650) {
+        $headerScroll.perfectScrollbar({ wheelSpeed: 30 });
+    }
 
     // GALLERY POPUP
     $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").attr('rel', 'gallery').magnificPopup({
