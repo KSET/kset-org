@@ -326,11 +326,11 @@ a:hover
     text-decoration: none;
 }
 
-.no-csstransforms #header-scroll .item:hover {
+.no-csstransforms .header-scroll .item:hover {
     margin-left: 50px;
 }
 
-#header-scroll .item:hover {
+.header-scroll .item:hover {
     -webkit-transform: translate3d(50px, 0, 0);
     -moz-transform: translate3d(50px, 0, 0);
     -ms-transform: translate3d(50px, 0, 0);
@@ -1905,8 +1905,13 @@ and (max-width : 650px) {
 
     .header-scroll .item:hover {
         background: none;
-        border-bottom: 1px solid #191919;
-        margin-left: 0;
+        border-bottom: 0;
+        margin-left: 0 !important;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
     }
 
     .header-scroll.scroll-expanded .item {
