@@ -168,7 +168,7 @@ a:hover
 
 .orange
 {
-    color: #fe7929;
+    color: #E48145;
 }
 
 .footer
@@ -596,7 +596,11 @@ h3
 
 .left-column
 {
-    margin-right: 180px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 80%;
+    float: left;
     padding: 15px;
     padding-top: 10px;
 }
@@ -612,8 +616,8 @@ h3
 
 .left-column.club-left p {
     margin: 0.7em 0;
-    font-size: 13px;
-    line-height: 22px;
+    font-size: 15px;
+    line-height: 24px;
 }
 
 
@@ -959,11 +963,13 @@ div.clear + div.left-column {
 
 .right-column
 {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     font-size: 11px;
     color: #333;
     float: right;
-    clear: both;
-    width: 161px;
+    width: 20%;
     padding: 10px;
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -971,7 +977,7 @@ div.clear + div.left-column {
 }
 
 .club-right {
-    width: 400px;
+    width: 420px;
 }
 
 .right-column table
@@ -981,11 +987,11 @@ div.clear + div.left-column {
 
 .right-column h1
 {
-    font-family: 'Roboto slab', arial,helvetica,sans-serif;
-    font-size: 10px;
-    color: #555;
+    font-family: 'Open Sans', arial,helvetica,sans-serif;
+    font-size: 11px;
+    color: #000;
     margin: 0px;
-    padding: 10px 0px 3px 5px;
+    padding: 10px 0px 10px 5px;
     text-transform: uppercase;
 }
 
@@ -1037,26 +1043,6 @@ div.clear + div.left-column {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-/*
-#club-info
-{
-    background: #fff url(../images/cockroach.png) no-repeat scroll right top;
-    border: 1px solid #e6e6e6;
-    font-size: 9px;
-    font-style: italic;
-    color: #555;
-
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-
-#club-info ol
-{
-    padding: 0px 0px 0px 25px;
-}
-*/
-
 
 /* RIGHT COLUMN - FORMS */
 
@@ -1235,41 +1221,38 @@ div.clear + div.left-column {
 .calendar
 {
   padding-top: 10px;
-  height: 150px;
-  width: 161px;
   text-align: center;
 }
 
 .calendar span
 {
-  float: left;
-  display: block;
-  width: 21px;
-
-  font-size: 10px;
-  font-weight: bold;
-  color: #444;
-
-  background-color: #e5e5e5;
-  border: 1px solid transparent;
-  border-bottom: 1px solid #f7ac7b;
-
-  margin-bottom: 2px;
-  }
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    float: left;
+    display: block;
+    width: 14.285714285%;
+    padding: 2% 0;
+    font-weight: bold;
+    color: #444;
+    background-color: #e5e5e5;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #f7ac7b;
+    margin-bottom: 2px;
+}
 
 .calendar a
 {
-  float: left;
-
-  display: block;
-  width: 21px;
-  height: 18px;
-
-  font-size: 11px;
-  color: #000;
-
-  border: 1px solid transparent;
-  }
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    float: left;
+    display: block;
+    width: 14.285714285%;
+    padding: 2% 0;
+    color: #000;
+    border: 1px solid transparent;
+}
 
 .calendar a:hover
 {
@@ -1297,8 +1280,11 @@ div.clear + div.left-column {
 
 .calendar .month
 {
-  width: 110px;
+  width: 71.428571428%;
   font-weight: bold;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   }
 
 /* GALLERY */
@@ -1944,12 +1930,17 @@ and (max-width : 650px) {
 
     .left-column {
         margin: 0;
-        padding: 0 10px;
+        padding: 10px;
         clear: left;
+        width: auto;
     }
 
     .club-left {
         max-width: 100%;
+    }
+
+    .club-right table {
+        font-size: 1em;
     }
 
     .left-column table {
@@ -1959,9 +1950,20 @@ and (max-width : 650px) {
 
     .right-column {
         clear:left;
-        float: left;
-        width: 97%;
+        float: none;
+        width: auto;
         padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .right-column h1 {
+        font-size: 17px;
+    }
+
+    .right-column p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 26px;
     }
 
     .right-column.club-right {
@@ -1970,18 +1972,19 @@ and (max-width : 650px) {
     }
 
     .right-column > div {
-        display: none;
-        float: left;
-        margin: 0 5px;
-    }
-
-    .vsep {
-        clear: none;
+        margin: 0 5px 10px;
     }
 
     .right-column .search-box {
         display: block;
         width: 100%;
+    }
+
+    .right-column-col1-klub,
+    .right-column-col2-klub {
+        width: auto;
+        float: none;
+        display: block;
     }
 
     .input-search {
@@ -2033,6 +2036,7 @@ and (max-width : 650px) {
         max-width: none;
         float: none;
         clear: both;
+        padding: 5px;
     }
 
 }

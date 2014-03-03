@@ -3,14 +3,23 @@
 {% load fb_versions %}
 
 {% block content %}
+
+
+<div id="left" class="left-column club-left">
+  {% block subpage_content %}
+  {% endblock subpage_content %}
+
+</div>
+
 <div id="right" class="right-column club-right" >
 
   <div id="right-col2-klub" class="right-column-col2-klub">
 
-    <img src="{{ STATIC_URL }}frontend/images/kset_logo2.png" style="margin-top:10px;"/> <i>... prvi put otvorio vrata 1976.</i>
+    <img src="{{ STATIC_URL }}frontend/images/kset_logo2.png" style="margin-top:10px;"/>
+    <p><i>... prvi put otvorio vrata 1976.</i></p>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Informacije
     </h1>
     <table>
@@ -57,14 +66,14 @@
     <div class="vsep"></div>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Voditelji
     </h1>
     {% include "partials/leaders.html" %}
     <div class="vsep"></div>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;&nbsp;</span> <i>"Vrijedi do sutra ..."</i>
+      <span class="orange">//&nbsp;</span> <i>"Vrijedi do sutra ..."</i>
     </h1>
 
     <a href="{% url 'subpage_alumni' %}">
@@ -76,11 +85,11 @@
   <div id="right-col1-klub" class="right-column-col1-klub">
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Sekcije
     </h1>
 
-    <div class="cellmenu" style="min-height: 335px;">
+    <div class="cellmenu">
       {% for division in divisions %}
         <a href="{% url 'subpage_division' division=division.id %}" style="background-image: url('{{ division.logo }}');">
         <div class="text">{{ division.name }}</div>
@@ -91,11 +100,11 @@
     <div class="vsep"></div>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Projekti
     </h1>
 
-    <div class="cellmenu" style="min-height:200px;">
+    <div class="cellmenu">
       {% for project in projects %}
       <a href="{% url 'subpage_project' project=project.id %}" style="background-image: url('{{ project.logo }}');">
         <div class="text">{{ project.name }}</div>
@@ -103,13 +112,11 @@
       {% endfor %}
     </div>
 
+
+    <div class="clearfix"></div>
+
   </div>
 
 </div>
 
-<div id="left" class="left-column club-left">
-  {% block subpage_content %}
-  {% endblock subpage_content %}
-
-</div>
 {% endblock %}

@@ -3,6 +3,14 @@
 
 {% block content %}
 
+<section id="left" class="left-column">
+
+  {% block leftcolumn %}
+
+  {% endblock %}
+
+</section>
+
 <aside id="right" class="right-column">
 
   <div class="search-box">
@@ -87,13 +95,5 @@
 
 
 
-
-<section id="left" class="left-column">
-
-  {% block leftcolumn %}
-
-  {% endblock %}
-
-</section>
 
 {% endblock %}
