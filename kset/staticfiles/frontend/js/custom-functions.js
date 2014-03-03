@@ -1,10 +1,6 @@
 
 // define globals
-var events_count;
-var max_events = 6;
-var current_event = 0;
 var scrollViewport;
-var scrollBar;
 
 // on page load
 $( function()
@@ -43,9 +39,7 @@ $( function()
         event.stopPropagation();
     });
 
-    events_count = $('#header-scroll .item').length;
     scrollViewport = jQuery('#header-scroll-viewport');
-    scrollBar = jQuery('#header-scrollbar');
 
     // bind events
     $('#newsletter-subscription').click(function () { $('#newsletter-subscription').val(''); });
@@ -148,7 +142,7 @@ function header_scroll_up()
 }
 
 function flip_element_by_id(id) {
-    jQuery('#'+id).animate({height:'toggle'}, 300);
+    jQuery('#'+id).slideToggle(300);
 }
 
 

@@ -538,7 +538,7 @@ a:hover
 }
 
 .left-column p {
-    margin: 0.3em 0;
+    margin: 0 0 0.6em;
     line-height: 22px;
     font-size: 15px;
     text-shadow: 0 1px 2px rgba(20, 20, 20, 0.12);
@@ -772,7 +772,7 @@ div.clear + div.left-column {
     font-weight: bold;
     font-family: 'roboto slab', sans-serif;
     margin-top: 5px;
-    padding: 5px 0 0;
+    padding: 5px 0 5px;
     font-size: 14px;
     text-align: left;
     text-transform: uppercase;
