@@ -43,14 +43,6 @@ $( function()
         event.stopPropagation();
     });
 
-    var $topMenuPrompt = $('#top-menu-prompt');
-    // top menu prompt blink
-    if (!isOperaMini) {
-        setInterval(function(){
-            $topMenuPrompt.toggleClass('prompt-blink');
-        }, 500);
-    }
-
     events_count = $('#header-scroll .item').length;
     scrollViewport = jQuery('#header-scroll-viewport');
     scrollBar = jQuery('#header-scrollbar');

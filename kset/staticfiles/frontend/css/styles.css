@@ -485,11 +485,44 @@ a:hover
     color: #fe7929;
     margin-left: 10px;
     display: inline;
+
+      -webkit-animation: promt-blink 1s ease-out 0s infinite reverse;
+         -moz-animation: promt-blink 1s ease-out 0s infinite reverse;
+           -o-animation: promt-blink 1s ease-out 0s infinite reverse;
+              animation: promt-blink 1s ease-out 0s infinite reverse;
 }
 
-.fontface .prompt-blink
-{
-    background-color: #fe7929;
+
+@-webkit-keyframes promt-blink {
+    from {
+        background-color: transparent;
+    } to {
+        background-color: #fe7929;
+    }
+}
+
+@-moz-keyframes promt-blink {
+    from {
+        background-color: transparent;
+    } to {
+        background-color: #fe7929;
+    }
+}
+
+@-o-keyframes promt-blink {
+    from {
+        background-color: transparent;
+    } to {
+        background-color: #fe7929;
+    }
+}
+
+@keyframes promt-blink {
+    from {
+        background-color: transparent;
+    } to {
+        background-color: #fe7929;
+    }
 }
 
 /* --- CONTENT ----------------------------------------------------- */
