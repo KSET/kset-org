@@ -98,6 +98,10 @@ $( function()
         else if (e.which == 107)
             $headerScroll.animate({scrollTop: $headerScroll.scrollTop() - 48}, 120);
     });
+
+    $('.club-right a[href*=mailto]').attr('href', function(i, href) {
+        return href.replace('!at!', '@');
+    });
 });
 
 
