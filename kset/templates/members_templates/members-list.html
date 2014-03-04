@@ -15,11 +15,6 @@
 				<div class="members-list-item">
 					<a href="{% url 'members_get_member' id=member.id %}">
                         <strong>{{member.surname}} {{member.name}}</strong>{%if member.nickname%} - <em>{{member.nickname}}{%endif%}</em>
-                        {% with member.groups.first as group  %}
-                            {% if group.name %}
-                                <span class="member-group"><em>({{ group.name }})</em></span>
-                            {% endif %}
-                        {% endwith %}
                     </a>
 				</div>
 			{% endfor %}
