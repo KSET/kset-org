@@ -1,24 +1,30 @@
 {% extends "main.html" %}
 
 {% block leftContent %}
+
+    <h1><u>Filter:</u></h1>
+    {% include "partials/form.html" with form=filter_form method="POST" %}
+
+{% endblock %}
+
+{% block middleContent %}
     <div class="members-list">
     	{% if members %}
     		<h1>Broj pronađenih članova: {{ members|length }}</h1>
 			{% for member in members %}
 				<div class="members-list-item">
-					<div class="members-list-member">
-						<a href="{% url 'members_get_member' id=member.id %}">{{member.name}} {{member.surname}}</a>
-					</div>
+					<a href="{% url 'members_get_member' id=member.id %}">
+                        <strong>{{member.surname}} {{member.name}}</strong>{%if member.nickname%} - <em>{{member.nickname}}{%endif%}</em>
+                        {% with member.groups.first as group  %}
+                            {% if group.name %}
+                                <span class="member-group"><em>({{ group.name }})</em></span>
+                            {% endif %}
+                        {% endwith %}
+                    </a>
 				</div>
 			{% endfor %}
 		{% else %}
 			<h1>Nije pronađen niti jedan član.</h1>
     	{% endif %}
 	</div>
-{% endblock %}
-
-{% block rightContent %}
-	{{block.super}}
-	<h1><u>Filter:</u></h1>
-	{% include "partials/form.html" with form=filter_form method="POST" %}
 {% endblock %}

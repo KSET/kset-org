@@ -3,14 +3,23 @@
 {% load fb_versions %}
 
 {% block content %}
+
+
+<div id="left" class="left-column club-left">
+  {% block subpage_content %}
+  {% endblock subpage_content %}
+
+</div>
+
 <div id="right" class="right-column club-right" >
 
   <div id="right-col2-klub" class="right-column-col2-klub">
 
-    <img src="{{ STATIC_URL }}frontend/images/kset_logo2.png" style="margin-top:10px;"/> <i>... prvi put otvorio vrata 1976.</i>
+    <img src="{{ STATIC_URL }}frontend/images/kset_logo2.png" style="margin-top:10px;"/>
+    <p><i>... prvi put otvorio vrata 1976.</i></p>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Informacije
     </h1>
     <table>
@@ -18,9 +27,9 @@
         <td> <b>mail:</b>
         </td>
         <td>
-          <a href="#">info@kset.org</a>
+          <a href="mailto:info!at!kset.org">info@kset.org</a>
           <br />
-          <a href="#">booking@kset.org</a>
+          <a href="mailto:booking!at!kset.org">booking@kset.org</a>
         </td>
       </tr>
       <tr>
@@ -39,7 +48,7 @@
           <b>gdje?!</b>
         </td>
         <td>
-          <a href="https://maps.google.com/maps?q=Zagreb+Unska+3&hl=en&sll=45.801616,15.971576&sspn=0.001034,0.002642&hnear=Unska+ulica+3,+10000,+Zagreb,+Croatia&t=m&z=16">GoogleMaps</a>
+          <a href="https://www.google.com/maps/place/KSET/@45.8015025,15.9711053,17z/data=!4m2!3m1!1s0x4765d6f150cf2ccd:0xda86ab7b9573d6c8?hl=en">GoogleMaps</a>
           <br />
           <a href="http://osm.org/go/0Ismj9JZ0--" target="blank">OpenStreetMap</a>
         </td>
@@ -57,14 +66,14 @@
     <div class="vsep"></div>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Voditelji
     </h1>
     {% include "partials/leaders.html" %}
     <div class="vsep"></div>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;&nbsp;</span> <i>"Vrijedi do sutra ..."</i>
+      <span class="orange">//&nbsp;</span> <i>"Vrijedi do sutra ..."</i>
     </h1>
 
     <a href="{% url 'subpage_alumni' %}">
@@ -76,11 +85,11 @@
   <div id="right-col1-klub" class="right-column-col1-klub">
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Sekcije
     </h1>
 
-    <div class="cellmenu" style="min-height: 335px;">
+    <div class="cellmenu">
       {% for division in divisions %}
         <a href="{% url 'subpage_division' division=division.id %}" style="background-image: url('{{ division.logo }}');">
         <div class="text">{{ division.name }}</div>
@@ -91,11 +100,11 @@
     <div class="vsep"></div>
 
     <h1>
-      <span class="orange">&raquo;&nbsp;</span>
+      <span class="orange">//&nbsp;</span>
       Projekti
     </h1>
 
-    <div class="cellmenu" style="min-height:200px;">
+    <div class="cellmenu">
       {% for project in projects %}
       <a href="{% url 'subpage_project' project=project.id %}" style="background-image: url('{{ project.logo }}');">
         <div class="text">{{ project.name }}</div>
@@ -103,13 +112,11 @@
       {% endfor %}
     </div>
 
+
+    <div class="clearfix"></div>
+
   </div>
 
 </div>
 
-<div id="left" class="left-column club-left">
-  {% block subpage_content %}
-  {% endblock subpage_content %}
-
-</div>
 {% endblock %}
