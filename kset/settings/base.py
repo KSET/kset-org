@@ -117,6 +117,8 @@ INSTALLED_APPS = (
     'newsletter',
     'savjet',
     'gallery',
+    'sorl.thumbnail',
+    'ajaxuploader',
 
 )
 

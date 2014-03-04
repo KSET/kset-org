@@ -10,3 +10,5 @@ reportlab==2.7
 djorm-ext-expressions==0.6
 djorm-ext-pgarray==0.10
 psycopg2==2.5.1
+sorl-thumbnail==11.12
+ajaxuploader==0.3.4

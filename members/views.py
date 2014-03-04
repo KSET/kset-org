@@ -8,9 +8,15 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 
+from ajaxuploader.views import AjaxFileUploader
+from ajaxuploader.backends.thumbnail import ThumbnailUploadBackend
+
 from .forms import *
 from .models import *
 from .decorators import require_auth
+
+
+import_uploader = AjaxFileUploader(backend=ThumbnailUploadBackend, DIMENSIONS="170x200", KEEP_ORIGINAL=False)
 
 
 def _display_member(request, template, member, address_form=None, contact_form=None):
@@ -41,6 +47,18 @@ def index(request):
             contact_form.save()
             return redirect('members_index')
     return _display_member(request, 'main.html', member, address_form, contact_form)
+
+
+@require_auth
+@require_POST
+def update_avatar(request):
+    member = get_object_or_404(Member, id=request.session['members_user_id'])
+    # FIXME: We should use a form here
+    filename = request.POST.get('filename')
+    if filename:
+        member.image = filename
+        member.save()
+        return redirect('members_index')
 
 
 def login(request):
