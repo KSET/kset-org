@@ -190,10 +190,7 @@ input[type="submit"]:hover,
 
 #members-main .top .image
 {
-	float: left;
-	width: 100%;
-	height: 200px;
-	background-color: #666;
+    padding-bottom: 10px;
 }
 
 #members-main .top img {
@@ -286,4 +283,27 @@ input[type="submit"]:hover,
 	background: #E48145;
 	color: #fff;
 	text-decoration: none;
+}
+
+.qq-upload-button {
+    background: #E48145 !important;
+    font-weight: bold;
+}
+
+.qq-upload-list *,
+.qq-upload-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 !important;
+}
+
+.qq-upload-drop-area {
+    background: #F1A569 !important;
+    font-weight: bold !important;
+}
+
+.qq-upload-file {
+    display: block;
+    padding: 4px 0;
+    font-weight: bold;
 }
