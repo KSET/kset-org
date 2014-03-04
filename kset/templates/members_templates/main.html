@@ -14,13 +14,18 @@
 
 	{% block main %}
 
-		<div class="members-leftContent" style="width:75%; float: left;">
+		<div class="members-leftContent" style="">
 		{% block leftContent %}
-
 			<div class="top">
 				<div class="image">
 					{{member.image}}
 				</div>
+			</div>
+		{% endblock %}
+		</div>
+		<div class="members-middleContent" style="width:60%; float: left;">
+			{% block middleContent %}
+			<div class="top">
 				<div class="basic-info">
 					<div class="name">{{member.name}} {{member.surname}}</div>
 					<div class="nickname">{% if member.nickname %}- <i>{{member.nickname}}</i>{% endif %}</div>
@@ -65,8 +70,12 @@
 					    </table>
 					</div>
 					{% if is_owner %}
-						Dodaj novu adresu:
-						{% include "partials/form.html" with form=address_form method="POST" %}
+						<div>
+						    <a href="#" class="open-form"><strong>Dodaj novu adresu:</strong></a>
+						    <div class="form hide">
+								{% include "partials/form.html" with form=address_form method="POST" %}
+						    </div>
+						</div>
 					{% endif %}
 				</div>
 
@@ -92,8 +101,12 @@
 					    </table>
 					</div>
 					{% if is_owner %}
-					    Dodaj novi kontakt:
-						{% include "partials/form.html" with form=contact_form method="POST" %}
+						<div>
+						    <a href="#" class="open-form"><strong>Dodaj novi kontakt:</strong></a>
+						    <div class="form hide">
+								{% include "partials/form.html" with form=contact_form method="POST" %}
+							</div>
+						</div>
 					{% endif %}
 				</div>
 
@@ -134,12 +147,13 @@
 		{% endblock %}
 		</div>
 
-		<div class="members-rightContent" style="width: 20%; float: right;">
+		<div class="members-rightContent">
 		{% block rightContent %}
-			<div class="menu">
+			<div class="members-menu">
 				<ul>
-					<li><h1><a href="{% url 'members_index' %}">Profil</a> | <a href="{% url 'members_logout' %}">Odjava</a></h1></li>
 					<li><a href="{% url 'members_list_all' %}">Lista svih članova</a></li>
+					<li><a href="{% url 'members_index' %}">Moj profil</a></li>
+					<li><a href="{% url 'members_logout' %}">Odjava</a></li>
 				</ul>
 			</div>
 		{% endblock %}

@@ -102,6 +102,11 @@ $( function()
     $('.club-right a[href*=mailto]').attr('href', function(i, href) {
         return href.replace('!at!', '@');
     });
+
+    $('.open-form').click(function() {
+        $(this).next('.form').slideToggle(200);
+        return false;
+    });
 });
 
 

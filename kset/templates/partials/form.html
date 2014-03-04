@@ -11,19 +11,17 @@
 
     <fieldset>
 
-        <ol>
-            {% for field in form  %}
+        {% for field in form  %}
 
-                {% include "partials/form-field.html" with field=field %}
+            {% include "partials/form-field.html" with field=field %}
 
-            {% endfor %}
+        {% endfor %}
 
-            {% if not no_controls %}
-                <div class="action">
-                    <input type="submit" class="button" value="Submit"/>
-                </div>
-            {% endif %}
-        </ol>
+        {% if not no_controls %}
+            <div class="action">
+                <input type="submit" class="button" value="Submit"/>
+            </div>
+        {% endif %}
 
     </fieldset>
 
