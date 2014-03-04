@@ -73,23 +73,18 @@
 						{% else %}
 							<img src="{{ STATIC_URL }}frontend/images/placeholder.jpg" alt="Avatar placeholder">
 						{% endif %}
+						{% if is_owner %}
 					    <div class="qq-upload-drop-area" style="display: none;">
 					        <span>Drop files here to upload</span>
 					    </div>
 					    <div class="qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">Upload a file
 					        <input type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;">
 					    </div>
+					    {% endif %}
 					    <ul class="qq-upload-list"></ul>
 					</div>
 
 				</div>
-				{% if is_owner %}
-					<div id="file-uploader">
-				        <noscript>
-				            <p>Please enable JavaScript to use file uploader.</p>
-				        </noscript>
-				    </div>
-				{% endif %}
 			</div>
 		{% endblock %}
 		</div>
