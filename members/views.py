@@ -5,6 +5,7 @@ from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_http_methods
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 
@@ -16,7 +17,7 @@ from .models import *
 from .decorators import require_auth
 
 
-import_uploader = AjaxFileUploader(backend=ThumbnailUploadBackend, DIMENSIONS="170x200", KEEP_ORIGINAL=False)
+import_uploader = AjaxFileUploader(backend=ThumbnailUploadBackend, DIMENSIONS="188", KEEP_ORIGINAL=False)
 
 
 def _display_member(request, template, member, address_form=None, contact_form=None):
@@ -126,7 +127,7 @@ def list_all(request):
 
 
 @require_auth
-@require_POST
+@require_http_methods(["DELETE"])
 def delete_address(request, id):
     member = get_object_or_404(Member, id=request.session['members_user_id'])
     address = get_object_or_404(Address, id=id)
@@ -138,7 +139,7 @@ def delete_address(request, id):
 
 
 @require_auth
-@require_POST
+@require_http_methods(["DELETE"])
 def delete_contact(request, id):
     member = get_object_or_404(Member, id=request.session['members_user_id'])
     contact = get_object_or_404(contact, id=id)
