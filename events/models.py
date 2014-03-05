@@ -67,4 +67,4 @@ class Event(models.Model):
         Using this for list_display in admin because if tags is a list
         unicodes get messed up, but a string shows up fine
         """
-        return ','.join(self.tags)
+        return ', '.join(self.tags)
