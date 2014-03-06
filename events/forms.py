@@ -14,6 +14,6 @@ class EventAdminForm(forms.ModelForm):
         # Remove empty tags if trailing comma and remove white space
         for tag in tags:
             if tag:
-                cleaned_tags.append(tag.strip())
+                cleaned_tags.append(tag.strip().lower())
 
         return cleaned_tags
