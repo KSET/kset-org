@@ -1,10 +1,124 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>KSET</title>
-</head>
+  <head>
 
-<body>
-<div align="center"><img src="/static/images/errors/404.png" /></div>
-<body>
+    {% block extrahead %}
+        <meta property="og:url" content="http://www.kset.org/" />
+        <meta property="og:title" content="www.KSET.org" />
+        <meta property="og:description" content="Klub Studenata Elektrotehnike" />
+        <meta property="og:image" content="http://www.kset.org/{{ STATIC_URL }}frontend/images/kset_logo.png" />
+
+        <meta property="og:latitude" content="45.80154"/>
+        <meta property="og:longitude" content="15.97166"/>
+        <meta property="og:street-address" content="Unska 3"/>
+        <meta property="og:locality" content="Zagreb"/>
+        <meta property="og:region" content="Zagreb"/>
+        <meta property="og:postal-code" content="10000"/>
+        <meta property="og:country-name" content="Croatia"/>
+    {% endblock %}
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link href="{{ STATIC_URL }}frontend/css/styles.css?3" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}frontend/magnific-popup/magnific-popup.css" type="text/css" media="screen" />
+
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{{ STATIC_URL}}frontend/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="{{ STATIC_URL}}frontend/images/favicon.png" />
+
+    <title>KSET.org - Klub Studenata ElektroTehnike</title>
+
+    {% block feeds %}
+    <link rel="alternate" type="application/rss+xml" title="Public Feeds" href="{% url 'feed_rss' %}" />
+    {% endblock feeds %}
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Roboto+Slab:700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/modernizr.custom.js"></script>
+    {% block members-css %}{% endblock %}
+
+  </head>
+
+  <body>
+
+    <div id="container" class="page-container">
+
+        <header id="header" class="page-header">
+            <img src="{{ STATIC_URL }}frontend/images/headers/{{ header_bg }}" id="header-pic" class="header-pic" />
+
+            <a href="{% url 'index' %}">
+                <img width="230" height="76" src="{{ STATIC_URL }}frontend/images/kset_logo.png" id="kset-logo" class="logo"/>
+            </a>
+
+            <nav id="top-menu" class="page-nav top-menu">
+                <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
+                <a href="{% url 'index' %}">NASLOVNICA</a>
+                <a href="{% url 'subpage_index' %}">O KLUBU</a>
+                <a href="{% url 'subpage_multimedia' %}">MULTIMEDIA</a>
+                <a href="{% url 'news_archive' %}">VIJESTI</a>
+                <a href="{% url 'events_archive' %}">PROGRAM</a>
+
+            </nav>
+
+            <section id="social-stuff" class="header-social-links">
+                <a href="http://www.facebook.com/KSETZg" title="Facebook"></a>
+                <a href="http://twitter.com/KSETinfo" title="Twitter"></a>
+                <a href="http://www.last.fm/user/Klub_KSET" title="Last.fm"></a>
+                <a href="http://webchat.freenode.net/?channels=kset" title="IRC"></a>
+                <a href="http://www.youtube.com/user/KsetVideo" title="Youtube"></a>
+                <a href="{% url 'feed_rss' %}" title="RSS"></a>
+            </section>
+
+
+            {% include 'header-scroll.html' %}
+
+        </header>
+
+        <section role="main" id="content" class="main clearfix">
+
+            <img class="marvin" src="{{ STATIC_URL }}/images/errors/marvin404.jpg" alt="Marvin">
+
+            <h1 class="marvin-error">
+                Not that anyone cares what I say, but the page is at the *other* end of the Universe.
+            </h1>
+
+        </section>
+
+        <footer id="footer" class="footer">
+            <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
+            <i>... prvi put otvorio vrata <b>1976.</b></i>
+        </footer>
+
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.0.min.js"><script>')</script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/csrf.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/magnific-popup/magnific-popup.min.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/perfect-scrollbar.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/custom-functions.js"></script>
+
+     <!-- Google analytics -->
+    <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20067825-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+    </script>
+
+    {% block members-jss %}{% endblock %}
+
+  </body>
+
 </html>
 
