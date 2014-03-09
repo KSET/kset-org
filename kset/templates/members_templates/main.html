@@ -49,6 +49,22 @@
             template: $el.html()
         });
     });
+
+	$('.ctrl-del').click(function(e) {
+		e.preventDefault();
+		var $el = $(this);
+		var prompt = $el.data('should-prompt');
+		var ok = true;
+		if (prompt) {
+			ok = window.confirm(prompt);
+		}
+		$.ajax({
+			type: $el.data('method'),
+			url: $el.attr('href')
+		}).then(function() {
+			$el.closest('.ctrl-smart-row').slideUp(200);
+		});
+	});
 </script>
 
 {% endblock members-jss %}
@@ -129,7 +145,7 @@
 					                    <td>{{address.town|default:"nepoznato"}}</td>
 					                    <td>{{address.zipcode|default:"nepoznato"}}</td>
 					                    <td>{{address.country|default:"nepoznato"}}</td>
-					                    {% if is_owner %}<td><a class="icononly" data-method="post" href="{% url 'members_delete_address' address.id %}" data-should-prompt="Jeste li sigurni?"/>X</a></td>{% endif %}
+					                    {% if is_owner %}<td><a class="icononly ctrl-del" data-method="delete" href="{% url 'members_delete_address' address.id %}" data-should-prompt="Jeste li sigurni?"/>X</a></td>{% endif %}
 					                </tr>
 					            {% empty %}
 									<tr class="no-contact">
@@ -160,7 +176,7 @@
 					                <tr class="ctrl-smart-row">
 					                    <td>{{contact.get_contact_type_display}}:</td>
 					                    <td>{{contact.contact}}</td>
-					                    {% if is_owner %}<td><a class="icononly" data-method="post" href="{% url 'members_delete_contact' contact.id %}" data-should-prompt="Jeste li sigurni?"/>X</a></td>{% endif %}
+					                    {% if is_owner %}<td><a class="icononly ctrl-del" data-method="delete" href="{% url 'members_delete_contact' contact.id %}" data-should-prompt="Jeste li sigurni?"/>X</a></td>{% endif %}
 					                </tr>
 					             {% empty %}
 									<tr class="no-contact">
