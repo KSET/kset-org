@@ -109,6 +109,18 @@ def reset_password(request, link):
 
 
 @require_auth
+def change_password(request):
+    member = get_object_or_404(Member, id=request.session['members_user_id'])
+    form = ChangePasswordForm(request.POST or None, member=member)
+    if form.is_valid():
+        form.set_new_password()
+        messages.success(request, 'Uspješno ste promijenili lozinku.')
+        return redirect('members_index')
+    else:
+        return render(request, 'change_password.html', {'form': form})
+
+
+@require_auth
 def get_member(request, id):
     member = get_object_or_404(Member, id=id)
     return _display_member(request, 'main.html', member)

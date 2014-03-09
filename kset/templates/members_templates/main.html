@@ -73,6 +73,9 @@
 {% block content %}
 
 <div id="members-main">
+	{% for message in messages %}
+        <p class="{{ message.tags }}">{{ message|safe}}</p>
+    {% endfor %}
 
 	{% block main %}
 
@@ -234,6 +237,7 @@
 				<ul>
 					<li><a href="{% url 'members_list_all' %}">Lista svih članova</a></li>
 					<li><a href="{% url 'members_index' %}">Moj profil</a></li>
+					<li><a href="{% url 'members_change_password' %}">Promjena lozinke</a></li>
 					<li><a href="{% url 'members_logout' %}">Odjava</a></li>
 				</ul>
 			</div>

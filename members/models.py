@@ -83,8 +83,11 @@ class Member(models.Model):
     def get_username(self):
         return self.username
 
+    def hash_password(self, password):
+        return hashlib.md5(password+settings.SECRET_KEY).hexdigest()
+
     def set_password(self, password):
-        self.password = hashlib.md5(password+settings.SECRET_KEY).hexdigest()
+        self.password = self.hash_password(password)
 
     def division(self):
         """Returns division name. --> Hardcoded group ID!"""

@@ -10,7 +10,8 @@ from .helpers import send_template_email
 
 
 __all__ = ['LoginForm', 'MemberCreationForm', 'MemberChangeForm', 'MemberFilterForm',
-    'MemberForgotPasswordForm', 'ResetPasswordForm', 'AddAddressForm', 'AddContactForm']
+    'MemberForgotPasswordForm', 'ResetPasswordForm', 'AddAddressForm', 'AddContactForm',
+    'ChangePasswordForm']
 
 
 class LoginForm(forms.Form):
@@ -182,6 +183,40 @@ class ResetPasswordForm(forms.Form):
         member.set_password(self.cleaned_data['password1'])
         member.save()
         rpl.delete()
+
+
+class ChangePasswordForm(forms.Form):
+
+    def __init__(self, *args, **kwargs):
+        self.member = kwargs.pop('member')
+        super(ChangePasswordForm, self).__init__(*args, **kwargs)
+
+    current = forms.CharField(
+        label='Trenutna lozinka',
+        widget=forms.PasswordInput(attrs={'placeholder': 'Trenutna Lozinka'}))
+    password1 = forms.CharField(
+        label='Nova Lozinka',
+        widget=forms.PasswordInput(attrs={'placeholder': 'Nova Lozinka'}))
+    password2 = forms.CharField(
+        label='Ponovite Lozinku',
+        widget=forms.PasswordInput(attrs={'placeholder': 'Ponovite Lozinku'}))
+
+    def clean(self):
+        current = self.cleaned_data.get('current')
+        hashed = self.member.hash_password(current)
+        if hashed != self.member.password:
+            raise forms.ValidationError('Unijeli ste neispravnu lozinku.')
+        p1 = self.cleaned_data.get('password1')
+        p2 = self.cleaned_data.get('password2')
+        if p1 != p2:
+            raise forms.ValidationError('Upisane lozinke se moraju podudarati.')
+        if len(p1) < 8:
+            raise forms.ValidationError('Molimo unesite lozinku od najmanje 8 znakova.')
+        return self.cleaned_data
+
+    def set_new_password(self):
+        self.member.set_password(self.cleaned_data['password1'])
+        self.member.save()
 
 
 class AddAddressForm(forms.ModelForm):
