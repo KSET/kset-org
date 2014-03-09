@@ -131,7 +131,7 @@ def list_all(request):
 def delete_address(request, id):
     member = get_object_or_404(Member, id=request.session['members_user_id'])
     address = get_object_or_404(Address, id=id)
-    if member.id == address.memer_id:
+    if member.id == address.member_id:
         address.delete()
         return redirect('members_index')
     else:
@@ -142,8 +142,8 @@ def delete_address(request, id):
 @require_http_methods(["DELETE"])
 def delete_contact(request, id):
     member = get_object_or_404(Member, id=request.session['members_user_id'])
-    contact = get_object_or_404(contact, id=id)
-    if member.id == contact.memer_id:
+    contact = get_object_or_404(Contact, id=id)
+    if member.id == contact.member_id:
         contact.delete()
         return redirect('members_index')
     else:
