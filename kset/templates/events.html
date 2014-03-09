@@ -6,7 +6,7 @@
     {% with events|first as event %}
         <meta property="og:title" content="{{ event.title }}" />
         <meta property="og:description" content="{{ event.description|striptags|truncatechars:140 }}" />
-        <meta property="og:image" content="{% if event.thumb %}{% version event.thumb 'medium' %}{% endif %}" />
+        <meta property="og:image" content="{{ BASE_URL }}/{% if event.thumb %}{% version event.thumb 'medium' %}{% endif %}" />
     {% endwith %}
 {% endblock %}
 

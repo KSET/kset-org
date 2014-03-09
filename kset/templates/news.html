@@ -22,9 +22,9 @@
 
         <h2 class="news-item-title">
             <a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a>
-            </h2>
+            <div class="news-item-date">{{ item.created_at|date:"l, j. E" }}</div>
+        </h2>
         <div class="news-item-description">
-            <h3 class="news-item-date">{{ item.created_at|date:"l, j. E" }}</h3>
 
             <div class="news-item-text">
 
@@ -69,9 +69,9 @@
 
         <h2 class="news-item-title">
             <a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a>
+            <div class="news-item-date">{{ item.date|date:"l, j. E" }}</div>
         </h2>
         <div class="news-item-description">
-            <h3 class="news-item-date">{{ item.date|date:"l, j. E" }}</h3>
 
 
             {{ item.description|safe }}
@@ -115,9 +115,10 @@
 
         <h2 class="news-item-title">
             <a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a>
+
+            <div class="news-item-date">{{ item.date|date:"l, j. E" }}</div>
         </h2>
         <div class="news-item-description">
-            <h3 class="news-item-date">{{ item.date|date:"l, j. E" }}</h3>
 
             <div class="news-item-text">
 
