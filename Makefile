@@ -56,7 +56,8 @@ update:
 		git pull
 		$(MAKE) clean
 		$(MAKE) requirements
-		python manage.py migrate
+		python manage.py syncdb --noinput
+		python manage.py migrate --noinput
 		python manage.py collectstatic --noinput
 
 deploy: update
