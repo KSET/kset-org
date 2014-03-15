@@ -5,7 +5,9 @@
   <div id="header-scroll-viewport" class="header-scroll-viewport {% if not header_events %} header-scroll-viewport-empty {% endif %}">
 
     {% for event in header_events %}
-    <a class="item" id="event-{{ forloop.counter0 }}" href="{% url 'event_slug' event.slug %}" title="{{ event.title }}">
+    <div itemscope itemtype="http://schema.org/Event" >
+
+    <a class="item" id="event-{{ forloop.counter0 }}" href="{% url 'event_slug' event.slug %}" title="{{ event.title }}" itemprop="url">
 
       {% if event.thumb %}
         <img src="{% version event.thumb 'fb_thumb' %}" class="scroll-thumb" />
@@ -14,8 +16,8 @@
       {% endif %}
 
       <div class="item-top">
-        <span class="date">{% if today_active and forloop.first %}<span class="scroll-today">Danas</span>{% endif %}{{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small></span>
-        <span class="item-top-title">{{ event.title }}</span>
+        <time class="date" itemprop="startDate" datetime="{{ event.date|date:"c" }}">{% if today_active and forloop.first %}<span class="scroll-today">Danas</span>{% endif %}{{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small></time>
+        <span class="item-top-title" itemprop="name">{{ event.title }}</span>
       </div>
 
       <div class="item-bottom">
@@ -28,10 +30,11 @@
           {% endif %}
         </span>
         {% if event.price %} &mdash; {{ event.price }} {% endif %}
-        {% if event.time %} &mdash; od {{ event.time|time:"H" }}h {% endif %}
+        {% if event.time %} &mdash; od <time itemprop="doorTime">{{ event.time|time:"H" }}</time>h {% endif %}
       </div>
 
     </a>
+    </div>
     {% endfor %}
 
   </div>

@@ -2,11 +2,28 @@
 
 {% load fb_versions %}
 
+{% block title %} - {{event.title}}{% endblock title %}
+
 {% block extrahead %}
 <meta property="og:title" content="{{ event.title }}" />
-<meta property="og:description" content="{{ event.description|striptags|truncatechars:140 }}" />
-<meta property="og:image" content="{{ BASE_URL }}{% if event.thumb %}{% version event.thumb 'medium' %}{% endif %}" />
+<meta property="og:type" content="event" />
+<meta property="og:url" content="{{ request.build_absolute_uri }}" />
+<meta property="og:description" content="{% if event.description %}
+{{ event.description|striptags|truncatechars:160 }}
+{% else %}
+{{ event.content|striptags|truncatechars:160 }}
+{% endif %}" />
+<meta property="og:image" content="{{ BASE_URL }}{{ MEDIA_URL }}{% if event.thumb %}{{ event.thumb }}{% endif %}" />
 {% endblock %}
+
+{% block metadesc %}{% if event.description %}
+{{ event.description|striptags|truncatechars:160 }}
+{% else %}
+{{ event.content|striptags|truncatechars:160 }}
+{% endif %}{% endblock %}
+
+{% block metatags %}event, kset, concert, nightlife, {{ event.tags_to_str }}{% endblock %}
+
 
 {% block leftcolumn %}
 

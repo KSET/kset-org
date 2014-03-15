@@ -2,6 +2,7 @@
 
 {% load fb_versions %}
 
+{% block title %} - {{news.subject}}{% endblock title %}
 {% block extrahead %}
 <meta property="og:title" content="{{ news.subject }}" />
 <meta property="og:description" content="www.kset.org" />
