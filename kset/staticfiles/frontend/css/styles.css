@@ -1,16 +1,75 @@
 @charset "UTF-8";
 
-/*201F25*/
 
 @font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?13204804');
+  src: url('../fonts/fontello.eot?13204804#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?13204804') format('woff'),
+       url('../fonts/fontello.ttf?13204804') format('truetype'),
+       url('../fonts/fontello.svg?13204804#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
     font-family: 'fontello';
-    src: url('../fonts/fontello.eot');
-    src: url('../fonts/fontello.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/fontello.woff') format('woff'),
-         url('../fonts/fontello.ttf') format('truetype'),
-         url('../fonts/fontello.svg#iconic') format('svg');
-    font-weight: normal; font-style: normal; }
+    src: url('../font/fontello.svg?13204804#fontello') format('svg');
+  }
+}
+*/
 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-tags:before { content: '\e80a'; } /* '' */
+.icon-youtube:before { content: '\e807'; } /* '' */
+.icon-chat:before { content: '\e80b'; } /* '' */
+.icon-newspaper:before { content: '\e810'; } /* '' */
+.icon-article:before { content: '\e80c'; } /* '' */
+.icon-calendar-inv:before { content: '\e801'; } /* '' */
+.icon-moon-inv:before { content: '\e80e'; } /* '' */
+.icon-sun-inv:before { content: '\e80f'; } /* '' */
+.icon-align-left:before { content: '\e800'; } /* '' */
+.icon-calendar:before { content: '\e809'; } /* '' */
+.icon-rss:before { content: '\e808'; } /* '' */
+.icon-facebook-rect:before { content: '\e803'; } /* '' */
+.icon-twitter-bird:before { content: '\e804'; } /* '' */
+.icon-github:before { content: '\e802'; } /* '' */
+.icon-lastfm:before { content: '\e805'; } /* '' */
+.icon-comment-alt:before { content: '\e806'; } /* '' */
+.icon-menu:before { content: '\e80d'; } /* '' */
 /* PERFECT SCROLLBAR */
 
 .ps-container .ps-scrollbar-x-rail {
@@ -217,7 +276,7 @@ a:hover
     font-family: fontello;
     font-size: 24px;
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 47%;
     line-height: 24px;
     width: 50px;
@@ -226,13 +285,12 @@ a:hover
 
 .header-social-links a {
     margin-bottom: 9px;
-    padding: 7px;
+    padding: 5px;
     display: block;
     color: #666;
-    overflow: hidden;
-    line-height: 26px;
+    line-height: 22px;
     min-width: 28px;
-    height: 20px;
+    height: 18px;
     text-align: center;
     border-radius: 5px;
     text-shadow: 0 0 5px black;
@@ -248,7 +306,6 @@ a:hover
 .header-social-links a:hover {
     text-decoration: none;
     color: #fff;
-    font-size: 24px;
     /*background: rgba(255,255,255,0.2);*/
     text-shadow: 0 0 6px #eee, 0 0 2px black;
 }
@@ -432,17 +489,6 @@ a:hover
     white-space: nowrap;
 }
 
-.header-scroll .item-bottom .date span {
-    padding-right: 2px;
-    padding-left: 2px;
-}
-
-.header-scroll .item-bottom .tags:before {
-    font-family: 'fontello';
-    content: '\E70D ';
-    font-size: 11px;
-}
-
 .header-scroll-control {
     display: none;
 }
@@ -463,6 +509,7 @@ a:hover
     max-width: 53%;
     overflow: hidden;
     text-align: center;
+    white-space: nowrap;
 }
 
 .page-nav a
@@ -655,7 +702,7 @@ div.clear + div.left-column {
     transition: all 0.35s;
 }
 
-.news-header:after {
+.news-header:before {
     font-family: 'fontello';
     float: right;
     vertical-align:middle;
@@ -666,18 +713,6 @@ div.clear + div.left-column {
     -o-transition: all 0.35s;
     -ms-transition: all 0.35s;
     transition: all 0.35s;
-}
-
-.dnevni .news-header:after {
-    content:'\263C ';
-}
-
-.nocni .news-header:after {
-    content:'\E7A0 ';
-}
-
-.vijesti .news-header:after {
-    content:'\E734 ';
 }
 
 .news-box:hover .news-header:after {
@@ -798,8 +833,6 @@ div.clear + div.left-column {
     width: 26px;
     text-align: center;
     font-weight: normal;
-    font-family: 'fontello';
-    content:'📅';
     margin-right: 10px;
     background: #F7AC7B;
 }
@@ -878,10 +911,6 @@ div.clear + div.left-column {
     text-transform: uppercase;
 }
 
-.single-date:before {
-    content:'📅';
-}
-
 .single-details {
     clear: both;
     font-family: 'Roboto slab', sans-serif;
@@ -916,12 +945,6 @@ div.clear + div.left-column {
     padding-bottom: 50px;
 }
 
-.single-tags {
-}
-.single-tags:before {
-    content: '\E70D';
-}
-
 .single-details:before {
     color: #888;
     font-family: 'fontello';
@@ -937,7 +960,8 @@ div.clear + div.left-column {
     font-style: normal;
     text-align: center;
     line-height: 50px;
-    margin-top: -14px;
+    margin-top: -10px;
+    margin-right: 0;
 }
 
 
@@ -955,14 +979,6 @@ div.clear + div.left-column {
 .share-btn:before {
     font-family: 'fontello';
     font-size: 26px;
-}
-
-.shareTw:before {
-    content: '';
-}
-
-.shareFb:before {
-    content: '';
 }
 
 /* RIGHT COLUMN */
@@ -1035,8 +1051,6 @@ div.clear + div.left-column {
     padding: 5px;
     font-size: 20px;
     color: white;
-    content: '\1F304';
-    font-family: fontello;
     z-index: 100;
 }
 
@@ -1475,15 +1489,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
     text-shadow:0 0 5px black;
 }
 
-.gallery-date:before {
-    content:'\E73E ';
-}
-
-.gallery-author:before {
-    content:'\1F464 ';
-}
-
-
 .m-album .ime {
   width: 100%;
     padding-bottom:5px;
@@ -1758,7 +1763,7 @@ and (max-width : 650px) {
     }
 
     .top-menu:before {
-        content: '\E734';
+        content: '\e80c';
         color: #fe7929;
         font-family: fontello;
         position: absolute;

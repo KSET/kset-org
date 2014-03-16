@@ -21,8 +21,8 @@
       </div>
 
       <div class="item-bottom">
-        <div class="date"><span class="fontello">&#x1F4C5;</span> {{ event.date|date:"D"}}</div>
-        <span class="tags">
+        <div class="date icon-calendar"> {{ event.date|date:"D"}}</div>
+        <span class="tags icon-tags">
           {% if event.tags_to_str|length < 22 %}
             {{ event.tags_to_str }}
           {% else %}
