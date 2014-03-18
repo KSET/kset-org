@@ -5,7 +5,7 @@
 {% if news %}
 <section class="news-box vijesti clearfix">
 
-    <h1 class="news-header">Vijesti</h1>
+    <h1 class="news-header icon-newspaper">Vijesti</h1>
 
     {% for item in news %}
 
@@ -22,7 +22,7 @@
 
         <h2 class="news-item-title">
             <a href="{% url 'news_slug' slug=item.slug %}">{{ item.subject }}</a>
-            <div class="news-item-date">{{ item.created_at|date:"l, j. E" }}</div>
+            <div class="news-item-date icon-calendar-inv">{{ item.created_at|date:"l, j. E" }}</div>
         </h2>
         <div class="news-item-description">
 
@@ -53,7 +53,7 @@
 {% if daytime_events %}
 <section class="news-box dnevni clearfix">
 
-    <h1 class="news-header">Dnevni program</h1>
+    <h1 class="news-header icon-sun-inv">Dnevni program</h1>
 
     {% for item in daytime_events %}
 
@@ -69,7 +69,7 @@
 
         <h2 class="news-item-title">
             <a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a>
-            <div class="news-item-date">{{ item.date|date:"l, j. E" }}</div>
+            <div class="news-item-date icon-calendar-inv">{{ item.date|date:"l, j. E" }}</div>
         </h2>
         <div class="news-item-description">
 
@@ -98,7 +98,7 @@
 {% if events %}
 <section class="news-box nocni clearfix">
 
-    <h1 class="news-header">Večernji program</h1>
+    <h1 class="news-header icon-moon-inv">Večernji program</h1>
 
     {% for item in events %}
 
@@ -116,7 +116,7 @@
         <h2 class="news-item-title">
             <a href="{% url 'event_slug' slug=item.slug %}">{{ item.title }}</a>
 
-            <div class="news-item-date">{{ item.date|date:"l, j. E" }}</div>
+            <div class="news-item-date icon-calendar-inv">{{ item.date|date:"l, j. E" }}</div>
         </h2>
         <div class="news-item-description">
 

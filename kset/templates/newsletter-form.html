@@ -1,13 +1,16 @@
-
-<h1>Newsletter</h1>
+<p>
+    <strong>Newsletter</strong>
+</p>
 <form id="form-newsletter">
 
+<p>
   {% csrf_token %}
 
   <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription" value="vaša e-mail adresa" />
   <input type="button" id="newsletter-submit" value="OK" />
   <!-- TODO: CAPTCHA -->
 
+</p>
 </form>
 
 <p id="newsletter-message" style="text-weight: bold; display: none;">Poruka!</p>

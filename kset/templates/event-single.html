@@ -24,7 +24,7 @@
     {% endif %}
 
 
-    <div class="single-date single-details">
+    <div class="single-date single-details icon-calendar-inv">
       <time itemprop="startDate" datetime="{{ event.date|date:"Y-m-d" }}T{{ event.time|time:"H:i" }}" >
         <div class="single-date-day">{{ event.date|date:"l" }}</div>
         <div class="single-date-date">{{ event.date|date:"j. E" }}</div>
@@ -32,12 +32,12 @@
       </time>
     </div>
 
-    <div class="single-tags single-details">{{ event.tags_to_str }} </div>
+    <div class="single-tags single-details icon-tags">{{ event.tags_to_str }} </div>
 
     <section class="share-buttons">
 
-      <a href="http://twitter.com/home?status=http://www.kset.org{% url 'event_slug' event.slug %}" class="share-btn shareTw single-details">Twitter</a>
-      <a href="http://www.facebook.com/sharer.php?u=http://www.kset.org{% url 'event_slug' event.slug %}" class="share-btn shareFb single-details">Facebook</a>
+      <a href="http://twitter.com/home?status=http://www.kset.org{% url 'event_slug' event.slug %}" class="share-btn shareTw single-details icon-twitter-bird">Twitter</a>
+      <a href="http://www.facebook.com/sharer.php?u=http://www.kset.org{% url 'event_slug' event.slug %}" class="share-btn shareFb single-details icon-facebook-rect">Facebook</a>
     </section>
 
   </section>

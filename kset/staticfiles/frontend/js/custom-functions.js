@@ -2,6 +2,10 @@
 // define globals
 var scrollViewport;
 
+function supportsSvg() {
+    return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
+}
+
 // on page load
 $( function()
 {
@@ -107,6 +111,11 @@ $( function()
         $(this).next('.form').slideToggle(200);
         return false;
     });
+
+    if (!supportsSvg()) {
+        $('#kset-logo').attr('src', '/static/frontend/images/kset_logo.png');
+    }
+
 });
 
 
