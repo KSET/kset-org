@@ -22,7 +22,7 @@ def active(request):
     sticky_news = News.get_sticky_news()
 
     #get latest albums from gallery
-    latest = Album.objects.filter(category='LIVE',
+    latest = Album.objects.filter(category=Album.LIVE,
         date_of_event__range=(datetime.today() - timedelta(14), datetime.today())).order_by('-date_of_event')[:3]
 
     return render(request, 'news.html',
