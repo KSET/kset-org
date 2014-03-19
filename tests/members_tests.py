@@ -1,8 +1,9 @@
 from django.test import TestCase
 
 from members.forms import LoginForm
+from members.models import ResetPasswordLink
 from .base import BaseTestClient
-from .factories import MemberFactory, UserFactory
+from .factories import MemberFactory, UserFactory, MemberContactFactory
 
 
 __all__ = ['MembersViewTest']
@@ -101,7 +102,7 @@ class MembersViewTest(TestCase):
         self.assertEquals(302, ret.status_code)
 
     def test_red_table_page_with_login(self):
-        user = UserFactory(username='test', password='test')
+        UserFactory(username='test', password='test')
         self.client.login(username='test', password='test')
         ret = self.client.get('members_red_table')
         self.assertEquals(200, ret.status_code)
@@ -113,8 +114,26 @@ class MembersViewTest(TestCase):
         ret = self.client.get('members_red_list')
         self.assertEquals(302, ret.status_code)
 
-    def test_red_table_page_with_login(self):
-        user = UserFactory(username='test', password='test')
-        self.client.login(username='test', password='test')
-        ret = self.client.get('members_red_table')
-        self.assertEquals(200, ret.status_code)
+    def test_forgot_password_form(self):
+        member = MemberFactory(username='test')
+        email = MemberContactFactory(member=member, contact='me@kset.org')
+
+        response = self.client.post('members_forgot_password', {'email': email.contact})
+        self.assertEquals(302, response.status_code)
+        self.assertEquals(1, ResetPasswordLink.objects.all().count())
+
+    def test_forgot_password_form_only_one_reset_link_per_user(self):
+        member = MemberFactory(username='test')
+        email = MemberContactFactory(member=member, contact='me@kset.org')
+
+        response = self.client.post('members_forgot_password', {'email': email.contact})
+        # and again
+        response = self.client.post('members_forgot_password', {'email': email.contact})
+        self.assertEquals(302, response.status_code)
+        self.assertEquals(1, ResetPasswordLink.objects.all().count())
+
+    def test_forgot_password_form_invalid_email(self):
+        response = self.client.post('members_forgot_password', {'email': 'email@email.com'})
+        # 200 because the form will just re-render with errors
+        self.assertEquals(200, response.status_code)
+        self.assertEquals(0, ResetPasswordLink.objects.all().count())

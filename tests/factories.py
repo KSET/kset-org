@@ -6,13 +6,13 @@ import factory
 
 from news.models import News
 from events.models import Event
-from members.models import Group, Member, MemberGroupLink
+from members.models import Group, Member, MemberGroupLink, Contact
 from gallery.models import Photographer, Album, Image
 
 
 __all__ = ['UserFactory', 'NewsFactory', 'EventFactory',
     'MemberFactory', 'GroupFactory', 'MemberGroupLinkFactory',
-    'PhotographerFactory', 'AlbumFactory', 'ImageFactory']
+    'PhotographerFactory', 'AlbumFactory', 'ImageFactory', 'MemberContactFactory']
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -88,6 +88,14 @@ class MemberFactory(factory.django.DjangoModelFactory):
     death = None
     comment = None
     image = None
+
+
+class MemberContactFactory(factory.django.DjangoModelFactory):
+    FACTORY_FOR = Contact
+
+    member = factory.SubFactory(MemberFactory)
+    contact_type = 'email'
+    contact = 'test@test.com'
 
 
 class MemberGroupLinkFactory(factory.django.DjangoModelFactory):
