@@ -797,7 +797,10 @@ div.clear + div.left-column {
     clear: both;
 }
 
-.news-item-0 .news-item-description, .news-item-title {
+
+.news-item.even:last-child .news-item-description,
+.news-item-0 .news-item-description,
+.news-item-title {
     width: 75%;
     float: right;
     clear: none;
