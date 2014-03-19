@@ -86,7 +86,7 @@ $( function()
     }
 
     // GALLERY POPUP
-    $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").attr('rel', 'gallery').magnificPopup({
+    $(".ctrl-gallery-pic").magnificPopup({
         type: 'image',
         gallery: {
             enabled: true,

@@ -15,7 +15,7 @@
 
     <header>
         <div class="album-title">
-          <div class="gumb"><h2><a href="{% url 'gallery_category_albums' category=category %}"></a></h2></div>
+          <div class="gumb"><h2><a href="{% url 'gallery_category_albums' category=category %}">Povratak</a></h2></div>
           <span><h2>{{ album.title }} - {{ album.date_of_event }}</h2></span>
         </div>
 
@@ -32,7 +32,7 @@
     {% for image in images %}
 
     <article class="m-slika">
-      <a href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" title="Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} {% if image.caption %} :: {{ image.caption|striptags|default:"" }}{% endif %}">
+      <a class="ctrl-gallery-pic" href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" title="Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} {% if image.caption %} :: {{ image.caption|striptags|default:"" }}{% endif %}">
         <div class="slika">
           <img src="{% version image.upload_path 'gallerytb' %}" />
         </div>

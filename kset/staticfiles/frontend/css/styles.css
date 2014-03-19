@@ -1532,42 +1532,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
     width: 31.3333%;
     margin: 0 1%;
     position: relative;
-    height:185px;
     overflow: hidden;
-    line-height: 185px;
 }
 
 .m-slika a {
     color: #000;
     display: block;
-    line-height: 185px;
-    height: 185px;
+    height: 200px;
+    line-height: 200px;
     text-align: center;
 }
 
-.m-slika .slika {
-    display: inline-block;
-    vertical-align: middle;
-    height: 140px;
-    margin-top: 20px;
-    overflow: hidden;
-    box-shadow: 0 0 10px #bbb;
-    border: 1px solid #555;
-    -moz-transition:all 0.2s ease-out;
-    -ms-transition:all 0.2s ease-out;
-    -o-transition:all 0.2s ease-out;
-    -webkit-transition:all 0.2s ease-out;
-    transition:all 0.2s ease-out;
-    border-radius: 3px;
-}
-
-.m-slika:hover .slika {
-    height: 170px;
-    margin: 0;
-}
-
 .m-slika img {
-    width: 100%;
     padding:0;
     margin:0;
 }
@@ -1576,7 +1552,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: alpha(opacity=90);
     opacity: 0.90;
-    box-shadow: 0 2px 13px #747474;
 }
 
 .m-slika .info {
@@ -1616,11 +1591,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
 }
 
 .album-title {
-    width: 800px;
     margin: 0 auto 0 10px;
     height: 1.5em;
-    padding-top:0.5em;
-    margin-bottom:2em;
+    padding-top:1em;
+    margin-bottom:3em;
+}
+
+.album-title h2 {
+    font-size: 28px;
+    font-family: 'Roboto slab';
 }
 
 .album-title .gumb {
@@ -1631,6 +1610,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
     background-color: white ;
     box-shadow: 0 0 1px #333;
     padding: 0;
+    text-transform: uppercase;
 }
 
 .album-title .gumb h2 {
@@ -1638,10 +1618,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1242528', e
 }
 
 .album-title .gumb a {
-    font-size:18px;
+    font-size:12px;
     color:#222;
-    font-family: 'fontello';
-    padding: 5px 10px;
+    padding: 2px 10px;
+    line-height: 35px;
 }
 .album-title .gumb:hover {
   box-shadow: 0 0 2px #000;
@@ -1692,6 +1672,10 @@ and (max-width : 1080px) {
 
     .m-album {
         width: 43.3%;
+    }
+
+    .m-slika {
+        width: 48%;
     }
 }
 
@@ -2037,6 +2021,11 @@ and (max-width : 650px) {
 
     .m-album {
         width: 93.6%;
+    }
+
+    .m-slika {
+        width: 100%;
+        margin: 0;
     }
 
     .header-social-links {
