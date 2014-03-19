@@ -1,13 +1,13 @@
 #coding: utf8
-import hashlib
+import json
 
-from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
+from django.http import HttpResponse
 
 from ajaxuploader.views import AjaxFileUploader
 from ajaxuploader.backends.thumbnail import ThumbnailUploadBackend
@@ -145,7 +145,10 @@ def delete_address(request, id):
     address = get_object_or_404(Address, id=id)
     if member.id == address.member_id:
         address.delete()
-        return redirect('members_index')
+        return HttpResponse(
+            json.dumps({'success': True}),
+            content_type="application/json",
+            status=200)
     else:
         raise PermissionDenied()
 
@@ -157,7 +160,10 @@ def delete_contact(request, id):
     contact = get_object_or_404(Contact, id=id)
     if member.id == contact.member_id:
         contact.delete()
-        return redirect('members_index')
+        return HttpResponse(
+            json.dumps({'success': True}),
+            content_type="application/json",
+            status=200)
     else:
         raise PermissionDenied()
 

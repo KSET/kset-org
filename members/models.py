@@ -167,7 +167,7 @@ class ResetPasswordLink(models.Model):
     MAX_VALID_DAYS = 3
 
     member = models.ForeignKey(Member, unique=True)
-    unique_link = models.CharField(unique=True, max_length=255, default=uuid4().get_hex())
+    unique_link = models.CharField(unique=True, max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def is_still_valid(self):

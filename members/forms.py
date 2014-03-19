@@ -1,5 +1,6 @@
 #coding: utf8
 import hashlib
+from uuid import uuid4
 
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
@@ -153,7 +154,7 @@ class MemberForgotPasswordForm(forms.Form):
         ResetPasswordLink.objects.filter(member=member).delete()
 
         # create new reset link
-        rpl = ResetPasswordLink.objects.create(member=member)
+        rpl = ResetPasswordLink.objects.create(member=member, unique_link=uuid4().get_hex())
 
         send_template_email(
             member_email=member_email,
