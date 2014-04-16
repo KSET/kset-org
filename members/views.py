@@ -17,7 +17,11 @@ from .models import *
 from .decorators import require_auth
 
 
-import_uploader = AjaxFileUploader(backend=ThumbnailUploadBackend, DIMENSIONS="188", KEEP_ORIGINAL=False)
+import_uploader = AjaxFileUploader(
+    backend=ThumbnailUploadBackend,
+    DIMENSIONS="188",
+    KEEP_ORIGINAL=False,
+    UPLOAD_DIR='members/avatars/')
 
 
 def _display_member(request, template, member, address_form=None, contact_form=None):
