@@ -38,8 +38,9 @@
 				    type: "POST",
 				    url: "{% url 'members_avatar_update' %}",
 				    data: {'filename': path}
-				}).then(
-					location.reload()
+				}).then(function(){
+						location.reload();
+					}
 				);
             },
             params: {
