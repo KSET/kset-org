@@ -38,8 +38,9 @@
 				    type: "POST",
 				    url: "{% url 'members_avatar_update' %}",
 				    data: {'filename': path}
-				});
-				location.reload();
+				}).then(
+					location.reload()
+				);
             },
             params: {
                 'csrf_token': '{{ csrf_token }}',
