@@ -39,7 +39,7 @@
 
         {% if image.caption %}
           <div class="info">
-            <p>{{ image.caption|default:"" }}</p>
+            {{ image.caption|safe|default:"" }}
           </div>
         {% endif %}
 
