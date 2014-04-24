@@ -75,7 +75,7 @@ ROOT_URLCONF = PROJECT_NAME + '.urls'
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS +\
     ('django.core.context_processors.request',
-     'ctx.header', 'ctx.baseurl', )
+     'ctx.header', 'ctx.baseurl', 'ctx.authenticated', )
 
 
 def ensure_secret_key_file():

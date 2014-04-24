@@ -58,7 +58,11 @@
         	<nav id="top-menu" class="page-nav top-menu">
                 <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
                 <a href="{% url 'index' %}">NASLOVNICA</a>
-                <a href="{% url 'subpage_index' %}">O KLUBU</a>
+                {% if is_member %}
+                    <a href="{% url 'members_list_all' %}">ČLANOVI</a>
+                {% else %}
+                    <a href="{% url 'subpage_index' %}">O KLUBU</a>
+                {% endif %}
                 <a href="{% url 'subpage_multimedia' %}">MULTIMEDIA</a>
                 <a href="{% url 'news_archive' %}">VIJESTI</a>
                 <a href="{% url 'events_archive' %}">PROGRAM</a>
