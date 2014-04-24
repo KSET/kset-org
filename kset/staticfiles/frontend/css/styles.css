@@ -402,7 +402,7 @@ a:hover
 .scroll-today {
     display: block;
     position: absolute;
-    z-index: 1000;
+    z-index: 85;
     top: -28px;
     margin-left: -5px;
     background-color: #F16F18;
@@ -1733,7 +1733,7 @@ and (max-width : 650px) {
         left: auto;
         bottom: auto;
         padding-bottom: 0;
-        z-index:90;
+        z-index: 100;
         background: #000;
         border-radius: 0 0 15px 0;
         border: 1px solid #111;
