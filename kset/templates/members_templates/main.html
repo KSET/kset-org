@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "subpage.html" %}
 
 {% block members-css %}
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}frontend/css/members.css">
@@ -72,16 +72,26 @@
 {% endblock members-jss %}
 
 
-{% block content %}
+{% block subpage_content %}
 
-<div id="members-main">
+<div id="members-main" class="members-main">
 	{% for message in messages %}
         <p class="{{ message.tags }}">{{ message|safe}}</p>
     {% endfor %}
 
+	<div class="members-menu">
+		<ul>
+			<li><a href="{% url 'subpage_index' %}">O klubu</a></li>
+			<li><a href="{% url 'members_list_all' %}">Lista svih članova</a></li>
+			<li><a href="{% url 'members_index' %}">Moj profil</a></li>
+			<li><a href="{% url 'members_change_password' %}">Promjena lozinke</a></li>
+			<li><a href="{% url 'members_logout' %}">Odjava</a></li>
+		</ul>
+	</div>
+
 	{% block main %}
 
-		<div class="members-leftContent" style="">
+		<div class="members-left">
 		{% block leftContent %}
 			<div class="top">
 
@@ -109,8 +119,9 @@
 			</div>
 		{% endblock %}
 		</div>
-		<div class="members-middleContent" style="width:60%; float: left;">
+		<div class="members-middle">
 			{% block middleContent %}
+
 			<div class="top">
 				<div class="basic-info">
 					<div class="name">{{member.name}} {{member.surname}}</div>
@@ -119,7 +130,7 @@
 				<div style="clear: both"></div>
 			</div>
 
-			<div class="bottom">
+			<div class="bottom members-profile">
 				<div class="birth-date bottom-item">
 					<div class="entry-title">Datum rođenja:</div>
 					<div class="value">{{member.birth|date:"d.m.Y"|default:"nepoznato"}}</div>
@@ -233,18 +244,6 @@
 		{% endblock %}
 		</div>
 
-		<div class="members-rightContent">
-		{% block rightContent %}
-			<div class="members-menu">
-				<ul>
-					<li><a href="{% url 'members_list_all' %}">Lista svih članova</a></li>
-					<li><a href="{% url 'members_index' %}">Moj profil</a></li>
-					<li><a href="{% url 'members_change_password' %}">Promjena lozinke</a></li>
-					<li><a href="{% url 'members_logout' %}">Odjava</a></li>
-				</ul>
-			</div>
-		{% endblock %}
-		</div>
 
 		<div style="clear:both; height: 20px;"></div>
 	{% endblock %}

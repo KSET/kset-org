@@ -2,7 +2,7 @@
 
 {% block leftContent %}
 
-    <h1><u>Filter:</u></h1>
+    <h2 class="members-list-title">Filter:</h2>
     {% include "partials/form.html" with form=filter_form method="POST" %}
 
 {% endblock %}
@@ -10,7 +10,7 @@
 {% block middleContent %}
     <div class="members-list">
     	{% if members %}
-    		<h1>Broj pronađenih članova: {{ members|length }}</h1>
+    		<h2 class="members-list-title">Broj pronađenih članova: {{ members|length }}</h2>
 			{% for member in members %}
 				<div class="members-list-item">
 					<a href="{% url 'members_get_member' id=member.id %}">

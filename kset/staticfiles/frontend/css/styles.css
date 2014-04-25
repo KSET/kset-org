@@ -152,7 +152,6 @@ body
 }
 
 .clearfix {
-    display: inline-block;
     width: 100%;
 }
 
@@ -175,7 +174,7 @@ td
 
 a
 {
-    color: #E48145; /* old: #c06833;*/
+    color: #F37F39; /* old: #c06833;*/
     text-decoration: none;
 }
 
@@ -192,9 +191,20 @@ img
 
 input
 {
+    background: #E5E5E5;
     border: 1px solid #aaa;
     margin: 0px;
     outline: none;
+    -webkit-transition: all 0.2s;
+       -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+         -o-transition: all 0.2s;
+            transition: all 0.2s;
+}
+
+input:hover, input:focus {
+    border-color: #E48145;
+    background-color: #FFF;
 }
 
 .fontello {
@@ -206,8 +216,6 @@ input
 .vsep
 {
     clear: both;
-    border-bottom: 1px dotted #aaa;
-    padding-top: 8px;
 }
 
 
@@ -598,9 +606,9 @@ a:hover
 
 .left-column p img {
     max-width: 50%;
-    float: left;
     margin-right: 30px;
     height: auto;
+    float: left;
 }
 
 h1
@@ -630,17 +638,18 @@ h3
 
 .logo-fer
 {
-    float: right;
-    margin-right: 5px;
-    background: transparent url(../images/fer.png) no-repeat scroll 0px -60px;
-
     display: block;
-    width: 40px;
-    height: 60px;
+    padding: 0 20px;
+    text-align: center;
 }
+
+.logo-fer img {
+    width: 60px;
+}
+
 .logo-fer:hover
 {
-    background: transparent url(../images/fer.png) no-repeat scroll 0px 0px;
+    opacity: 0.9;
 }
 
 
@@ -651,7 +660,7 @@ h3
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    width: 80%;
+    width: 77%;
     float: left;
     padding: 15px;
     padding-top: 10px;
@@ -662,8 +671,7 @@ h3
 }
 
 .club-left {
-    max-width: 530px;
-    padding-right: 10px;
+    width: 60%;
 }
 
 .left-column.club-left p {
@@ -991,51 +999,60 @@ div.clear + div.left-column {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    font-size: 11px;
     color: #333;
     float: right;
-    width: 20%;
+    width: 22%;
     padding: 10px;
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     background: #f5f5f5;
 }
 
+.right-box-title {
+    margin-top: 10px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 10px;
+    border-left: 2px solid #F7AC7B;
+    font-size: 1.2em;
+    background: #eee;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: bold;
+    font-family: Roboto slab;
+    margin-bottom: 10px;
+}
+
+.right-box-title:first-child {
+  margin-top: 0;
+}
+
 .club-right {
-    width: 420px;
+    width: 40%;
 }
 
 .right-column table
 {
-    font-size: 11px;
+    font-size: 1em;
+    width: 100%;
+    text-align: left;
 }
 
-.right-column h1
-{
-    font-family: 'Open Sans', arial,helvetica,sans-serif;
-    font-size: 11px;
-    color: #000;
-    margin: 0px;
-    padding: 10px 0px 10px 5px;
-    text-transform: uppercase;
+.right-column td:first-child {
+    padding-right: 10px;
 }
 
-.right-column p
-{
-    padding-left: 5px;
-    padding-top: 2px;
-    margin: 0;
+.right-column p {
+    margin: 0 0 10px;
 }
 
-
-.right-column .fer-box p {
-    padding-top:10px;
+.right-column .fer-box {
+    padding-top: 10px;
 }
 
 
 
 .right-box a {
-    padding-left: 5px;
     padding-top: 10px;
     position: relative;
     display: block;
@@ -1061,29 +1078,27 @@ div.clear + div.left-column {
     color: #ccc;
 }
 
-.right-box p{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 /* RIGHT COLUMN - FORMS */
 
 
 .form-search {
-    line-height: 20px;
-    background: #E5E5E5;
-    border: 1px solid #ccc;
+    display: block;
+}
+
+.form-search:hover {
+    border-color: #E48145;
 }
 
 .input-search {
-    background: url(/static/frontend/images/search.png) no-repeat 5px 4px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background: url(/static/frontend/images/search.png) no-repeat 5px center #E5E5E5;
     color: #222;
+    width: 100%;
     padding: 5px 5px 5px 29px;
-    height: 17px;
-    width: 125px;
-    border: 0;
-    font-size: 12px;
+    line-height: 1.6em;
+    font-size: 1.1em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -1092,9 +1107,8 @@ div.clear + div.left-column {
 }
 
 .input-search:focus {
-    background-position: -30px 4px;
+    background-position: -30px center;
     padding-left: 5px;
-    width: 149px;
 }
 
 .form-search img {
@@ -1102,13 +1116,48 @@ div.clear + div.left-column {
     padding: 0 3px;
 }
 
-
-.newsletter-subscription {
-    width: 120px;
-    color: #666;
-    padding-left: 3px;
+.form-newsletter {
+    display: block;
+    padding-bottom: 32px;
 }
 
+.newsletter-subscription {
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 75%;
+    color: #222;
+    margin: 0;
+    padding: 5px;
+    line-height: 1.6em;
+    font-size: 1.1em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.newsletter-submit {
+    border-left: none;
+    float: right;
+    display: block;
+    font-weight: bold;
+    font-family: Roboto Slab;
+    line-height: 1.6em;
+    font-size: 1.1em;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 25%;
+    margin: 0;
+    color: #222;
+    padding: 5px;
+    cursor: pointer;
+}
 
 /* RIGHT COLUMN - KLUB */
 
@@ -1122,28 +1171,25 @@ div.clear + div.left-column {
     margin-right: 10px;
 }
 
+.right-subcolumn-club {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 50%;
+    padding: 0 10px 0 0;
+    float: left;
+}
+
 .right-column-col2-klub
 {
     float: right;
-    width: 175px;
-    background-color: #e1e1e1;
-    border-right: 1px solid #d1d1d1;
-    border-left: 1px solid #d8d8d8;
-    border-bottom: 1px solid #d8d8d8;
-    padding: 0px 3px 10px 5px;
-
-    border-top: 1px solid #d1d1d1;
+    padding: 0 0 0 10px;
 }
 
-.right-column-col1-klub
-{
-    width: 195px;
-    background-color: #e8e8e8;
-    border-right: 1px solid #d8d8d8;
-    border-left: 1px solid #e1e1e1;
-    border-bottom: 1px solid #e1e1e1;
-    padding: 0px 3px 10px 5px;
-    border-top: 1px solid #d1d1d1;
+.kset-opened-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
 }
 
 .right-column-col1-klub .vsep {
@@ -1163,31 +1209,24 @@ div.clear + div.left-column {
     padding: 10px 0px 3px 5px;
 }
 
-.right-column-klub p
-{
-    margin: 5px 3px 3px 12px;
-}
-
-
-.cellmenu
-{
-}
-
-.cellmenu a
-{
+.cellmenu a {
     display: block;
     float: left;
     width: 80px;
+    max-width: 46%;
     height: 60px;
     border: 1px solid #ccc;
-    margin: 5px 0px 0px 12px;
+    margin: 5px 0px 0px 2px;
     position: relative;
+    -webkit-transition: all 0.2s;
+       -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+         -o-transition: all 0.2s;
+            transition: all 0.2s;
 }
 
-.cellmenu a:hover
-{
-    text-decoration: none;
-    border: 1px solid #fe7929;
+.cellmenu a:nth-child(2n) {
+    float: right;
 }
 
 .cellmenu .text
@@ -1197,13 +1236,24 @@ div.clear + div.left-column {
     bottom: 0px;
     right: 0px;
     left: 0px;
-    padding: 0px 3px;
+    padding: 2px 3px;
     color: #fff;
-    font-weight: bold;
-    font-size: 10px;
-    background-color: #000;
-    opacity:0.85;
-    filter:alpha(opacity=85); /* IE */
+    font-size: 11px;
+    background-color: rgba(0,0,0,0.8);
+    -webkit-transition: all 0.2s;
+       -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+         -o-transition: all 0.2s;
+            transition: all 0.2s;
+}
+
+.cellmenu a:hover {
+    text-decoration: none;
+    border: 1px solid #fe7929;
+}
+
+.cellmenu a:hover .text {
+    background: #000;
 }
 
 /* CALENDAR */
@@ -1243,7 +1293,6 @@ div.clear + div.left-column {
 
 .calendar
 {
-  padding-top: 10px;
   text-align: center;
 }
 
@@ -1264,8 +1313,7 @@ div.clear + div.left-column {
     margin-bottom: 2px;
 }
 
-.calendar a
-{
+.calendar a {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -1273,13 +1321,15 @@ div.clear + div.left-column {
     display: block;
     width: 14.285714285%;
     padding: 2% 0;
-    color: #000;
+    color: #333;
     border: 1px solid transparent;
 }
 
 .calendar a:hover
 {
   font-weight: bold;
+  background: #ddd;
+  text-decoration: none;
 }
 
 .calendar .current {
@@ -1812,7 +1862,7 @@ and (max-width : 650px) {
         right: -70px;
         padding: 0.30em 19px;
         top: 0;
-        z-index:100;
+        z-index: 110;
         font-size: 210%;
         line-height: 1.5em;
         text-align: right;
@@ -2006,18 +2056,15 @@ and (max-width : 650px) {
         max-width: 100%;
     }
 
-    .club-right table {
-        font-size: 1em;
-    }
-
     .left-column table {
         font-size: 1.6em;
         margin-bottom: 15px;
     }
 
     .right-column {
-        clear:left;
+        clear: left;
         float: none;
+        text-align: center;
         width: auto;
         padding: 10px 0;
         font-size: 16px;
@@ -2027,9 +2074,8 @@ and (max-width : 650px) {
         font-size: 17px;
     }
 
-    .right-column p {
+    .right-column {
         font-size: 16px;
-        margin-bottom: 10px;
         line-height: 26px;
     }
 
@@ -2042,26 +2088,14 @@ and (max-width : 650px) {
         margin: 0 5px 10px;
     }
 
-    .right-column .search-box {
-        display: block;
-        width: 100%;
-    }
-
-    .right-column-col1-klub,
-    .right-column-col2-klub {
+    .right-subcolumn-club {
         width: auto;
+        padding: 10px 5px;
         float: none;
-        display: block;
     }
 
-    .input-search {
-        width: 90%;
-    }
-
-    .input-search:focus {
-        font-size: 16px;
-        color: #000;
-        width: 90%;
+    .cellmenu a:nth-child(2n) {
+        float: left;
     }
 
     .archive-table {
