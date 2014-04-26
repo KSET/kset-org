@@ -341,5 +341,42 @@ input[type="submit"]:hover,
 
 .right-subcolumn-club {
     width: 100%;
-    padding: 0;
+}
+
+
+/* MOBILE */
+
+
+@media only screen and (max-width : 650px) {
+    .club-left {
+        width: auto;
+    }
+
+    .members-menu ul {
+        display: block;
+        margin: 0 0 10px;
+        border: 1px solid #ddd;
+        padding: 0;
+    }
+
+    .members-left,
+    .members-middle {
+        padding: 0 0 20px;
+        clear: both;
+        width: auto;
+        float: none;
+    }
+
+    .members-menu li {
+        text-align: center;
+        float: none !important;
+        vertical-align: middle;
+    }
+    .members-menu li a {
+        padding: 10px;
+    }
+
+    .members-profile table {
+        font-size: 1em;
+    }
 }

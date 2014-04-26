@@ -2084,13 +2084,9 @@ and (max-width : 650px) {
         max-width: 100%;
     }
 
-    .right-column > div {
-        margin: 0 5px 10px;
-    }
-
     .right-subcolumn-club {
         width: auto;
-        padding: 10px 5px;
+        padding: 10px 10px;
         float: none;
     }
 
