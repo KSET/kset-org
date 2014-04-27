@@ -7,22 +7,27 @@
 {%block extrahead %}
 <meta property="og:title" content="{{ album.title }} - {{ album.date_of_event }}" />
 <meta property="og:description" content="Copyright by: {{ album.photographer }}" />
-<meta property="og:image" content="{% version album.thumb 'gallerytb' %}" />
+<meta property="og:image" content="{% version album.thumb 'galleryimage' %}" />
 {% endblock %}
 
 {% block content %}
-<section id="gallery-album">
+<section id="gallery-album" class="gallery">
 
     <header>
-        <div class="album-title">
-          <div class="gumb"><h2><a href="{% url 'gallery_category_albums' category=category %}">Povratak</a></h2></div>
-          <span><h2>{{ album.title }} - {{ album.date_of_event }}</h2></span>
+        <div>
+          <h2 class="gallery-top-title gallery-month-title">
+
+              <a href="{% url 'gallery_category_albums' category=category %}" class="gallery-backlink"><i class="icon-left-open"></i> <i class="icon-picture"></i></a>
+              <span class="gallery-top-title-text">{{ album.title }} - {{ album.date_of_event }}</span>
+          </h2>
+
         </div>
 
 
         <div class="album-info">
-            {{ album.description|safe }}
-          <p class="album-author">Copyright by: {% if album.photographer.url %}<a href='{{ album.photographer.url }}'>{{ album.photographer.name }}</a>{% else %}{{ album.photographer.name }}{% endif %}</p>
+          <div class="album-author"><p><strong>Copyright by: {% if album.photographer.url %}<a href='{{ album.photographer.url }}'>{{ album.photographer.name }}</a>{% else %}{{ album.photographer.name }}{% endif %}</strong></p></div>
+
+          <div>{{ album.description|safe }}</div>
         </div>
     </header>
 
@@ -34,12 +39,13 @@
     <article class="m-slika">
       <a class="ctrl-gallery-pic" href="{% version image.upload_path 'galleryimage' %}" rel="lightbox[setofimagesinalbum]" title="Copyright {% if image.photographer.url %}<a href='{{ image.photographer.url }}'>{{ image.photographer.name }}</a>{% else %}{{ image.photographer.name }}{% endif %} {% if image.caption %} :: {{ image.caption|striptags|default:"" }}{% endif %}">
         <div class="slika">
-          <img src="{% version image.upload_path 'gallerytb' %}" />
+
+          <img src="{% version image.upload_path 'gallerypic' %}" />
         </div>
 
         {% if image.caption %}
           <div class="info">
-            {{ image.caption|safe|default:"" }}
+            <div class="gallery-info-inner">{{ image.caption|safe|default:"" }}</div>
           </div>
         {% endif %}
 

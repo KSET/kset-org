@@ -7,23 +7,47 @@
 {% block content %}
 
 	<!-- ... TU SAM ... -->
-<section id="gallery" class="gallery clearfix">
+<section id="gallery" class="gallery">
     <nav class="gallery-menu">
         {% if years %}
-            <span>Odaberi godinu ...</span>
+            <h2 class="gallery-month-title gallery-top-title">
+              <a href="/gallery/" class="gallery-backlink"><i class="icon-left-open"></i> <i class="icon-picture"></i></a>
+
+              {% if category == 'live' %}
+                <div class="gallery-years">
+                  {% for year in years %}
+                    {% with year=year|date:'Y'%}
+                    <a class="gallery-year {% if year == active_year %}gallery-year-active{%endif%}" href="{% url 'gallery_category_albums_by_year' category=category year=year %}">{{ year }}.</a>
+                    {% endwith %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <div class="gallery-top-title-text">{% if category == 'live' %}KSET.live!{% else %}KSET.foto{% endif %}</div>
+
+            </h2>
         {% else %}
-            <span>Uskoro... </span>
+            <div>Uskoro... </div>
         {% endif %}
-        {% for year in years %}
-            <a href="{% url 'gallery_category_albums_by_year' category=category year=year|date:'Y' %}">{{ year|date:'Y' }}</a>{% if not forloop.last %}, {% endif %}
-        {% endfor %}
+
+
+
     </nav>
+
+
+    <div class="gallery-albums-wrapper">
 
     {% for a in albums %}
 
-        {% ifchanged %}
-            <header class="gallery-month"><h2>{{ a.date_of_event|date:"F Y." }}</h2></header>
-        {% endifchanged %}
+        {% if category == 'live' %}
+          {% ifchanged %}
+          <div class="clearfix"></div>
+          </div>
+              <h2 class="gallery-month-title"><i class="icon-calendar-inv"></i> {{ a.date_of_event|date:"F Y." }}</h2>
+
+          <div class="gallery-albums-wrapper">
+          {% endifchanged %}
+        {% endif %}
 
         <article class="m-album">
 
@@ -31,20 +55,22 @@
 
               <div class="slika">
                 <!-- slika dimenzije 255x170 -->
-                <img align="middle" src="{% version a.thumb 'gallerytb' %}"/>
+                <img src="{% version a.thumb 'gallerypic' %}" alt="{{ a.title }}"/>
               </div>
               <div class="ime">
                 <!--<div class="transparent"></div>-->
-                <h2>{{ a.title }}</h2>
+                <h2><i class="icon-picture"></i> {{ a.title }}</h2>
               </div>
               <section class="tekst">
-                <p class="gallery-date"> {{ a.date_of_event }}</p>
-                <p class="gallery-author"> {{ a.photographer }}</p>
+                <p class="gallery-author"><i class="icon-camera"></i> <strong> {{ a.photographer }}</strong></p>
+                <p class="gallery-date"><i class="icon-calendar-inv"></i> {{ a.date_of_event }}</p>
               </section>
             </a>
         </article>
 
     {% endfor %}
+      <div class="clearfix"></div>
+    </div>
 
 </section>
 

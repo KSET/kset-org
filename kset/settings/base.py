@@ -166,6 +166,8 @@ FILEBROWSER_VERSIONS = {
         'width': 70, 'height': 70, 'opts': 'crop upscale'},
     'gallerytb': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 255,
         'height': 173, 'opts': 'crop'},
+    'gallerypic': {'verbose_name': 'gallery_thumbnail (255px)', 'width': 430,
+        'height': 300, 'opts': 'crop'},
     'sticky': {'verbose_name': 'Main Page Sticky (150px)', 'width': 150,
         'height': 80, 'opts': 'crop'},
     'galleryimage': {'verbose_name': 'gallery_image (800x600)',
