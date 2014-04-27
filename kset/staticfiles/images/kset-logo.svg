@@ -18,7 +18,7 @@
    version="1.0"
    sodipodi:docname="kset-logo.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="/home/josip/projekti/kset.org/kset/kset/staticfiles/frontend/images/kset_logo.png"
+   inkscape:export-filename="/home/josip/projekti/kset-org/kset/staticfiles/images/kset-black.svg.png"
    inkscape:export-xdpi="20.48"
    inkscape:export-ydpi="20.48">
   <metadata
@@ -29,7 +29,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>

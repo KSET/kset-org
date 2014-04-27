@@ -6,39 +6,40 @@
 
 {% block content %}
 
-   <div class="m-box">
-		<a href="{% url 'gallery_category_albums' category='live' %}" title="KSET live!">
-			<!-- <img src="http://placehold.it/400x272" class="quimby_search_image"> -->
-      <img src="{{ STATIC_URL }}images/gallery/live.jpg" class="quimby_search_image">
-			<div class="dolje">
-				<h2 class="m-naslov">KSET.live!</h2>
-				<h3>galerija fotografija s koncerata održanih u KSET-u</h3>
-			</div>
-		</a>
-	</div>
 
-	<div class="m-box">
-		<a href="{% url 'gallery_category_albums' category='foto' %}" title="KSET.foto">
-			<!--<img src="http://placehold.it/400x272" class="quimby_search_image">-->
-      <img src="{{ STATIC_URL}}images/gallery/foto.jpg" class="quimby_search_image">
-			<div class="dolje">
-				<h2 class="m-naslov">KSET.foto</h2>
-				<h3>galerija fotografija članova foto sekcije</h3>
-			</div>
-		</a>
-	</div>
-<div class="m-welcome">
-                  <h2>Dobrodošli na KSET foto galeriju!</h2>
-                                  <h3>v2.0</h3>
+    <section class="gallery-type-box">
+        <a href="{% url 'gallery_category_albums' category='live' %}" title="KSET live!">
+            <img src="{{ STATIC_URL }}images/gallery/live.jpg" class="quimby_search_image">
+            <hgroup class="gallery-type-text">
+                <h2 class="gallery-type-title">KSET.live!</h2>
+                <h3 class="gallery-type-subtitle">galerija fotografija s koncerata održanih u KSET-u</h3>
+            </hgroup>
+        </a>
+    </section>
+
+    <section class="gallery-type-box">
+        <a href="{% url 'gallery_category_albums' category='foto' %}" title="KSET.foto">
+            <img src="{{ STATIC_URL }}images/gallery/foto.jpg" class="quimby_search_image">
+            <hgroup class="gallery-type-text">
+                <h2 class="gallery-type-title">KSET.foto</h2>
+                <h3 class="gallery-type-subtitle">galerija fotografija članova foto sekcije</h3>
+            </hgroup>
+        </a>
+    </section>
+
+
+<div class="gallery-welcome">
+                  <h1 class="gallery-welcome-title">Dobrodošli na KSET foto galeriju!</h1>
+                                  <h3 class="gallery-welcome-version">v2.0</h3>
                                   <p>
                                   Jednog lijepog KSETovskog dana, u proljeće 2004. godine, rodila se ideja kako bi lijepo bilo fotografije nastale marljivim škljocanjem
                                   članova fotosekcije izvući iz mraka i pokazati javnosti. Tako smo odlučili stvoriti vlastiti virtualni izložbeni prostor.
                                   Zašto? Zato što možemo... :-) . A i zato što je stvarnih prostora za izložbu  malo, pa do njih nije niti lako doći.
                                   </p>
-                                  <p>Počeli smo s galerijom <a>KSET.live!</a> koja tematski pokriva koncertna događanja u KSET-u, a njih ima uistinu mnogo.
+                                  <p>Počeli smo s galerijom <a href="{% url 'gallery_category_albums' category='live' %}" title="KSET live!">KSET.live!</a> koja tematski pokriva koncertna događanja u KSET-u, a njih ima uistinu mnogo.
                                   Ta događanja ostaju zabilježena mnoštvom fotografija od kojih autori biraju najbolje i objavljuju ih ovdje.
                                   No, kako ne bi sve ostalo na KSET-u i u KSET-u, fotosekcija pokazuje da se može, zna i želi izražavati fotografijom pa je tako postavljena i
-                                  galerija <a>KSET.foto</a>. Tu se mogu pronaći fotografije iz života, života s fotoaparatom u ruci.
+                                  galerija <a href="{% url 'gallery_category_albums' category='foto' %}" title="KSET.foto">KSET.foto</a>. Tu se mogu pronaći fotografije iz života, života s fotoaparatom u ruci.
                                   </p>
                                   <p>Početkom studenog 2011. godine otvara se nova, ljepša i preglednija galerija! Stara i nepregledna galerija odlazi u arhivu,
                                   dok novu, ljepšu i organiziraniju galeriju možete vidjeti pred sobom.

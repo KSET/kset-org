@@ -13,26 +13,26 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-	-webkit-appearance: none;
-	background-color: white;
-	font-family: inherit;
-	border: 1px solid #cccccc;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-	color: rgba(0, 0, 0, 0.75);
-	display: block;
-	font-size: 0.875rem;
-	margin: 0 0 1rem 0;
-	padding: 0.5rem;
-	height: 2.3125rem;
-	max-width: 100%;
-	width: 300px;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
-	-moz-transition: -moz-box-shadow 0.45s, border-color 0.45s ease-in-out;
-	transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+    -webkit-appearance: none;
+    background-color: white;
+    font-family: inherit;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-size: 0.875rem;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem;
+    height: 2.3125rem;
+    max-width: 100%;
+    width: 300px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
+    -moz-transition: -moz-box-shadow 0.45s, border-color 0.45s ease-in-out;
+    transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
 }
 
 input[type="text"]:focus,
@@ -76,35 +76,34 @@ textarea:focus {
 
 
 select {
-  -webkit-appearance: none !important;
-  background: #fafafa url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==") no-repeat;
-  background-position-x: 97%;
-  background-position-y: center;
-  border: 1px solid #cccccc;
-  padding: 0.5rem;
-  font-size: 0.875rem;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-	width: 100%;
-}
-  select.radius {
-    -webkit-border-radius: 3px;
-    border-radius: 3px; }
-  select:hover {
-    background: #f3f3f3 url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==") no-repeat;
+    text-transform: uppercase;
+    -webkit-appearance: none !important;
+    background: #f5f5f5 url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==") no-repeat;
     background-position-x: 97%;
     background-position-y: center;
-    border-color: #999999;
+    border: 1px solid #cccccc;
+    padding: 0.5rem;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+}
+
+select:hover {
+    background: #ffffff url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==") no-repeat;
+    background-position-x: 97%;
+    background-position-y: center;
+    border-color: #E48145;
  }
 
 
-table,
-fieldset {
-	border: solid 1px #dddddd;
-	padding: 0.75rem;
-	margin: 1.125rem 0;
+.members-main table,
+.members-main fieldset {
+    border: solid 1px #dddddd;
+    padding: 0.75rem;
+    margin: 1.125rem 0;
 }
-fieldset legend {
+.members-main legend {
     font-weight: bold;
     background: white;
     padding: 0 0.1875rem;
@@ -112,75 +111,65 @@ fieldset legend {
     margin-left: -0.1875rem;
 }
 
-table {
-	width: 100%;
-	padding: 0;
-	border-bottom: none;
+.members-main table {
+    width: 100%;
+    padding: 0;
+    border-bottom: none;
 }
 
-table tr:hover {
-	background: #f5f5f5;
+.members-main table tr:hover {
+    background: #f5f5f5;
 }
 
-table td {
-	vertical-align: middle;
-	padding: 5px;
-	border-bottom: 1px solid #ddd;
+.members-main table td {
+    vertical-align: middle;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
 }
 .icononly {
-	padding: 5px;
-	display: block;
-	font-weight: bold;
-	text-align: center;
-	vertical-align: middle;
-	color: #E48145;
+    padding: 5px;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color: #E48145;
 }
 
 .icononly:hover {
-	color: #000;
-	text-decoration: none;
+    color: #000;
+    text-decoration: none;
 }
 
 /* CUSTOM STYLES */
 
 label {
-	padding-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 input[type="submit"],
 .button {
-	padding: 10px 20px;
-	text-transform: uppercase;
-	font-family: 'Roboto Slab', sans-serif;
-	background: #eee;
-	cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', sans-serif;
+    background: #FFF;
+    cursor: pointer;
 }
 input[type="submit"]:hover,
 .button:hover {
-	background: #ddd;
+    background: #ddd;
 }
 
-.main {
-	font-size: 14px;
+.members-left, .members-middle {
+    width: 25%;
+    float: left;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-#members-main
-{
-	padding: 20px;
-
-}
-
-.members-leftContent, .members-rightContent, .members-middleContent {
-	width:20%;
-	float: left;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-
-.members-middleContent {
-	width: 60%;
-	padding: 0 25px;
+.members-middle {
+    width: 75%;
+    padding: 0 0 0 15px;
 }
 
 .member-group {
@@ -188,68 +177,81 @@ input[type="submit"]:hover,
     text-transform: lowercase;
 }
 
-#members-main .top .image
+.members-main .top .image
 {
     padding-bottom: 10px;
 }
 
-#members-main .top img {
-	max-width: 100%;
+.members-main .top img {
+    max-width: 100%;
 }
 
-#members-main .top .basic-info
+.members-profile {
+    font-size: 14px;
+}
+
+.basic-info
 {
-	font-family: 'roboto slab', sans-serif;
-	font-size: 30px;
-	font-weight: bold;
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
+    font-family: 'roboto slab', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-#members-main .top .basic-info .nickname
+.nickname
 {
-	font-weight: normal;
-	font-size: 14px;
+    font-weight: normal;
+    font-size: 14px;
 }
 
-#members-main  .bottom .bottom-item
+.bottom-item
 {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-#members-main .entry-title
+.entry-title
 {
-	font-size: 18px;
-	font-family: 'Roboto Slab', sans-serif;
-	font-weight: bold;
-	text-transform: uppercase;
-	margin-bottom: 5px;
+    font-size: 18px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
-.members-list h1 {
-	text-align: center;
-	text-transform: uppercase;
+.members-list-title {
+    padding: 5px 10px;
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 .members-list-item {
-	font-size: 16px;
-	line-height: 24px;
-	text-transform: uppercase;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.members-list-item:nth-child(2n) {
+    background: #f5f5f5;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
 }
 
 .members-list-item a {
-	display: inline-block;
-	color: #111;
-	padding-bottom: 2px;
-	padding: 3px 10px;
+    display: block;
+    color: #111;
+    padding-bottom: 2px;
+    padding: 3px 10px;
 }
 
 .members-list-item a:hover {
 
-	background: #E48145;
-	color: #fff;
-	text-decoration: none;
+    background: #E48145;
+    color: #fff;
+    text-decoration: none;
 }
 
 /*
@@ -259,35 +261,54 @@ input[type="submit"]:hover,
 */
 .members-menu ul
 {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-	text-align: right;
-	text-transform: uppercase;
+    background: #f5f5f5;
+    list-style: none;
+    margin: -10px -16px 10px -15px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-size: Open Sans;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
 .members-menu ul li
 {
-	padding: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+
+.members-menu ul li:last-child {
+    float: right;
 }
 
 .members-menu a {
-	color: #000;
-	display: inline-block;
-	padding: 3px 10px;
-	margin: 5px 0;
-	border-right: 2px solid #E48145;
+    color: #333;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 0;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: all 0.2s;
+       -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+         -o-transition: all 0.2s;
+            transition: all 0.2s;
 }
 
 .members-menu a:hover {
-	background: #E48145;
-	color: #fff;
-	text-decoration: none;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #E48145;
 }
+
+/* PROFILE PICTURE UPLOADER */
 
 .qq-upload-button {
     background: #E48145 !important;
     font-weight: bold;
+    width: 100% !important;
 }
 
 .qq-upload-list *,
@@ -306,4 +327,56 @@ input[type="submit"]:hover,
     display: block;
     padding: 4px 0;
     font-weight: bold;
+}
+
+/* MAIN CONTENT REFLOW */
+
+.club-left {
+    width: 78%;
+}
+
+.club-right {
+    width: 22%;
+}
+
+.right-subcolumn-club {
+    width: 100%;
+}
+
+
+/* MOBILE */
+
+
+@media only screen and (max-width : 650px) {
+    .club-left {
+        width: auto;
+    }
+
+    .members-menu ul {
+        display: block;
+        margin: 0 0 10px;
+        border: 1px solid #ddd;
+        padding: 0;
+    }
+
+    .members-left,
+    .members-middle {
+        padding: 0 0 20px;
+        clear: both;
+        width: auto;
+        float: none;
+    }
+
+    .members-menu li {
+        text-align: center;
+        float: none !important;
+        vertical-align: middle;
+    }
+    .members-menu li a {
+        padding: 10px;
+    }
+
+    .members-profile table {
+        font-size: 1em;
+    }
 }

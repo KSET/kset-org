@@ -57,8 +57,13 @@
 
         	<nav id="top-menu" class="page-nav top-menu">
                 <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
-                <a href="{% url 'index' %}">NASLOVNICA</a>
-                <a href="{% url 'subpage_index' %}">O KLUBU</a>
+                {% if is_member %}
+                    <a href="{% url 'members_list_all' %}">ČLANOVI</a>
+                    <a href="{% url 'dezurstva' %}">DEŽURSTVA</a>
+                {% else %}
+                    <a href="{% url 'index' %}">NASLOVNICA</a>
+                    <a href="{% url 'subpage_index' %}">O KLUBU</a>
+                {% endif %}
                 <a href="{% url 'subpage_multimedia' %}">MULTIMEDIA</a>
                 <a href="{% url 'news_archive' %}">VIJESTI</a>
                 <a href="{% url 'events_archive' %}">PROGRAM</a>
@@ -70,7 +75,7 @@
                 <a href="http://twitter.com/KSETinfo" title="Twitter" class="icon-twitter-bird"></a>
                 <a href="http://www.last.fm/user/Klub_KSET" title="Last.fm"  class="icon-lastfm"></a>
                 <a href="http://webchat.freenode.net/?channels=kset" title="IRC" class="icon-chat"></a>
-                <a href="http://www.youtube.com/user/KsetVideo" title="Youtube" class="icon-youtube"></a>
+                <a href="http://www.youtube.com/user/KsetVideo" title="Youtube" class="icon-youtube-play"></a>
                 <a href="{% url 'feed_rss' %}" title="RSS" class="icon-rss"></a>
                 <a href="https://github.com/kset" title="Github" class="icon-github"></a>
             </section>

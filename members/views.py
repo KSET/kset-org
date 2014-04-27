@@ -15,6 +15,7 @@ from ajaxuploader.backends.thumbnail import ThumbnailUploadBackend
 from .forms import *
 from .models import *
 from .decorators import require_auth
+from subpages.views import DIVISIONS, PROJECTS
 
 
 import_uploader = AjaxFileUploader(
@@ -33,7 +34,9 @@ def _display_member(request, template, member, address_form=None, contact_form=N
         'contacts': Contact.objects.filter(member=member.id),
         'groups': MemberGroupLink.objects.filter(member=member.id).order_by('date_start'),
         'address_form': address_form,
-        'contact_form': contact_form
+        'contact_form': contact_form,
+        'divisions': DIVISIONS,
+        'projects': PROJECTS
     })
 
 
@@ -76,7 +79,11 @@ def login(request):
         request.session.save()
         return redirect('members_index')
     else:
-        return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html', {
+            'form': form,
+            'divisions': DIVISIONS,
+            'projects': PROJECTS
+        })
 
 
 def logout(request):
@@ -139,7 +146,10 @@ def list_all(request):
 
     return render(request, 'members-list.html', {
         'members': members,
-        'filter_form': filter_form})
+        'filter_form': filter_form,
+            'divisions': DIVISIONS,
+            'projects': PROJECTS
+        })
 
 
 @require_auth
@@ -185,6 +195,9 @@ def red_table(request):
 
     return render(request, 'members-red.html', {
         'members': members,
+        'divisions': DIVISIONS,
+        'projects': PROJECTS
+
     })
 
 
@@ -198,4 +211,7 @@ def red_list(request):
 
     return render(request, 'members-red-list.html', {
         'members': members,
+        'divisions': DIVISIONS,
+        'projects': PROJECTS
+
     })
