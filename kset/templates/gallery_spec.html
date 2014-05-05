@@ -16,9 +16,7 @@
               {% if category == 'live' %}
                 <div class="gallery-years">
                   {% for year in years %}
-                    {% with year=year|date:'Y'%}
                     <a class="gallery-year {% if year == active_year %}gallery-year-active{%endif%}" href="{% url 'gallery_category_albums_by_year' category=category year=year %}">{{ year }}.</a>
-                    {% endwith %}
                   {% endfor %}
                 </div>
               {% endif %}
@@ -40,7 +38,7 @@
     {% for a in albums %}
 
         {% if category == 'live' %}
-          {% ifchanged %}
+          {% ifchanged a.date_of_event.month %}
           <div class="clearfix"></div>
           </div>
               <h2 class="gallery-month-title"><i class="icon-calendar-inv"></i> {{ a.date_of_event|date:"F Y." }}</h2>

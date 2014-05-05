@@ -37,7 +37,4 @@ def baseurl(request):
 
 
 def authenticated(request):
-    logged_in = False
-    if request.session.get('members_user_id'):
-        logged_in = True
-    return {'is_member': logged_in}
+    return {'is_member': request.session.get('members_user_id', False)}
