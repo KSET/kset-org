@@ -9,10 +9,10 @@ def show_gallery(request):
     return render(request, 'gallery_main.html')
 
 
-def list_albums(request, category, year=datetime.today().year):
-    years = Album.objects.filter(
+def list_albums(request, category, year=str(datetime.today().year)):
+    years = [str(d.year) for d in Album.objects.filter(
         category=category).dates(
-        'date_of_event', 'year', order='DESC')
+        'date_of_event', 'year', order='DESC')]
 
     if category == 'foto':
         albums = Album.objects.filter(
@@ -24,7 +24,7 @@ def list_albums(request, category, year=datetime.today().year):
     return render(request, 'gallery_spec.html', {
         'albums': albums,
         'years': years,
-        'active_year': str(year) + '.',
+        'active_year': year,
         'category': category
     })
 
