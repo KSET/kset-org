@@ -38,7 +38,7 @@
     {% for a in albums %}
 
         {% if category == 'live' %}
-          {% ifchanged %}
+          {% ifchanged a.date_of_event.month %}
           <div class="clearfix"></div>
           </div>
               <h2 class="gallery-month-title"><i class="icon-calendar-inv"></i> {{ a.date_of_event|date:"F Y." }}</h2>
