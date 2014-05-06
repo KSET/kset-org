@@ -730,6 +730,9 @@ div.clear + div.left-column {
 
 .news-item
 {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     margin-bottom: 10px;
     border-bottom: 1px dotted #fff;
     padding-bottom: 5px;
@@ -794,9 +797,6 @@ div.clear + div.left-column {
              box-sizing: border-box;
  }
 
-.news-item-thumb img {
-    box-shadow: 0 0 5px #000 inset;
-}
 
 .news-item-description {
     clear: both;
@@ -1702,6 +1702,7 @@ video {
     float: left;
     width: 33.3333%;
     padding: 5px;
+    height: 225px;
     position: relative;
     overflow: hidden;
 }
@@ -1839,6 +1840,7 @@ and (max-width : 1080px) {
 
     .m-slika {
         width: 50%;
+        height: auto;
     }
 }
 
@@ -1911,7 +1913,8 @@ and (max-width : 650px) {
     }
 
     .top-menu:before {
-        content: '\e80c';
+        content: '\e80f';
+        font-family: '13204804';
         color: #fe7929;
         position: absolute;
         width: 30px;
@@ -1919,8 +1922,8 @@ and (max-width : 650px) {
         padding: 0.30em 19px;
         top: 0;
         z-index: 110;
-        font-size: 210%;
-        line-height: 1.5em;
+        font-size: 3em;
+        line-height: 0.9em;
         text-align: right;
     }
 
@@ -2104,7 +2107,7 @@ and (max-width : 650px) {
         margin: 0;
         padding: 10px;
         clear: left;
-        width: auto;
+        width: 100%;
     }
 
     .club-left {
@@ -2166,6 +2169,14 @@ and (max-width : 650px) {
         float: none;
     }
 
+    .gallery-backlink {
+        position: relative;
+    }
+
+    .gallery-years{
+        padding: 10px 0;
+    }
+
     .m-album {
         width: 100%;
     }
@@ -2180,7 +2191,8 @@ and (max-width : 650px) {
     }
 
     .news-item-thumb {
-        width: auto;
+        width: 100%;
+        float: none;
         padding-right: 0;
     }
 
