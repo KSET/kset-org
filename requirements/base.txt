@@ -1,5 +1,5 @@
 Django==1.6.2
-Pillow==2.2.1
+Pillow==2.4.0
 South==0.8.4
 django-grappelli==2.5.1
 django-filebrowser==3.5.3
@@ -12,3 +12,4 @@ djorm-ext-pgarray==0.10
 psycopg2==2.5.1
 sorl-thumbnail==11.12
 ajaxuploader==0.3.4
+dj-database-url==0.3.0
