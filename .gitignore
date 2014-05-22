@@ -11,3 +11,4 @@ baza.db
 /kset/media/uploads
 dev.db
 /requirements/local.txt
+*.swp
