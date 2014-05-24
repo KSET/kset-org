@@ -27,5 +27,6 @@ class Dezurstva(models.Model):
     content = HTMLField("Dezurne sekcije")
 
     class Meta:
+        ordering = ordering = ['-start']
         verbose_name = "Dezurstvo"
         verbose_name_plural = "Dezurstva"
