@@ -13,3 +13,4 @@ psycopg2==2.5.1
 sorl-thumbnail==11.12
 ajaxuploader==0.3.4
 dj-database-url==0.3.0
+django-compressor==1.4

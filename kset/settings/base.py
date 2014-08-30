@@ -39,6 +39,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 
@@ -119,6 +120,7 @@ INSTALLED_APPS = (
     'gallery',
     'sorl.thumbnail',
     'ajaxuploader',
+    'compressor',
 
 )
 
@@ -240,3 +242,8 @@ BASE_LOGGING = {
 }
 
 LOGGING = BASE_LOGGING
+
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter'
+]
