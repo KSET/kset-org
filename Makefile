@@ -3,7 +3,7 @@ MANAGE=python manage.py
 SETTINGS=--settings=$(PROJECT_NAME).settings.test
 
 DATA_DIR="__data"
-POSTGRES_VERSION=9.1
+POSTGRES_VERSION=9.3
 PORT=5432
 
 
@@ -79,6 +79,7 @@ postgres: docker-check
 	@if [ ! -d $(DATA_DIR)/postgresql ]; then \
 		echo 'Preparing Postgres persistent data storage...'; \
 		mkdir -p $(DATA_DIR); \
+		chmod 777 $(DATA_DIR); \
 		docker run -v $$PWD/$(DATA_DIR):/tmp/$(DATA_DIR) -i -t \
 			denibertovic/postgres:$(POSTGRES_VERSION)\
 			/bin/bash -c "cp -rp var/lib/postgresql /tmp/$(DATA_DIR)"; \
@@ -86,4 +87,4 @@ postgres: docker-check
 	@echo "Persistent data storage found.";
 	@echo "Starting postgres...";
 	@docker run -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -d -p $(PORT):$(PORT) \
-		denibertovic/postgres:$(POSTGRES_VERSION) /usr/local/bin/start_postgres.sh;
+		denibertovic/postgres:$(POSTGRES_VERSION);
