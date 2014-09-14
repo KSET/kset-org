@@ -136,6 +136,7 @@ class Contact(models.Model):
     member = models.ForeignKey(Member, verbose_name="član", related_name='contacts')
     contact = models.CharField("kontakt", max_length=64)
     contact_type = models.CharField('Tip', max_length=255, choices=TYPES, null=True)
+    is_private = models.BooleanField('Sakrij kontakt (vidljiv samo administratorima)', default=False)
 
     class Meta:
         verbose_name = "kontakt"
