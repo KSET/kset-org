@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
   <head>
+    {% load compress %}
 
     {% block extrahead %}
         <meta property="og:type" content="website" />
@@ -25,8 +26,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
+    {% compress css %}
     <link href="{{ STATIC_URL }}frontend/css/styles.css?6" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}frontend/magnific-popup/magnific-popup.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}frontend/magnific-popup/magnific-popup.css" type="text/css" />
+    {% endcompress %}
 
 
     <link rel="icon" type="image/vnd.microsoft.icon" href="{{ STATIC_URL}}frontend/images/favicon.ico" />
@@ -101,14 +104,15 @@
     </div>
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.0.min.js"><script>')</script>
+    {% compress js %}
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/csrf.js"></script>
 
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/magnific-popup/magnific-popup.min.js"></script>
 
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/perfect-scrollbar.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/custom-functions.js"></script>
+    {% endcompress %}
 
      <!-- Google analytics -->
     <script type="text/javascript">
