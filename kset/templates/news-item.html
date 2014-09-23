@@ -34,14 +34,6 @@
     {% if news.thumb %}
       <img src="{% version news.thumb 'semibig' %}" class="thumb" />
     {% endif %}
-
-
-    <div class="single-date single-details">
-        <div class="single-date-day">{{ news.created_at|date:"l" }}</div>
-        <div class="single-date-date">{{ news.created_at|date:"j. E" }}</div>
-        <div>{{ news.created_at|time:"H:i" }}</div>
-    </div>
-
   </section>
 
 </div>
