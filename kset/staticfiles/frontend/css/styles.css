@@ -1610,6 +1610,9 @@ video {
     background-color:#fff;
 }
 
+.m-album:nth-child(3n+1) {
+    clear: left;
+}
 
 .m-album a {
   display:block;
@@ -1836,6 +1839,14 @@ and (max-width : 1080px) {
 
     .m-album {
         width: 50%;
+    }
+
+    .m-album:nth-child(3n+1) {
+        clear: none;
+    }
+
+    .m-album:nth-child(2n+1) {
+        clear: left;
     }
 
     .m-slika {
