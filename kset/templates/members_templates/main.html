@@ -188,11 +188,19 @@
                                     {% if not contact.is_private or is_owner %}
                                         <tr class="ctrl-smart-row">
                                             <td>{{contact.get_contact_type_display}}:</td>
-                                            <td>{{contact.contact}}</td>
+                                            <td>
+                                                {% if contact.contact_type == 'email' %}
+                                                    <a href="mailto:{{contact.contact}}">{{contact.contact}}</a>
+                                                {% else %}
+                                                    <a href="tel:{{contact.contact}}">{{contact.contact}}</a>
+                                                {% endif %}
+                                            </td>
                                             {% if contact.is_private %}
                                                 <td>
                                                     <strong>Private</strong>
                                                 </td>
+                                            {% else %}
+                                                <td></td>
                                             {% endif %}
                                             {% if is_owner %}<td><a class="icononly ctrl-del" data-method="delete" href="{% url 'members_delete_contact' contact.id %}" data-should-prompt="Jeste li sigurni?"/>X</a></td>{% endif %}
                                         </tr>
