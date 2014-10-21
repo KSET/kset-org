@@ -2207,9 +2207,9 @@ and (max-width : 650px) {
         padding-right: 0;
     }
 
-    .news-item-title,
-    .news-item-description,
-    .news-item-0 .news-item-description {
+    .news-item.even:last-child .news-item-description,
+    .news-item-0 .news-item-description,
+    .news-item-title {
         float: none;
         width: auto;
         clear: both;
