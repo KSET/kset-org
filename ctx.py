@@ -18,11 +18,7 @@ def header(request):
         pass
 
     ctx['header_events'] = Event.objects.filter(date__gte=datetime.now()).order_by('date')
-    try:
-        if ctx['header_events'][0].date == datetime.now().date():
-            ctx['today_active'] = True
-    except:
-        pass
+    ctx['today'] = datetime.now().date()
 
     return ctx
 
