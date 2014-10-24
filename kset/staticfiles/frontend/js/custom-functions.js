@@ -1,3 +1,5 @@
+/* globals $, Modernizr */
+'use strict';
 
 // define globals
 var scrollViewport;
@@ -11,9 +13,6 @@ $( function()
 {
     // load calendar
     loadCalendar();
-
-    // opera mini detection
-    var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1)
 
     // user modernizr to check if device supports touch and is small (mobile)
     // adjust event names accordingly
@@ -43,7 +42,7 @@ $( function()
         event.stopPropagation();
     });
 
-    scrollViewport = jQuery('#header-scroll-viewport');
+    scrollViewport = $('#header-scroll-viewport');
 
     // bind events
     $('#newsletter-subscription').click(function () { $('#newsletter-subscription').val(''); });
@@ -116,8 +115,38 @@ $( function()
         $('#kset-logo').attr('src', '/static/frontend/images/kset_logo.png');
     }
 
-});
 
+    var staticThumbs = $('.news-item-0 .news-item-thumb, .news-item-1:last-child .news-item-thumb');
+
+    var $win = $(window).scroll(function() {
+        if ($win.width() < 650) return;
+        staticThumbs.each(function() {
+            var el = $(this);
+            var h = el.height();
+            var w = el.width() + 10;
+
+            var parent = el.parent();
+            var pt = parent.offset().top;
+            var pb = parent.offset().top + parent.height();
+
+            var st = $win.scrollTop();
+
+
+            if (st + 10 < pt) {
+                el.css({position: 'relative', top: 0});
+            } else if (st + h > pb + 10) {
+                el.css({position: 'relative', top: pb - h - pt});
+            } else {
+                el.css({position: 'fixed', top: 10, width: w});
+            }
+
+
+        });
+    });
+
+
+
+});
 
 // functions
 
