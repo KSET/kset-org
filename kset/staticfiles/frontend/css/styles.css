@@ -733,10 +733,10 @@ div.clear + div.left-column {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+    position: relative;
     margin-bottom: 10px;
     border-bottom: 1px dotted #fff;
     padding-bottom: 5px;
-    padding-top: 5px;
     width: 48.5%;
     float: left;
 }
@@ -789,6 +789,7 @@ div.clear + div.left-column {
 }
 
  .news-item-thumb {
+     position: absolute;
      width: 25%;
      float: left;
      padding-right: 10px;
@@ -2202,6 +2203,7 @@ and (max-width : 650px) {
     }
 
     .news-item-thumb {
+        position: relative;
         width: 100%;
         float: none;
         padding-right: 0;
