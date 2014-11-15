@@ -16,7 +16,10 @@
       {% endif %}
 
       <div class="item-top">
-        <time class="date" itemprop="startDate" datetime="{{ event.date|date:"c" }}">{% if today_active and forloop.first %}<span class="scroll-today">Danas</span>{% endif %}{{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small></time>
+        <time class="date" itemprop="startDate" datetime="{{ event.date|date:"c" }}">
+            {% if event.date == today %}<span class="scroll-today">Danas</span>{% endif %}
+            {{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small>
+        </time>
         <span class="item-top-title" itemprop="name">{{ event.title }}</span>
       </div>
 
