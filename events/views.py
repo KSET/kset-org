@@ -17,7 +17,10 @@ def by_date(request, date):
     return render(request, 'events.html', {'events': events})
 
 
-def archive(request, year=datetime.today().year):
+def archive(request, year=None):
+    if year is None:
+        year = datetime.today().year
+
     # get distinct years
     years = Event.objects.dates('date', 'year', order='DESC')
 
