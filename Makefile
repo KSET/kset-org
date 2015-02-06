@@ -3,12 +3,13 @@ MANAGE=python manage.py
 SETTINGS=--settings=$(PROJECT_NAME).settings.test
 
 DATA_DIR="__data"
-POSTGRES_VERSION=9.3
+DOCKER_POSTGRES_REPO=denibertovic/postgres
+DOCKER_POSTGRES_TAG=9.3
 PORT=5432
 
 
 .PHONY: all test coverage clean requirements requirements-dev setup-test \
-	docker-check postgres
+	docker-check db db-data-dir db-db db-user db-user-grant db-restore db-prompt
 
 all: coverage
 
@@ -70,21 +71,44 @@ docker-check:
 	@command -v docker >/dev/null 2>&1 || \
 		{ echo >&2 "Docker needs to be installed and on your PATH.  Aborting."; exit 1; }
 
-postgres: docker-check
-	@if nmap -PS localhost | grep -q $(PORT); then \
-		echo "ERROR: Port $(PORT) is already in use..."; \
-		echo "Maybe Postgres is already running?!"; \
-		exit 1; \
-	fi
+db-data-dir: docker-check
 	@if [ ! -d $(DATA_DIR)/postgresql ]; then \
 		echo 'Preparing Postgres persistent data storage...'; \
 		mkdir -p $(DATA_DIR); \
 		chmod 777 $(DATA_DIR); \
-		docker run -v $$PWD/$(DATA_DIR):/tmp/$(DATA_DIR) -i -t \
-			denibertovic/postgres:$(POSTGRES_VERSION)\
+		docker run --rm -v $$PWD/$(DATA_DIR):/tmp/$(DATA_DIR) -t \
+			$(DOCKER_POSTGRES_REPO):$(DOCKER_POSTGRES_TAG)\
 			/bin/bash -c "cp -rp var/lib/postgresql /tmp/$(DATA_DIR)"; \
 	fi
-	@echo "Persistent data storage found.";
-	@echo "Starting postgres...";
-	@docker run -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -d -p $(PORT):$(PORT) \
-		denibertovic/postgres:$(POSTGRES_VERSION);
+
+db-prompt: db-data-dir
+	@echo "Starting interactive database prompt (current dir mounted to /tmp/codebase)...";
+	@docker run --rm -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -v $$PWD:/tmp/codebase -i -t \
+		$(DOCKER_POSTGRES_REPO):$(DOCKER_POSTGRES_TAG) /bin/bash -c "/etc/init.d/postgresql start && psql -Upostgres";
+
+db-db: db-data-dir
+	@echo "Creating database...";
+	@docker run --rm -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -t \
+		$(DOCKER_POSTGRES_REPO):$(DOCKER_POSTGRES_TAG) /bin/bash -c "/etc/init.d/postgresql start && psql -Upostgres -c'CREATE DATABASE ksetdb;'";
+
+db-user: db-data-dir
+	@echo "Creating user..";
+	@docker run --rm -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -t\
+		$(DOCKER_POSTGRES_REPO):$(DOCKER_POSTGRES_TAG) /bin/bash -c "/etc/init.d/postgresql start && psql -Upostgres -c\"CREATE USER kset WITH SUPERUSER PASSWORD 'kset';\"";
+
+db-user-grant: db-user
+	@echo "Granting user required permissions...";
+	@docker run --rm -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -t\
+		$(DOCKER_POSTGRES_REPO):$(DOCKER_POSTGRES_TAG) /bin/bash -c "/etc/init.d/postgresql start && psql -Upostgres -c\"GRANT ALL ON DATABASE ksetdb to kset;\"";
+
+db-restore: db-data-dir
+	@if [ ! -f ksetdb.sql ]; then \
+		echo "Aborting! Can't find backup file. Database backup file must be named ksetdb.sql and located in the current directory!"; \
+		exit 1; \
+	fi
+	@echo "Restoring database from backup file: ksetdb.sql"
+	@docker run --rm -v $$PWD/$(DATA_DIR)/postgresql:/var/lib/postgresql -v $$PWD:/tmp/codebase -i -t\
+		$(DOCKER_POSTGRES_REPO):$(DOCKER_POSTGRES_TAG) /bin/bash -c "/etc/init.d/postgresql start && psql -Upostgres ksetdb < /tmp/codebase/ksetdb.sql";
+
+db: db-db db-user-grant
+
