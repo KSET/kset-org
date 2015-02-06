@@ -11,7 +11,7 @@ PREPEND_WWW = False
 try:
     import dj_database_url
     DATABASES = {'default': dj_database_url.config(
-        default='postgres://kset:kset@localhost:5432/ksetdb')}
+        default='postgres://kset:kset@db:5432/ksetdb')}
 except ImportError:
     pass
 
