@@ -27,6 +27,23 @@
 
   <div class="vsep"></div>
 
+  <div class="newsletter-box">
+
+      <h3 class="right-box-title">Newsletter</h3>
+
+        <form id="form-newsletter" class="form-newsletter">
+            {% csrf_token %}
+
+            <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription" placeholder="Vaša e-mail adresa" />
+            <input type="button" id="newsletter-submit" class="newsletter-submit" value="OK" />
+            <!-- TODO: CAPTCHA -->
+        </form>
+
+      <p id="newsletter-message" style="text-weight: bold; display: none;">Poruka!</p>
+  </div>
+
+  <div class="vsep"></div>
+
 {% if latest %}
     <div class="right-box gallery-box">
       <h3 class="right-box-title">Foto galerija</h3>
@@ -89,24 +106,6 @@
         <a href="http://www.ruziona.hr/" target="_blank">Ruziona.hr</a><br />
         <a href="http://www.tvoj-toner.com/" target="_blank">Tvoj Toner</a><br />
       </p>
-    </div>
-
-    <div class="vsep"></div>
-
-
-    <div class="newsletter-box">
-
-        <h3 class="right-box-title">Newsletter</h3>
-
-          <form id="form-newsletter" class="form-newsletter">
-              {% csrf_token %}
-
-              <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription" placeholder="Vaša e-mail adresa" />
-              <input type="button" id="newsletter-submit" class="newsletter-submit" value="OK" />
-              <!-- TODO: CAPTCHA -->
-          </form>
-
-        <p id="newsletter-message" style="text-weight: bold; display: none;">Poruka!</p>
     </div>
 
 </aside>
