@@ -18,7 +18,7 @@ make_announced.short_description = "Najavi dogadaje"
 
 class EventAdmin(admin.ModelAdmin):
     form = EventAdminForm
-    fields = ('title', 'slug', 'date', 'time', 'announce', 'daytime', 'thumb',
+    fields = ('title', 'fbeventid', 'slug', 'date', 'time', 'announce', 'daytime', 'thumb',
         'tags', 'price', 'description', 'content')
     list_display = ('title', 'date', 'announce', 'daytime', 'tags_to_str', 'slug',)
     ordering = ('-date',)
