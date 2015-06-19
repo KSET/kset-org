@@ -29,6 +29,8 @@ class Event(models.Model):
     objects = EventManager()
 
     title = models.CharField(u'Naslov', max_length=192)
+    fbeventid = models.CharField(u'Facebook Event ID', null=True, blank=True, max_length=25,
+        help_text='Pročitati iz adresne trake (URL) na Facebooku')
     date = models.DateField(u'Datum')
     time = models.TimeField(u'Vrijeme', null=True, blank=True)
     description = HTMLField(u'Opis', blank=True)
