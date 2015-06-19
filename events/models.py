@@ -3,6 +3,7 @@
 from datetime import datetime
 
 from django.db import models
+from django.contrib.auth.models import User
 
 from filebrowser.fields import FileBrowseField
 from tinymce.models import HTMLField
@@ -28,6 +29,7 @@ class EventManager(ExpressionManager):
 class Event(models.Model):
     objects = EventManager()
 
+    author = models.ForeignKey(User, null=True, blank=True)
     title = models.CharField(u'Naslov', max_length=192)
     fbeventid = models.CharField(u'Facebook Event ID', null=True, blank=True, max_length=25,
         help_text='Pročitati iz adresne trake (URL) na Facebooku')
