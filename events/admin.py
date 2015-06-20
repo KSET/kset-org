@@ -18,14 +18,20 @@ make_announced.short_description = "Najavi dogadaje"
 
 class EventAdmin(admin.ModelAdmin):
     form = EventAdminForm
-    fields = ('title', 'slug', 'date', 'time', 'announce', 'daytime', 'thumb',
+    fields = ('title', 'fbeventid', 'slug', 'date', 'time', 'announce', 'daytime', 'thumb',
         'tags', 'price', 'description', 'content')
-    list_display = ('title', 'date', 'announce', 'daytime', 'tags_to_str', 'slug',)
+    list_display = ('title', 'date', 'announce', 'daytime', 'tags_to_str', 'slug', 'author')
     ordering = ('-date',)
     search_fields = ('title', 'date', 'description', 'content')
     list_filter = ['tags']
     prepopulated_fields = {'slug': ('date', 'title',)}
     actions = [make_announced]
+
+    def save_model(self, request, obj, form, change):
+        """When creating a new object, set the author field."""
+        if not change:
+            obj.author = request.user
+        obj.save()
 
 
 class TinyMCEFlatPageAdmin(FlatPageAdmin):
