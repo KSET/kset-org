@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-
+{% load i18n %}
 {% load fb_versions %}
 <head style="margin: 0;padding: 0;">
 
@@ -15,7 +15,8 @@
 
             <td class="header container" align="" style="margin: 0 auto!important;padding: 0;display: block!important;max-width: 600px!important;clear: both!important; color: #fff !important;">
                 <div class="content" style="margin: 0 auto;padding: 15px 15px 0;max-width: 600px;display: block; font-size: 12px; text-align: center;">
-                Newsletter Vam se dobro ne prikazuje? Uf :/ Posjetite <a style="color: #F1783F;" href="http://kset.org/newsletter/">www.kset.org/newsletter/</a>
+                    {# Translators: Newsletter Vam se dobro ne prikazuje? Uf :/ Posjetite #}
+                    {% trans "newsletter-error-message" %} <a style="color: #F1783F;" href="http://kset.org/newsletter/">www.kset.org/newsletter/</a>
                 </div>
             </td>
         </tr>
@@ -48,7 +49,8 @@
                     <table style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;width: 100%;">
                         <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
                             <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
-                                <p class="lead" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin-bottom: 10px;font-weight: normal;font-size: 17px;line-height: 1.6;">Program kluba od <b style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">{{ from_date|date:"d.m.Y." }}</b> do <b style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">{{ till_date|date:"d.m.Y." }}</b></p>
+                                {# Translators: Program kluba od #}
+                                <p class="lead" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin-bottom: 10px;font-weight: normal;font-size: 17px;line-height: 1.6;">{% trans "club-program-since" %} <b style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">{{ from_date|date:"d.m.Y." }}</b> do <b style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">{{ till_date|date:"d.m.Y." }}</b></p>
 
                             </td>
                         </tr>
@@ -78,7 +80,8 @@
                                         {{ event.content|safe }}
                                     {% endif %}
                                 </div>
-                                <a class="btn" href="https://www.kset.org{% url 'event_slug' slug=event.slug %}" style="padding: 10px 16px;color: #FFF;text-decoration: none;background-color: #F1783F;font-weight: bold;margin-right: 10px;text-align: center;cursor: pointer;display: inline-block;">Opširnije &raquo;</a>
+                                {# Translators: Opširnije #}
+                                <a class="btn" href="https://www.kset.org{% url 'event_slug' slug=event.slug %}" style="padding: 10px 16px;color: #FFF;text-decoration: none;background-color: #F1783F;font-weight: bold;margin-right: 10px;text-align: center;cursor: pointer;display: inline-block;">{% trans "more-capitalized" %} &raquo;</a>
                             </td>
                         </tr>
                     </table>
@@ -87,7 +90,7 @@
     {% endfor %}
                 <tr>
                   <td colspan="2" style="background-color:#F1783F; padding: 20px;border-color:#F1783F" align="center" valign="top">
-                    <a style="font-size:14px; font-weight: bold; color:#ffffff; line-height:100%; font-family:verdana; text-decoration: none;">Klub Studenata ElektroTehnike</a>
+                    <a style="font-size:14px; font-weight: bold; color:#ffffff; line-height:100%; font-family:verdana; text-decoration: none;">{% trans "description-short" %}</a>
                   </td>
                 </tr>
             </td>

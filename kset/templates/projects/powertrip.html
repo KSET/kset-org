@@ -1,20 +1,13 @@
-{% extends "subpage.html" %} {% block subpage_content %}
+{% extends "subpage.html" %}
+{% load i18n %}
+{% block subpage_content %}
 
-<h1>PowerTrip</h1>
+{# Translators: PowerTrip #}
+<h1>{% trans "powertrip-title" %}</h1>
 
-<p>To je stručno
-    <strong>putovanje studenata</strong>u svrhu
-    <strong>upoznavanja procesa proizvodnje električne energije iz različitih izvora energije</strong>. Naglasak POWERTRIP-a je educiranje budućih magistara i prvostupnika elektrotehnike o načinima dobivanja električne energije iz termo i nukleranih izvora energije. Hrvatska je zemlja koja veliki dio svoje energetske potrošnje koja svoje potrebe zadovoljava uvozom energije. Danas su aktualne rasprave o nadoknađivanju tog uvoza. Cilj je upoznati buduće magistre i prvostupnike s prednostima i nedostacima rezličitih rješenja te povećati njihovo znanje na tom području. Želimo povećati međusobnu suradnju između budućih magistara struke i znanstvenika u svrhu razvoja hrvatske energetike i gospodarstva. Svake godine u organizaiji POWERTRIP-a sudjeluju članovi planinarske sekcije, a sudjeluje 70 studenata FER-a.</p>
-<p>Dosada se u sklopu projekta posjećene:
-    <strong>RHE Velebit</strong>,
-    <strong>HE Zakučac</strong>,
-    <strong>HE Peruća</strong>,
-    <strong>HE Orlovac</strong>,
-    <strong>NE Krško</strong>,
-    <strong>TE Plomin</strong>,
-    <strong>Kontrolni centar HAC</strong> - Delnice,
-    <strong>Memorijalni centar Nikola Tesla</strong>.
+<p>
+    {# Translators: To je stručno <strong>putovanje studenata</strong>u svrhu <strong>upoznavanja procesa proizvodnje električne energije iz različitih izvora energije</strong>. Naglasak POWERTRIP-a je educiranje budućih magistara i prvostupnika elektrotehnike o načinima dobivanja električne energije iz termo i nukleranih izvora energije. Hrvatska je zemlja koja veliki dio svoje energetske potrošnje koja svoje potrebe zadovoljava uvozom energije. Danas su aktualne rasprave o nadoknađivanju tog uvoza. Cilj je upoznati buduće magistre i prvostupnike s prednostima i nedostacima rezličitih rješenja te povećati njihovo znanje na tom području. Želimo povećati međusobnu suradnju između budućih magistara struke i znanstvenika u svrhu razvoja hrvatske energetike i gospodarstva. Svake godine u organizaiji POWERTRIP-a sudjeluju članovi planinarske sekcije, a sudjeluje 70 studenata FER-a.</p> <p>Dosada se u sklopu projekta posjećene: <strong>RHE Velebit</strong>, <strong>HE Zakučac</strong>, <strong>HE Peruća</strong>, <strong>HE Orlovac</strong>, <strong>NE Krško</strong>, <strong>TE Plomin</strong>, <strong>Kontrolni centar HAC</strong> - Delnice, <strong>Memorijalni centar Nikola Tesla</strong>. </p> <p>Ovim putem se zahvaljujemo svim profesorima fakulteta, te zaposlenicima navedenih mjesta na pomoći i ukazanoj dobroj volji. #}
+    {% trans "powertrip-desc" %}
 </p>
-<p>Ovim putem se zahvaljujemo svim profesorima fakulteta, te zaposlenicima navedenih mjesta na pomoći i ukazanoj dobroj volji.</p>
 
 {% endblock subpage_content %}

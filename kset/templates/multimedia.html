@@ -1,7 +1,9 @@
 {% extends 'index.html' %}
+{% load i18n %}
 {% load fb_versions %}
 
-{% block title %} - Multimedia{% endblock title %}
+{# Translators: Multimedija #}
+{% block title %} - {% trans "multimedia-title" %}{% endblock title %}
 
 {% block content %}
 
@@ -10,7 +12,7 @@
             <img src="{{ STATIC_URL }}images/gallery/live.jpg" class="quimby_search_image">
             <hgroup class="gallery-type-text">
                 <h2 class="gallery-type-title">KSET.live!</h2>
-                <h3 class="gallery-type-subtitle">galerija fotografija s koncerata održanih u KSET-u</h3>
+                <h3 class="gallery-type-subtitle">{% trans "kset-live-subtitle" %}</h3>
             </hgroup>
         </a>
     </section>
@@ -20,7 +22,7 @@
             <img src="{{ STATIC_URL }}images/gallery/foto.jpg" class="quimby_search_image">
             <hgroup class="gallery-type-text">
                 <h2 class="gallery-type-title">KSET.foto</h2>
-                <h3 class="gallery-type-subtitle">galerija fotografija članova foto sekcije</h3>
+                <h3 class="gallery-type-subtitle">{% trans "kset-foto-gallery-subtitle" %}</h3>
             </hgroup>
         </a>
     </section>

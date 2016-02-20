@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -35,7 +36,8 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="{{ STATIC_URL}}frontend/images/favicon.ico" />
     <link rel="icon" type="image/png" href="{{ STATIC_URL}}frontend/images/favicon.png" />
 
-    <title>KSET.org{%block title%} - Klub Studenata ElektroTehnike {%endblock%}</title>
+    {# Translators: Klub Studenata ElektroTehnike #}
+    <title>KSET.org{%block title%} - {% trans "description-short" %} {%endblock%}</title>
 
     {% block feeds %}
     <link rel="alternate" type="application/rss+xml" title="Public Feeds" href="{% url 'feed_rss' %}" />
@@ -61,15 +63,22 @@
         	<nav id="top-menu" class="page-nav top-menu">
                 <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
                 {% if is_member %}
-                    <a href="{% url 'members_list_all' %}">ČLANOVI</a>
-                    <a href="{% url 'dezurstva' %}">DEŽURSTVA</a>
+                    {# Translators: ČLANOVI #}
+                    <a href="{% url 'members_list_all' %}">{% trans 'members' %}</a>
+                    {# Translators: DEŽURSTVA #}
+                    <a href="{% url 'dezurstva' %}">{% trans "duties" %}</a>
                 {% else %}
-                    <a href="{% url 'index' %}">NASLOVNICA</a>
-                    <a href="{% url 'subpage_index' %}">O KLUBU</a>
+                    {# Translators: NASLOVNICA #}
+                    <a href="{% url 'index' %}">{% trans "homepage" %}</a>
+                    {# Translators: O KLUBU #}
+                    <a href="{% url 'subpage_index' %}">{% trans "about" %}</a>
                 {% endif %}
-                <a href="{% url 'subpage_multimedia' %}">MULTIMEDIA</a>
-                <a href="{% url 'news_archive' %}">VIJESTI</a>
-                <a href="{% url 'events_archive' %}">PROGRAM</a>
+                {# Translators: MULTIMEDIA #}
+                <a href="{% url 'subpage_multimedia' %}">{% trans "multimedia" %}</a>
+                {# Translators: VIJESTI #}
+                <a href="{% url 'news_archive' %}">{% trans "news" %}</a>
+                {# Translators: PROGRAM #}
+                <a href="{% url 'events_archive' %}">{% trans "program" %}</a>
 
         	</nav>
 
@@ -97,8 +106,8 @@
         </section>
 
         <footer id="footer" class="footer">
-          	<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
-          	<i>... prvi put otvorio vrata <b>1976.</b></i>
+          	{# Translators: <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br /><i>... prvi put otvorio vrata <b>1976.</b></i> #}
+            {% trans "footer" %}
         </footer>
 
     </div>

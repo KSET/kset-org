@@ -1,17 +1,19 @@
 {% extends "subpage.html" %}
-
+{% load i18n %}
 {% block subpage_content %}
-    <h1>Alumni</h1>
+    {# Translators: Alumni #}
+    <h1>{% trans "alumni-title" %}</h1>
     <img src="{{ STATIC_URL}}frontend/images/alumni.png" alt="" />
     <p>
         &ccedil; <strong>Main Entry:</strong> alumnus, pl. alumni<br /> &ccedil; <strong>Etymology:</strong> (Latin) foster son, pupil<br /> &ccedil; <strong>Date:</strong> 1645<br /> &ccedil; <strong>Meaning:</strong> one who is a former member, employee, contributor, or inmate<strong></strong>
     </p>
 
     <p>
-        <strong>Crvena iskaznica</strong> od uvijek je bila pojam časti za svakog ksetovca na kraju njegove studentske karijere jer se dodjeljuje počasno samo najzaslužnijim članovima i, kako to lijepo piše na pozadini, vrijedi do vječnosti. Zbog utrošene energije i svojih izuzetnih vrijednosti, počasni članovi su uvijek dobrodošli i rado viđeni u svome klubu.<br />
-        Ova stranica je upravo namijenjena počasnim članovima <strong>KSET</strong>-a za međusobnu komunikaciju i kontakt prema <strong>KSET</strong>-u.
+        {# Translators: <strong>Crvena iskaznica</strong> od uvijek je bila pojam časti za svakog ksetovca na kraju njegove studentske karijere jer se dodjeljuje počasno samo najzaslužnijim članovima i, kako to lijepo piše na pozadini, vrijedi do vječnosti. Zbog utrošene energije i svojih izuzetnih vrijednosti, počasni članovi su uvijek dobrodošli i rado viđeni u svome klubu.<br />Ova stranica je upravo namijenjena počasnim članovima <strong>KSET</strong>-a za međusobnu komunikaciju i kontakt prema <strong>KSET</strong>-u. #}
+        {% trans "alumni-description" %}
     </p>
 
-    <p>Kontakt osoba za ažuriranje podataka i održavanje alumni@kset.org mailing liste:</p>
+    {# Translators: Kontakt osoba za ažuriranje podataka i održavanje alumni@kset.org mailing liste: #}
+    <p>{% trans "alumni-contact-person" %}</p>
     <p><strong>Mladen Geng<br /></strong><a href="mailto:mladen@kset.org" target="_blank">mladen@kset.org</a></p>
 {% endblock subpage_content %}

@@ -1,12 +1,13 @@
 {% extends 'program.html' %}
-
+{% load i18n %}
 {% block title %} - Program{% endblock title %}
 
 {% block leftcolumn %}
 
 <nav class="hMenu">
 
-  <h3>Odaberi godinu ...</h3>
+    {# Translators: Odaberi godinu ... #}
+  <h3>{% trans "choose-year" %}</h3>
   {% for year in years %}
     <a href="{% url 'events_archive_year' year.year %}">{{ year.year }}</a>{% if not forloop.last %}, {% endif %}
   {% endfor %}

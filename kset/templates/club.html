@@ -1,23 +1,12 @@
 {% extends "subpage.html" %}
-
-{% block title %} - O klubu{% endblock title %}
+{% load i18n %}
+{# Translators: O klubu #}
+{% block title %} - {% trans "about-title" %}{% endblock title %}
 
 {% block subpage_content %}
-
-  <div class="item" style="margin-top: 0px; border: 0px;">
-    <h1>KSET - Klub Studenata ElektroTehnike</h1>
-
-    <p>To je bivša <strong>kotlovnica</strong> smještena na sjeveroistočnom uglu najboljeg fakulteta na svijetu (i pored C zgrade FER-a). Neki ljudi tvrde da je <strong>"Rupa"</strong> unatoč brojnim nelogičnostima te izjave. Za početak, Rupa je mjesto u sjeverozapadnoj Hrvatskoj na granici sa Slovenijom.</p>
-
-    <p>U današnjem obliku <strong>Klub postoji već 37 godina.</strong> On funkcionira vrlo dobro, hvala na pitanju, i broji <strong>9 sekcija</strong>: <strong>bike</strong> (profesionalni obožavatelji međunožnog gurala), <strong>disco</strong> (navodno za muziku), <strong>dramska</strong> (misle da znaju glumiti), <strong>računarska</strong> (za geekove i geekice), <strong>tehnička</strong> (za manualni rad), <strong>glazbena</strong> (za propale glazbenike koji su se bacili u opremanje, ma imaju oni i bend), <strong>planinarska</strong> a.k.a. P.I.J.A.N.D.U.R.E. (s redovitim gubljenjem po šumama upoznaju prirodu i svoj unutrašnji mir), <strong>video</strong> (snimaju i opskrbljuju KSET onim prekrasnim bićima koje nazivamo žene) i <strong>foto</strong> (za umjetnike s pravim aparatima). Više o njima možete saznati kasnije ili navratite do KSET-a i pitajte prvu osobu na koju naiđete.
-    </p>
-    <img src="{{ STATIC_URL }}frontend/images/kset-dvorana_01.jpg" alt="kset">
-
-    <p>Sada koja riječ o nekim administrativni stvarima. <strong>KSET je klub volontera.</strong> To znači da sve što radimo je rezultat činjenice da nemamo pametnijeg posla u životu. Zašto bi to itko radio? <strong>Jer je zabavno.</strong> KSET postane mjesto na kojem možete <strong>popiti kavu</strong>, sjesti s <strong>prijateljima</strong> i <strong>kartati</strong> ili <strong>surfati</strong> u pauzama između predavanja ili se na kraju dana opustiti uz <strong>šah ili dobar film.</strong></p>
-
-    <p>Za vrijeme ispita Klub se pretvara u mjesto u kojem svi uče, ali će članovi uvijek izdvojiti vremena da vam pokažu zadatak koji ne znate riješiti ili pojasniti nešto što vam je jasno kao i poljoprivreda Eskimu. U svakoj sekciji može se <strong>primijeniti ili proširiti znanje</strong> stečeno na fakultetu (čak i u planinarskoj) i skupiti hrpu prijatelja.</p>
-
-    <p><strong>Članarina</strong> u KSET-u iznosi 100 kn, uz članstvo dobijete mogućnost konzumiranja pića na šanku po <strong>studenskim cijenama</strong> (kava 3 kn, sok 3,5...), besplatne upade srijedom na različite slušaonice... Čitajte dalje ili dođite petkom između 13 i 14h u Klub i saznajte sami...</p>
-
-  </div>
+    <div class="item" style="margin-top: 0px; border: 0px;">
+        <h1>KSET - {% trans "description-short" %}</h1>
+        {# Translators: <p>To je bivša <strong>kotlovnica</strong> smještena na sjeveroistočnom uglu najboljeg fakulteta na svijetu (i pored C zgrade FER-a). Neki ljudi tvrde da je <strong>"Rupa"</strong> unatoč brojnim nelogičnostima te izjave. Za početak, Rupa je mjesto u sjeverozapadnoj Hrvatskoj na granici sa Slovenijom.</p> <p>Iako <strong>Klub u kotlovnici postoji od 1976.</strong>, njegova povijest seže puno dalje. Tadašnji Studentski savez osnovan je <strong>1969.</strong> i služio je isključivo članovima nekolicine sekcija za razbibrigu i životne dileme svakog studenta: <em>„Idemo na kavu ili predavanje?“</em>. Iz potrebe za zvučnim imenom, <strong>1971.</strong> Klub je dobio ime KSET, a samo pet godina kasnije postao <strong>kultno mjesto na koje se svi rado vraćaju</strong>, ne samo studenti FER-a već i drugih fakulteta.</p> <p>Klub funkcionira vrlo dobro, hvala na pitanju, i u njemu danas <strong>aktivno volontira gotovo 300 volontera u 9 sekcija</strong>: <strong>bike</strong> (profesionalni obožavatelji međunožnih gurala i vožnji po brdima), <strong>disco</strong> (za kemijanje po mikseti), <strong>dramska</strong> (dok ne glume na pozornici, čitaju poeziju), <strong>računarska</strong> (za prave <em>geekove</em> i one koji se tako osjećaju), <strong>tehnička</strong> (za manualni rad i popravke popravaka), <strong>glazbena</strong> (propali glazbenici koji su se bacili u opremanje, a zapravo imaju tajni bend), <strong>planinarska</strong> a.k.a. P.I.J.A.N.D.U.R.E. (s redovitim gubljenjem po šumama upoznaju prirodu i svoj unutrašnji mir), <strong>video</strong> (snimaju neugodne filmiće) i <strong>foto</strong> (umjetnici s pravim aparatima i najviše žena u sekciji). Više o njima možete saznati kasnije ili navratite do KSET-a i pitajte prvu osobu na koju naiđete. </p> <p>Sada koja riječ o nekim administrativnim stvarima. <strong>KSET je klub studenata volontera.</strong> To znači da sve što radimo je rezultat činjenice da nemamo pametnijeg posla u životu. Zašto bi to itko radio? <strong>Jer je zabavno.</strong> KSET postane mjesto na kojem možete <strong>popiti kavu</strong>, sjesti s <strong>prijateljima</strong> i <strong>kartati</strong> ili <strong>surfati</strong> u pauzama između predavanja ili se na kraju dana opustiti uz <strong>šah ili dobar film. </strong></p> <p>Za vrijeme ispita Klub se pretvara u mjesto u kojem svi uče, ali će članovi uvijek izdvojiti vremena da vam pokažu zadatak koji ne znate riješiti ili pojasniti nešto što vam je jasno kao i poljoprivreda Eskimu. U svakoj sekciji može se <strong>primijeniti ili proširiti znanje</strong> stečeno na fakultetu (čak i u planinarskoj) i skupiti hrpu prijatelja. Ne kaže se bezveze da je rad u KSET-u jedno od najvećih i najboljih iskustava u životu.</p> <p>Ono što <strong>članstvom</strong> u KSET-u možete dobiti su mogućnost korištenja opreme Kluba, besplatne upade srijedom na različite slušaonice i petkom na kultni <strong>KSET Caffe,</strong> druženje s najboljom ekipom na svijetu i još mnogo toga... Čitajte dalje ili dođite bilo koji dan u Klub i saznajte sami...</p>  #}
+        {% trans "club-description-full" %}
+    </div>
 {% endblock subpage_content %}

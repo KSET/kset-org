@@ -1,6 +1,7 @@
 {% extends 'program.html' %}
-
-{% block title %} - Pretraga{% endblock title %}
+{% load i18n %}
+{# Translators: Pretraga #}
+{% block title %} - {% trans "search-title" %}{% endblock title %}
 
 {% block leftcolumn %}
 
@@ -25,7 +26,8 @@
         {% endfor %}
       </table>
     {% else %}
-      <p>Nijedna vijest nije pronađena.</p>
+        {# Translators: Nijedna vijest nije pronađena. #}
+      <p>{% trans "no-news-error" %}</p>
     {% endif %}
 
 
@@ -42,7 +44,8 @@
         {% endfor %}
       </table>
     {% else %}
-      <p>Nijedan događaj nije pronađen.</p>
+        {# Translators: Nijedan događaj nije pronađen. #}
+      <p>{% trans "no-events-error" %}</p>
     {% endif %}
 
   </div>

@@ -12,3 +12,4 @@ baza.db
 dev.db
 /requirements/local.txt
 *.swp
+.idea

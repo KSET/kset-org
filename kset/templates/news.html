@@ -1,11 +1,15 @@
-{% extends 'program.html' %} {% load fb_versions %} {% block leftcolumn %}
+{% extends 'program.html' %}
+{% load i18n %}
+{% load fb_versions %}
+{% block leftcolumn %}
 
 
 <!-- NEWS -->
 {% if news %}
 <section class="news-box vijesti clearfix">
 
-    <h1 class="news-header icon-newspaper">Vijesti</h1>
+    {# Translators: Vijesti #}
+    <h1 class="news-header icon-newspaper">{% trans "news-titlr" %}</h1>
 
     {% for item in news %}
 
@@ -34,7 +38,8 @@
                 </div>
 
                 {% if item.content and item.description %}
-                <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+                    {# Translators: opširnije ... #}
+                <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">{% trans "more" %}</a>
                 {% endif %}
             </div>
 
@@ -52,7 +57,8 @@
 {% if daytime_events %}
 <section class="news-box dnevni clearfix">
 
-    <h1 class="news-header icon-sun-inv">Dnevni program</h1>
+    {# Translators: Dnevni program #}
+    <h1 class="news-header icon-sun-inv">{% trans "daily-program" %}</h1>
 
     {% for item in daytime_events %}
 
@@ -80,7 +86,7 @@
             </div>
 
             {% if item.content and item.description %}
-            <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+            <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">{% trans "more" %}</a>
             {% endif %}
 
         </div>
@@ -97,7 +103,8 @@
 {% if events %}
 <section class="news-box nocni clearfix">
 
-    <h1 class="news-header icon-moon-inv">Večernji program</h1>
+    {# Translators: Večernji program #}
+    <h1 class="news-header icon-moon-inv">{% trans "evening-program" %}</h1>
 
     {% for item in events %}
 
@@ -128,7 +135,7 @@
                 </div>
 
                 {% if item.content and item.description %}
-                <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">opširnije ...</a>
+                <a id="link-{{ item.slug }}" href="javascript:flip_element_by_id('{{ item.slug }}')" class="readmore">{% trans "more" %}</a>
                 {% endif %}
 
             </div>
