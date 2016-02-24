@@ -1,15 +1,15 @@
 {% load i18n %}
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
     {% load compress %}
 
     {% block extrahead %}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ request.build_absolute_uri }}" />
-        <meta property="og:title" content="www.KSET.org" />
-        <meta property="og:description" content="Klub Studenata Elektrotehnike" />
-        <meta property="og:image" content="{{ BASE_URL }}{{ STATIC_URL }}frontend/images/kset2.png" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+        <meta property="og:title" content="www.KSET.org"/>
+        <meta property="og:description" content="Klub Studenata Elektrotehnike"/>
+        <meta property="og:image" content="{{ BASE_URL }}{{ STATIC_URL }}frontend/images/kset2.png"/>
 
         <meta property="og:latitude" content="45.80154"/>
         <meta property="og:longitude" content="15.97166"/>
@@ -20,100 +20,118 @@
         <meta property="og:country-name" content="Croatia"/>
     {% endblock %}
 
-    <meta name="description" content="{%block metadesc%}Klub studenata elektrotehnike, poznatiji kao KSET je zagrebački klub i okupljalište studenata Fakulteta elektrotehnike i računarstva (FER).{%endblock%}">
-    <meta name="keywords" content="{%block metatags%}KSET, klub, studenti, fakultet, zagreb, elektrotehnika, računarstvo, hacker, volunteering, computing, electrical engineering, club, nightlife, university{%endblock%}">
+    <meta name="description"
+          content="{% block metadesc %}Klub studenata elektrotehnike, poznatiji kao KSET je zagrebački klub i okupljalište studenata Fakulteta elektrotehnike i računarstva (FER).{% endblock %}">
+    <meta name="keywords"
+          content="{% block metatags %}KSET, klub, studenti, fakultet, zagreb, elektrotehnika, računarstvo, hacker, volunteering, computing, electrical engineering, club, nightlife, university{% endblock %}">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     {% compress css %}
-    <link href="{{ STATIC_URL }}frontend/css/styles.css?6" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}frontend/magnific-popup/magnific-popup.css" type="text/css" />
+        <link href="{{ STATIC_URL }}frontend/css/styles.css?6" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}frontend/magnific-popup/magnific-popup.css" type="text/css"/>
     {% endcompress %}
 
 
-    <link rel="icon" type="image/vnd.microsoft.icon" href="{{ STATIC_URL}}frontend/images/favicon.ico" />
-    <link rel="icon" type="image/png" href="{{ STATIC_URL}}frontend/images/favicon.png" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{{ STATIC_URL }}frontend/images/favicon.ico"/>
+    <link rel="icon" type="image/png" href="{{ STATIC_URL }}frontend/images/favicon.png"/>
 
     {# Translators: Klub Studenata ElektroTehnike #}
-    <title>KSET.org{%block title%} - {% trans "description-short" %} {%endblock%}</title>
+    <title>KSET.org{% block title %} - {% trans "description-short" %} {% endblock %}</title>
 
     {% block feeds %}
-    <link rel="alternate" type="application/rss+xml" title="Public Feeds" href="{% url 'feed_rss' %}" />
+        <link rel="alternate" type="application/rss+xml" title="Public Feeds" href="{% url 'feed_rss' %}"/>
     {% endblock feeds %}
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Roboto+Slab:700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Roboto+Slab:700&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/modernizr.custom.js"></script>
     {% block members-css %}{% endblock %}
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div id="container" class="page-container">
-
-        <header id="header" class="page-header">
-            <img src="{{ STATIC_URL }}frontend/images/headers/{{ header_bg }}" id="header-pic" class="header-pic" />
-
-            <a href="{% url 'index' %}">
-                <img width="230" src="{{ STATIC_URL }}images/kset-logo.svg" id="kset-logo" class="logo"/>
-            </a>
-
-        	<nav id="top-menu" class="page-nav top-menu">
-                <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
-                {% if is_member %}
-                    {# Translators: ČLANOVI #}
-                    <a href="{% url 'members_list_all' %}">{% trans 'members' %}</a>
-                    {# Translators: DEŽURSTVA #}
-                    <a href="{% url 'dezurstva' %}">{% trans "duties" %}</a>
-                {% else %}
-                    {# Translators: NASLOVNICA #}
-                    <a href="{% url 'index' %}">{% trans "homepage" %}</a>
-                    {# Translators: O KLUBU #}
-                    <a href="{% url 'subpage_index' %}">{% trans "about" %}</a>
-                {% endif %}
-                {# Translators: MULTIMEDIA #}
-                <a href="{% url 'subpage_multimedia' %}">{% trans "multimedia" %}</a>
-                {# Translators: VIJESTI #}
-                <a href="{% url 'news_archive' %}">{% trans "news" %}</a>
-                {# Translators: PROGRAM #}
-                <a href="{% url 'events_archive' %}">{% trans "program" %}</a>
-
-        	</nav>
-
-            <section id="social-stuff" class="header-social-links">
-                <a href="http://www.facebook.com/KSETZg" title="Facebook" class="icon-facebook-rect"></a>
-                <a href="http://twitter.com/KSETinfo" title="Twitter" class="icon-twitter-bird"></a>
-                <a href="http://www.last.fm/user/Klub_KSET" title="Last.fm"  class="icon-lastfm"></a>
-                <a href="http://webchat.freenode.net/?channels=kset" title="IRC" class="icon-chat"></a>
-                <a href="http://www.youtube.com/user/KsetVideo" title="Youtube" class="icon-youtube-play"></a>
-                <a href="{% url 'feed_rss' %}" title="RSS" class="icon-rss"></a>
-                <a href="https://github.com/kset" title="Github" class="icon-github"></a>
-            </section>
-
-
-        	{% include 'header-scroll.html' %}
-
-        </header>
-
-        <section role="main" id="content" class="main clearfix">
-
-            {% block content %}
-
-            {% endblock %}
-
-        </section>
-
-        <footer id="footer" class="footer">
-          	{# Translators: <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br /><i>... prvi put otvorio vrata <b>1976.</b></i> #}
-            {% trans "footer" %}
-        </footer>
-
+<div id="container" class="page-container">
+    <div class="row">
+        <div class="position-right localization-widget">
+            <form id="change-language-form" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                <input id="language-value" type="hidden" name="language" value="hr"/>
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <button class="language-select {% if language.code == LANGUAGE_CODE %}language-selected{% endif %}"
+                            onclick="change_language('{{ language.code }}')">{{ language.code }}</button>
+                {% endfor %}
+            </form>
+        </div>
     </div>
 
+    <header id="header" class="page-header">
+        <img src="{{ STATIC_URL }}frontend/images/headers/{{ header_bg }}" id="header-pic" class="header-pic"/>
 
-    {% compress js %}
+        <a href="{% url 'index' %}">
+            <img width="230" src="{{ STATIC_URL }}images/kset-logo.svg" id="kset-logo" class="logo"/>
+        </a>
+
+        <nav id="top-menu" class="page-nav top-menu">
+            <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
+            {% if is_member %}
+                {# Translators: ČLANOVI #}
+                <a href="{% url 'members_list_all' %}">{% trans 'members' %}</a>
+                {# Translators: DEŽURSTVA #}
+                <a href="{% url 'dezurstva' %}">{% trans "duties" %}</a>
+            {% else %}
+                {# Translators: NASLOVNICA #}
+                <a href="{% url 'index' %}">{% trans "homepage" %}</a>
+                {# Translators: O KLUBU #}
+                <a href="{% url 'subpage_index' %}">{% trans "about" %}</a>
+            {% endif %}
+            {# Translators: MULTIMEDIA #}
+            <a href="{% url 'subpage_multimedia' %}">{% trans "multimedia" %}</a>
+            {# Translators: VIJESTI #}
+            <a href="{% url 'news_archive' %}">{% trans "news" %}</a>
+            {# Translators: PROGRAM #}
+            <a href="{% url 'events_archive' %}">{% trans "program" %}</a>
+
+        </nav>
+
+        <section id="social-stuff" class="header-social-links">
+            <a href="http://www.facebook.com/KSETZg" title="Facebook" class="icon-facebook-rect"></a>
+            <a href="http://twitter.com/KSETinfo" title="Twitter" class="icon-twitter-bird"></a>
+            <a href="http://www.last.fm/user/Klub_KSET" title="Last.fm" class="icon-lastfm"></a>
+            <a href="http://webchat.freenode.net/?channels=kset" title="IRC" class="icon-chat"></a>
+            <a href="http://www.youtube.com/user/KsetVideo" title="Youtube" class="icon-youtube-play"></a>
+            <a href="{% url 'feed_rss' %}" title="RSS" class="icon-rss"></a>
+            <a href="https://github.com/kset" title="Github" class="icon-github"></a>
+        </section>
+
+
+        {% include 'header-scroll.html' %}
+
+    </header>
+
+    <section role="main" id="content" class="main clearfix">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </section>
+
+    <footer id="footer" class="footer">
+        {# Translators: <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br /><i>... prvi put otvorio vrata <b>1976.</b></i> #}
+        {% trans "footer" %}
+    </footer>
+
+</div>
+
+
+{% compress js %}
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/csrf.js"></script>
 
@@ -121,26 +139,37 @@
 
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/perfect-scrollbar.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/custom-functions.js"></script>
-    {% endcompress %}
+{% endcompress %}
 
-     <!-- Google analytics -->
-    <script type="text/javascript">
+<!-- Google analytics -->
+<script type="text/javascript">
 
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-20067825-1']);
-          _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20067825-1']);
+    _gaq.push(['_trackPageview']);
 
-          (function() {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
 
-    </script>
+</script>
 
-    {% block members-jss %}{% endblock %}
+<script>
+    function change_language($language) {
+        console.log($language);
+        $("#language-value").attr("value", $language);
+        $("#change-language-form").submit();
+    }
+    ;
+</script>
+{% block members-jss %}{% endblock %}
 
-  </body>
+</body>
 
 </html>
 

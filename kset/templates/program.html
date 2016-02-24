@@ -14,24 +14,6 @@
 
     <aside id="right" class="right-column">
 
-        <div>
-            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                <select name="language">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
-                                selected="selected"{% endif %}>
-                            {{ language.name_local }} ({{ language.code }})
-                        </option>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="Go"/>
-            </form>
-        </div>
-
         <div class="search-box">
             <form id="form-search" class="form-search" method="GET" action="{% url 'search' %}">
                 <input id="input-search" class="input-search" type="text" name="query" placeholder="Search me"/>
@@ -108,27 +90,27 @@
         <div class="uticnice-box">
             <h3 class="right-box-title">Utičnice</h3>
 
-            <p>
-                <a href="http://www.sczg.hr/" target="_blank">Studentski centar</a><br/>
-                <a href="http://www.szzg.hr/" target="_blank">Studentski zbor</a><br/>
-                <a href="http://www.dirtyoldempire.com/" target="_blank">Dirty old shop</a><br/>
-                <a href="http://www.mmv-auris.hr/" target="_blank">MMV-Auris</a><br/>
-                <a href="http://www.mipro.hr/" target="_blank">MIPRO</a><br/>
-                <a href="http://www.radiostudent.hr/" target="_blank">Radio Student</a><br/>
-                <a href="http://www.muzika.hr/" target="_blank">Muzika.hr</a><br/>
-                <a href="http://www.terapija.net/" target="_blank">Terapija.net</a><br/>
-                <a href="http://www.linux.hr/" target="_blank">HULK</a><br/>
-                <a href="http://www.razmjenavjestina.org/" target="_blank">Razmjena vjestina</a><br/>
-                <a href="http://www.carnet.hr/" target="_blank">CARNet</a><br/>
-                <a href="http://www.rep.hr/" target="_blank">Rep.hr</a><br/>
-                <a href="http://www.naklikaj.com/" target="_blank">Naklikaj.com</a><br/>
-                <a href="http://www.idemvan.hr/" target="_blank">Idemvan.hr</a><br/>
-                <a href="http://www.ruziona.hr/" target="_blank">Ruziona.hr</a><br/>
-                <a href="http://www.tvoj-toner.com/" target="_blank">Tvoj Toner</a><br/>
-            </p>
-        </div>
+      <p>
+        <a href="http://www.sczg.hr/" target="_blank">Studentski centar</a><br />
+        <a href="http://www.szzg.hr/" target="_blank">Studentski zbor</a><br />
+        <a href="http://www.muzika.hr/" target="_blank">Muzika.hr</a><br />
+        <a href="http://www.radiostudent.hr/" target="_blank">Radio Student</a><br />
+        <a href="http://www.terapija.net/" target="_blank">Terapija.net</a><br />
+        <a href="http://www.perun.hr/" target="_blank">Perun.hr</a><br />
+        <a href="http://www.soundguardian.com/" target="_blank">SoundGuardian</a><br />
+        <a href="http://www.eventos.com.hr/" target="_blank">Eventos</a><br />
+        <a href="http://www.pivnica-medvedgrad.hr/" target="_blank">Pivnica Medvedgrad</a><br />
+        <a href="http://www.rockmark.hr/" target="_blank">Rockmark</a><br />
+        <a href="http://www.mmv-auris.hr/" target="_blank">MMV-Auris</a><br />
+        <a href="http://www.nisamtapir.com/" target="_blank">Nisam Tapir.</a><br />
+        <a href="http://www.mipro.hr/" target="_blank">MIPRO</a><br />
+        <a href="http://www.linux.hr/" target="_blank">HULK</a><br />
+        <a href="http://www.carnet.hr/" target="_blank">CARNet</a><br />
+        <a href="http://www.kst.org.rs/" target="_blank">Klub Studenata Tehnike</a><br />
+      </p>
+    </div>
 
-    </aside>
+</aside>
 
 
 
