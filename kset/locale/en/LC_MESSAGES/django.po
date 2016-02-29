@@ -3,14 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-24 18:34+0100\n"
+"POT-Creation-Date: 2016-02-29 21:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Anamarija Miličević <anamarija.mili@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -26,33 +25,33 @@ msgid "English"
 msgstr "English"
 
 #. Translators: Klub Studenata ElektroTehnike
-#: templates/404.html:31 templates/club.html:8 templates/index.html:40
+#: templates/404.html:31 templates/club.html:8 templates/index.html:42
 #: templates/newsletter.html:93
 msgid "description-short"
 msgstr "Klub Studenata ElektroTehnike"
 
 #. Translators: NASLOVNICA
-#: templates/404.html:56 templates/index.html:72
+#: templates/404.html:56 templates/index.html:90
 msgid "homepage"
 msgstr "HOME"
 
 #. Translators: O KLUBU
-#: templates/404.html:57 templates/index.html:74
+#: templates/404.html:57 templates/index.html:92
 msgid "about"
 msgstr "ABOUT"
 
 #. Translators: MULTIMEDIA
-#: templates/404.html:58 templates/index.html:77
+#: templates/404.html:58 templates/index.html:95
 msgid "multimedia"
 msgstr "MULTIMEDIA"
 
 #. Translators: VIJESTI
-#: templates/404.html:59 templates/index.html:79
+#: templates/404.html:59 templates/index.html:97
 msgid "news"
 msgstr "NEWS"
 
 #. Translators: PROGRAM
-#: templates/404.html:60 templates/index.html:81
+#: templates/404.html:60 templates/index.html:99
 msgid "program"
 msgstr "PROGRAMME"
 
@@ -64,7 +63,7 @@ msgstr ""
 "Universe."
 
 #. Translators: <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br /><i>... prvi put otvorio vrata <b>1976.</b></i>
-#: templates/404.html:90 templates/index.html:110
+#: templates/404.html:90 templates/index.html:128
 msgid "footer"
 msgstr ""
 "<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</"
@@ -79,15 +78,49 @@ msgstr "Alumni"
 #: templates/alumni.html:13
 msgid "alumni-description"
 msgstr ""
-"<strong>The Red Membership card</strong> has always been a sign of pride for many a member of KSET at the end of their student career, "
-"as it is given honorarily only to those who deserve it the most and, as it is said on the back, it lasts forever. "
-"For the energy spent and significant effort given to the Club, these honorary members are always welcome and gladly seen in their Club. "
-"This site is made specifically for the honorary members of <strong>KSET</strong> so that they can communicate with each other and with <strong>KSET</strong>. "
+"<strong>The Red Membership card</strong> has always been a sign of pride for "
+"many a member of KSET at the end of their student career, as it is given "
+"honorarily only to those who deserve it the most and, as it is said on the "
+"back, it lasts forever. For the energy spent and significant effort given to "
+"the Club, these honorary members are always welcome and gladly seen in their "
+"Club. This site is made specifically for the honorary members of "
+"<strong>KSET</strong> so that they can communicate with each other and with "
+"<strong>KSET</strong>. "
 
 #. Translators: Kontakt osoba za ažuriranje podataka i održavanje alumni@kset.org mailing liste:
 #: templates/alumni.html:17
 msgid "alumni-contact-person"
-msgstr "Contact person for data updating and maintenance of thealumni@kset.org mailing list"
+msgstr ""
+"Contact person for data updating and maintenance of thealumni@kset.org "
+"mailing list"
+
+#: templates/calendar.html:6
+msgid "monday.first_letter"
+msgstr "M"
+
+#: templates/calendar.html:7
+msgid "tuesday.first_letter"
+msgstr "T"
+
+#: templates/calendar.html:8
+msgid "wednesday.first_letter"
+msgstr "W"
+
+#: templates/calendar.html:9
+msgid "thursday.first_letter"
+msgstr "T"
+
+#: templates/calendar.html:10
+msgid "friday.first_letter"
+msgstr "F"
+
+#: templates/calendar.html:11
+msgid "saturday.first_letter"
+msgstr "S"
+
+#: templates/calendar.html:12
+msgid "sunday.first_letter"
+msgstr "S"
 
 #. Translators: O klubu
 #: templates/club.html:4
@@ -117,22 +150,24 @@ msgstr "Photo gallery of concerts held in KSET"
 
 #. Translators: galerija fotografija članova foto sekcije
 #: templates/gallery_main.html:28 templates/multimedia.html:25
-msgid "kset-foto-gallery-subtitle "
+msgid "kset-foto-gallery-subtitle"
 msgstr "Photo gallery taken by members of the Photo section "
 
 #. Translators: Dobrodošli na KSET foto galeriju!
 #: templates/gallery_main.html:36
-msgid "foto-gallery-welcome-title "
+msgid "foto-gallery-welcome-title"
 msgstr "Welcome to the KSET Photo gallery! "
 
 #. Translators: Jednog lijepog KSETovskog dana, u proljeće 2004. godine, rodila se ideja kako bi lijepo bilo fotografije nastale marljivim škljocanjem članova fotosekcije izvući iz mraka i pokazati javnosti. Tako smo odlučili stvoriti vlastiti virtualni izložbeni prostor. Zašto? Zato što možemo... :-) . A i zato što je stvarnih prostora za izložbu  malo, pa do njih nije niti lako doći.
 #: templates/gallery_main.html:40
 msgid "foto-gallery-desc-part-1"
-msgstr "On a nice KSET-like day, in the spring of 2004, an idea was born "
-"about how nice it would be for the photos taken by the hardworking snapping of the members of the Photo section "
-"to be pulled out of the dark and shown to the public. So we have decided to create our own "
-"virtual exhibition space. Why? Because we can... :-) But also because "
-"there are too few real exhibition spaces and they are hard to get to. "
+msgstr ""
+"On a nice KSET-like day, in the spring of 2004, an idea was born about how "
+"nice it would be for the photos taken by the hardworking snapping of the "
+"members of the Photo section to be pulled out of the dark and shown to the "
+"public. So we have decided to create our own virtual exhibition space. Why? "
+"Because we can... :-) But also because there are too few real exhibition "
+"spaces and they are hard to get to. "
 
 #. Translators: Počeli smo s galerijom
 #: templates/gallery_main.html:44
@@ -143,39 +178,38 @@ msgstr "We've begun with the Gallery"
 #: templates/gallery_main.html:47
 msgid "foto-gallery-desc-part-3"
 msgstr ""
-"Which covers the concerts taking place in KSET, which are truly many. "
-"These events now remain recorded by many photos, out of which the authors cloose "
-"the best and publish them here. But, so that not all of it would remain in KSET, "
-"the Photo section shows that it can, knows how to and wants to express itself through photography, so "
-"a gallery was created."
+"Which covers the concerts taking place in KSET, which are truly many. These "
+"events now remain recorded by many photos, out of which the authors cloose "
+"the best and publish them here. But, so that not all of it would remain in "
+"KSET, the Photo section shows that it can, knows how to and wants to express "
+"itself through photography, so a gallery was created."
 
 #. Translators: Tu se mogu pronaći fotografije iz života, života s fotoaparatom u ruci.
 #: templates/gallery_main.html:50
 msgid "foto-gallery-desc-part-4"
-msgstr ""
-"Here one can find photos of life, life while holding a camera."
+msgstr "Here one can find photos of life, life while holding a camera."
 
 #. Translators: Početkom studenog 2011. godine otvara se nova, ljepša i preglednija galerija! Stara i nepregledna galerija odlazi u arhivu, dok novu, ljepšu i organiziraniju galeriju možete vidjeti pred sobom. U "KSET.live!" dijelu galerije možete pronaći fotografije koje su zabilježene analognim i digitalnim fotoaparatima. Nakon što otvorite album, na vrhu ćete vidjeti više informacija o tehnici korištenoj pri njegovom nastajanju.
 #: templates/gallery_main.html:54
 msgid "foto-gallery-desc-part-5"
 msgstr ""
-"At the beginning of 2011, a new, better looking and more clear "
-"Gallery was opened! The old, cluttered one was moved to the archive, and the new one can be seen "
-"before you now. In the \"KSET.live!\" part of the Gallery, "
-"one can find the photos taken by analogue and digital cameras. "
-"After you open the album, you will see more info about the technique used to take the photos on top. "
-
+"At the beginning of 2011, a new, better looking and more clear Gallery was "
+"opened! The old, cluttered one was moved to the archive, and the new one can "
+"be seen before you now. In the \"KSET.live!\" part of the Gallery, one can "
+"find the photos taken by analogue and digital cameras. After you open the "
+"album, you will see more info about the technique used to take the photos on "
+"top. "
 
 #. Translators: Eto, od trenutka kad ste pročitali ovaj tekst pa nadalje, znajte da se ovdje održava stalna izložba radova fotosekcije. Postav izložbe nije stalan, on postaje bogatiji iz dana u dan - ne zaboravite navratiti ponovno i pogledati što ima novoga. A ako Vam ovo nije dovoljno, uvijek možete navratiti do KSET-a, jer se u njemu svaki mjesec održava nova izložba radova članova sekcije, ali i polaznika tečaja koji organizira fotosekcija.
 #: templates/gallery_main.html:58
 msgid "foto-gallery-desc-part-6"
 msgstr ""
-"So, from the moment you've read this text onwards, know that here "
-"there is a permanent exhibition of the Photo section. The exhibits are not permanent, it "
-"gets richer every day - don't forget to drop by again and take a look at "
+"So, from the moment you've read this text onwards, know that here there is a "
+"permanent exhibition of the Photo section. The exhibits are not permanent, "
+"it gets richer every day - don't forget to drop by again and take a look at "
 "what might be new. And if that was not enough, you can always drop by KSET "
-"for there, there is a new exhibition of the members of the Section every month "
-"as well as those who took part in the Photo section's course. "
+"for there, there is a new exhibition of the members of the Section every "
+"month as well as those who took part in the Photo section's course. "
 
 #. Translators: Uživajte!
 #: templates/gallery_main.html:62
@@ -202,12 +236,12 @@ msgid "short-movie-clips"
 msgstr "Short movie clips"
 
 #. Translators: ČLANOVI
-#: templates/index.html:67
+#: templates/index.html:85
 msgid "members"
 msgstr "MEMBERS"
 
 #. Translators: DEŽURSTVA
-#: templates/index.html:69
+#: templates/index.html:87
 msgid "duties"
 msgstr "DUTIES"
 
@@ -255,6 +289,45 @@ msgstr "Programme since"
 #: templates/newsletter.html:84
 msgid "more-capitalized"
 msgstr "More"
+
+#: templates/program.html:19
+msgid "search"
+msgstr "Search"
+
+#. Translators: Vaša e-mail adresa
+#: templates/program.html:40
+msgid "email.placeholder"
+msgstr "Your e-mail address"
+
+#. Translators: Poruka
+#: templates/program.html:46
+msgid "message"
+msgstr "Message"
+
+#. Translators: Foto galerija
+#: templates/program.html:54
+msgid "foto_gallery"
+msgstr "Foto galery"
+
+#. Translators: Obavijesti
+#: templates/program.html:72
+msgid "notifications"
+msgstr "Notifications"
+
+#. Translators: Uvijek je tu za nas
+#: templates/program.html:85
+msgid "fer_logo_title"
+msgstr "Always there for us"
+
+#. Translators: Fakultet elektrotehnike <br> i računarstva
+#: templates/program.html:90
+msgid "fer"
+msgstr "Faculty of Electrical Engineering <br /> and Computing"
+
+#. Translators: Utičnice
+#: templates/program.html:98
+msgid "plugs"
+msgstr "Plugs"
 
 #. Translators: Pretraga
 #: templates/search.html:4
@@ -322,7 +395,7 @@ msgid "projects"
 msgstr "Projects"
 
 #. Translators: Bike
-#: templates/divisions/bike.html:5
+#: templates/divisions/bike.html:5 templates/partials/leaders.html:13
 msgid "bike-title"
 msgstr "Bike"
 
@@ -332,7 +405,7 @@ msgid "bike-desc"
 msgstr ""
 
 #. Translators: Računarska
-#: templates/divisions/comp.html:6
+#: templates/divisions/comp.html:6 templates/partials/leaders.html:37
 msgid "comp"
 msgstr "Computing"
 
@@ -342,7 +415,7 @@ msgid "comp-desc"
 msgstr ""
 
 #. Translators: Disco
-#: templates/divisions/disco.html:5
+#: templates/divisions/disco.html:5 templates/partials/leaders.html:17
 msgid "disco-title"
 msgstr "Disco"
 
@@ -352,7 +425,7 @@ msgid "disco-desc"
 msgstr ""
 
 #. Translators: Dramska
-#: templates/divisions/drama.html:5
+#: templates/divisions/drama.html:5 templates/partials/leaders.html:21
 msgid "drama-title"
 msgstr "Drama"
 
@@ -362,7 +435,7 @@ msgid "drama-desc"
 msgstr ""
 
 #. Translators: Foto
-#: templates/divisions/foto.html:6
+#: templates/divisions/foto.html:6 templates/partials/leaders.html:25
 msgid "foto-title"
 msgstr "Photo"
 
@@ -372,22 +445,25 @@ msgid "foto-desc"
 msgstr ""
 "<p>In the north-eastern corner of KSET is hidden the Photo section's space "
 "and <strong>darkroom</strong>. The first written logs of its existance stem "
-"as far back as years before KSET was founded and the farthest to <strong>1965</strong>. "
-"</p> <p> Since its beginnings, the Photo section has traditionally been holding the <strong>"
-"Photography course</strong> about the basics of photography. Currently the Section consists "
-"of some 20 members which hold the tradition of <strong>black and white analogue photography"
-"</strong> with their hard work. New members have the chance to learn much about the process "
-"od photography, from the settings, through film develpoment, and finally to developing "
-"the photos in different formats. In the Photo section, one can also learn a lot about photography "
-"in general, as well as digital photography, which is sadly taking the former place of our "
-"beloved photo films. Despite that, here one can learn a lot about the latest news in the "
-"world of <strong>digical photography</strong>. Among other things, in the section we "
-"organize photo-sessions, exhibitions, internal workshops, trips, cooking parties... </p> "
-"<p> You can find out more about us and our activities and projects at : "
-"<a title=\"www.fotokset.org\" href=\"http://www.fotokset.org/\">www.fotokset."org</a> </p>"
+"as far back as years before KSET was founded and the farthest to "
+"<strong>1965</strong>. </p> <p> Since its beginnings, the Photo section has "
+"traditionally been holding the <strong>Photography course</strong> about the "
+"basics of photography. Currently the Section consists of some 20 members "
+"which hold the tradition of <strong>black and white analogue photography</"
+"strong> with their hard work. New members have the chance to learn much "
+"about the process od photography, from the settings, through film "
+"develpoment, and finally to developing the photos in different formats. In "
+"the Photo section, one can also learn a lot about photography in general, as "
+"well as digital photography, which is sadly taking the former place of our "
+"beloved photo films. Despite that, here one can learn a lot about the latest "
+"news in the world of <strong>digical photography</strong>. Among other "
+"things, in the section we organize photo-sessions, exhibitions, internal "
+"workshops, trips, cooking parties... </p> <p> You can find out more about us "
+"and our activities and projects at : <a title=\"www.fotokset.org\" href="
+"\"http://www.fotokset.org/\">www.fotokset.org</a> </p>"
 
 #. Translators: Glazbena
-#: templates/divisions/music.html:5
+#: templates/divisions/music.html:5 templates/partials/leaders.html:29
 msgid "music-title"
 msgstr "Music"
 
@@ -395,65 +471,70 @@ msgstr "Music"
 #: templates/divisions/music.html:8
 msgid "music-desc"
 msgstr ""
-"<p>The Music section of takes care of the realization of the concert programme, "
-"specifically – the technical production. Stage hand experience gained in the Section "
-"can be and is later used by many members on bigger stages. In the Music section you "
-"can learn the basics of sound engineering and sound editing on PCs. The experience "
-"gained in this field has brought some of KSET's tone masters into cooperation with "
-"famous pop-bands (such as Zabranjeno Pušenje). One of the most important projects "
-"of the Section is <strong>Čuješ?!</strong>, a concert programme which hosts and shows "
-"young and not-famous-enough performers. </p> <p> The main obligations of the Music "
-"section are: <ul> <li>complete audio production of concerts</li> <li>music equipment "
-"maintenance</li> <li>playing in a band</li> <li>lighting and VJ-ing</li> <li>booking and "
-"promotion</li> </ul> </p><br /> " 
-"<h2>COMPLETE AUDIO PRODUCTION</h2> "
-"<p> Members of the Music section go through all the steps of music production in "
-"a concert. They are primarily taught how to set up a stage, where and how to position the gear "
-"and what to do with the cables. The members are also taught about all the parts of the "
-"music equipment, as well as all the pros and cons of every element of setting "
-"up a stage. </p> <p>After the members have learned how to set up a stage before a band, "
-"they are offered the opportunity to use the Club's professional sound system. There is no "
-"other place like KSET where the members can learn first-hand how to use this kind of "
-"professional equipment. This is why many of Croatia's best tone masters come from KSET. "
-"Members are taught not only how to use the equipment itself, but what may influence the "
-"recordings, the equipment, the sound and all other elements of a concert. </p> <br />"
-"<h2>EQUIPMENT MAINTENANCE</h2> "
-"<p> For the members to be able to learn everything there is to know about the "
-"equipment, it has to function. A large part of time is spent on maintaining the equipment "
-"since we do not have money for new parts. The members are taught how to fix every part "
-"of the equipment, as well as how to solder perfectly since nothing can function without "
-"impeccable cables. Aside from this, members are also taught how to make various parts "
-"of the equipment, such as hybrid cables, switches etc. </p><br />"
-"<h2>PLAYING IN A BAND</h2>"
-"<p>What kind of Music section would it be without a band called Zaudarači? Many "
-"of our members come to the section specifically looking for a good band and the "
-"company of other musicians. Taking into account that practicing studios cost money, "
-"and the equipment is expensive, the members of KSET get to share their musical "
-"experiences and knowledge with other members and in this way perfect their skill. "
-"If need be, we also teach our members how to sing through singing workshops.</p> <br />"
-"<h2>LIGHTING AND VJ-ing</h2> "
-"<p> Members who show a desire to learn how to deal with lighting are taught how to do so. "
-"Just like with tone mastering, here it is a question of very expensive equipment for which "
-"there is no other place to practice at except KSET. There are also no lighting schools so "
-"many of our members easily find a lighting job for a firm later on. Members learn how "
-"to set up the lighting, how to connect it, the differences between various devices, their "
-"upsides and downsides, working on a professional console in professional programmes. "
-"Aside from general knowledge about lighting, members also learn certain specific areas of "
-"knowledge which come with learning about lighting, such as how specific devices act in "
-"certain spaces or how to detect and fix problems... </p> <p>Recently, we've started teaching "
-"VJing to new members as a new kind of concert visual production. Members are taught "
-"how to use specialized software for this activity and they get to learn from the experiences "
-"of other VJs, which have been doing this sort of lighting for a while. </p> <br />"
-"<h2>BOOKING AND PROMOTION</h2> "
-"<p>Members who really show their best within the Section get to be part of the organization 
-"of events in KSET, mostly concerts as that is the obligation of the Music section. Taking care "
-"of the organization of concerts is one of the most important things in KSET, since it is precisely "
-"the concerts that brings us popularity and makes us a lively club. Members which take part "
-"in the organization gain valuable organization and communication skills and have the chance"
-" to be one of the bearers of the cultural programme in Croatia. </p>"
+"<p>The Music section of takes care of the realization of the concert "
+"programme, specifically – the technical production. Stage hand experience "
+"gained in the Section can be and is later used by many members on bigger "
+"stages. In the Music section you can learn the basics of sound engineering "
+"and sound editing on PCs. The experience gained in this field has brought "
+"some of KSET's tone masters into cooperation with famous pop-bands (such as "
+"Zabranjeno Pušenje). One of the most important projects of the Section is "
+"<strong>Čuješ?!</strong>, a concert programme which hosts and shows young "
+"and not-famous-enough performers. </p> <p> The main obligations of the Music "
+"section are: <ul> <li>complete audio production of concerts</li> <li>music "
+"equipment maintenance</li> <li>playing in a band</li> <li>lighting and VJ-"
+"ing</li> <li>booking and promotion</li> </ul> </p><br /> <h2>COMPLETE AUDIO "
+"PRODUCTION</h2> <p> Members of the Music section go through all the steps of "
+"music production in a concert. They are primarily taught how to set up a "
+"stage, where and how to position the gear and what to do with the cables. "
+"The members are also taught about all the parts of the music equipment, as "
+"well as all the pros and cons of every element of setting up a stage. </p> "
+"<p>After the members have learned how to set up a stage before a band, they "
+"are offered the opportunity to use the Club's professional sound system. "
+"There is no other place like KSET where the members can learn first-hand how "
+"to use this kind of professional equipment. This is why many of Croatia's "
+"best tone masters come from KSET. Members are taught not only how to use the "
+"equipment itself, but what may influence the recordings, the equipment, the "
+"sound and all other elements of a concert. </p> <br /><h2>EQUIPMENT "
+"MAINTENANCE</h2> <p> For the members to be able to learn everything there is "
+"to know about the equipment, it has to function. A large part of time is "
+"spent on maintaining the equipment since we do not have money for new parts. "
+"The members are taught how to fix every part of the equipment, as well as "
+"how to solder perfectly since nothing can function without impeccable "
+"cables. Aside from this, members are also taught how to make various parts "
+"of the equipment, such as hybrid cables, switches etc. </p><br /><h2>PLAYING "
+"IN A BAND</h2><p>What kind of Music section would it be without a band "
+"called Zaudarači? Many of our members come to the section specifically "
+"looking for a good band and the company of other musicians. Taking into "
+"account that practicing studios cost money, and the equipment is expensive, "
+"the members of KSET get to share their musical experiences and knowledge "
+"with other members and in this way perfect their skill. If need be, we also "
+"teach our members how to sing through singing workshops.</p> <br /"
+"><h2>LIGHTING AND VJ-ing</h2> <p> Members who show a desire to learn how to "
+"deal with lighting are taught how to do so. Just like with tone mastering, "
+"here it is a question of very expensive equipment for which there is no "
+"other place to practice at except KSET. There are also no lighting schools "
+"so many of our members easily find a lighting job for a firm later on. "
+"Members learn how to set up the lighting, how to connect it, the differences "
+"between various devices, their upsides and downsides, working on a "
+"professional console in professional programmes. Aside from general "
+"knowledge about lighting, members also learn certain specific areas of "
+"knowledge which come with learning about lighting, such as how specific "
+"devices act in certain spaces or how to detect and fix problems... </p> "
+"<p>Recently, we've started teaching VJing to new members as a new kind of "
+"concert visual production. Members are taught how to use specialized "
+"software for this activity and they get to learn from the experiences of "
+"other VJs, which have been doing this sort of lighting for a while. </p> "
+"<br /><h2>BOOKING AND PROMOTION</h2> <p>Members who really show their best "
+"within the Section get to be part of the organization of events in KSET, "
+"mostly concerts as that is the obligation of the Music section. Taking care "
+"of the organization of concerts is one of the most important things in KSET, "
+"since it is precisely the concerts that brings us popularity and makes us a "
+"lively club. Members which take part in the organization gain valuable "
+"organization and communication skills and have the chance to be one of the "
+"bearers of the cultural programme in Croatia. </p>"
 
 #. Translators: Pijandure
-#: templates/divisions/pijandure.html:6
+#: templates/divisions/pijandure.html:6 templates/partials/leaders.html:33
 msgid "pi-title"
 msgstr "Mountaneering"
 
@@ -461,36 +542,44 @@ msgstr "Mountaneering"
 #: templates/divisions/pijandure.html:9
 msgid "pi-desc"
 msgstr ""
-"Way back in 1976, an age so far gone that they probably didn't even have electricity, "
-"let alone anything more advanced, a group of some 20 people met up, longing for the mountains and good company. "
-"They form a hiking group, led by their wish to get away from the noisy city and rest their minds and spirits "
-"in forests and on endless fields... Not much later, the section gets its current name (translated directly from Croatian): "
-"<strong>the Mountaineering, Field-tripping, Heroic, Anti-alcoholic, Unbeatable Society of tentatively put Electronic Engineers </strong>. Short in Croatian"
-"– Pijandure (or in English – Drunkards). It all started with a simple trip to Sljeme on a Sunday and proceeded to be the section we know today. "
-"One of the main missions of the Section, which has to be taken very seriously, is the systemic destruction of our enemies – alcohol and good food. "
-"We organize the Electromountaineering Rally, the PowerTrip, barbecues, the Little Mountaineering School, many trips... "
-"<strong>Trips!</strong> We go on many trips, everywhere, bravely venturing into the unknown and into new adventures! "
-"There's no feeling like enjoying the peace and quiet, with amazing people around you, somewhere on a mountain, "
-"in some woods, on a meadow... <br />"
-"<strong>Tl;dr </strong> we like to dine, have a drink, see a hill or two and hang out with cool people, "
-"you can come along. <br />"
-"*** <br />"
-"We organize both short and longer trips, as well as camping on the Mrežnica river in the summer, "
-"the Little Mountaineering School usually at the end of February, barbecues, hanging out, anything that seems "
-"like a good idea! If nothing else, you can always count on a friendly face from the section to cheer you "
-"up when you come to KSET, tired and saddened by life and college. Everything we do is based on love, "
-"only love, love toward trips, people, company, the section and the Club. The section has members from "
-"different colleges, not just from FER, and although we don't always share colleges or all other interests, "
-"we do share the wish to have good company and go hiking, and it is precisely this that has kept the section alive "
-"for a very long time now. If you're interested in this wonderful, friendly section, you enjoy nature and hiking, "
-"if you have a good taste in beer and food, you should join us! For all info, you can turn to the section leader per e-mail "
-"(julije@kset.org) or just come by KSET on a Friday at 2PM, when the section has its weekly meetings, "
-"and meet the people and the section first-hand."
-
-
+"Way back in 1976, an age so far gone that they probably didn't even have "
+"electricity, let alone anything more advanced, a group of some 20 people met "
+"up, longing for the mountains and good company. They form a hiking group, "
+"led by their wish to get away from the noisy city and rest their minds and "
+"spirits in forests and on endless fields... Not much later, the section gets "
+"its current name (translated directly from Croatian): <strong>the "
+"Mountaineering, Field-tripping, Heroic, Anti-alcoholic, Unbeatable Society "
+"of tentatively put Electronic Engineers </strong>. Short in Croatian– "
+"Pijandure (or in English – Drunkards). It all started with a simple trip to "
+"Sljeme on a Sunday and proceeded to be the section we know today. One of the "
+"main missions of the Section, which has to be taken very seriously, is the "
+"systemic destruction of our enemies – alcohol and good food. We organize the "
+"Electromountaineering Rally, the PowerTrip, barbecues, the Little "
+"Mountaineering School, many trips... <strong>Trips!</strong> We go on many "
+"trips, everywhere, bravely venturing into the unknown and into new "
+"adventures! There's no feeling like enjoying the peace and quiet, with "
+"amazing people around you, somewhere on a mountain, in some woods, on a "
+"meadow... <br /><strong>Tl;dr </strong> we like to dine, have a drink, see a "
+"hill or two and hang out with cool people, you can come along. <br />*** "
+"<br />We organize both short and longer trips, as well as camping on the "
+"Mrežnica river in the summer, the Little Mountaineering School usually at "
+"the end of February, barbecues, hanging out, anything that seems like a good "
+"idea! If nothing else, you can always count on a friendly face from the "
+"section to cheer you up when you come to KSET, tired and saddened by life "
+"and college. Everything we do is based on love, only love, love toward "
+"trips, people, company, the section and the Club. The section has members "
+"from different colleges, not just from FER, and although we don't always "
+"share colleges or all other interests, we do share the wish to have good "
+"company and go hiking, and it is precisely this that has kept the section "
+"alive for a very long time now. If you're interested in this wonderful, "
+"friendly section, you enjoy nature and hiking, if you have a good taste in "
+"beer and food, you should join us! For all info, you can turn to the section "
+"leader per e-mail (julije@kset.org) or just come by KSET on a Friday at 2PM, "
+"when the section has its weekly meetings, and meet the people and the "
+"section first-hand."
 
 #. Translators: Tehnička
-#: templates/divisions/tech.html:5
+#: templates/divisions/tech.html:5 templates/partials/leaders.html:41
 msgid "tech-title"
 msgstr "Tech"
 
@@ -498,25 +587,26 @@ msgstr "Tech"
 #: templates/divisions/tech.html:8
 msgid "tech-desc"
 msgstr ""
-"<p><span>The Tech section of KSET has existed since the very beginning of the Club (way back since "
-"1976), at the beginning of its existance called \"<strong>Zavod za manualni "
-"rad i </strong></span><span><strong> preciznu elektroniku</strong>\" (Department of manual labour and precise electronics).</"
-"span></p> <p>The Sections area of work includes maintaining the  "
-"Club's inventory in (almost) top shape. "
-"</p> <p> The range of work includes "
-"regularly peeking under the lids of many professional audio, video and light systems in the Club. "
-"</span></p> <p> The section also does the"
-"planning and constructing of various (electronic) handcrafted objects, depending on "
-"the needs of the Club, section members or just for fun (of which there is an abundance in KSET). "
-"</p> <p> So: terms such as sawing, drilling, cutting (cables?), leveling, sanding, measuring and soldering "
-"are part of everyday life for a member of this section. </span></p> <p > The section "
-"currently includes some 20 members, who are always ready to help and offer their knowledge to new members.  "
-"</p> <p> If you want to find out what all this looks like in practice, "
-"and you aren't afraid to roll up your sleeves while at it, "
-"then the Tech section is the right place for you! </p> "
+"<p><span>The Tech section of KSET has existed since the very beginning of "
+"the Club (way back since 1976), at the beginning of its existance called "
+"\"<strong>Zavod za manualni rad i </strong></span><span><strong> preciznu "
+"elektroniku</strong>\" (Department of manual labour and precise electronics)."
+"</span></p> <p>The Sections area of work includes maintaining the  Club's "
+"inventory in (almost) top shape. </p> <p> The range of work includes "
+"regularly peeking under the lids of many professional audio, video and light "
+"systems in the Club. </span></p> <p> The section also does theplanning and "
+"constructing of various (electronic) handcrafted objects, depending on the "
+"needs of the Club, section members or just for fun (of which there is an "
+"abundance in KSET). </p> <p> So: terms such as sawing, drilling, cutting "
+"(cables?), leveling, sanding, measuring and soldering are part of everyday "
+"life for a member of this section. </span></p> <p > The section currently "
+"includes some 20 members, who are always ready to help and offer their "
+"knowledge to new members.  </p> <p> If you want to find out what all this "
+"looks like in practice, and you aren't afraid to roll up your sleeves while "
+"at it, then the Tech section is the right place for you! </p> "
 
 #. Translators: Video
-#: templates/divisions/video.html:5
+#: templates/divisions/video.html:5 templates/partials/leaders.html:45
 msgid "video-title"
 msgstr "Video"
 
@@ -524,20 +614,29 @@ msgstr "Video"
 #: templates/divisions/video.html:8
 msgid "video-desc"
 msgstr ""
-"<p>The Video section is an <strong>excentric group of students</strong> of various professions. "
-"We are tied by our love for films. We <strong>direct</strong>, "
-"<strong>write</strong>, <strong>produce</strong>, <strong>act</"
-"strong>, <strong>watch</strong>, <strong>form opinions</strong> "
-"<strong>and do to films</strong> just about anything that can be done to them. Our members "
-"include cameramen and -women, producers, actors, directors, editors, writers, "
-"critics... and not one of us is a professional in their area ... YET!</p> "
-"<p>Other jobs of the Section are also <strong>recording and directing live concerts in KSET </strong>, "
-"<strong>making movie shorts</strong>, reporting on "
-"student events, as well as organizing workshops, for now mostly for our own members. "
-"We've also been organizing movie projections in KSET for a long line of years now. "
-"With our movies, we <strong>take part in festivals</strong>, "
-"where we very often gain a lot of attention. <br /> <br /> Along with all of this, we enjoy"
-"student life, lulled in the loving bosom of KSET .</p> "
+"<p>The Video section is an <strong>excentric group of students</strong> of "
+"various professions. We are tied by our love for films. We <strong>direct</"
+"strong>, <strong>write</strong>, <strong>produce</strong>, <strong>act</"
+"strong>, <strong>watch</strong>, <strong>form opinions</strong> <strong>and "
+"do to films</strong> just about anything that can be done to them. Our "
+"members include cameramen and -women, producers, actors, directors, editors, "
+"writers, critics... and not one of us is a professional in their area ... "
+"YET!</p> <p>Other jobs of the Section are also <strong>recording and "
+"directing live concerts in KSET </strong>, <strong>making movie shorts</"
+"strong>, reporting on student events, as well as organizing workshops, for "
+"now mostly for our own members. We've also been organizing movie projections "
+"in KSET for a long line of years now. With our movies, we <strong>take part "
+"in festivals</strong>, where we very often gain a lot of attention. <br /> "
+"<br /> Along with all of this, we enjoystudent life, lulled in the loving "
+"bosom of KSET .</p> "
+
+#: templates/partials/leaders.html:5
+msgid "club"
+msgstr "Club"
+
+#: templates/partials/leaders.html:49
+msgid "program-contact"
+msgstr "Programme"
 
 #. Translators: Monografija 2^5
 #: templates/projects/monografija.html:6
@@ -549,15 +648,17 @@ msgstr "Monography 2^5"
 msgid "mono-desc-part-1"
 msgstr ""
 "This isn't the first time someone has thought of making a book about KSET, "
-"but it is the first time someone has been able to bring the project to an end..."
+"but it is the first time someone has been able to bring the project to an "
+"end..."
 
 #. Translators: <strong>Monografija KSET-a na petstotrideset i šest (536!) ful kolor stranica</strong>, jedan od velikih projekata foto sekcije, na kojemu je čitavo foto-članstvo radilo gotovo tri godine, kako bi slikom i riječi obuhvatilo
 #: templates/projects/monografija.html:14
 msgid "mono-desc-part-2"
 msgstr ""
-"<strong>The monography of KSET contains five hundred thirty six (536!) full-colour pages </strong>, "
-"one of the biggest projects of the Photo section, on which the entirety of the section "
-"worked for almost three years, so that it could encompass with words and pictures "
+"<strong>The monography of KSET contains five hundred thirty six (536!) full-"
+"colour pages </strong>, one of the biggest projects of the Photo section, on "
+"which the entirety of the section worked for almost three years, so that it "
+"could encompass with words and pictures "
 
 #. Translators: prve 32 godine najdražeg nam Kluba...
 #: templates/projects/monografija.html:16
@@ -568,19 +669,21 @@ msgstr "the first 32 years of our favorite Club..."
 #: templates/projects/monografija.html:18
 msgid "mono-desc-part-4"
 msgstr ""
-"The book is about members of KSET and all their endeavours, great and small, because of which "
-"KSET has become and remained the unforgettable place we all know it to be... all you "
-"can see around you as soon as you go through the door, all of it is a product of the members' work; "
-"from the preparation of the Club's space, through concerts you listen to, the exhibitions hanging on the walls... "
-"And so much more is also done in KSET... we have preserved it so that it would not be lost, forgotten: "
-"From KSET members to KSET members. "
+"The book is about members of KSET and all their endeavours, great and small, "
+"because of which KSET has become and remained the unforgettable place we all "
+"know it to be... all you can see around you as soon as you go through the "
+"door, all of it is a product of the members' work; from the preparation of "
+"the Club's space, through concerts you listen to, the exhibitions hanging on "
+"the walls... And so much more is also done in KSET... we have preserved it "
+"so that it would not be lost, forgotten: From KSET members to KSET members. "
 
 #. Translators: Zavirite i pronađite sliku mame, tate, strica, tetke, sestre, brata, svoju... ili samo provjerite što se sve dešavalo u prostorima kotlovnice u prvih trideset i dvije godine njegova postojanja. I uživajte.
 #: templates/projects/monografija.html:20
 msgid "mono-desc-part-5"
 msgstr ""
-"Take a look and find pictures of your mom, dad, uncle, aunt, brother, sister... "
-"Or just find out what happened in the former boiler room in the first thirty-two years of the Club's existence. And enjoy."
+"Take a look and find pictures of your mom, dad, uncle, aunt, brother, "
+"sister... Or just find out what happened in the former boiler room in the "
+"first thirty-two years of the Club's existence. And enjoy."
 
 #. Translators: PowerTrip
 #: templates/projects/powertrip.html:6
@@ -591,18 +694,22 @@ msgstr "PowerTrip"
 #: templates/projects/powertrip.html:10
 msgid "powertrip-desc"
 msgstr ""
-"It is a technical <strong>student trip</strong> with the purpose of <strong>getting to know "
-"the process behind the creation of electrical energy from various sources of energy</strong>. "
-"The point of POWERTRIP is the education of future MSc and BSc graduates of Electrotechnics about "
-"the ways of acquiring electrical energy out of thermal and nuclear sources. Croatia is a land which "
-"satisfies most of its energetic needs through import. Today there are many discussions about making "
-"up for that import. The goal is to acquaint the future MSc and BSc graduates with the pros and cons "
-"of various solutions and to broaden their knowledge in the field. We want to improve the cooperation "
-"between future graduates and local scientists in order to help the advance of Croatian energetics and economy. "
-"Every year, members of the Mountaneering section help organize POWERTRIP, and some 70 students of FER take part "
-"in it. </p> <p> So far, <strong>numerous facilities all around Croatia and the neighbouring "
-"countries</strong> have been visited. </p> <p>We would hereby like to thank all the professors "
-"of our Faculty, as well as the employees of all visited places for their help and good will."
+"It is a technical <strong>student trip</strong> with the purpose of "
+"<strong>getting to know the process behind the creation of electrical energy "
+"from various sources of energy</strong>. The point of POWERTRIP is the "
+"education of future MSc and BSc graduates of Electrotechnics about the ways "
+"of acquiring electrical energy out of thermal and nuclear sources. Croatia "
+"is a land which satisfies most of its energetic needs through import. Today "
+"there are many discussions about making up for that import. The goal is to "
+"acquaint the future MSc and BSc graduates with the pros and cons of various "
+"solutions and to broaden their knowledge in the field. We want to improve "
+"the cooperation between future graduates and local scientists in order to "
+"help the advance of Croatian energetics and economy. Every year, members of "
+"the Mountaneering section help organize POWERTRIP, and some 70 students of "
+"FER take part in it. </p> <p> So far, <strong>numerous facilities all around "
+"Croatia and the neighbouring countries</strong> have been visited. </p> "
+"<p>We would hereby like to thank all the professors of our Faculty, as well "
+"as the employees of all visited places for their help and good will."
 
 #. Translators: Rally
 #: templates/projects/rally.html:6
@@ -613,28 +720,36 @@ msgstr "Rally"
 #: templates/projects/rally.html:10
 msgid "rally-desc"
 msgstr ""
-"Have you ever wanted to go walk in the woods with a group of friends? "
-"Play the best of games while people around you glorify you? "
-"Try and find the most creative answers to questions given to you? "
-"Happily eat amazing ćevapi? And have <strong>the most fun of your entire life </strong> while at it? "
-"Then you've come to the right place! For those who may not know, the <strong> Global Electromountaineering Hiking Rally </strong> (Svjetski Elektroplaninarski pješački rally) "
-"is an annual competition between numerous teams, whose goal is to get from start to finish "
-"as soon as possible, answering questions and playing crazy games on the way. "
-"The competition is organized by the Mountaineering Section of KSET (P.I.J.A.N.D.U.R.E.), "
-"and the competitors are people and centaurs of all ages, colours and dietary habits, all in teams of 4-10 people, "
-"with an overall number of up to 200. The competitors arrive early in the morning to a well-prepared course on a previously unknown "
-"location and are given, at every checkpoint, a paper with questions and instructions to the next checkpoint. "
-"The questions are of a general knowledge nature, whereas the games given vary greatly in topics. "
-"Winning depends on bravery, resourcefulness, capability of eating and drinking, creativity and willingness to "
-"sacrifice yourself for your team. On the way, you have the unique opportunity to meet people from other teams, "
-"as well as the wonderful organizers of the Rally from the Mountaineering section! New friendships all around! "
-"And there are also some sausages and ćevapi and such... <br />"
-"*** <br />"
-"Taking part in the competition includes a  ride to the start, a t-shirt for every contestant, "
-"food at the middle and end of the course, beer, "
-"wine and juice to your heart's content or until it is all gone, as well as a ride back to KSET, "
-"where there is an official diploma ceremony and an after-party. The Rally takes place every year, "
-"so this year, 2016, a round <strong> 40th </strong>Rally will be held, celebrating its birthday together with KSET! "
-"For all details, you can turn to the leader of the Mountaineering Section per e-mail (julije@kset.org), "
-"and if you are more of a face-to-face type, you can always stop by KSET and ask for someone from the Section at the bar. "
-"You can also sit down for a warm coffee or some juice with other KSET members and ask them about their previous Rally experiences."
+"Have you ever wanted to go walk in the woods with a group of friends? Play "
+"the best of games while people around you glorify you? Try and find the most "
+"creative answers to questions given to you? Happily eat amazing ćevapi? And "
+"have <strong>the most fun of your entire life </strong> while at it? Then "
+"you've come to the right place! For those who may not know, the <strong> "
+"Global Electromountaineering Hiking Rally </strong> (Svjetski "
+"Elektroplaninarski pješački rally) is an annual competition between numerous "
+"teams, whose goal is to get from start to finish as soon as possible, "
+"answering questions and playing crazy games on the way. The competition is "
+"organized by the Mountaineering Section of KSET (P.I.J.A.N.D.U.R.E.), and "
+"the competitors are people and centaurs of all ages, colours and dietary "
+"habits, all in teams of 4-10 people, with an overall number of up to 200. "
+"The competitors arrive early in the morning to a well-prepared course on a "
+"previously unknown location and are given, at every checkpoint, a paper with "
+"questions and instructions to the next checkpoint. The questions are of a "
+"general knowledge nature, whereas the games given vary greatly in topics. "
+"Winning depends on bravery, resourcefulness, capability of eating and "
+"drinking, creativity and willingness to sacrifice yourself for your team. On "
+"the way, you have the unique opportunity to meet people from other teams, as "
+"well as the wonderful organizers of the Rally from the Mountaineering "
+"section! New friendships all around! And there are also some sausages and "
+"ćevapi and such... <br />*** <br />Taking part in the competition includes "
+"a  ride to the start, a t-shirt for every contestant, food at the middle and "
+"end of the course, beer, wine and juice to your heart's content or until it "
+"is all gone, as well as a ride back to KSET, where there is an official "
+"diploma ceremony and an after-party. The Rally takes place every year, so "
+"this year, 2016, a round <strong> 40th </strong>Rally will be held, "
+"celebrating its birthday together with KSET! For all details, you can turn "
+"to the leader of the Mountaineering Section per e-mail (julije@kset.org), "
+"and if you are more of a face-to-face type, you can always stop by KSET and "
+"ask for someone from the Section at the bar. You can also sit down for a "
+"warm coffee or some juice with other KSET members and ask them about their "
+"previous Rally experiences."

@@ -16,7 +16,7 @@
 
         <div class="search-box">
             <form id="form-search" class="form-search" method="GET" action="{% url 'search' %}">
-                <input id="input-search" class="input-search" type="text" name="query" placeholder="Search me"/>
+                <input id="input-search" class="input-search" type="text" name="query" placeholder="{% trans "search" %}"/>
             </form>
         </div>
 
@@ -36,19 +36,22 @@
                 {% csrf_token %}
 
                 <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription"
-                       placeholder="Vaša e-mail adresa"/>
+                       {# Translators: Vaša e-mail adresa #}
+                       placeholder="{% trans "email.placeholder" %}"/>
                 <input type="button" id="newsletter-submit" class="newsletter-submit" value="OK"/>
                 <!-- TODO: CAPTCHA -->
             </form>
 
-            <p id="newsletter-message" style="text-weight: bold; display: none;">Poruka!</p>
+            {# Translators: Poruka #}
+            <p id="newsletter-message" style="text-weight: bold; display: none;">{% trans "message" %}!</p>
         </div>
 
         <div class="vsep"></div>
 
         {% if latest %}
             <div class="right-box gallery-box">
-                <h3 class="right-box-title">Foto galerija</h3>
+                {# Translators: Foto galerija #}
+                <h3 class="right-box-title">{% trans "foto_gallery" %}</h3>
 
                 {% if latest %}
                     {% for a in latest %}
@@ -65,7 +68,8 @@
 
         {% if sticky_news %}
             <div class="right-box sticky-news-box">
-                <h3 class="right-box-title">Obavijesti</h3>
+                {# Translators: Obavijesti #}
+                <h3 class="right-box-title">{% trans "notifications" %}</h3>
                 {% for news in sticky_news %}
                     <a href="{% url 'news_slug' slug=news.slug %}">
                         <img src="{% version news.thumb 'semibig' %}"/>
@@ -77,18 +81,21 @@
         {% endif %}
 
         <div class="fer-box">
-            <h3 class="right-box-title">Uvijek je tu za nas</h3>
+            {# Translators: Uvijek je tu za nas #}
+            <h3 class="right-box-title">{% trans "fer_logo_title" %}</h3>
 
             <a href="http://www.fer.hr/" class="logo-fer">
                 <img src="{{ STATIC_URL }}images/logos/fer.png" alt="Fakultet elektrotehnike i računarstva">
-                <p>Fakultet elektrotehnike <br> i računarstva</p>
+                {# Translators: Fakultet elektrotehnike <br> i računarstva #}
+                <p>{% trans "fer" %}</p>
             </a>
         </div>
 
         <div class="vsep"></div>
 
         <div class="uticnice-box">
-            <h3 class="right-box-title">Utičnice</h3>
+            {# Translators: Utičnice #}
+            <h3 class="right-box-title">{% trans "plugs" %}</h3>
 
       <p>
         <a href="http://www.sczg.hr/" target="_blank">Studentski centar</a><br />

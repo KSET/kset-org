@@ -1,14 +1,15 @@
+{% load i18n %}
 <a id="cal_prev_month" href="javascript:GetCalendar({{ previous_date|date:"Y,n,d" }})">&laquo;</a>
 <a href="#" class="month">{{ current_date|date:"F 'y" }}</a>
 <a id="cal_next_month" href="javascript:GetCalendar({{ next_date|date:"Y,n,d" }})">&raquo;</a>
 
-<span>P</span>
-<span>U</span>
-<span>S</span>
-<span>Č</span>
-<span>P</span>
-<span>S</span>
-<span>N</span>
+<span>{% trans "monday.first_letter" %}</span>
+<span>{% trans "tuesday.first_letter" %}</span>
+<span>{% trans "wednesday.first_letter" %}</span>
+<span>{% trans "thursday.first_letter" %}</span>
+<span>{% trans "friday.first_letter" %}</span>
+<span>{% trans "saturday.first_letter" %}</span>
+<span>{% trans "sunday.first_letter" %}</span>
 
 {% for day, class in dates %}
 

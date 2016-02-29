@@ -3,14 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-24 18:34+0100\n"
+"POT-Creation-Date: 2016-02-29 21:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Anamarija Miličević <anamarija.mili@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -28,33 +27,33 @@ msgid "English"
 msgstr "Engleski"
 
 #. Translators: Klub Studenata ElektroTehnike
-#: templates/404.html:31 templates/club.html:8 templates/index.html:40
+#: templates/404.html:31 templates/club.html:8 templates/index.html:42
 #: templates/newsletter.html:93
 msgid "description-short"
 msgstr "Klub Studenata ElektroTehnike"
 
 #. Translators: NASLOVNICA
-#: templates/404.html:56 templates/index.html:72
+#: templates/404.html:56 templates/index.html:90
 msgid "homepage"
 msgstr "NASLOVNICA"
 
 #. Translators: O KLUBU
-#: templates/404.html:57 templates/index.html:74
+#: templates/404.html:57 templates/index.html:92
 msgid "about"
 msgstr "O KLUBU"
 
 #. Translators: MULTIMEDIA
-#: templates/404.html:58 templates/index.html:77
+#: templates/404.html:58 templates/index.html:95
 msgid "multimedia"
 msgstr "MULTIMEDIA"
 
 #. Translators: VIJESTI
-#: templates/404.html:59 templates/index.html:79
+#: templates/404.html:59 templates/index.html:97
 msgid "news"
 msgstr "VIJESTI"
 
 #. Translators: PROGRAM
-#: templates/404.html:60 templates/index.html:81
+#: templates/404.html:60 templates/index.html:99
 msgid "program"
 msgstr "PROGRAM"
 
@@ -66,7 +65,7 @@ msgstr ""
 "Universe."
 
 #. Translators: <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br /><i>... prvi put otvorio vrata <b>1976.</b></i>
-#: templates/404.html:90 templates/index.html:110
+#: templates/404.html:90 templates/index.html:128
 msgid "footer"
 msgstr ""
 "<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</"
@@ -96,6 +95,34 @@ msgstr ""
 "Kontakt osoba za ažuriranje podataka i održavanje alumni@kset.org mailing "
 "liste:"
 
+#: templates/calendar.html:6
+msgid "monday.first_letter"
+msgstr "P"
+
+#: templates/calendar.html:7
+msgid "tuesday.first_letter"
+msgstr "U"
+
+#: templates/calendar.html:8
+msgid "wednesday.first_letter"
+msgstr "S"
+
+#: templates/calendar.html:9
+msgid "thursday.first_letter"
+msgstr "Č"
+
+#: templates/calendar.html:10
+msgid "friday.first_letter"
+msgstr "P"
+
+#: templates/calendar.html:11
+msgid "saturday.first_letter"
+msgstr "S"
+
+#: templates/calendar.html:12
+msgid "sunday.first_letter"
+msgstr "N"
+
 #. Translators: O klubu
 #: templates/club.html:4
 msgid "about-title"
@@ -107,45 +134,45 @@ msgid "club-description-full"
 msgstr ""
 "<p>To je bivša <strong>kotlovnica</strong> smještena na sjeveroistočnom uglu "
 "najboljeg fakulteta na svijetu(i pored C zgrade FER-a). Neki ljudi tvrde da "
-"je <strong>\"Rupa\"</strong> unatoč brojnim nelogičnostimate izjave. Za "
+"je <strong>\"Rupa\"</strong> unatoč brojnim nelogičnostima te izjave. Za "
 "početak, Rupa je mjesto u sjeverozapadnoj Hrvatskoj na granici sa Slovenijom."
-"</p> <p>Iako<strong>Klub u kotlovnici postoji od 1976.</strong>, njegova "
-"povijest seže puno dalje. Tadašnji Studentskisavez osnovan je <strong>1969.</"
-"strong> i služio je isključivo članovima nekolicine sekcija za razbibrigui "
+"</p> <p>Iako<strong> Klub u kotlovnici postoji od 1976.</strong>, njegova "
+"povijest seže puno dalje. Tadašnji Studentski savez osnovan je <strong>1969.</"
+"strong> i služio je isključivo članovima nekolicine sekcija za razbibrigu i "
 "životne dileme svakog studenta: <em>„Idemo na kavu ili predavanje?“</em>. Iz "
 "potrebe za zvučnim imenom,<strong>1971.</strong> Klub je dobio ime KSET, a "
-"samo pet godina kasnije postao <strong>kultno mjesto nakoje se svi rado "
+"samo pet godina kasnije postao <strong>kultno mjesto na koje se svi rado "
 "vraćaju</strong>, ne samo studenti FER-a već i drugih fakulteta.</p> <p>Klub "
 "funkcionira vrlo dobro, hvala na pitanju, i u njemu danas <strong>aktivno "
-"volontira gotovo300 volontera u 9 sekcija</strong>: <strong>bike</strong> "
-"(profesionalni obožavatelji međunožnihgurala i vožnji po brdima), "
-"<strong>disco</strong> (za kemijanje po mikseti),<strong>dramska</strong> "
+"volontira gotov o300 volontera u 9 sekcija</strong>: <strong>bike</strong> "
+"(profesionalni obožavatelji međunožnih gurala i vožnji po brdima), "
+"<strong>disco</strong> (za kemijanje po mikseti), <strong>dramska</strong> "
 "(dok ne glume na pozornici, čitaju poeziju), <strong>računarska</strong> (za "
 "prave <em>geekove</em> i one koji se tako osjećaju), <strong>tehnička</"
 "strong>(za manualni rad i popravke popravaka), <strong>glazbena</strong> "
 "(propali glazbenici koji su se bacili u opremanje, a zapravo imaju tajni "
-"bend), <strong>planinarska</strong>a.k.a. P.I.J.A.N.D.U.R.E. (s redovitim "
-"gubljenjem po šumama upoznaju prirodu isvoj unutrašnji mir), <strong>video</"
+"bend), <strong>planinarska</strong> a.k.a. P.I.J.A.N.D.U.R.E. (s redovitim "
+"gubljenjem po šumama upoznaju prirodu i svoj unutrašnji mir), <strong>video</"
 "strong> (snimaju neugodne filmiće) i <strong>foto</strong>(umjetnici s "
 "pravim aparatima i najviše žena u sekciji). Više o njima možete saznati "
-"kasnijeili navratite do KSET-a i pitajte prvu osobu na koju naiđete. </p> "
-"<p>Sada koja riječ o nekimadministrativnim stvarima. <strong>KSET je klub "
-"studenata volontera.</strong> To znači dasve što radimo je rezultat "
+"kasnije ili navratite do KSET-a i pitajte prvu osobu na koju naiđete. </p> "
+"<p>Sada koja riječ o nekim administrativnim stvarima. <strong>KSET je klub "
+"studenata volontera.</strong> To znači da sve što radimo je rezultat "
 "činjenice da nemamo pametnijeg posla u životu. Zašto bi to itko radio?"
-"<strong>Jer je zabavno.</strong> KSET postane mjesto na kojem možete "
-"<strong>popiti kavu</strong>,sjesti s <strong>prijateljima</strong> i "
+"<strong> Jer je zabavno.</strong> KSET postane mjesto na kojem možete "
+"<strong>popiti kavu</strong>, sjesti s <strong>prijateljima</strong> i "
 "<strong>kartati</strong> ili <strong>surfati</strong> u pauzama između "
 "predavanja ili se na kraju dana opustiti uz <strong>šah ili dobar film.</"
 "strong></p> <p>Za vrijeme ispita Klub se pretvara u mjesto u kojem svi uče, "
-"ali će članovi uvijek izdvojiti vremena da vam pokažu zadatak koji neznate "
+"ali će članovi uvijek izdvojiti vremena da vam pokažu zadatak koji ne znate "
 "riješiti ili pojasniti nešto što vam je jasno kao i poljoprivreda Eskimu. U "
 "svakoj sekciji može se <strong>primijeniti ili proširiti znanje</strong> "
 "stečeno na fakultetu(čak i u planinarskoj) i skupiti hrpu prijatelja. Ne "
-"kaže se bezveze da je rad u KSET-u jednood najvećih i najboljih iskustava u "
-"životu.</p> <p>Ono što <strong>članstvom</strong> u KSET-umožete dobiti su "
+"kaže se bezveze da je rad u KSET-u jedno od najvećih i najboljih iskustava u "
+"životu.</p> <p>Ono što <strong>članstvom</strong> u KSET-u možete dobiti su "
 "mogućnost korištenja opreme Kluba, besplatne upade srijedom na različite "
-"slušaonicei petkom na kultni <strong>KSET Caffe,</strong> druženje s "
-"najboljom ekipom na svijetui još mnogo toga... Čitajte dalje ili dođite bilo "
+"slušaonice i petkom na kultni <strong>KSET Caffe,</strong> druženje s "
+"najboljom ekipom na svijetu i još mnogo toga... Čitajte dalje ili dođite bilo "
 "koji dan u Klub i saznajte sami...</p>"
 
 #. Translators: Odaberi godinu ...
@@ -253,24 +280,22 @@ msgid "short-movie-clips"
 msgstr "Kratki filmovi"
 
 #. Translators: ČLANOVI
-#: templates/index.html:67
+#: templates/index.html:85
 msgid "members"
 msgstr "ČLANOVI"
 
 #. Translators: DEŽURSTVA
-#: templates/index.html:69
+#: templates/index.html:87
 msgid "duties"
 msgstr "DEŽURSTVA"
 
 #. Translators: Multimedija
 #: templates/multimedia.html:6
-#, fuzzy
 msgid "multimedia-title"
 msgstr "MULTIMEDIA"
 
 #. Translators: Arhiva novosti
 #: templates/news-archive.html:5
-#, fuzzy
 msgid "news-archive-title"
 msgstr "galerija fotografija s koncerata održanih u KSET-u"
 
@@ -297,7 +322,7 @@ msgstr "Večernji program"
 #. Translators: Newsletter Vam se dobro ne prikazuje? Uf :/ Posjetite
 #: templates/newsletter.html:19
 msgid "newsletter-error-message"
-msgstr "ewsletter Vam se dobro ne prikazuje? Uf :/ Posjetite"
+msgstr "Newsletter Vam se dobro ne prikazuje? Uf :/ Posjetite"
 
 #. Translators: Program kluba od
 #: templates/newsletter.html:53
@@ -308,6 +333,45 @@ msgstr "Program kluba od"
 #: templates/newsletter.html:84
 msgid "more-capitalized"
 msgstr "Opširnije"
+
+#: templates/program.html:19
+msgid "search"
+msgstr "Pretraga"
+
+#. Translators: Vaša e-mail adresa
+#: templates/program.html:40
+msgid "email.placeholder"
+msgstr "Vaša e-mail adresa"
+
+#. Translators: Poruka
+#: templates/program.html:46
+msgid "message"
+msgstr "Poruka"
+
+#. Translators: Foto galerija
+#: templates/program.html:54
+msgid "foto_gallery"
+msgstr "Foto galerija"
+
+#. Translators: Obavijesti
+#: templates/program.html:72
+msgid "notifications"
+msgstr "Obavijesti"
+
+#. Translators: Uvijek je tu za nas
+#: templates/program.html:85
+msgid "fer_logo_title"
+msgstr "Uvijek je tu za nas"
+
+#. Translators: Fakultet elektrotehnike <br> i računarstva
+#: templates/program.html:90
+msgid "fer"
+msgstr "Fakultet elektrotehnike <br> i računarstva"
+
+#. Translators: Utičnice
+#: templates/program.html:98
+msgid "plugs"
+msgstr "Utičnice"
 
 #. Translators: Pretraga
 #: templates/search.html:4
@@ -375,7 +439,7 @@ msgid "projects"
 msgstr "Projekti"
 
 #. Translators: Bike
-#: templates/divisions/bike.html:5
+#: templates/divisions/bike.html:5 templates/partials/leaders.html:13
 msgid "bike-title"
 msgstr "Bike"
 
@@ -415,7 +479,7 @@ msgstr ""
 "na mail!</p> "
 
 #. Translators: Računarska
-#: templates/divisions/comp.html:6
+#: templates/divisions/comp.html:6 templates/partials/leaders.html:37
 msgid "comp"
 msgstr "Računarska"
 
@@ -449,7 +513,7 @@ msgstr ""
 "trenutnom voditelju sekcije.</strong> </p>"
 
 #. Translators: Disco
-#: templates/divisions/disco.html:5
+#: templates/divisions/disco.html:5 templates/partials/leaders.html:17
 msgid "disco-title"
 msgstr "Disco"
 
@@ -504,7 +568,7 @@ msgstr ""
 "vidimo se u KSET-u!</p> "
 
 #. Translators: Dramska
-#: templates/divisions/drama.html:5
+#: templates/divisions/drama.html:5 templates/partials/leaders.html:21
 msgid "drama-title"
 msgstr "Dramska"
 
@@ -516,7 +580,7 @@ msgstr ""
 "<strong>režija</strong>? Želiš <strong>biti ili ne biti</strong>? Želiš biti "
 "Romeo, Romeo, zašto <strong>Romeo</strong>? Dao bi kraljevstvo za "
 "<strong>konja</strong>? Želiš ubiti svoju <strong>majku</strong>, a da ona "
-"to ne zna? Potraži <strong>psihološku</strong>pomoć ili dođi u dramsku "
+"to ne zna? Potraži <strong>psihološku</strong> pomoć ili dođi u dramsku "
 "sekciju KSET-a!</p> <p>A što to dramska sekcija radi? Pa ono što bi i "
 "trebala :-D <strong>Postavlja predstave na KSET-ovske daske</strong> koje "
 "život znače i dovodi druge predstave u ovaj prostor. Dramska sekcija je "
@@ -535,7 +599,7 @@ msgstr ""
 "možeš odglumiti da to radiš</strong>?</p>"
 
 #. Translators: Foto
-#: templates/divisions/foto.html:6
+#: templates/divisions/foto.html:6 templates/partials/leaders.html:25
 msgid "foto-title"
 msgstr "Foto"
 
@@ -562,8 +626,7 @@ msgstr ""
 "org</a> </p> "
 
 #. Translators: Glazbena
-#: templates/divisions/music.html:5
-#, fuzzy
+#: templates/divisions/music.html:5 templates/partials/leaders.html:29
 msgid "music-title"
 msgstr "Glazbena"
 
@@ -643,7 +706,7 @@ msgstr ""
 "programa u Hrvatskoj. </p> "
 
 #. Translators: Pijandure
-#: templates/divisions/pijandure.html:6
+#: templates/divisions/pijandure.html:6 templates/partials/leaders.html:33
 msgid "pi-title"
 msgstr "Pijandure"
 
@@ -684,7 +747,7 @@ msgstr ""
 "i iz prve ruke se upoznati s ljudima i radom sekcije. </p> "
 
 #. Translators: Tehnička
-#: templates/divisions/tech.html:5
+#: templates/divisions/tech.html:5 templates/partials/leaders.html:41
 msgid "tech-title"
 msgstr "Tehnička"
 
@@ -711,7 +774,7 @@ msgstr ""
 "rukave tehnička sekcija je pravo mjesto za vas!</p> "
 
 #. Translators: Video
-#: templates/divisions/video.html:5
+#: templates/divisions/video.html:5 templates/partials/leaders.html:45
 msgid "video-title"
 msgstr "Video"
 
@@ -733,6 +796,14 @@ msgstr ""
 "godina. Sa filmskim uratcima <strong>sudjelujemo na festivalima</strong> "
 "gdje smo nerjetko bili primjećeni. <br /> <br />Uz sve to uživamo u "
 "studentskom životu uzibani u divnim njedrima KSET-a .</p> "
+
+#: templates/partials/leaders.html:5
+msgid "club"
+msgstr "Klub"
+
+#: templates/partials/leaders.html:49
+msgid "program-contact"
+msgstr "Program"
 
 #. Translators: Monografija 2^5
 #: templates/projects/monografija.html:6
