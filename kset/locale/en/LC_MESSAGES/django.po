@@ -413,6 +413,26 @@ msgstr "Computing"
 #: templates/divisions/comp.html:8
 msgid "comp-desc"
 msgstr ""
+"<p>The Computing section of KSET has been maintaining and upkeeping the "
+"IT infrastructure of KSET and live streaming various cultural events organized "
+"in KSET with the help of CARNet. To realize its projects, the Section uses open-source "
+"and free technologies. </p> <p> <strong> <br /> <br />* Some of the most "
+"challenging jobs, physically and mentally, <strong>include all kinds of (un)imaginable "
+"Linux Sysadmin jobs (sometimes also other OS) ) <br />*, maintaining and "
+"upgrading the IT net in KSET, working in numerous programming languages, "
+"<br />* streaming (in cooperation with CARNet) <br />*, offering free web "
+"hosting (and e-mail) to student organizations<br />*, maintaining the KSET web site<br />*, 
+"holding courses for eager students <br />* and so on, and so forth. "
+"</p> <p>The section has some 30 members, "
+"almost as many computers running GNU/Linux (Debian, Ubuntu), BSD and Windows, "
+"also a couple kilometres of UTP, a couple of switches, an imposing RACK... "
+"If any one of the mentioned terms brings a smile to your face, you want to have "
+"fun while at it, and you're also a student, feel free to join us! We're always looking "
+"for new, promising members with a broad area of technical interests and a wish to "
+"work in a group atmosphere. If you're a student and find yourself in the "
+"above-mentioned description, <strong>come to our meeting, Fridays at 6 PM, "
+"or contact the current section leader per e-mail</strong>."
+
 
 #. Translators: Disco
 #: templates/divisions/disco.html:5 templates/partials/leaders.html:17
@@ -439,7 +459,7 @@ msgstr ""
 "You would give your kingdom for a <strong>horse</strong>? "
 "Do you wish to kill your <strong>mother</strong>, without her knowing? 
 "Look for <strong>psychological</strong> help or come to the Drama section of KSET! "
- "</p> <p> And what does the Drama section do? "
+"</p> <p> And what does the Drama section do? "
 "Well, exactly what it should! :-D It <strong>puts shows on the stage of "
 "KSET</strong> and brings other shows there, too. The Drama section is "
 "the youngest of all the sections, finally rebuilt in 2009 after some 20 years "
