@@ -433,6 +433,27 @@ msgstr "Drama"
 #: templates/divisions/drama.html:8
 msgid "drama-desc"
 msgstr ""
+"<p>Are you interested in <strong>drama, acting, directing</strong>? "
+"Do you want <strong>to be or not to be</strong>? Do you want to be "
+"Romeo, Romeo, Romeo, wherefore art thou <strong>Romeo</strong>? " 
+"You would give your kingdom for a <strong>horse</strong>? "
+"Do you wish to kill your <strong>mother</strong>, without her knowing? 
+"Look for <strong>psychological</strong> help or come to the Drama section of KSET! "
+ "</p> <p> And what does the Drama section do? "
+"Well, exactly what it should! :-D It <strong>puts shows on the stage of "
+"KSET</strong> and brings other shows there, too. The Drama section is "
+"the youngest of all the sections, finally rebuilt in 2009 after some 20 years "
+"of hiatus. So far, the Section has had many of its own shows in KSET, "
+"as well as guest appearances. </p> <p>"
+"New members of all interests are gladly "
+"accepted, including anything related to theater: acting, writing, directing, "
+"lights, scenography, writing music, carrying nails (apparently the most "
+"famous position in a theater) and anything else you can imagine being "
+"necessary to create a play. </p> <p>So why the Drama section and not some "
+"other one? Well, damn it, why would you make electronic circuits, "
+"change light bulbs, write programmes, take photos or go mountaineering "
+"when you can simply act like you're doing all those things? </p>"
+
 
 #. Translators: Foto
 #: templates/divisions/foto.html:6 templates/partials/leaders.html:25
