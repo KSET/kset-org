@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-29 21:11+0100\n"
+"POT-Creation-Date: 2016-03-03 00:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Anamarija Miličević <anamarija.mili@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,11 +137,11 @@ msgstr ""
 "je <strong>\"Rupa\"</strong> unatoč brojnim nelogičnostima te izjave. Za "
 "početak, Rupa je mjesto u sjeverozapadnoj Hrvatskoj na granici sa Slovenijom."
 "</p> <p>Iako<strong> Klub u kotlovnici postoji od 1976.</strong>, njegova "
-"povijest seže puno dalje. Tadašnji Studentski savez osnovan je <strong>1969.</"
-"strong> i služio je isključivo članovima nekolicine sekcija za razbibrigu i "
-"životne dileme svakog studenta: <em>„Idemo na kavu ili predavanje?“</em>. Iz "
-"potrebe za zvučnim imenom,<strong>1971.</strong> Klub je dobio ime KSET, a "
-"samo pet godina kasnije postao <strong>kultno mjesto na koje se svi rado "
+"povijest seže puno dalje. Tadašnji Studentski savez osnovan je <strong>1969."
+"</strong> i služio je isključivo članovima nekolicine sekcija za razbibrigu "
+"i životne dileme svakog studenta: <em>„Idemo na kavu ili predavanje?“</em>. "
+"Iz potrebe za zvučnim imenom,<strong>1971.</strong> Klub je dobio ime KSET, "
+"a samo pet godina kasnije postao <strong>kultno mjesto na koje se svi rado "
 "vraćaju</strong>, ne samo studenti FER-a već i drugih fakulteta.</p> <p>Klub "
 "funkcionira vrlo dobro, hvala na pitanju, i u njemu danas <strong>aktivno "
 "volontira gotov o300 volontera u 9 sekcija</strong>: <strong>bike</strong> "
@@ -172,8 +172,8 @@ msgstr ""
 "životu.</p> <p>Ono što <strong>članstvom</strong> u KSET-u možete dobiti su "
 "mogućnost korištenja opreme Kluba, besplatne upade srijedom na različite "
 "slušaonice i petkom na kultni <strong>KSET Caffe,</strong> druženje s "
-"najboljom ekipom na svijetu i još mnogo toga... Čitajte dalje ili dođite bilo "
-"koji dan u Klub i saznajte sami...</p>"
+"najboljom ekipom na svijetu i još mnogo toga... Čitajte dalje ili dođite "
+"bilo koji dan u Klub i saznajte sami...</p>"
 
 #. Translators: Odaberi godinu ...
 #: templates/events-archive.html:10
@@ -264,6 +264,11 @@ msgstr "Uživajte!"
 #: templates/gallery_spec.html:30
 msgid "soon"
 msgstr "Uskoro..."
+
+#. Translators: Danas
+#: templates/header-scroll.html:22
+msgid "today"
+msgstr "Danas"
 
 #: templates/header-scroll.html:38
 msgid "from"

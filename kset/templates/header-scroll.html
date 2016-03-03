@@ -19,7 +19,7 @@
       <div class="item-top">
         <time class="date" itemprop="startDate" datetime="{{ event.date|date:"c" }}">
             {# Translators: Danas #}
-            {% if event.date == today %}<span class="scroll-today">{% trans today %}</span>{% endif %}
+            {% if event.date == today %}<span class="scroll-today">{% trans "today" %}</span>{% endif %}
             {{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small>
         </time>
         <span class="item-top-title" itemprop="name">{{ event.title }}</span>
