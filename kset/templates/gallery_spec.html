@@ -1,8 +1,9 @@
 {% extends 'index.html' %}
+{% load i18n %}
 {% load fb_versions %}
 
 
-{% block title %} - Foto Galerija{% endblock title %}
+{% block title %} - {% trans "foto-gallery-title" %}{% endblock title %}
 
 {% block content %}
 
@@ -25,7 +26,8 @@
 
             </h2>
         {% else %}
-            <div>Uskoro... </div>
+            {# Translators: Uskoro...  #}
+            <div>{% trans "soon" %}</div>
         {% endif %}
 
 

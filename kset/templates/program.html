@@ -1,92 +1,101 @@
 {% extends 'index.html' %}
+{% load i18n %}
 {% load fb_versions %}
 
 {% block content %}
 
-<section id="left" class="left-column">
+    <section id="left" class="left-column">
 
-  {% block leftcolumn %}
+        {% block leftcolumn %}
 
-  {% endblock %}
+        {% endblock %}
 
-</section>
+    </section>
 
-<aside id="right" class="right-column">
+    <aside id="right" class="right-column">
 
-  <div class="search-box">
-    <form id="form-search" class="form-search" method="GET" action="{% url 'search' %}">
-      <input id="input-search" class="input-search" type="text" name="query" placeholder="Search me"/>
-    </form>
-  </div>
+        <div class="search-box">
+            <form id="form-search" class="form-search" method="GET" action="{% url 'search' %}">
+                <input id="input-search" class="input-search" type="text" name="query" placeholder="{% trans "search" %}"/>
+            </form>
+        </div>
 
-  <div class="vsep"></div>
+        <div class="vsep"></div>
 
-    <div class="calendar-box">
-      <div id="calendar" class="calendar"></div>
-    </div>
+        <div class="calendar-box">
+            <div id="calendar" class="calendar"></div>
+        </div>
 
-  <div class="vsep"></div>
+        <div class="vsep"></div>
 
-  <div class="newsletter-box">
+        <div class="newsletter-box">
 
-      <h3 class="right-box-title">Newsletter</h3>
+            <h3 class="right-box-title">Newsletter</h3>
 
-        <form id="form-newsletter" class="form-newsletter">
-            {% csrf_token %}
+            <form id="form-newsletter" class="form-newsletter">
+                {% csrf_token %}
 
-            <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription" placeholder="Vaša e-mail adresa" />
-            <input type="button" id="newsletter-submit" class="newsletter-submit" value="OK" />
-            <!-- TODO: CAPTCHA -->
-        </form>
+                <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription"
+                       {# Translators: Vaša e-mail adresa #}
+                       placeholder="{% trans "email.placeholder" %}"/>
+                <input type="button" id="newsletter-submit" class="newsletter-submit" value="OK"/>
+                <!-- TODO: CAPTCHA -->
+            </form>
 
-      <p id="newsletter-message" style="text-weight: bold; display: none;">Poruka!</p>
-  </div>
+            {# Translators: Poruka #}
+            <p id="newsletter-message" style="text-weight: bold; display: none;">{% trans "message" %}!</p>
+        </div>
 
-  <div class="vsep"></div>
-
-{% if latest %}
-    <div class="right-box gallery-box">
-      <h3 class="right-box-title">Foto galerija</h3>
+        <div class="vsep"></div>
 
         {% if latest %}
-          {% for a in latest %}
-            <a href="{% url 'gallery_view_album' category=a.category album_slug=a.slug %}">
-              <img src="{% version a.thumb 'semibig' %}"/>
-            </a>
-            <p>{{ a.title }}</p>
-          {% endfor %}
+            <div class="right-box gallery-box">
+                {# Translators: Foto galerija #}
+                <h3 class="right-box-title">{% trans "foto_gallery" %}</h3>
+
+                {% if latest %}
+                    {% for a in latest %}
+                        <a href="{% url 'gallery_view_album' category=a.category album_slug=a.slug %}">
+                            <img src="{% version a.thumb 'semibig' %}"/>
+                        </a>
+                        <p>{{ a.title }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="vsep"></div>
         {% endif %}
-    </div>
 
-    <div class="vsep"></div>
-{% endif %}
+        {% if sticky_news %}
+            <div class="right-box sticky-news-box">
+                {# Translators: Obavijesti #}
+                <h3 class="right-box-title">{% trans "notifications" %}</h3>
+                {% for news in sticky_news %}
+                    <a href="{% url 'news_slug' slug=news.slug %}">
+                        <img src="{% version news.thumb 'semibig' %}"/>
+                    </a>
+                    <p>{{ news.subject }}</p>
+                {% endfor %}
+            </div>
+            <div class="vsep"></div>
+        {% endif %}
 
-{% if sticky_news %}
-    <div class="right-box sticky-news-box">
-      <h3 class="right-box-title">Obavijesti</h3>
-      {% for news in sticky_news %}
-        <a href="{% url 'news_slug' slug=news.slug %}">
-          <img src="{% version news.thumb 'semibig' %}"/>
-        </a>
-        <p>{{ news.subject }}</p>
-      {% endfor %}
-    </div>
-    <div class="vsep"></div>
-{% endif %}
+        <div class="fer-box">
+            {# Translators: Uvijek je tu za nas #}
+            <h3 class="right-box-title">{% trans "fer_logo_title" %}</h3>
 
-    <div class="fer-box">
-        <h3 class="right-box-title">Uvijek je tu za nas</h3>
+            <a href="http://www.fer.hr/" class="logo-fer">
+                <img src="{{ STATIC_URL }}images/logos/fer.png" alt="Fakultet elektrotehnike i računarstva">
+                {# Translators: Fakultet elektrotehnike <br> i računarstva #}
+                <p>{% trans "fer" %}</p>
+            </a>
+        </div>
 
-        <a href="http://www.fer.hr/" class="logo-fer">
-          <img src="{{ STATIC_URL }}images/logos/fer.png" alt="Fakultet elektrotehnike i računarstva">
-          <p>Fakultet elektrotehnike <br> i računarstva</p>
-        </a>
-    </div>
+        <div class="vsep"></div>
 
-    <div class="vsep"></div>
-
-    <div class="uticnice-box">
-      <h3 class="right-box-title">Utičnice</h3>
+        <div class="uticnice-box">
+            {# Translators: Utičnice #}
+            <h3 class="right-box-title">{% trans "plugs" %}</h3>
 
       <p>
         <a href="http://www.sczg.hr/" target="_blank">Studentski centar</a><br />
@@ -101,7 +110,7 @@
         <a href="http://www.rockmark.hr/" target="_blank">Rockmark</a><br />
         <a href="http://www.mmv-auris.hr/" target="_blank">MMV-Auris</a><br />
         <a href="http://www.nisamtapir.com/" target="_blank">Nisam Tapir.</a><br />
-        <a href="http://www.mipro.hr/" target="_blank">MIPRO</a><br />        
+        <a href="http://www.mipro.hr/" target="_blank">MIPRO</a><br />
         <a href="http://www.linux.hr/" target="_blank">HULK</a><br />
         <a href="http://www.carnet.hr/" target="_blank">CARNet</a><br />
         <a href="http://www.kst.org.rs/" target="_blank">Klub Studenata Tehnike</a><br />

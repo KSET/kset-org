@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-
+{% load i18n %}
 {% block extrahead %}
 <meta property="og:title" content="{{ flatpage.title }}" />
 <meta property="og:description" content="www.kset.org" />
@@ -11,9 +11,11 @@
 
 
 <div id="right" class="right-column">
-  <h1><span class="orange">&raquo;</span> Galerija </h1>
+    {# Translators: Galerija #}
+  <h1><span class="orange">&raquo;</span> {% trans "gallery" %} </h1>
   <a href="{% url 'gallery_index' %}"><img src="{{ STATIC_URL }}images/design/fotogalerija.jpg" /></a>
-  <h1><span class="orange">&raquo;</span> Kratki filmovi</h1>
+    {# Translators: Kratki filmovi #}
+  <h1><span class="orange">&raquo;</span> {% trans "short-movie-clips" %}</h1>
 </div>
 
 

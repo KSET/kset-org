@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-
+{% load i18n %}
 {% load fb_versions %}
 
 {% block content %}
@@ -16,9 +16,11 @@
   <div id="right-col2-klub" class="right-column-col2-klub right-subcolumn-club">
 
     <img src="{{ STATIC_URL }}/images/kset-logo-black.svg" width="220"/>
-    <p class="kset-opened-text"><em>... prvi put otvorio vrata 1976.</em></p>
+      {# Translators: ... prvi put otvorio vrata 1976. #}
+    <p class="kset-opened-text"><em>{% trans "kset-logo-subtitle" %}</em></p>
 
-    <h3 class="right-box-title">Informacije</h3>
+      {# Translators: Informacije #}
+    <h3 class="right-box-title">{% trans "info-title" %}</h3>
     <table>
       <tr>
         <td> <strong>mail:</strong>
@@ -30,19 +32,22 @@
         </td>
       </tr>
       <tr>
-        <td> <strong>adr:</strong>
+          {# Translators: adr #}
+        <td> <strong>{% trans "address-short" %}:</strong>
         </td>
         <td>Unska 3, 10000 Zagreb</td>
       </tr>
       <tr>
         <td>
-          <strong>tel:</strong>
+            {# Translators: tel #}
+          <strong>{% trans "telefon-short" %}:</strong>
         </td>
         <td>+385 1 6129 758</td>
       </tr>
       <tr>
         <td>
-          <strong>gdje?!</strong>
+            {# Translators: gdje #}
+          <strong>{% trans "location-short" %}?!</strong>
         </td>
         <td>
           <a href="https://www.google.com/maps/place/KSET/@45.8015025,15.9711053,17z/data=!4m2!3m1!1s0x4765d6f150cf2ccd:0xda86ab7b9573d6c8?hl=en">GoogleMaps</a>
@@ -52,7 +57,8 @@
       </tr>
       <tr>
         <td>
-          <strong>logotip:</strong>
+            {# Translators: logotip #}
+          <strong>{% trans "logotip" %}:</strong>
         </td>
         <td>
           <a href="{{ STATIC_URL }}images/KSETlogo.zip">logotip.zip</a>
@@ -60,11 +66,13 @@
       </tr>
     </table>
 
-    <h3 class="right-box-title">Voditelji</h3>
+      {# Translators: Voditelji #}
+    <h3 class="right-box-title">{% trans "leaders-title" %}</h3>
 
     {% include "partials/leaders.html" %}
 
-    <h3 class="right-box-title">"Vrijedi do sutra ..."</h3>
+      {# Translators: Vrijedi do sutra ... #}
+    <h3 class="right-box-title">"{% trans "valid-till-tomorrow" %}"</h3>
 
     <a href="{% url 'subpage_alumni' %}">
       <img src="{{ STATIC_URL }}frontend/images/alumni_link.png" alt="alumni" />
@@ -74,7 +82,8 @@
 
   <div id="right-col1-klub" class="right-column-col1-klub right-subcolumn-club">
 
-    <h3 class="right-box-title">Sekcije</h3>
+    {# Translators: Sekcije #}
+    <h3 class="right-box-title">{% trans "sekcije" %}</h3>
 
     <div class="cellmenu">
       {% for division in divisions %}
@@ -85,7 +94,8 @@
       <div class="clearfix"></div>
     </div>
 
-    <h3 class="right-box-title">Projekti</h3>
+    {# Translators: Projekti #}
+    <h3 class="right-box-title">{% trans "projects" %}</h3>
 
     <div class="cellmenu">
       {% for project in projects %}

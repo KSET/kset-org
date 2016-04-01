@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load fb_versions %}
 
 <section id="header-scroll" class="header-scroll">
@@ -17,7 +18,8 @@
 
       <div class="item-top">
         <time class="date" itemprop="startDate" datetime="{{ event.date|date:"c" }}">
-            {% if event.date == today %}<span class="scroll-today">Danas</span>{% endif %}
+            {# Translators: Danas #}
+            {% if event.date == today %}<span class="scroll-today">{% trans "today" %}</span>{% endif %}
             {{ event.date|date:"d" }}<small>/{{ event.date|date:"m" }}</small>
         </time>
         <span class="item-top-title" itemprop="name">{{ event.title }}</span>
@@ -33,7 +35,7 @@
           {% endif %}
         </span>
         {% if event.price %} &mdash; {{ event.price }} {% endif %}
-        {% if event.time %} &mdash; od <time itemprop="doorTime">{{ event.time|time:"H" }}</time>h {% endif %}
+        {% if event.time %} &mdash; {% trans "from" %} <time itemprop="doorTime">{{ event.time|time:"H" }}</time>h {% endif %}
       </div>
 
     </a>

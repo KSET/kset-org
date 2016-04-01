@@ -13,6 +13,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+
     # feeds
     url(r'^feeds/rss/$', RssProgramFeed(),
         name='feed_rss'),

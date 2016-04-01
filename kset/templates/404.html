@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,7 +28,7 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="{{ STATIC_URL}}frontend/images/favicon.ico" />
     <link rel="icon" type="image/png" href="{{ STATIC_URL}}frontend/images/favicon.png" />
 
-    <title>KSET.org - Klub Studenata ElektroTehnike</title>
+    <title>KSET.org - {% trans "description-short" %}</title>
 
     {% block feeds %}
     <link rel="alternate" type="application/rss+xml" title="Public Feeds" href="{% url 'feed_rss' %}" />
@@ -52,11 +53,11 @@
 
             <nav id="top-menu" class="page-nav top-menu">
                 <code id="top-menu-prompt" class="top-menu-prompt">&gt;</code>
-                <a href="{% url 'index' %}">NASLOVNICA</a>
-                <a href="{% url 'subpage_index' %}">O KLUBU</a>
-                <a href="{% url 'subpage_multimedia' %}">MULTIMEDIA</a>
-                <a href="{% url 'news_archive' %}">VIJESTI</a>
-                <a href="{% url 'events_archive' %}">PROGRAM</a>
+                <a href="{% url 'index' %}">{% trans "homepage" %}</a>
+                <a href="{% url 'subpage_index' %}">{% trans "about" %}</a>
+                <a href="{% url 'subpage_multimedia' %}">{% trans "multimedia" %}</a>
+                <a href="{% url 'news_archive' %}">{% trans "news" %}</a>
+                <a href="{% url 'events_archive' %}">{% trans "program" %}</a>
 
             </nav>
 
@@ -79,14 +80,14 @@
             <img class="marvin" src="{{ STATIC_URL }}/images/errors/marvin404.jpg" alt="Marvin">
 
             <h1 class="marvin-error">
-                Not that anyone cares what I say, but the page is at the *other* end of the Universe.
+                {# Translators: Not that anyone cares what I say, but the page is at the *other* end of the Universe. #}
+                {% trans "error-404-message" %}
             </h1>
 
         </section>
 
         <footer id="footer" class="footer">
-            <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br />
-            <i>... prvi put otvorio vrata <b>1976.</b></i>
+            {% trans "footer" %}
         </footer>
 
     </div>

@@ -1,5 +1,6 @@
 # Django settings for kset project.
 from django.conf import global_settings
+from django.utils.translation import ugettext_lazy as _
 import os
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -17,7 +18,13 @@ ADMINS = (
 MANAGERS = ADMINS
 
 TIME_ZONE = 'Europe/Zagreb'
-LANGUAGE_CODE = 'hr-hr'
+
+LANGUAGE_CODE = 'hr'
+
+LANGUAGES = (
+    ('hr', _('Croatian')),
+    ('en', _('English')),
+)
 
 SITE_ID = 1
 
@@ -58,6 +65,10 @@ TEMPLATE_DIRS = (
     ABS_PATH('templates', 'members_templates'),
 )
 
+LOCALE_PATHS = (
+    ABS_PATH('locale'),
+)
+
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -66,6 +77,8 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'kset.middleware.force_default_middleware.ForceDefaultLanguageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -76,6 +89,7 @@ ROOT_URLCONF = PROJECT_NAME + '.urls'
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS +\
     ('django.core.context_processors.request',
+     'django.core.context_processors.i18n',
      'ctx.header', 'ctx.baseurl', 'ctx.authenticated', )
 
 

@@ -269,6 +269,38 @@ a:hover
     border-radius: 20px 0 0 0;
 }
 
+.position-right {
+    margin-left:auto;
+    margin-right:0;
+}
+
+.localization-widget {
+    margin-top: 5px;
+    width: 70px;
+    text-transform: uppercase;
+
+}
+
+.language-select {
+    text-transform: uppercase;
+    padding: 3px;
+    background-color: #000;
+    color: #F37F39;
+    border-color: #F37F39;
+    cursor: pointer;
+}
+
+.language-select:hover {
+    color: #eee;
+    border-color: #eee;
+}
+
+.language-selected {
+    color: #eee;
+    border-color: #eee;
+    cursor: default;
+}
+
 .logo
 {
     float:left;
