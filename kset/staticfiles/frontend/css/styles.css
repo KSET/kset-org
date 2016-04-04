@@ -275,8 +275,10 @@ a:hover
 }
 
 .localization-widget {
+    margin-right: 10px;
     margin-top: 5px;
-    width: 60px;
+    width: 100px;
+    text-align: right;
     text-transform: uppercase;
 
 }
