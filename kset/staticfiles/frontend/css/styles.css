@@ -275,8 +275,10 @@ a:hover
 }
 
 .localization-widget {
+    margin-right: 10px;
     margin-top: 5px;
-    width: 70px;
+    width: 100px;
+    text-align: right;
     text-transform: uppercase;
 
 }
@@ -284,22 +286,23 @@ a:hover
 .language-select {
     text-transform: uppercase;
     padding: 3px;
-    background-color: #000;
-    color: #F37F39;
-    border-color: #F37F39;
+    background-color: #fe7929;
+    color: black;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border: 0;
     cursor: pointer;
 }
 
-.language-select:hover {
-    color: #eee;
-    border-color: #eee;
-}
+/*.language-select:hover {*/
+    /*color: #eee;*/
+    /*border-color: #eee;*/
+/*}*/
 
-.language-selected {
-    color: #eee;
-    border-color: #eee;
-    cursor: default;
-}
+/*.language-selected {*/
+    /*color: #eee;*/
+    /*border-color: #eee;*/
+    /*cursor: default;*/
+/*}*/
 
 .logo
 {
