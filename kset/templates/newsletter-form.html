@@ -3,16 +3,15 @@
 {% load fb_versions %}
 
 
-{% block title %} - {% trans "foto-gallery-title" %} {{ album.title }}{% endblock title %}
+{% block title %} - Newsletter{% endblock title %}
 
 {% block extrahead %}
-    <meta property="og:title" content="{{ album.title }} - {{ album.date_of_event }}"/>
-    <meta property="og:description" content="Copyright by: {{ album.photographer }}"/>
-    <meta property="og:image" content="{% version album.thumb 'galleryimage' %}"/>
+    <meta property="og:title" content="Newsletter"/>
+    <meta property="og:description" content="Newsletter subscribe form."/>
 {% endblock %}
 
 {% block content %}
-    <section id="gallery-album" class="gallery">
+    <section class="gallery">
         <div class="newsletter-box">
 
             <h3 class="right-box-title">Newsletter</h3>
