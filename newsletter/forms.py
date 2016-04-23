@@ -3,7 +3,7 @@
 from django import forms
 
 from .models import Subscription
-
+from django.utils.translation import ugettext_lazy as _
 
 class SubscriptionForm(forms.ModelForm):
     class Meta:
@@ -11,7 +11,9 @@ class SubscriptionForm(forms.ModelForm):
 
     def clean_email(self):
         if not self.cleaned_data.get('email'):
-            raise forms.ValidationError('Molimo unesite email adresu.')
+            # Translators: Molimo unesite email adresu.
+            raise forms.ValidationError(_('newsletter.subscription.no-email'))
         if Subscription.objects.filter(email=self.cleaned_data.get('email')):
-            raise forms.ValidationError('Email adresa je već pretplaćena.')
+            # Translators: Email adresa je već pretplaćena.
+            raise forms.ValidationError(_('newsletter.subscription.not-unique-email'))
         return self.cleaned_data.get('email')

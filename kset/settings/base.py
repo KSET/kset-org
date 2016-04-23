@@ -67,6 +67,7 @@ TEMPLATE_DIRS = (
 
 LOCALE_PATHS = (
     ABS_PATH('locale'),
+    ABS_PATH('../conf/locale')
 )
 
 TEMPLATE_LOADERS = (

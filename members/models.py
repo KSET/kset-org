@@ -1,4 +1,4 @@
-#coding: utf8
+#coding: utf-8
 
 import hashlib
 from uuid import uuid4

@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load fb_versions %}
+
+
+{% block title %} - {% trans "foto-gallery-title" %} {{ album.title }}{% endblock title %}
+
+{% block extrahead %}
+    <meta property="og:title" content="{{ album.title }} - {{ album.date_of_event }}"/>
+    <meta property="og:description" content="Copyright by: {{ album.photographer }}"/>
+    <meta property="og:image" content="{% version album.thumb 'galleryimage' %}"/>
+{% endblock %}
+
+{% block content %}
+    <section id="gallery-album" class="gallery">
+        <div class="newsletter-box">
+
+            <h3 class="right-box-title">Newsletter</h3>
+
+            <p>
+                {% trans "newsletter.subscribe.text" %}
+            </p>
+
+            <form id="form-newsletter" class="form-newsletter">
+                {% csrf_token %}
+
+                <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription"
+                        {# Translators: Vaša e-mail adresa #}
+                       placeholder="{% trans "email.placeholder" %}"/>
+                <input type="button" id="newsletter-submit" class="newsletter-submit" value="{% trans "newsletter.subscribe.button" %}"/>
+                <!-- TODO: CAPTCHA -->
+            </form>
+
+            {# Translators: Poruka #}
+            <p id="newsletter-message" style="text-weight: bold; display: none;">{% trans "message" %}</p>
+        </div>
+    </section>
+
+{% endblock %}
+
