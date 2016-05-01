@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-23 18:28+0200\n"
+"POT-Creation-Date: 2016-05-01 20:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Anamarija Miličević <anamarija.mili@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr "Engleski"
 
 #. Translators: Klub Studenata ElektroTehnike
 #: kset/templates/404.html:31 kset/templates/club.html:8
-#: kset/templates/index.html:42 kset/templates/newsletter.html:93
+#: kset/templates/index.html:42 kset/templates/newsletter.html:99
 msgid "description-short"
 msgstr "Klub Studenata ElektroTehnike"
 
@@ -207,7 +207,6 @@ msgstr "Odaberi godinu ..."
 #. Translators: Foto Galerija:
 #: kset/templates/gallery_main.html:6 kset/templates/gallery_spec.html:6
 #: kset/templates/gallery_view_album.html:6
-#: kset/templates/newsletter-form.html:6
 msgid "foto-gallery-title"
 msgstr "Foto Galerija:"
 
@@ -350,21 +349,23 @@ msgstr "Dnevni program"
 msgid "evening-program"
 msgstr "Večernji program"
 
-#: kset/templates/newsletter-form.html:23
+#: kset/templates/newsletter-form.html:20
 msgid "newsletter.subscribe.text"
-msgstr "Prijavite se na naš newsletter kako biste pratili najnovije vijesti i evente u KSET-u."
+msgstr ""
+"Prijavite se na naš newsletter kako biste pratili najnovije vijesti i evente "
+"u KSET-u."
 
 #. Translators: Vaša e-mail adresa
-#: kset/templates/newsletter-form.html:31 kset/templates/program.html:40
+#: kset/templates/newsletter-form.html:28 kset/templates/program.html:40
 msgid "email.placeholder"
 msgstr "Vaša e-mail adresa"
 
-#: kset/templates/newsletter-form.html:32
+#: kset/templates/newsletter-form.html:29
 msgid "newsletter.subscribe.button"
 msgstr "PRETPLATI ME"
 
 #. Translators: Poruka
-#: kset/templates/newsletter-form.html:37 kset/templates/program.html:46
+#: kset/templates/newsletter-form.html:34 kset/templates/program.html:46
 msgid "message"
 msgstr "Poruka"
 
@@ -382,6 +383,15 @@ msgstr "Program kluba od"
 #: kset/templates/newsletter.html:84
 msgid "more-capitalized"
 msgstr "Opširnije"
+
+#: kset/templates/newsletter.html:93
+msgid "unsubscribe-text"
+msgstr ""
+"Ne želiš više primati KSET newsletter? <br/>"
+"Za odjavu s newslettera molimo pošaljite"
+"<a href=\"mailto:unsubscribe@kset.org?subject=Unsubscribe%20me\">e-mail</a>"
+"sa predmetom <b>\"Unsubscribe me\"</b>"
+"na adresu <a href=\"mailto:unsubscribe@kset.org\">unsubscribe@kset.org</a>."
 
 #: kset/templates/program.html:19
 msgid "search"
@@ -983,4 +993,6 @@ msgstr "Uspješno ste se pretplatili!"
 #. Translators: 'Oops! Something went wrong.'
 #: newsletter/views.py:20
 msgid "newsletter.subscription.error"
-msgstr "Dogodila se greška prilikom spremanja vaše pretplate! Molim Vas pokušajte ponovno."
+msgstr ""
+"Dogodila se greška prilikom spremanja vaše pretplate! Molim Vas pokušajte "
+"ponovno."

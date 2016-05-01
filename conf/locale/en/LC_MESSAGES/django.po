@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-23 18:28+0200\n"
+"POT-Creation-Date: 2016-05-01 20:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Anamarija Miličević <anamarija.mili@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr "English"
 
 #. Translators: Klub Studenata ElektroTehnike
 #: kset/templates/404.html:31 kset/templates/club.html:8
-#: kset/templates/index.html:42 kset/templates/newsletter.html:93
+#: kset/templates/index.html:42 kset/templates/newsletter.html:99
 msgid "description-short"
 msgstr "Klub Studenata ElektroTehnike"
 
@@ -210,7 +210,6 @@ msgstr "Choose a year..."
 #. Translators: Foto Galerija:
 #: kset/templates/gallery_main.html:6 kset/templates/gallery_spec.html:6
 #: kset/templates/gallery_view_album.html:6
-#: kset/templates/newsletter-form.html:6
 msgid "foto-gallery-title"
 msgstr "Photo gallery"
 
@@ -352,21 +351,21 @@ msgstr "Morning programme"
 msgid "evening-program"
 msgstr "Evening program"
 
-#: kset/templates/newsletter-form.html:23
+#: kset/templates/newsletter-form.html:20
 msgid "newsletter.subscribe.text"
 msgstr "Subscribe to our newsletter to receive latest news and events in KSET."
 
 #. Translators: Vaša e-mail adresa
-#: kset/templates/newsletter-form.html:31 kset/templates/program.html:40
+#: kset/templates/newsletter-form.html:28 kset/templates/program.html:40
 msgid "email.placeholder"
 msgstr "Your e-mail address"
 
-#: kset/templates/newsletter-form.html:32
+#: kset/templates/newsletter-form.html:29
 msgid "newsletter.subscribe.button"
 msgstr "SUBSCRIBE"
 
 #. Translators: Poruka
-#: kset/templates/newsletter-form.html:37 kset/templates/program.html:46
+#: kset/templates/newsletter-form.html:34 kset/templates/program.html:46
 msgid "message"
 msgstr "Message"
 
@@ -384,6 +383,15 @@ msgstr "Programme since"
 #: kset/templates/newsletter.html:84
 msgid "more-capitalized"
 msgstr "More"
+
+#: kset/templates/newsletter.html:93
+msgid "unsubscribe-text"
+msgstr ""
+"Don't want to receive KSET newsletter emails anymore? <br/>"
+"For unsubscribing please send "
+"<a href=\"mailto:unsubscribe@kset.org?subject=Unsubscribe%20me\">e-mail</a> "
+"with subject <b>\"Unsubscribe me\" </b>"
+"to <a href=\"mailto:unsubscribe@kset.org\">unsubscribe@kset.org</a>."
 
 #: kset/templates/program.html:19
 msgid "search"
