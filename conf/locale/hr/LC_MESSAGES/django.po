@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-03 00:49+0100\n"
+"POT-Creation-Date: 2016-05-01 20:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Anamarija Miličević <anamarija.mili@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,66 +18,90 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: settings/base.py:25
+#: dashboard.py:25
+msgid "Group: Administration & Applications"
+msgstr "Group: Administration & Applications"
+
+#: dashboard.py:30
+msgid "Administration"
+msgstr "Administration"
+
+#: dashboard.py:36
+msgid "Applications"
+msgstr "Applications"
+
+#: dashboard.py:46
+msgid "Media Management"
+msgstr "Media Management"
+
+#: dashboard.py:50
+msgid "FileBrowser"
+msgstr "FileBrowser"
+
+#: dashboard.py:59
+msgid "Recent Actions"
+msgstr "Recent Actions"
+
+#: kset/settings/base.py:25
 msgid "Croatian"
 msgstr "Hrvatski"
 
-#: settings/base.py:26
+#: kset/settings/base.py:26
 msgid "English"
 msgstr "Engleski"
 
 #. Translators: Klub Studenata ElektroTehnike
-#: templates/404.html:31 templates/club.html:8 templates/index.html:42
-#: templates/newsletter.html:93
+#: kset/templates/404.html:31 kset/templates/club.html:8
+#: kset/templates/index.html:42 kset/templates/newsletter.html:99
 msgid "description-short"
 msgstr "Klub Studenata ElektroTehnike"
 
 #. Translators: NASLOVNICA
-#: templates/404.html:56 templates/index.html:90
+#: kset/templates/404.html:56 kset/templates/index.html:90
 msgid "homepage"
 msgstr "NASLOVNICA"
 
 #. Translators: O KLUBU
-#: templates/404.html:57 templates/index.html:92
+#: kset/templates/404.html:57 kset/templates/index.html:92
 msgid "about"
 msgstr "O KLUBU"
 
 #. Translators: MULTIMEDIA
-#: templates/404.html:58 templates/index.html:95
+#: kset/templates/404.html:58 kset/templates/index.html:95
 msgid "multimedia"
 msgstr "MULTIMEDIA"
 
 #. Translators: VIJESTI
-#: templates/404.html:59 templates/index.html:97
+#: kset/templates/404.html:59 kset/templates/index.html:97
 msgid "news"
 msgstr "VIJESTI"
 
 #. Translators: PROGRAM
-#: templates/404.html:60 templates/index.html:99
+#: kset/templates/404.html:60 kset/templates/index.html:99
 msgid "program"
 msgstr "PROGRAM"
 
 #. Translators: Not that anyone cares what I say, but the page is at the *other* end of the Universe.
-#: templates/404.html:84
+#: kset/templates/404.html:84
 msgid "error-404-message"
 msgstr ""
 "Not that anyone cares what I say, but the page is at the *other* end of the "
 "Universe."
 
 #. Translators: <b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</b>ehnike<br /><i>... prvi put otvorio vrata <b>1976.</b></i>
-#: templates/404.html:90 templates/index.html:128
+#: kset/templates/404.html:90 kset/templates/index.html:128
 msgid "footer"
 msgstr ""
 "<b>KSET</b> &mdash; <b>K</b>lub <b>S</b>tudenata <b>E</b>lektro<b>T</"
 "b>ehnike<br /><i>... prvi put otvorio vrata <b>1976.</b></i>"
 
 #. Translators: Alumni
-#: templates/alumni.html:5
+#: kset/templates/alumni.html:5
 msgid "alumni-title"
 msgstr "Alumni"
 
 #. Translators: <strong>Crvena iskaznica</strong> od uvijek je bila pojam časti za svakog ksetovca na kraju njegove studentske karijere jer se dodjeljuje počasno samo najzaslužnijim članovima i, kako to lijepo piše na pozadini, vrijedi do vječnosti. Zbog utrošene energije i svojih izuzetnih vrijednosti, počasni članovi su uvijek dobrodošli i rado viđeni u svome klubu.<br />Ova stranica je upravo namijenjena počasnim članovima <strong>KSET</strong>-a za međusobnu komunikaciju i kontakt prema <strong>KSET</strong>-u.
-#: templates/alumni.html:13
+#: kset/templates/alumni.html:13
 msgid "alumni-description"
 msgstr ""
 "<strong>Crvena iskaznica</strong> od uvijek je bila pojam časti za svakog "
@@ -89,47 +113,47 @@ msgstr ""
 "međusobnu komunikaciju i kontakt prema <strong>KSET</strong>-u."
 
 #. Translators: Kontakt osoba za ažuriranje podataka i održavanje alumni@kset.org mailing liste:
-#: templates/alumni.html:17
+#: kset/templates/alumni.html:17
 msgid "alumni-contact-person"
 msgstr ""
 "Kontakt osoba za ažuriranje podataka i održavanje alumni@kset.org mailing "
 "liste:"
 
-#: templates/calendar.html:6
+#: kset/templates/calendar.html:6
 msgid "monday.first_letter"
 msgstr "P"
 
-#: templates/calendar.html:7
+#: kset/templates/calendar.html:7
 msgid "tuesday.first_letter"
 msgstr "U"
 
-#: templates/calendar.html:8
+#: kset/templates/calendar.html:8
 msgid "wednesday.first_letter"
 msgstr "S"
 
-#: templates/calendar.html:9
+#: kset/templates/calendar.html:9
 msgid "thursday.first_letter"
 msgstr "Č"
 
-#: templates/calendar.html:10
+#: kset/templates/calendar.html:10
 msgid "friday.first_letter"
 msgstr "P"
 
-#: templates/calendar.html:11
+#: kset/templates/calendar.html:11
 msgid "saturday.first_letter"
 msgstr "S"
 
-#: templates/calendar.html:12
+#: kset/templates/calendar.html:12
 msgid "sunday.first_letter"
 msgstr "N"
 
 #. Translators: O klubu
-#: templates/club.html:4
+#: kset/templates/club.html:4
 msgid "about-title"
 msgstr "O klubu"
 
 #. Translators: <p>To je bivša <strong>kotlovnica</strong> smještena na sjeveroistočnom uglu najboljeg fakulteta na svijetu (i pored C zgrade FER-a). Neki ljudi tvrde da je <strong>"Rupa"</strong> unatoč brojnim nelogičnostima te izjave. Za početak, Rupa je mjesto u sjeverozapadnoj Hrvatskoj na granici sa Slovenijom.</p> <p>Iako <strong>Klub u kotlovnici postoji od 1976.</strong>, njegova povijest seže puno dalje. Tadašnji Studentski savez osnovan je <strong>1969.</strong> i služio je isključivo članovima nekolicine sekcija za razbibrigu i životne dileme svakog studenta: <em>„Idemo na kavu ili predavanje?“</em>. Iz potrebe za zvučnim imenom, <strong>1971.</strong> Klub je dobio ime KSET, a samo pet godina kasnije postao <strong>kultno mjesto na koje se svi rado vraćaju</strong>, ne samo studenti FER-a već i drugih fakulteta.</p> <p>Klub funkcionira vrlo dobro, hvala na pitanju, i u njemu danas <strong>aktivno volontira gotovo 300 volontera u 9 sekcija</strong>: <strong>bike</strong> (profesionalni obožavatelji međunožnih gurala i vožnji po brdima), <strong>disco</strong> (za kemijanje po mikseti), <strong>dramska</strong> (dok ne glume na pozornici, čitaju poeziju), <strong>računarska</strong> (za prave <em>geekove</em> i one koji se tako osjećaju), <strong>tehnička</strong> (za manualni rad i popravke popravaka), <strong>glazbena</strong> (propali glazbenici koji su se bacili u opremanje, a zapravo imaju tajni bend), <strong>planinarska</strong> a.k.a. P.I.J.A.N.D.U.R.E. (s redovitim gubljenjem po šumama upoznaju prirodu i svoj unutrašnji mir), <strong>video</strong> (snimaju neugodne filmiće) i <strong>foto</strong> (umjetnici s pravim aparatima i najviše žena u sekciji). Više o njima možete saznati kasnije ili navratite do KSET-a i pitajte prvu osobu na koju naiđete. </p> <p>Sada koja riječ o nekim administrativnim stvarima. <strong>KSET je klub studenata volontera.</strong> To znači da sve što radimo je rezultat činjenice da nemamo pametnijeg posla u životu. Zašto bi to itko radio? <strong>Jer je zabavno.</strong> KSET postane mjesto na kojem možete <strong>popiti kavu</strong>, sjesti s <strong>prijateljima</strong> i <strong>kartati</strong> ili <strong>surfati</strong> u pauzama između predavanja ili se na kraju dana opustiti uz <strong>šah ili dobar film. </strong></p> <p>Za vrijeme ispita Klub se pretvara u mjesto u kojem svi uče, ali će članovi uvijek izdvojiti vremena da vam pokažu zadatak koji ne znate riješiti ili pojasniti nešto što vam je jasno kao i poljoprivreda Eskimu. U svakoj sekciji može se <strong>primijeniti ili proširiti znanje</strong> stečeno na fakultetu (čak i u planinarskoj) i skupiti hrpu prijatelja. Ne kaže se bezveze da je rad u KSET-u jedno od najvećih i najboljih iskustava u životu.</p> <p>Ono što <strong>članstvom</strong> u KSET-u možete dobiti su mogućnost korištenja opreme Kluba, besplatne upade srijedom na različite slušaonice i petkom na kultni <strong>KSET Caffe,</strong> druženje s najboljom ekipom na svijetu i još mnogo toga... Čitajte dalje ili dođite bilo koji dan u Klub i saznajte sami...</p>
-#: templates/club.html:10
+#: kset/templates/club.html:10
 msgid "club-description-full"
 msgstr ""
 "<p>To je bivša <strong>kotlovnica</strong> smještena na sjeveroistočnom uglu "
@@ -176,33 +200,33 @@ msgstr ""
 "bilo koji dan u Klub i saznajte sami...</p>"
 
 #. Translators: Odaberi godinu ...
-#: templates/events-archive.html:10
+#: kset/templates/events-archive.html:10
 msgid "choose-year"
 msgstr "Odaberi godinu ..."
 
 #. Translators: Foto Galerija:
-#: templates/gallery_main.html:6 templates/gallery_spec.html:6
-#: templates/gallery_view_album.html:6
+#: kset/templates/gallery_main.html:6 kset/templates/gallery_spec.html:6
+#: kset/templates/gallery_view_album.html:6
 msgid "foto-gallery-title"
 msgstr "Foto Galerija:"
 
 #. Translators: galerija fotografija s koncerata održanih u KSET-u
-#: templates/gallery_main.html:17 templates/multimedia.html:15
+#: kset/templates/gallery_main.html:17 kset/templates/multimedia.html:15
 msgid "kset-live-subtitle"
 msgstr "galerija fotografija s koncerata održanih u KSET-u"
 
 #. Translators: galerija fotografija članova foto sekcije
-#: templates/gallery_main.html:28 templates/multimedia.html:25
+#: kset/templates/gallery_main.html:28 kset/templates/multimedia.html:25
 msgid "kset-foto-gallery-subtitle"
 msgstr "galerija fotografija članova foto sekcije"
 
 #. Translators: Dobrodošli na KSET foto galeriju!
-#: templates/gallery_main.html:36
+#: kset/templates/gallery_main.html:36
 msgid "foto-gallery-welcome-title"
 msgstr "Dobrodošli na KSET foto galeriju!"
 
 #. Translators: Jednog lijepog KSETovskog dana, u proljeće 2004. godine, rodila se ideja kako bi lijepo bilo fotografije nastale marljivim škljocanjem članova fotosekcije izvući iz mraka i pokazati javnosti. Tako smo odlučili stvoriti vlastiti virtualni izložbeni prostor. Zašto? Zato što možemo... :-) . A i zato što je stvarnih prostora za izložbu  malo, pa do njih nije niti lako doći.
-#: templates/gallery_main.html:40
+#: kset/templates/gallery_main.html:40
 msgid "foto-gallery-desc-part-1"
 msgstr ""
 "Jednog lijepog KSETovskog dana, u proljeće 2004. godine, rodila se ideja "
@@ -213,12 +237,12 @@ msgstr ""
 "doći."
 
 #. Translators: Počeli smo s galerijom
-#: templates/gallery_main.html:44
+#: kset/templates/gallery_main.html:44
 msgid "foto-gallery-desc-part-2"
 msgstr "Počeli smo s galerijom"
 
 #. Translators: koja tematski pokriva koncertna događanja u KSET-u, a njih ima uistinu mnogo. Ta događanja ostaju zabilježena mnoštvom fotografija od kojih autori biraju najbolje i objavljuju ih ovdje. No, kako ne bi sve ostalo na KSET-u i u KSET-u, fotosekcija pokazuje da se može, zna i želi izražavati fotografijom pa je tako postavljena i galerija
-#: templates/gallery_main.html:47
+#: kset/templates/gallery_main.html:47
 msgid "foto-gallery-desc-part-3"
 msgstr ""
 "koja tematski pokriva koncertna događanja u KSET-u, a njih ima uistinu "
@@ -228,13 +252,13 @@ msgstr ""
 "fotografijom pa je tako postavljena i galerija"
 
 #. Translators: Tu se mogu pronaći fotografije iz života, života s fotoaparatom u ruci.
-#: templates/gallery_main.html:50
+#: kset/templates/gallery_main.html:50
 msgid "foto-gallery-desc-part-4"
 msgstr ""
 "Tu se mogu pronaći fotografije iz života, života s fotoaparatom u ruci."
 
 #. Translators: Početkom studenog 2011. godine otvara se nova, ljepša i preglednija galerija! Stara i nepregledna galerija odlazi u arhivu, dok novu, ljepšu i organiziraniju galeriju možete vidjeti pred sobom. U "KSET.live!" dijelu galerije možete pronaći fotografije koje su zabilježene analognim i digitalnim fotoaparatima. Nakon što otvorite album, na vrhu ćete vidjeti više informacija o tehnici korištenoj pri njegovom nastajanju.
-#: templates/gallery_main.html:54
+#: kset/templates/gallery_main.html:54
 msgid "foto-gallery-desc-part-5"
 msgstr ""
 "Početkom studenog 2011. godine otvara se nova, ljepša i preglednija "
@@ -245,7 +269,7 @@ msgstr ""
 "više informacija o tehnici korištenoj pri njegovom nastajanju."
 
 #. Translators: Eto, od trenutka kad ste pročitali ovaj tekst pa nadalje, znajte da se ovdje održava stalna izložba radova fotosekcije. Postav izložbe nije stalan, on postaje bogatiji iz dana u dan - ne zaboravite navratiti ponovno i pogledati što ima novoga. A ako Vam ovo nije dovoljno, uvijek možete navratiti do KSET-a, jer se u njemu svaki mjesec održava nova izložba radova članova sekcije, ali i polaznika tečaja koji organizira fotosekcija.
-#: templates/gallery_main.html:58
+#: kset/templates/gallery_main.html:58
 msgid "foto-gallery-desc-part-6"
 msgstr ""
 "Eto, od trenutka kad ste pročitali ovaj tekst pa nadalje, znajte da se ovdje "
@@ -256,200 +280,221 @@ msgstr ""
 "ali i polaznika tečaja koji organizira fotosekcija."
 
 #. Translators: Uživajte!
-#: templates/gallery_main.html:62
+#: kset/templates/gallery_main.html:62
 msgid "foto-gallery-desc-part-7"
 msgstr "Uživajte!"
 
 #. Translators: Uskoro...
-#: templates/gallery_spec.html:30
+#: kset/templates/gallery_spec.html:30
 msgid "soon"
 msgstr "Uskoro..."
 
 #. Translators: Danas
-#: templates/header-scroll.html:22
+#: kset/templates/header-scroll.html:22
 msgid "today"
 msgstr "Danas"
 
-#: templates/header-scroll.html:38
+#: kset/templates/header-scroll.html:38
 msgid "from"
 msgstr "od"
 
 #. Translators: Galerija
-#: templates/hoodies.html:15
+#: kset/templates/hoodies.html:15
 msgid "gallery"
 msgstr "Galerija"
 
 #. Translators: Kratki filmovi
-#: templates/hoodies.html:18
+#: kset/templates/hoodies.html:18
 msgid "short-movie-clips"
 msgstr "Kratki filmovi"
 
 #. Translators: ČLANOVI
-#: templates/index.html:85
+#: kset/templates/index.html:85
 msgid "members"
 msgstr "ČLANOVI"
 
 #. Translators: DEŽURSTVA
-#: templates/index.html:87
+#: kset/templates/index.html:87
 msgid "duties"
 msgstr "DEŽURSTVA"
 
 #. Translators: Multimedija
-#: templates/multimedia.html:6
+#: kset/templates/multimedia.html:6
 msgid "multimedia-title"
 msgstr "MULTIMEDIA"
 
 #. Translators: Arhiva novosti
-#: templates/news-archive.html:5
+#: kset/templates/news-archive.html:5
 msgid "news-archive-title"
 msgstr "galerija fotografija s koncerata održanih u KSET-u"
 
 #. Translators: Vijesti
-#: templates/news.html:12
+#: kset/templates/news.html:12
 msgid "news-titlr"
 msgstr "Vijesti"
 
 #. Translators: opširnije ...
-#: templates/news.html:42 templates/news.html.py:89 templates/news.html:138
+#: kset/templates/news.html:42 kset/templates/news.html.py:89
+#: kset/templates/news.html:138
 msgid "more"
 msgstr "opširnije ..."
 
 #. Translators: Dnevni program
-#: templates/news.html:61
+#: kset/templates/news.html:61
 msgid "daily-program"
 msgstr "Dnevni program"
 
 #. Translators: Večernji program
-#: templates/news.html:107
+#: kset/templates/news.html:107
 msgid "evening-program"
 msgstr "Večernji program"
 
+#: kset/templates/newsletter-form.html:20
+msgid "newsletter.subscribe.text"
+msgstr ""
+"Prijavite se na naš newsletter kako biste pratili najnovije vijesti i evente "
+"u KSET-u."
+
+#. Translators: Vaša e-mail adresa
+#: kset/templates/newsletter-form.html:28 kset/templates/program.html:40
+msgid "email.placeholder"
+msgstr "Vaša e-mail adresa"
+
+#: kset/templates/newsletter-form.html:29
+msgid "newsletter.subscribe.button"
+msgstr "PRETPLATI ME"
+
+#. Translators: Poruka
+#: kset/templates/newsletter-form.html:34 kset/templates/program.html:46
+msgid "message"
+msgstr "Poruka"
+
 #. Translators: Newsletter Vam se dobro ne prikazuje? Uf :/ Posjetite
-#: templates/newsletter.html:19
+#: kset/templates/newsletter.html:19
 msgid "newsletter-error-message"
 msgstr "Newsletter Vam se dobro ne prikazuje? Uf :/ Posjetite"
 
 #. Translators: Program kluba od
-#: templates/newsletter.html:53
+#: kset/templates/newsletter.html:53
 msgid "club-program-since"
 msgstr "Program kluba od"
 
 #. Translators: Opširnije
-#: templates/newsletter.html:84
+#: kset/templates/newsletter.html:84
 msgid "more-capitalized"
 msgstr "Opširnije"
 
-#: templates/program.html:19
+#: kset/templates/newsletter.html:93
+msgid "unsubscribe-text"
+msgstr ""
+"Ne želiš više primati KSET newsletter? <br/>"
+"Za odjavu s newslettera molimo pošaljite"
+"<a href=\"mailto:unsubscribe@kset.org?subject=Unsubscribe%20me\">e-mail</a>"
+"sa predmetom <b>\"Unsubscribe me\"</b>"
+"na adresu <a href=\"mailto:unsubscribe@kset.org\">unsubscribe@kset.org</a>."
+
+#: kset/templates/program.html:19
 msgid "search"
 msgstr "Pretraga"
 
-#. Translators: Vaša e-mail adresa
-#: templates/program.html:40
-msgid "email.placeholder"
-msgstr "Vaša e-mail adresa"
-
-#. Translators: Poruka
-#: templates/program.html:46
-msgid "message"
-msgstr "Poruka"
-
 #. Translators: Foto galerija
-#: templates/program.html:54
+#: kset/templates/program.html:54
 msgid "foto_gallery"
 msgstr "Foto galerija"
 
 #. Translators: Obavijesti
-#: templates/program.html:72
+#: kset/templates/program.html:72
 msgid "notifications"
 msgstr "Obavijesti"
 
 #. Translators: Uvijek je tu za nas
-#: templates/program.html:85
+#: kset/templates/program.html:85
 msgid "fer_logo_title"
 msgstr "Uvijek je tu za nas"
 
 #. Translators: Fakultet elektrotehnike <br> i računarstva
-#: templates/program.html:90
+#: kset/templates/program.html:90
 msgid "fer"
 msgstr "Fakultet elektrotehnike <br> i računarstva"
 
 #. Translators: Utičnice
-#: templates/program.html:98
+#: kset/templates/program.html:98
 msgid "plugs"
 msgstr "Utičnice"
 
 #. Translators: Pretraga
-#: templates/search.html:4
+#: kset/templates/search.html:4
 msgid "search-title"
 msgstr "Pretraga"
 
 #. Translators: Nijedna vijest nije pronađena.
-#: templates/search.html:30
+#: kset/templates/search.html:30
 msgid "no-news-error"
 msgstr "Nijedna vijest nije pronađena."
 
 #. Translators: Nijedan događaj nije pronađen.
-#: templates/search.html:48
+#: kset/templates/search.html:48
 msgid "no-events-error"
 msgstr "Nijedan događaj nije pronađen."
 
 #. Translators: ... prvi put otvorio vrata 1976.
-#: templates/subpage.html:20
+#: kset/templates/subpage.html:20
 msgid "kset-logo-subtitle"
 msgstr "... prvi put otvorio vrata 1976."
 
 #. Translators: Informacije
-#: templates/subpage.html:23
+#: kset/templates/subpage.html:23
 msgid "info-title"
 msgstr "Informacije"
 
 #. Translators: adr
-#: templates/subpage.html:36
+#: kset/templates/subpage.html:36
 msgid "address-short"
 msgstr "adr"
 
 #. Translators: tel
-#: templates/subpage.html:43
+#: kset/templates/subpage.html:43
 msgid "telefon-short"
 msgstr "tel"
 
 #. Translators: gdje
-#: templates/subpage.html:50
+#: kset/templates/subpage.html:50
 msgid "location-short"
 msgstr "gdje"
 
 #. Translators: logotip
-#: templates/subpage.html:61
+#: kset/templates/subpage.html:61
 msgid "logotip"
 msgstr "logotip"
 
 #. Translators: Voditelji
-#: templates/subpage.html:70
+#: kset/templates/subpage.html:70
 msgid "leaders-title"
 msgstr "Voditelji"
 
 #. Translators: Vrijedi do sutra ...
-#: templates/subpage.html:75
+#: kset/templates/subpage.html:75
 msgid "valid-till-tomorrow"
 msgstr "Vrijedi do sutra ..."
 
 #. Translators: Sekcije
-#: templates/subpage.html:86
+#: kset/templates/subpage.html:86
 msgid "sekcije"
 msgstr "Sekcije"
 
 #. Translators: Projekti
-#: templates/subpage.html:98
+#: kset/templates/subpage.html:98
 msgid "projects"
 msgstr "Projekti"
 
 #. Translators: Bike
-#: templates/divisions/bike.html:5 templates/partials/leaders.html:13
+#: kset/templates/divisions/bike.html:5
+#: kset/templates/partials/leaders.html:13 subpages/views.py:9
 msgid "bike-title"
 msgstr "Bike"
 
 #. Translators: <p>Bike sekcija, poznatija pod <strong>bike@KSET</strong>, je društvance koje uživa vožnjama biciklima, a što drugo, ne? Pa, volimo mi i planine, vrhove, šume, prijevoje, adrenalin, alat, visoki puls, blato, korijenje, kamenje, dobro jesti..i KSET!</p> <p>Počeli smo još 2006te...i od tad se događalo puno toga: <strong>hrpa izleta</strong>, <strong>vožnji</strong>, <strong>utrka</strong>, <strong>druženja/žurki</strong>, <strong>uspona i padova</strong>(ovo dvoje doslovno shvatite :D)... sve u svemu odlični provodi i kvalitetno potrošeni vikendi, praznici, ljeta ,zime...</p> <p>Ako vam se sviđa što ste do sad pročitali, fali Vam ekipe za pedaliranje i biciklizam Vas zanima sve više... e pa onda ste na dobrom putu čitajući ovaj tekst! <strong>Pridružite nam se i dobivate</strong>:</p> <ul> <li>vožnje po okolici Zagreba, najčešće Sljeme no i drugi krajevi, pa i po udaljenim gorama</li> <li>kroz vožnje vrijedno sakupljanje bodova i zasluženi potpis iz tjelesnog</li> <li>saznati sve bitno o biciklima/izmu, dobiti savjete za sve što vas zanima ili muci</li> <li>na raspolaganju kvalitetni specijalizirani alat za bicikle (cca 40 komada) i maziva</li> <li>druženja, roštilji, dežurstva u KSET-u... aktivno sudjelovanje u klubu koji Vam može puno pružiti</li> <li>počastiti se na kraju ak. god. ljetovanjem u Alpama s nezaboravnim vožnjama!</li> <li>možete krenuti na utrke (pa i trenirati), par članova su iskusni natjecatelji HR MTB Kupa!</li> <li>prošetat gojze tu i tamo, u slučaju puno snijega ili čisto promjene radi</li> </ul> <p>Moglo bi se reći da smo orijentirani na brdski biciklizam, no ako se bavite drugim tipom biciklizma, svejedno se javite, nismo ograničeni. Nađe se tu i pokoja specka, DH zwer pa i jako dobar trialas! Ima i djevojaka, led je probijen već! <em>;-)</em> </p> <p>Postoji i <a title="galerija" href="http://bybude.com/bike@kset/gallery2/main.php">galerija</a>, tu i tamo updejtana, te naravno i <a title="forum" href="http://bike.kset.org/forum">forum</a> (samo za članove).</p> <p>Sve dodatne <strong>informacije</strong>možete dobiti na mail: bike@kset.org! <br />Ako se zelite uclaniti, javite nam se na mail!</p>
-#: templates/divisions/bike.html:8
+#: kset/templates/divisions/bike.html:8
 msgid "bike-desc"
 msgstr ""
 "<p>Bike sekcija, poznatija pod <strong>bike@KSET</strong>, je društvance "
@@ -484,12 +529,13 @@ msgstr ""
 "na mail!</p> "
 
 #. Translators: Računarska
-#: templates/divisions/comp.html:6 templates/partials/leaders.html:37
+#: kset/templates/divisions/comp.html:6
+#: kset/templates/partials/leaders.html:37 subpages/views.py:39
 msgid "comp"
 msgstr "Računarska"
 
 #. Translators: <p>Računarska sekcija KSET-a <strong>već 15+ godina</strong> održava i unapređuje računalnu infrastrukturu KSET-a te u suradnji s CARNetom putem live stream-a prenosi sva kulturna događanja u organizaciji KSET-a. Pri realizaciji svojih projekata sekcija se koristi otvorenim i besplatnim tehnologijama.</p> <p> <strong>Neki od najzahtjevnijih psihičkih i fizičkih poslova kojima se bavimo:</strong> <br /> <br />* Svi mogući (i nemogući) Linux sysadmin poslovi (ponekad i neki drugi OS-evi) <br />* održavanje i nadogradnja računalne mreže u KSET-u <br />* programiranje u svim mogućim programskim jezicima <br />* konfiguriranje svih (ne)zamislivih deamona/servisa <br />* stream-anje (u suradnji sa CARNet-om) <br />* pružanje besplatnog web hosting-a (i mail-a) studentskim udrugama <br />* wirelessiranje <br />* krimpanje UTP-a svih dužina (po standardu!) <br />* održavanje web stranica KSET-a <br />* održavanje tečaja za nadobudne studente <br />* održavanje dviju vještina na faksu <br />* itd. itd. itd.</p> <p>Sekcija broji oko 30ak članova/ica, skoro pa toliko računala pogonjenih GNU/Linuxom (Debianom, Ubuntu), *BSD-om i Windowsima, zatim par kilometara UTP-a, <br />nekoliko switcheva, impozantni RACK...</p> <p>Ukoliko vam ijedan od navedenih pojmova izaziva smiješak na licu i pritom se želite dobro zabaviti te nešto novo naučiti, a k tome ste još i student(ica) slobodno nam se pridružite. Uvijek smo u potrazi za novim, perspektivnim članovima sa širokim poljem tehničkih interesa i željom za radom u sekcijskoj atmosferi(tm) pa ako ste student i pronalazite se u gornjem opisu <strong>dođite na sastanak petkom u 18h ili se javite mailom trenutnom voditelju sekcije.</strong> </p>
-#: templates/divisions/comp.html:8
+#: kset/templates/divisions/comp.html:8
 msgid "comp-desc"
 msgstr ""
 "<p>Računarska sekcija KSET-a <strong>već 15+ godina</strong> održava i "
@@ -518,12 +564,13 @@ msgstr ""
 "trenutnom voditelju sekcije.</strong> </p>"
 
 #. Translators: Disco
-#: templates/divisions/disco.html:5 templates/partials/leaders.html:17
+#: kset/templates/divisions/disco.html:5
+#: kset/templates/partials/leaders.html:17 subpages/views.py:14
 msgid "disco-title"
 msgstr "Disco"
 
 #. Translators:  <p>Ako se pitate u kojoj točno crnoj rupi ljudi nestaju kada dođu do kraja galerije u KSET-u, odgovor je <strong>Disco sekcija</strong>! Naravno, ne radi se o prostoru tame i neveselja nego o prostoru rada (ili kako to mi zovemo 'roštanja' po miksetama) i okupljanja KSET-ovih vrijednih DJ-eva. Naći će se tu svega (swaga?!), od ploča, mikseta i pokoje skršene disko kugle. Ono što je konstanta je puno ljubavi prema raznim oblicima i žanrovima glazbe koju Disco redovito priprema za KSET-ove posjetitelje. Bilo da se radi o <strong>jutarnjim terminima</strong>, kada klub radi kao kafić, a DJ-evi se izmjenjuju u tri termina od 10h do 16h; ili pak o <strong>večernjima</strong> gdje se pušta glazba prije, nakon i između raznih koncerata.</p> <p>Organiziramo mnoge klupske programe (KSET Caffe, Lip Sync, Indietones, Super Gravy, Plesnjak, Maškaraoke...) i slušaonice u sklopu redovitog Srijednjaka. Iako je <strong>Srijednjak</strong> počeo kao niz slušaonica, sada nam uz glazbu donosi raznovrstan sadržaj u obliku tematskih kvizova i natjecanja. Od programa koji samo naizgled nemaju veze s glazbom valja istaknuti i popularni <strong>Game Night</strong>. Na ovim turnirima/slušaonicama izazivamo nostalgiju kroz video igre čiji su nam soundtrackovi obilježili mladost (Crash Team Racing, Worms, Tekken, NFS, THPS...).</p> <p>Da nam petkom ne bude dosadno zaduženi su KSET Caffe i naš novi program Lip Sync! <strong>KSET Caffe</strong> je tradicionalni, prepoznatljivi i istovremeno potpuno nepredvidivi program koji je stvoren za zabavu, ples i prisjećanje na stare i malo manje stare treš, pop i elektro hitove dok je <strong>Lip Sync</strong> natjecanje u kojem svatko ima priliku za svojih pet minuta slave s izgašenim mikrofonom. Sve što treba je što uvjerljivije te sa što više glumačkog žara i elana na pozornici predstaviti odabrani hit, i naravno - oduševiti publiku i žiri!</p> <p>Za kraj valja spomenuti i jednu stvar koja je usko vezana uz posao DJ-a: <strong>elektronska glazba</strong>. Svojim neumornim rejv duhom oživjeli smo elektronski program u KSET-u iz čega su proizišli programi koji su priznati van našeg omiljenog kluba.</p> <p><strong>Bipiem</strong> je DJ kolektiv ujedinjen ljubavlju prema bassu. Iako se temelji na drum and bass glazbenom pokretu, na nastupima Bipiema može se čuti sve od duba i junglea, preko klasičnog drum and bassa pa sve do najmračnijih tonova neurofunka i dubstepa. </p> <p><strong>Kotlovnica</strong> je glazbena platforma koja ugošćuje različita imena klupske elektronske glazbe te kroz koncept Boiler Room-a približava glazbu kroz sva osjetila.</p> <p>Ako ste jedni od onih kojima nijedan dan nije potpun bez glazbe, koji unaprijed znaju pjesme na radiju, koji slažu liste pjesama u glavi, a usto se želite družiti sa skupinom veselih ljudi kojima je glazba mnogo više od popratnog sadržaja, prijavite se na prijemni ispit Disco sekcije. On se održava u listopadu svake godine i pruža vam šansu da se priključite skupini mladih ljudi koji osmišljavaju nove glazbene projekte i surađuju s drugim sekcijama na cjelokupnom KSET-ovom programu. Pridružite se našoj disco obitelji i pustite da glazbe prožme i vaš život!</p> <p>Disco, disco, party, party! #ddpp i vidimo se u KSET-u!</p>
-#: templates/divisions/disco.html:8
+#: kset/templates/divisions/disco.html:8
 msgid "disco-desc"
 msgstr ""
 "<p>Ako se pitate u kojoj točno crnoj rupi ljudi nestaju kada dođu do kraja "
@@ -573,12 +620,13 @@ msgstr ""
 "vidimo se u KSET-u!</p> "
 
 #. Translators: Dramska
-#: templates/divisions/drama.html:5 templates/partials/leaders.html:21
+#: kset/templates/divisions/drama.html:5
+#: kset/templates/partials/leaders.html:21 subpages/views.py:19
 msgid "drama-title"
 msgstr "Dramska"
 
 #. Translators: <p>Zanimaju te <strong>drama</strong>, <strong>gluma</strong>, <strong>režija</strong>? Želiš <strong>biti ili ne biti</strong>? Želiš biti Romeo, Romeo, zašto <strong>Romeo</strong>? Dao bi kraljevstvo za <strong>konja</strong>? Želiš ubiti svoju <strong>majku</strong>, a da ona to ne zna? Potraži <strong>psihološku</strong>pomoć ili dođi u dramsku sekciju KSET-a!</p> <p>A što to dramska sekcija radi? Pa ono što bi i trebala :-D <strong>Postavlja predstave na KSET-ovske daske</strong> koje život znače i dovodi druge predstave u ovaj prostor. Dramska sekcija je najmlađa KSET-ova sekcija koja je nakon pauze od 20 godina ponovno pokrenuta u zimi 2009. godine. Trenutno nas ima 15-tak, a u četiri mjeseca postojanja smo postavili 3 gostovanja i izveli predstavu Nemreš pobjeć od nedjelje autorice Tene štivičić, za čiju se premijeru doslovno tražila karta više. (Za one koji nisu dobili tu kartu više: nema straha, igrat ćemo ju ponovno)</p> <p>U sekciju primamo nove ljude koji su zainteresirani za bilo koji dio vezan uz kazalište: glumu, pisanje, režiju, namještanje reflektora, scenografiju, slaganje muzike za predstave, nošenje čavala (najpopularniji posao u kazalištu, navodno) i svim i svačim što možete zamisliti da je potrebno za pripremiti predstavu.</p> <p>Zašto baš dramska, a ne neka druga sekcija? Pa, pobogu, zašto bi slagao elektroničke sklopove, mijenjao žarulje, programirao, fotografirao ili planinario <strong>kad jednostavno možeš odglumiti da to radiš</strong>?</p>
-#: templates/divisions/drama.html:8
+#: kset/templates/divisions/drama.html:8
 msgid "drama-desc"
 msgstr ""
 "<p>Zanimaju te <strong>drama</strong>, <strong>gluma</strong>, "
@@ -604,12 +652,13 @@ msgstr ""
 "možeš odglumiti da to radiš</strong>?</p>"
 
 #. Translators: Foto
-#: templates/divisions/foto.html:6 templates/partials/leaders.html:25
+#: kset/templates/divisions/foto.html:6
+#: kset/templates/partials/leaders.html:25 subpages/views.py:24
 msgid "foto-title"
 msgstr "Foto"
 
 #. Translators: <p>U sjeveroistočnom kutku KSET-a kriju se prostori Fotosekcije i njezine <strong>tamne komore</strong>. Prvi zapisi o njenom postojanju protežu se davno prije osnivanja KSET-a i sežu najkasnije do <strong>1965</strong>. godine.</p> <p>Od svojih početaka Fotosekcija se tradicionalno bavi držanjem <strong>Fototečaja</strong> osnova fotografije. Trenutačno se sastoji od dvadesetak članova koji svojim radom i trudom održavaju tradiciju <strong>crno-bijele analogne fotografije</strong>. Novi članovi sekcije imaju priliku naučiti mnogo o procesu fotografije, od određivanja postavki, preko razvijanja filma sve do razvijanja fotografija različitih formata. U Fotosekciji se isto tako može naučiti mnogo o fotografiji općenito te o digitalnoj fotografiji koja nažalost sve više potiskuje nama voljene fotografske filmove. Bez obzira na to tu se može jako puno naučiti o zadnjim novostima iz svijeta <strong>digitalije</strong>. Između ostalog u sekciji organiziramo foto-sessione, izložbe, interne tečajeve, druženja, izlete, kuhanja.</p> <p>Više o našim aktivnostima i projektima možete saznati na: <a title="www.fotokset.org" href="http://www.fotokset.org/">www.fotokset.org</a> </p>
-#: templates/divisions/foto.html:9
+#: kset/templates/divisions/foto.html:9
 msgid "foto-desc"
 msgstr ""
 "<p>U sjeveroistočnom kutku KSET-a kriju se prostori Fotosekcije i njezine "
@@ -631,12 +680,13 @@ msgstr ""
 "org</a> </p> "
 
 #. Translators: Glazbena
-#: templates/divisions/music.html:5 templates/partials/leaders.html:29
+#: kset/templates/divisions/music.html:5
+#: kset/templates/partials/leaders.html:29 subpages/views.py:29
 msgid "music-title"
 msgstr "Glazbena"
 
 #. Translators: <p>Glazbena sekcija KSET-a brine o realizaciji koncertnog programa, konkretno tehničkoj produkciji. Stage hand iskustvo stvoreno u sekciji mnogi članovi kasnije su iskoristili na većim pozornicama. U Glazbenoj možete naučiti osnove inženjeringa zvuka i obrade zvučnog signala na osobnim računalima. Iskustvo stvoreno na ovom području dovelo je neke KSET-ove ton majstore u suradnju s popularnim sastavima zabavne glazbe (Zabranjeno Pušenje). Jedan od bitnijih projekata sekcije je <strong>Čuješ?!</strong>, koncertni program koji ugošćuje i predstavlja mlade nedovoljno poznate izvođače. </p> <p>Glavne obaveze glazbene sekcije su: <ul> <li>kompletna audio produkcija koncerata</li> <li>održavanje glazbene opreme</li> <li>sviranje u bendu</li> <li>lighting i VJ-ing</li> <li>booking and promotion</li> </ul> </p><br /> <h2>KOMPLETNA AUDIO PRODUKCIJA</h2> <p>Članovi glazbene sekcije prolaze sve korake u audio produkciji koncerta. Primarno članovi uče slaganje stage-a, poziciju opreme i kabliranje. Članovi se podučavaju kompletnoj glazbenoj opremi (instrumenti, kablovi, mikrofoni) odnosno objašnjavaju im se prednosti i mane svakog od elemenata postavljanja stage-a. Samo neke od znanja koje usvajaju su razlike u mikrofonima, zašto svaki mikrofon ima svoju funkciju, čemu služi diferencirani signal, što je to compressor/gate/eq, što je skretnica što je DI, razlika TS-a i TRS-a...</p> <p>Nakon što članovi nauče složiti stage prije benda nudi im se prilika korištenja profesionalnog klubskog razglasa u smislu toniranja i snimanja koncerta. To je jako vrijedna oprema i ne postoji drugo mjesto osim KSET-a i glazbene sekcije gdje se može slobodno koristiti i vježbati na KSET-ovom razglasu. Velika većina najboljih hrvatskih tonaca je potekla upravo iz KSET-a jer im je pružio dovoljno praktičnog rada što je zapravo za tu svrhu krucijalno. Osim samog live miksanja članovi se mogu baviti i audio miksanjem snimki koje imamo priliku snimati uživo. Članove se uči kako razni signali utječu na snimku, kako spojit zvučne kartice, sinkronizirati ih, paziti na kvalitetu zvuka i na kraju krajeva dobiveni audio smiksati. To je također dosta bitna stavka koju članovi mogu naučiti pošto nemaju priliku snimit audio materijal koji bi mogli kasnije miksati. KSET nudi tu mogućnost. Dosta članova je tu mogućnost iskoristilo da se nauči te su se kasnije nastavili baviti time.</p><br /> <h2>ODRŽAVANJE GLAZBENE OPREME</h2> <p>Da bi članovi mogli usvojiti sva znanja o opremi ona mora biti funkcionalna. Veliki dio vremena se ulaže u održavanje opreme pošto nemamo novaca za novu. Članovi uče popravljati mikrofone (membrane), pojačala (lampe, potovi, jack ulazi), skretnice (transformatori, otpornici), monitore (driveri, skretnice), miksete (kanali, slideri, potovi), bubnjevi (kože, drvo). Uz to članovi besprijekorno nauče lemiti pošto bez funkcionalnih kablova ne možemo odrađivati produkciju koncerta. Uz standardne kablove, ovisno o potrebi, članovi sastavljaju razno razne hibridne kablove potrebne u našem poslu. Osim popravaka članovi uče i proizvodnju razno raznih pedala, switch-eva, pojačala, skretnica, kutija.</p><br /> <h2>SVIRANJE U BENDU</h2> <p>Kakva bi to glazbena bila da nema benda imena Zaudarači. Mnogi naši članovi dolaze u skeciju isključivo u potrazi za dobrim bendom i druženjem s drugim glazbenicima. Uzevši u obzir da se sviraone za vježbu plaćaju, a oprema je skupa, članovi mogu vježbati u KSET-u djeliti glazbena iskustva i znanja s drugim članovima te se na taj način glazbeno usavršiti. Ukoliko se pokaže potreba članove podučavamo i pjevanju kroz našu školicu pjevanja. </p><br /> <h2>LIGHTING I VJ-ing</h2> <p>Članove koji iskažu želju za bavljenjem lightom tome i podučavamo. Kao i s toniranjem radi se o jako vrijednoj opremi na kojoj, osim KSET-a, ne postoji mjesto za vježbanje. Ne postoje niti ikakve škole za učenje lightanja tako da mnogi naši članovi kasnije nađu zaposlenje baveći se lightanjem za neku firmu. Članovi uče kako složiti light, način spajanja lighta, razlike različitih uređaja, njihove prednosti i mane, rad na profesionalnoj konzoli u profesionalnom programu. Osim općih znanja o lightu, članovi usvajaju i određena specifična znanja koja dolaze kroz bavljenje lightanjem poput ponašanja uređaja u specifičnom prostoru ili detekcija kvara i popravak...</p> <p>Od nedavno smo članove počeli učiti i VJ-ingu kao jednoj novoj vrsti vizualne produkcije koncerta. Članovi uče koristiti specijalizirane software za ovu djelatnost te im se prenose iskustvena znanja ostalih VJ-a koji se duže bave ovim oblikom osvjetljavanja. </p><br /> <h2>BOOKING AND PROMOTION</h2> <p>Članovi koji se zbilja istaknu svojim trudom dobivaju priliku baviti se organizacijom evenata u KSET-u, uglavnom koncerta pošto je to obaveza glazbene sekcije. Bavljenje organizacijom koncerata je jedna od najbitnijih stavki KSET-a pošto su koncerti ono što nam nosi popularnost i što nas čini živim klubom. Članovi koji se upuste u organizaciju stječu izuzetne organizacijske i komunikacijske vještine te imaju priliku biti jedni od nositelja kulturnog programa u Hrvatskoj. </p>
-#: templates/divisions/music.html:8
+#: kset/templates/divisions/music.html:8
 msgid "music-desc"
 msgstr ""
 "<p>Glazbena sekcija KSET-a brine o realizaciji koncertnog programa, "
@@ -711,12 +761,13 @@ msgstr ""
 "programa u Hrvatskoj. </p> "
 
 #. Translators: Pijandure
-#: templates/divisions/pijandure.html:6 templates/partials/leaders.html:33
+#: kset/templates/divisions/pijandure.html:6
+#: kset/templates/partials/leaders.html:33 subpages/views.py:34
 msgid "pi-title"
 msgstr "Pijandure"
 
 #. Translators: <p>Davne 1976. godine, vremena tako daleko da valjda još nije ni struje bilo, a kamo li čega naprednijeg, sastaje se grupica od dvadesetak ljudi željnih planine i druženja, te osniva planinarski aktiv, vođeni željom da se udalje od buke grada i odmore dušu u šumama i na beskrajnim poljima…</p> <p>Nedugo nakon toga, sekcija dobiva današnje ime - <strong>Planinarsko Izletničko Junačko Antialkoholičarsko Nenad...mašno Društvo Uvjetno Rečeno Elektrotehničara</strong> - pijandure. Sve je počelo jednostavnim izletom na Sljeme jedne nedjelje, a nastavilo se u sekciju kakvu znamo danas.</p> <p>Jedna od glavnih zadaća sekcije, a koju zaista treba ozbiljno shvatiti, je sistematsko uništavanje neprijatelja – alkohola i dobre hrane. Organiziramo <strong>Elektroplaninarski rally</strong>, <strong>PowerTrip</strong>, <strong>roštilje</strong>, <strong>planinarsku školicu</strong>, <strong>izlete</strong>... Izleti! Idemo na puno izleta, i to posvuda, samo hrabro u nepoznato i u nove pustolovine! Ništa nije kao onaj osjećaj kada uživaš u miru i tišini, uz super ljude oko sebe, na nekoj planini, u nekoj šumi, na nekoj livadi... <br /> Tl;dr volimo pojesti, popiti, vidjeti neko brdo i družiti se sa super ljudima, a ti možeš s nama.</p> </hr> <p>Organiziraju se i kratki i duži izleti, kao i <strong>kampiranje</strong> na Mrežnici ljeti, Planinarska školica uglavnom krajem veljače, roštilji, druženja, što god nam padne na pamet kao dobra ideja! Ako ništa drugo, uvijek možete računati na neko poznato sekcijsko lice da vas razveseli kada tužni i umorni od života i faksa dođete u KSET. Sve se to radi na osnovi ljubavi, samo ljubavi, prema izletima, ljudima, druženju, sekciji i Klubu. Sekcija uključuje studente s raznoraznih fakulteta, ne samo FER-a, pa iako nam nisu zajednički fakulteti, kao ni svi interesi, dijelimo želju za ugodnim druženjem i planinarenjem i to je ono što ovu sekciju drži na okupu već dugi niz godina. </p> <p>Ako te zanima ova predivna, prijateljska sekcija, ako voliš prirodu i planinarenje, ako imaš ukusa za pivu i klopu, pridruži nam se! Za sve informacije se možeš obratiti voditelju sekcije na mail ili jednostavno doći petkom oko 14h u KSET, kada sekcija ima sastanak, i iz prve ruke se upoznati s ljudima i radom sekcije. </p>
-#: templates/divisions/pijandure.html:9
+#: kset/templates/divisions/pijandure.html:9
 msgid "pi-desc"
 msgstr ""
 "<p>Davne 1976. godine, vremena tako daleko da valjda još nije ni struje "
@@ -752,12 +803,13 @@ msgstr ""
 "i iz prve ruke se upoznati s ljudima i radom sekcije. </p> "
 
 #. Translators: Tehnička
-#: templates/divisions/tech.html:5 templates/partials/leaders.html:41
+#: kset/templates/divisions/tech.html:5
+#: kset/templates/partials/leaders.html:41 subpages/views.py:44
 msgid "tech-title"
 msgstr "Tehnička"
 
 #. Translators: <p><span>Tehnička sekcija KSET-a postoji od samih početaka kluba (davne 1976. godine), u početku svoga rada pod nazivom "<strong>Zavod za manualni rad i </strong></span><span><strong>preciznu elektroniku</strong>".</span></p> <p>Područje rada tehničke sekcije je održavanje cjelokupnog inventara i opreme kluba u (skoro) vrhunskoj formi, što čini lepezu aktivnosti kojima se tehničari bave veoma širokom...</p> <p>Pod to spada redovito virenje ispod poklopca mnogih profesionalnih audio, video i rasvjetnih sustava unutar kluba.</span></p> <p>Sekcija se također bavi projektiranjem i konstruiranjem mnogih (elektroničkih) samogradnji za potrebe kluba, članova sekcije ili jednostavno iz zabave (koje u KSET-u ne nedostaje).</p> <p>Dakle: pojmovi poput piljenja, bušenja, rezanja (kabela ?), gletanja, brušenja, spajanja, rastavljanja, mjerenja, rušenja i lemljenja svakodnevica su jednog tehničara.</span></p> <p >Sekcija trenutačno broji 20-ak članova, koji su uvijek spremni pomoći i prenijeti svoje znanje nekim od novih članova.</p> <p>Ako želite saznati kako u praksi izgleda sve ono što učite na faksu, a pritom se ne bojite (malo) zasukati rukave tehnička sekcija je pravo mjesto za vas!</p>
-#: templates/divisions/tech.html:8
+#: kset/templates/divisions/tech.html:8
 msgid "tech-desc"
 msgstr ""
 "<p><span>Tehnička sekcija KSET-a postoji od samih početaka kluba (davne "
@@ -779,12 +831,13 @@ msgstr ""
 "rukave tehnička sekcija je pravo mjesto za vas!</p> "
 
 #. Translators: Video
-#: templates/divisions/video.html:5 templates/partials/leaders.html:45
+#: kset/templates/divisions/video.html:5
+#: kset/templates/partials/leaders.html:45 subpages/views.py:49
 msgid "video-title"
 msgstr "Video"
 
 #. Translators: <p>Video Sekcija je <strong>ekscentrična grupa studenata</strong> raznih struka. Zajedno nas veže interes prema filmu. <strong>Režiramo</strong>, <strong>pišemo</strong>, <strong>produciramo</strong>, <strong>glumimo</strong>, <strong>gledamo</strong>, <strong>imamo mišljenja</strong> i <strong>radimo filmu</strong> otprilke sve što mu se napravit može. Među nama se ima snimatelja, producenata, glumaca, režisera, montažera, pisaca, kritičara... i nitko nije profesionalac na svojem području ... JOŠ!</p> <p>Video Sekcija se bavi <strong>snimanjem i režijom uživo koncerata u KSET-u</strong>, <strong>stvara kratke igrane filmove</strong>, izvještaje studentskih događanja, a organizira razne radionice za sada uglavnom samo za svoje članove. Takoder organiziramo projekcije filmova u KSETu vec duzi niz godina. Sa filmskim uratcima <strong>sudjelujemo na festivalima</strong> gdje smo nerjetko bili primjećeni. <br /> <br />Uz sve to uživamo u studentskom životu uzibani u divnim njedrima KSET-a .</p>
-#: templates/divisions/video.html:8
+#: kset/templates/divisions/video.html:8
 msgid "video-desc"
 msgstr ""
 "<p>Video Sekcija je <strong>ekscentrična grupa studenata</strong> raznih "
@@ -802,28 +855,28 @@ msgstr ""
 "gdje smo nerjetko bili primjećeni. <br /> <br />Uz sve to uživamo u "
 "studentskom životu uzibani u divnim njedrima KSET-a .</p> "
 
-#: templates/partials/leaders.html:5
+#: kset/templates/partials/leaders.html:5
 msgid "club"
 msgstr "Klub"
 
-#: templates/partials/leaders.html:49
+#: kset/templates/partials/leaders.html:49
 msgid "program-contact"
 msgstr "Program"
 
 #. Translators: Monografija 2^5
-#: templates/projects/monografija.html:6
+#: kset/templates/projects/monografija.html:6 subpages/views.py:57
 msgid "mono-title"
 msgstr "Monografija 2^5"
 
 #. Translators: Nije prvi put da se netko sjetio da bi bilo zgodno napraviti knjigu o KSET-u, ali je jedini puta do sada da se uspjelo dogurati do kraja...
-#: templates/projects/monografija.html:10
+#: kset/templates/projects/monografija.html:10
 msgid "mono-desc-part-1"
 msgstr ""
 "Nije prvi put da se netko sjetio da bi bilo zgodno napraviti knjigu o KSET-"
 "u, ali je jedini puta do sada da se uspjelo dogurati do kraja..."
 
 #. Translators: <strong>Monografija KSET-a na petstotrideset i šest (536!) ful kolor stranica</strong>, jedan od velikih projekata foto sekcije, na kojemu je čitavo foto-članstvo radilo gotovo tri godine, kako bi slikom i riječi obuhvatilo
-#: templates/projects/monografija.html:14
+#: kset/templates/projects/monografija.html:14
 msgid "mono-desc-part-2"
 msgstr ""
 "<strong>Monografija KSET-a na petstotrideset i šest (536!) ful kolor "
@@ -832,12 +885,12 @@ msgstr ""
 "obuhvatilo"
 
 #. Translators: prve 32 godine najdražeg nam Kluba...
-#: templates/projects/monografija.html:16
+#: kset/templates/projects/monografija.html:16
 msgid "mono-desc-part-3"
 msgstr "prve 32 godine najdražeg nam Kluba..."
 
 #. Translators: Knjiga o ksetovcima i svim njihovim malim i velikim pothvatima, zbog kojih je KSET postao i ostao nezaboravno mjesto kakvim ga svi znamo... sve što vidite oko sebe čim pređete prag, njihovih je ruku djelo; od uređenja prostora, organizacije koncerta kojeg slušate, izložbi koje vise... A ima tu još puno puno više toga sto se u KSET-u radi... Mi smo to samo sačuvali kako se ne bi zaboravilo, izgubilo: od ksetovaca za ksetovce.
-#: templates/projects/monografija.html:18
+#: kset/templates/projects/monografija.html:18
 msgid "mono-desc-part-4"
 msgstr ""
 "Knjiga o ksetovcima i svim njihovim malim i velikim pothvatima, zbog kojih "
@@ -848,7 +901,7 @@ msgstr ""
 "se ne bi zaboravilo, izgubilo: od ksetovaca za ksetovce."
 
 #. Translators: Zavirite i pronađite sliku mame, tate, strica, tetke, sestre, brata, svoju... ili samo provjerite što se sve dešavalo u prostorima kotlovnice u prvih trideset i dvije godine njegova postojanja. I uživajte.
-#: templates/projects/monografija.html:20
+#: kset/templates/projects/monografija.html:20
 msgid "mono-desc-part-5"
 msgstr ""
 "Zavirite i pronađite sliku mame, tate, strica, tetke, sestre, brata, "
@@ -856,12 +909,12 @@ msgstr ""
 "prvih trideset i dvije godine njegova postojanja. I uživajte."
 
 #. Translators: PowerTrip
-#: templates/projects/powertrip.html:6
+#: kset/templates/projects/powertrip.html:6 subpages/views.py:62
 msgid "powertrip-title"
 msgstr "PowerTrip"
 
 #. Translators: To je stručno <strong>putovanje studenata</strong>u svrhu <strong>upoznavanja procesa proizvodnje električne energije iz različitih izvora energije</strong>. Naglasak POWERTRIP-a je educiranje budućih magistara i prvostupnika elektrotehnike o načinima dobivanja električne energije iz termo i nukleranih izvora energije. Hrvatska je zemlja koja veliki dio svoje energetske potrošnje koja svoje potrebe zadovoljava uvozom energije. Danas su aktualne rasprave o nadoknađivanju tog uvoza. Cilj je upoznati buduće magistre i prvostupnike s prednostima i nedostacima rezličitih rješenja te povećati njihovo znanje na tom području. Želimo povećati međusobnu suradnju između budućih magistara struke i znanstvenika u svrhu razvoja hrvatske energetike i gospodarstva. Svake godine u organizaiji POWERTRIP-a sudjeluju članovi planinarske sekcije, a sudjeluje 70 studenata FER-a.</p> <p>Dosada se u sklopu projekta posjećene: <strong>RHE Velebit</strong>, <strong>HE Zakučac</strong>, <strong>HE Peruća</strong>, <strong>HE Orlovac</strong>, <strong>NE Krško</strong>, <strong>TE Plomin</strong>, <strong>Kontrolni centar HAC</strong> - Delnice, <strong>Memorijalni centar Nikola Tesla</strong>. </p> <p>Ovim putem se zahvaljujemo svim profesorima fakulteta, te zaposlenicima navedenih mjesta na pomoći i ukazanoj dobroj volji.
-#: templates/projects/powertrip.html:10
+#: kset/templates/projects/powertrip.html:10
 msgid "powertrip-desc"
 msgstr ""
 "To je stručno <strong>putovanje studenata</strong>u svrhu <strong> "
@@ -884,12 +937,12 @@ msgstr ""
 "zaposlenicima navedenih mjesta na pomoći i ukazanoj dobroj volji. "
 
 #. Translators: Rally
-#: templates/projects/rally.html:6
+#: kset/templates/projects/rally.html:6 subpages/views.py:67
 msgid "rally-title"
 msgstr "Rally"
 
 #. Translators: <p>Jesi li ikada poželio šetati se šumom s ekipom prijatelja? Igrati najbolje igre dok vas ljudi sa strane slave? Tražiti najkreativnije odgovore na zadana pitanja? Sretan jesti super ćevape? I pri tom se <strong>zabaviti</strong> kao nikad u životu? Onda si na pravome mjestu!</p> <p>Za one koji ne znaju, <strong>Svjetski elektroplaninarski pješački rally</strong> je godišnje natjecanje među ekipama čiji je cilj što prije doći od početka do kraja staze uz odgovaranje na pitanja i igranje ludih igara. Natjecanje organizira <strong>Planinarska sekcija</strong> (P.I.J.A.N.D.U.R.E.), a natječu se ljudi i kentauri svih godina, boja i prehrambenih navika u ekipama od 4 do 10 osoba, a uglavnom u ukupnom zbroju od 200 natjecatelja.</p> <p>Natjecatelji stižu rano ujutro na pomno pripremljenu stazu na nepoznatu lokaciju i dobivaju na svakoj kontrolnoj točki papir s pitanjima sasvim opće kulture, raznovrsnim igrama i uputama do iduće točke. Pobjeda ovisi o tome koliko ste hrabri, snalažljivi, sposobni pojesti i popiti, kreativni i voljni žrtvovati se za ekipu, a putem imate priliku upoznati ljude iz drugih timova, kao i predivne organizatore Rallyja iz Planinarske sekcije! Nova prijateljstva na sve strane! A tu su i neke kobasice i ćevapi i tako to…</p></br> <p>Sudjelovanje uključuje prijevoz do starta, majicu za svakog natjecatelja, hranu na sredini i na kraju staze, pivo, vino i sokove koliko vam srce poželi ili pak dok sve ne popijete, te prijevoz natrag u KSET, gdje je službena podjela diploma, nagrada, i after party.</p> <p>Rally se odvija <strong>svake godine</strong>. Za sve detalje se uvijek možete obratiti voditelju Planinarske sekcije putem e-maila, a ako ste više lice-u-lice tip, možete doći do KSET-a i na šanku pitati za pijandure. Uz to se možete obratiti i članovima KSET-a za njihove dojmove i iskustva s prošlih Rallyja uz toplu kavicu ili sok.</p>
-#: templates/projects/rally.html:10
+#: kset/templates/projects/rally.html:10
 msgid "rally-desc"
 msgstr ""
 "<p>Jesi li ikada poželio šetati se šumom s ekipom prijatelja? Igrati "
@@ -918,3 +971,28 @@ msgstr ""
 "lice tip, možete doći do KSET-a i na šanku pitati za pijandure. Uz to se "
 "možete obratiti i članovima KSET-a za njihove dojmove i iskustva s prošlih "
 "Rallyja uz toplu kavicu ili sok.</p> "
+
+#: members/helpers.py:12
+msgid "kset.org: Reset Lozinke"
+msgstr "kset.org: Reset Lozinke"
+
+#. Translators: Molimo unesite email adresu.
+#: newsletter/forms.py:15
+msgid "newsletter.subscription.no-email"
+msgstr "Molim vas unesite ispravnu e-mail adresu!"
+
+#. Translators: Email adresa je već pretplaćena.
+#: newsletter/forms.py:18
+msgid "newsletter.subscription.not-unique-email"
+msgstr "Unesena e-mail adresa je već pretplaćena!"
+
+#: newsletter/views.py:16
+msgid "newsletter.subscription.successful"
+msgstr "Uspješno ste se pretplatili!"
+
+#. Translators: 'Oops! Something went wrong.'
+#: newsletter/views.py:20
+msgid "newsletter.subscription.error"
+msgstr ""
+"Dogodila se greška prilikom spremanja vaše pretplate! Molim Vas pokušajte "
+"ponovno."

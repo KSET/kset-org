@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load fb_versions %}
+
+
+{% block title %} - Newsletter{% endblock title %}
+
+{% block extrahead %}
+    <meta property="og:title" content="Newsletter"/>
+    <meta property="og:description" content="Newsletter subscribe form."/>
+{% endblock %}
+
+{% block content %}
+    <section class="gallery">
+        <div class="newsletter-box">
+
+            <h3 class="right-box-title">Newsletter</h3>
+
+            <p>
+                {% trans "newsletter.subscribe.text" %}
+            </p>
+
+            <form id="form-newsletter" class="form-newsletter">
+                {% csrf_token %}
+
+                <input type="text" name="email" id="newsletter-subscription" class="newsletter-subscription"
+                        {# Translators: Vaša e-mail adresa #}
+                       placeholder="{% trans "email.placeholder" %}"/>
+                <input type="button" id="newsletter-submit" class="newsletter-submit" value="{% trans "newsletter.subscribe.button" %}"/>
+                <!-- TODO: CAPTCHA -->
+            </form>
+
+            {# Translators: Poruka #}
+            <p id="newsletter-message" style="text-weight: bold; display: none;">{% trans "message" %}</p>
+
+            <p style="font-size: small; text-align: center">
+                {% trans "unsubscribe-text" %}
+            </p>
+        </div>
+    </section>
+
+{% endblock %}
+

@@ -50,9 +50,9 @@ class EventsViewTest(TestCase):
         response = self.client.get('calendar')
         self.assertEquals(200, response.status_code)
 
-    def test_subscribe_to_newsletter_with_get_fail(self):
-        response = self.client.get('subscribe', {'email': 'invalidEmail'})
-        self.assertEquals(405, response.status_code)
+    def test_subscribe_to_newsletter_with_get(self):
+        response = self.client.get('subscribe')
+        self.assertEquals(200, response.status_code)
 
     def test_subscribe_to_newsletter_with_invalid_email_fail(self):
         response = self.client.post('subscribe', {'email': 'invalid_email_text'})
