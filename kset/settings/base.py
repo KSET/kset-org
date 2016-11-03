@@ -79,6 +79,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'kset.middleware.force_default_middleware.ForceDefaultLanguageMiddleware',
+    'kset.middleware.change_language_middleware.ChangeLanguageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
