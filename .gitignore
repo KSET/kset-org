@@ -13,3 +13,4 @@ dev.db
 /requirements/local.txt
 *.swp
 .idea
+*.mo

@@ -60,6 +60,7 @@ update:
 		python manage.py syncdb --noinput
 		python manage.py migrate --noinput
 		python manage.py collectstatic --noinput
+		python manage.py compilemessages
 
 deploy: update
 		sudo supervisorctl restart $(PROJECT_NAME)-org
