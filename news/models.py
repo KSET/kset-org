@@ -31,4 +31,4 @@ class News(models.Model):
 
     @staticmethod
     def get_sticky_news():
-        return News.objects.filter(sticky=True).order_by('-created_at')
+        return News.objects.filter(sticky=False).order_by('-created_at')
