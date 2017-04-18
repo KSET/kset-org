@@ -49,6 +49,7 @@ setup-dev:
 	$(MAKE) test
 	[ ! -f $(PROJECT_NAME)/settings/local.py ] && \
 		echo 'from .dev import *' > $(PROJECT_NAME)/settings/local.py
+	python manage.py compilemessages
 	python manage.py syncdb
 	python manage.py migrate
 	echo "Now run: python manage.py runserver and visit http://localhost:8000/"
