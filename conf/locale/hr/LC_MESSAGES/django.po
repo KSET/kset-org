@@ -393,9 +393,9 @@ msgstr "Opširnije"
 msgid "unsubscribe-text"
 msgstr ""
 "Ne želiš više primati KSET newsletter? <br/>"
-"Za odjavu s newslettera molimo pošaljite"
+"Za odjavu s newslettera molimo pošaljite "
 "<a href=\"mailto:unsubscribe@kset.org?subject=Unsubscribe%20me\">e-mail</a>"
-"sa predmetom <b>\"Unsubscribe me\"</b>"
+" sa predmetom <b>\"Unsubscribe me\"</b>"
 "na adresu <a href=\"mailto:unsubscribe@kset.org\">unsubscribe@kset.org</a>."
 
 #: kset/templates/program.html:19
