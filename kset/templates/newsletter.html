@@ -1,76 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 {% load i18n %}
 {% load fb_versions %}
 <head style="margin: 0;padding: 0;">
 
     <meta name="viewport" content="width=device-width">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
-<body bgcolor="#F5F5F5" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;height: 100%;color: #282828;width: 100%!important;">
+<body bgcolor="#F5F5F5" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"
+      style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;height: 100%;color: #282828;width: 100%!important;">
 
-    <table class="head-wrap" bgcolor="#000000" style="margin: 0;padding: 0;width: 100%; border-collapse: collapse;">
-        <tr>
+<table class="head-wrap" bgcolor="#000000" style="margin: 0;padding: 0;width: 100%; border-collapse: collapse;">
+    <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+        <td class="header container" align=""
+            style="margin: 0 auto!important;padding: 0;display: block!important;max-width: 600px!important;clear: both!important;">
 
-            <td class="header container" align="" style="margin: 0 auto!important;padding: 0;display: block!important;max-width: 600px!important;clear: both!important;">
-                <div class="content" style="margin: 0 auto;padding: 15px 15px 0;max-width: 600px;display: block; font-size: 12px; text-align: center;">
-                    {# Translators: Newsletter Vam se dobro ne prikazuje? Uf :/ Posjetite #}
-                    {% trans "newsletter-error-message" %} <a style="color: #F1783F;" href="http://kset.org/newsletter/">www.kset.org/newsletter/</a>
-                </div>
-            </td>
-        </tr>
-        <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+            <div class="content"
+                 style="margin: 0 auto;padding: 15px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;max-width: 600px;display: block;">
+                <table bgcolor="#000000"
+                       style="width: 100%;margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                    <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                        <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                            <a href="http://kset.org"
+                               style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;color: #F1783F;text-decoration: none;">
+                                <img src="https://www.kset.org{{ STATIC_URL }}images/newsletter/header.png"
+                                     style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;max-width: 100%;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;"></td>
+    </tr>
+</table>
 
-            <td class="header container" align="" style="margin: 0 auto!important;padding: 0;display: block!important;max-width: 600px!important;clear: both!important;">
+<table class="body-wrap" bgcolor="#F5F5F5"
+       style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;width: 100%;">
+    <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+        <td class="container" align="" bgcolor="#F5F5F5"
+            style="margin: 0 auto!important;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;display: block!important;max-width: 600px!important;clear: both!important;">
 
-                <div class="content" style="margin: 0 auto;padding: 15px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;max-width: 600px;display: block;">
-                    <table bgcolor="#000000" style="width: 100%;margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
-                        <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
-                            <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
-                                <a href="http://kset.org" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;color: #F1783F;text-decoration: none;">
-                                    <img src="https://www.kset.org{{STATIC_URL}}images/newsletter/header.png" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;max-width: 100%;">
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-            <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;"></td>
-        </tr>
-    </table>
+            <div class="content"
+                 style="margin: 0 auto;padding: 15px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;max-width: 600px;display: block;">
+                <table style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;width: 100%;">
+                    <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                        <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                            {# Translators: Program kluba od #}
+                            <p class="lead"
+                               style="text-align:center; margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin-bottom: 10px;font-weight: normal;font-size: 17px;line-height: 1.6;">{% trans "club-program-since" %}
+                                <b style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                                    {{ from_date|date:"d.m.Y." }}</b> do <b
+                                        style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                                    {{ till_date|date:"d.m.Y." }}</b></p>
 
-    <table class="body-wrap" bgcolor="#F5F5F5" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;width: 100%;">
-        <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
-            <td class="container" align="" bgcolor="#F5F5F5" style="margin: 0 auto!important;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;display: block!important;max-width: 600px!important;clear: both!important;">
-
-                <div class="content" style="margin: 0 auto;padding: 15px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;max-width: 600px;display: block;">
-                    <table style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;width: 100%;">
-                        <tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
-                            <td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
-                                {# Translators: Program kluba od #}
-                                <p class="lead" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin-bottom: 10px;font-weight: normal;font-size: 17px;line-height: 1.6;">{% trans "club-program-since" %} <b style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">{{ from_date|date:"d.m.Y." }}</b> do <b style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">{{ till_date|date:"d.m.Y." }}</b></p>
-
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
 
-    {% for event in events %}
+            {% for event in events %}
 
-                <div class="content" style="margin: 0 auto 20px;padding: 15px;max-width: 600px;display: block; background: #ffffff; border: 1px solid #e5e5e5; box-shadow: 0 1px 1px -1px rgba(0,0,0,0.6)">
+                <div class="content"
+                     style="margin: 0 auto 20px;padding: 15px;max-width: 600px;display: block; background: #ffffff; border: 1px solid #e5e5e5; box-shadow: 0 1px 1px -1px rgba(0,0,0,0.6)">
                     <table style="width: 100%;">
                         <tr>
-                            <td width="20%" style="vertical-align: top;padding-right: 10px;margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                            <td width="20%"
+                                style="vertical-align: top;padding-right: 10px;margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
                                 {% if event.thumb %}
-                                    <a href="https://www.kset.org{% url 'event_slug' slug=event.slug %}" style="color: #F1783F;text-decoration: none;"><img src="https://www.kset.org{% version event.thumb 'medium' %}" border="0" float="left" style="margin: 0;padding: 0;max-width: 100%;"></a>
+                                    <a href="https://www.kset.org{% url 'event_slug' slug=event.slug %}"
+                                       style="color: #F1783F;text-decoration: none;"><img
+                                            src="https://www.kset.org{% version event.thumb 'medium' %}" border="0"
+                                            float="left" style="margin: 0;padding: 0;max-width: 100%;"></a>
                                 {% endif %}
                             </td>
                             <td>
-                                <h4 style="margin: 0;padding: 0;font-family: &quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;line-height: 1.1;margin-bottom: 15px;color: #F1783F;font-weight: bold;font-size: 23px;"><a href="https://www.kset.org{% url 'event_slug' slug=event.slug %}" style="color: #F1783F;text-decoration: none;">{{ event.title }}</a>
+                                <h4 style="margin: 0;padding: 0;font-family: &quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;line-height: 1.1;margin-bottom: 15px;color: #F1783F;font-weight: bold;font-size: 23px;">
+                                    <a href="https://www.kset.org{% url 'event_slug' slug=event.slug %}"
+                                       style="color: #F1783F;text-decoration: none;">{{ event.title }}</a>
                                 </h4>
-                                <h4><small style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;color: #181818;line-height: 0;text-transform: none;"><strong style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">{{ event.date|date:"l, d.m.Y." }}</strong></small>
+                                <h4>
+                                    <small style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;color: #181818;line-height: 0;text-transform: none;">
+                                        <strong style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
+                                            {{ event.date|date:"l, d.m.Y." }}</strong></small>
                                 </h4>
 
                                 <div style="font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;">
@@ -80,31 +95,36 @@
                                     {% endif %}
                                 </div>
                                 {# Translators: Opširnije #}
-                                <a class="btn" href="{% url "subscribe" %}{% url 'event_slug' slug=event.slug %}" style="padding: 10px 16px;color: #FFF;text-decoration: none;background-color: #F1783F;font-weight: bold;margin-right: 10px;text-align: center;cursor: pointer;display: inline-block;">{% trans "more-capitalized" %} &raquo;</a>
+                                <a class="btn" href="{% url "subscribe" %}{% url 'event_slug' slug=event.slug %}"
+                                   style="padding: 10px 16px;color: #FFF;text-decoration: none;background-color: #F1783F;font-weight: bold;margin-right: 10px;text-align: center;cursor: pointer;display: inline-block;">{% trans "more-capitalized" %} &raquo;</a>
                             </td>
                         </tr>
                     </table>
                 </div>
 
-    {% endfor %}
-        <div class="content">
-            <p style="font-size: small; text-align: center; ">
-                {% trans "newsletter.subscribe.text" %} <a href="{% url "subscribe" %}">{% trans "newsletter.subscribe.button" %}</a>
-            </p>
-            <hr />
-            <p style="font-size: small; text-align: center; ">
-                {% trans "unsubscribe-text" %}
-            </p>
-        </div>
+            {% endfor %}
+            <div class="content">
+                <p style="font-size: small; text-align: center; ">
+                    {% trans "newsletter.subscribe.text" %} <a
+                        href="{% url "subscribe" %}">
+                    {% filter force_escape|title %}
+                        {% trans "newsletter.subscribe.button" %}
+                    {% endfilter %}
+                </a>
+                </p>
+                <hr/>
+                <p style="font-size: small; text-align: center; ">
+                    {% trans "unsubscribe-text" %}
+                </p>
+            </div>
 
-                <tr>
-                  <td colspan="2" style="background-color:#F1783F; padding: 20px;border-color:#F1783F" align="center" valign="top">
-                    <a style="font-size:14px; font-weight: bold; color:#ffffff; line-height:100%; font-family:verdana; text-decoration: none;">{% trans "description-short" %}</a>
-                  </td>
-                </tr>
-            </td>
-        </tr>
-    </table>
+    <tr>
+        <td colspan="2" style="background-color:#000000; padding: 20px;border-color:#FF8C00" align="center"
+            valign="top">
+            <a style="font-size:14px; font-weight: bold; color:#FF8C00; line-height:100%; font-family:verdana; text-decoration: none;">{% trans "description-short" %}</a>
+        </td>
+    </tr>
+</table>
 </body>
 
 </html>
