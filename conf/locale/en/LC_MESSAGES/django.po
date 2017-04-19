@@ -368,6 +368,10 @@ msgstr "Your e-mail address"
 msgid "newsletter.subscribe.button"
 msgstr "SUBSCRIBE"
 
+#: kset/templates/newsletter-form.html:29
+msgid "newsletter.subscribe.button2"
+msgstr "Subscribe"
+
 #. Translators: Poruka
 #: kset/templates/newsletter-form.html:34 kset/templates/program.html:46
 msgid "message"
