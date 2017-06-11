@@ -357,8 +357,7 @@ msgstr "Večernji program"
 #: kset/templates/newsletter-form.html:20
 msgid "newsletter.subscribe.text"
 msgstr ""
-"Prijavite se na naš newsletter kako biste pratili najnovije vijesti i evente "
-"u KSET-u."
+"Prijavi se na naš newsletter i prati najnovije vijesti i događanja u KSET-u. "
 
 #. Translators: Vaša e-mail adresa
 #: kset/templates/newsletter-form.html:28 kset/templates/program.html:40
@@ -368,6 +367,10 @@ msgstr "Vaša e-mail adresa"
 #: kset/templates/newsletter-form.html:29
 msgid "newsletter.subscribe.button"
 msgstr "PRETPLATI ME"
+
+#: kset/templates/newsletter-form.html:29
+msgid "newsletter.subscribe.button2"
+msgstr "Pretplati me"
 
 #. Translators: Poruka
 #: kset/templates/newsletter-form.html:34 kset/templates/program.html:46
@@ -393,9 +396,9 @@ msgstr "Opširnije"
 msgid "unsubscribe-text"
 msgstr ""
 "Ne želiš više primati KSET newsletter? <br/>"
-"Za odjavu s newslettera molimo pošaljite "
+"Za odjavu s newslettera molimo pošalji "
 "<a href=\"mailto:unsubscribe@kset.org?subject=Unsubscribe%20me\">e-mail</a>"
-" sa predmetom <b>\"Unsubscribe me\"</b>"
+" s predmetom <b>\"Unsubscribe me\"</b> "
 "na adresu <a href=\"mailto:unsubscribe@kset.org\">unsubscribe@kset.org</a>."
 
 #: kset/templates/program.html:19
