@@ -131,6 +131,16 @@ class Member(models.Model):
         except:
             return u'---'
 
+    def card_number(self):
+        """Returns card number. --> Hardcoded group ID!"""
+        try:
+            return MemberGroupLink.objects.filter(
+                member=self.id).filter(
+                group__parent=2).values(
+                'card_number')[0]["card_number"]
+        except:
+            return u'---'
+
     def phone(self):
         return self.__contact(Contact.TYPE_PHONE)
 
@@ -152,6 +162,7 @@ class Member(models.Model):
 class MemberGroupLink(models.Model):
     member = models.ForeignKey(Member, verbose_name="član")
     group = models.ForeignKey(Group, verbose_name="grupa")
+    card_number = models.CharField("broj iskaznice", max_length=10, null=True, blank=True)
     date_start = models.DateField("početak", null=True, blank=True)
     date_end = models.DateField("kraj", null=True, blank=True)
 
