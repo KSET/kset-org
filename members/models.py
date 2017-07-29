@@ -59,6 +59,11 @@ class Member(models.Model):
         verbose_name = "član"
         verbose_name_plural = "članovi"
 
+    GENDERS = (
+        ('Male', 'Muško'),
+        ('Female', 'Žensko')
+    )
+
     card_id = models.CharField("iskaznica", max_length=32, null=True, blank=True)
     name = models.CharField("ime", max_length=32)
     surname = models.CharField("prezime", max_length=64)
@@ -66,8 +71,15 @@ class Member(models.Model):
     nickname = models.CharField("nadimak", max_length=32, null=True, blank=True)
     username = models.CharField("korisničko ime", unique=True, max_length=32)
     password = models.CharField("lozinka", max_length=255, null=True, blank=True)
+    join_date = models.DateField("datum učlanjenja", null=True, blank=True)
+    leave_date = models.DateField("datum prestanka članstva", null=True, blank=True)
     birth = models.DateField("datum rođenja", null=True, blank=True)
     death = models.DateField("datum smrti", null=True, blank=True)
+    oib = models.CharField("oib", max_length=11, null=True, blank=True)
+    college = models.CharField("fakultet", max_length=100, null=True, blank=True)
+    college_confirmation = models.BooleanField("potvrda fakulteta", default=False)
+    membership_paid = models.BooleanField("članarina plaćena", default=False)
+    gender = models.CharField("spol", max_length=255, choices=GENDERS, null=True)
     comment = HTMLField("komentar", null=True, blank=True)
     groups = models.ManyToManyField(Group, through='MemberGroupLink')
     image = models.ImageField(upload_to="members/avatars/", null=True, blank=True, verbose_name="slika")
