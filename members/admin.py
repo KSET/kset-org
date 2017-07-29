@@ -1,41 +1,11 @@
 #coding: utf-8
 
-import os
-
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from django.conf import settings
-from django.utils.encoding import smart_str
-
 from .models import *
 from .forms import *
-from .membership import InvoiceTemplate
-
-
-def make_bill(modeladmin, request, queryset):
-    """Creates bill (.pdf) with memberships"""
-
-    bill = InvoiceTemplate(os.path.join(settings.MEDIA_ROOT, 'uploads', 'invoice.pdf'))
-
-    odd = True
-    cnt = 437
-    for member in queryset:
-        bill.buyer['name'] = smart_str(member.name + " " + member.surname)
-        bill.buyer['taxnum'] = member.id
-
-        bill.info['num'] = "2011-" + str(cnt)
-        bill.info['date'] = "04.01.2011."
-        bill.info['items'] = [['članarina za SSFER', 100.0]]
-
-        bill.populate()
-
-        cnt = cnt + 1
-
-        bill.newPage()
-
-    bill.create()
-
-make_bill.short_description = "Ispisi clanarine"
+from actions import export_as_csv_action
+from actions import make_bill
 
 
 class MemberGroup(admin.TabularInline):
@@ -82,7 +52,12 @@ class MemberAdmin(UserAdmin):
     search_fields_verbose = ('Ime', 'Prezime', 'Nadimak',)
     list_filter = ['groups']
 
-    actions = [make_bill]
+    actions = [
+        make_bill,
+        export_as_csv_action(
+            fields=['name', 'surname', 'division', 'card', 'birth', 'address', 'phone', 'mobile', 'email']
+        )
+    ]
     filter_horizontal = ()
 
     add_fieldsets = (
