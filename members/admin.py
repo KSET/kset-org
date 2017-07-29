@@ -43,10 +43,11 @@ class MemberAdmin(UserAdmin):
 
     fieldsets = [
         ("Korisnički račun", {'fields': ['username', 'password']}),
-        ("Osobni podaci", {'fields': ['name', 'surname', 'nickname', 'birth',
-                                        'death', 'image', 'comment']}),
+        ("Osobni podaci", {'fields': ['name', 'surname', 'nickname', 'gender', 'oib', 'birth',
+                                        'death', 'join_date', 'leave_date', 'college',
+                                      'college_confirmation', 'membership_paid', 'image', 'comment']}),
     ]
-    list_display = ('username', 'name', 'surname', 'nickname', 'division', 'card', )
+    list_display = ('username', 'name', 'surname', 'nickname', 'division', 'card')
     ordering = ('surname', 'name')
     search_fields = ('name', 'surname', 'nickname', 'username')
     search_fields_verbose = ('Ime', 'Prezime', 'Nadimak',)
