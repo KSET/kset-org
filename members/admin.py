@@ -56,7 +56,9 @@ class MemberAdmin(UserAdmin):
     actions = [
         make_bill,
         export_as_csv_action(
-            fields=['name', 'surname', 'division', 'card', 'birth', 'address', 'phone', 'mobile', 'email']
+            fields=[
+                'name', 'surname', 'gender', 'oib', 'division', 'card', 'join_date',
+                'leave_date', 'birth', 'address', 'phone', 'mobile', 'email', 'college']
         )
     ]
     filter_horizontal = ()
