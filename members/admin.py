@@ -49,7 +49,7 @@ class MemberAdmin(UserAdmin):
                                         'death', 'join_date', 'leave_date', 'college',
                                       'college_confirmation', 'membership_paid', 'image', 'comment']}),
     ]
-    list_display = ('username', 'name', 'surname', 'nickname', 'division', 'card', 'is_active')
+    list_display = ('username', 'name', 'surname', 'nickname', 'division', 'card', 'card_number', 'is_active')
     ordering = ('surname', 'name')
     search_fields = ('name', 'surname', 'nickname', 'username')
     search_fields_verbose = ('Ime', 'Prezime', 'Nadimak')
@@ -59,7 +59,7 @@ class MemberAdmin(UserAdmin):
         make_bill,
         export_as_csv_action(
             fields=[
-                'name', 'surname', 'gender', 'oib', 'division', 'card', 'join_date',
+                'name', 'surname', 'gender', 'oib', 'division', 'card', 'card_number', 'join_date',
                 'leave_date', 'birth', 'address', 'phone', 'mobile', 'email', 'college']
         )
     ]
