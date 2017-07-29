@@ -2,6 +2,8 @@
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+
+from members.helpers import MemberActiveFilter
 from .models import *
 from .forms import *
 from actions import export_as_csv_action
@@ -47,11 +49,11 @@ class MemberAdmin(UserAdmin):
                                         'death', 'join_date', 'leave_date', 'college',
                                       'college_confirmation', 'membership_paid', 'image', 'comment']}),
     ]
-    list_display = ('username', 'name', 'surname', 'nickname', 'division', 'card')
+    list_display = ('username', 'name', 'surname', 'nickname', 'division', 'card', 'is_active')
     ordering = ('surname', 'name')
     search_fields = ('name', 'surname', 'nickname', 'username')
-    search_fields_verbose = ('Ime', 'Prezime', 'Nadimak',)
-    list_filter = ['groups']
+    search_fields_verbose = ('Ime', 'Prezime', 'Nadimak')
+    list_filter = ['groups', MemberActiveFilter]
 
     actions = [
         make_bill,

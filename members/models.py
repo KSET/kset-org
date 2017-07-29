@@ -1,7 +1,6 @@
 #coding: utf-8
 
 import hashlib
-from uuid import uuid4
 from datetime import datetime
 
 from django.db import models
@@ -100,6 +99,9 @@ class Member(models.Model):
 
     def set_password(self, password):
         self.password = self.hash_password(password)
+
+    def is_active(self):
+        return self.leave_date is None
 
     def division(self):
         """Returns division name. --> Hardcoded group ID!"""
