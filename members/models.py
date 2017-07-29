@@ -100,6 +100,12 @@ class Member(models.Model):
         except:
             return u'---'
 
+    def address(self):
+        try:
+            return Address.objects.filter(member=self.id)[0]
+        except:
+            return '---'
+
     def card(self):
         """Returns card. --> Hardcoded group ID!"""
 
@@ -110,6 +116,23 @@ class Member(models.Model):
                 'group__name')[0]["group__name"]
         except:
             return u'---'
+
+    def phone(self):
+        return self.__contact(Contact.TYPE_PHONE)
+
+    def mobile(self):
+        return self.__contact(Contact.TYPE_CELL)
+
+    def email(self):
+        return self.__contact(Contact.TYPE_EMAIL)
+
+    def __contact(self, contact_type):
+        try:
+            return Contact.objects\
+                .filter(member=self.id, contact_type=contact_type)\
+                .values('contact')[0]['contact']
+        except:
+            return '---'
 
 
 class MemberGroupLink(models.Model):
@@ -163,7 +186,7 @@ class Address(models.Model):
         verbose_name_plural = "adrese"
 
     def __unicode__(self):
-        return self.address
+        return self.address + ", " + self.zipcode + " " + self.town + ", " + self.country
 
 
 class ResetPasswordLink(models.Model):
