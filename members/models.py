@@ -1,7 +1,6 @@
 #coding: utf-8
 
 import hashlib
-from uuid import uuid4
 from datetime import datetime
 
 from django.db import models
@@ -59,6 +58,11 @@ class Member(models.Model):
         verbose_name = "član"
         verbose_name_plural = "članovi"
 
+    GENDERS = (
+        ('Male', 'Muško'),
+        ('Female', 'Žensko')
+    )
+
     card_id = models.CharField("iskaznica", max_length=32, null=True, blank=True)
     name = models.CharField("ime", max_length=32)
     surname = models.CharField("prezime", max_length=64)
@@ -66,8 +70,15 @@ class Member(models.Model):
     nickname = models.CharField("nadimak", max_length=32, null=True, blank=True)
     username = models.CharField("korisničko ime", unique=True, max_length=32)
     password = models.CharField("lozinka", max_length=255, null=True, blank=True)
+    join_date = models.DateField("datum učlanjenja", null=True, blank=True)
+    leave_date = models.DateField("datum prestanka članstva", null=True, blank=True)
     birth = models.DateField("datum rođenja", null=True, blank=True)
     death = models.DateField("datum smrti", null=True, blank=True)
+    oib = models.CharField("oib", max_length=11, null=True, blank=True)
+    college = models.CharField("fakultet", max_length=100, null=True, blank=True)
+    college_confirmation = models.BooleanField("potvrda fakulteta", default=False)
+    membership_paid = models.BooleanField("članarina plaćena", default=False)
+    gender = models.CharField("spol", max_length=255, choices=GENDERS, null=True)
     comment = HTMLField("komentar", null=True, blank=True)
     groups = models.ManyToManyField(Group, through='MemberGroupLink')
     image = models.ImageField(upload_to="members/avatars/", null=True, blank=True, verbose_name="slika")
@@ -88,6 +99,9 @@ class Member(models.Model):
 
     def set_password(self, password):
         self.password = self.hash_password(password)
+
+    def is_active(self):
+        return self.leave_date is None
 
     def division(self):
         """Returns division name. --> Hardcoded group ID!"""
@@ -117,6 +131,16 @@ class Member(models.Model):
         except:
             return u'---'
 
+    def card_number(self):
+        """Returns card number. --> Hardcoded group ID!"""
+        try:
+            return MemberGroupLink.objects.filter(
+                member=self.id).filter(
+                group__parent=2).values(
+                'card_number')[0]["card_number"]
+        except:
+            return u'---'
+
     def phone(self):
         return self.__contact(Contact.TYPE_PHONE)
 
@@ -138,6 +162,7 @@ class Member(models.Model):
 class MemberGroupLink(models.Model):
     member = models.ForeignKey(Member, verbose_name="član")
     group = models.ForeignKey(Group, verbose_name="grupa")
+    card_number = models.CharField("broj iskaznice", max_length=10, null=True, blank=True)
     date_start = models.DateField("početak", null=True, blank=True)
     date_end = models.DateField("kraj", null=True, blank=True)
 
