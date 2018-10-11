@@ -546,30 +546,45 @@ msgstr "Računarska"
 #: kset/templates/divisions/comp.html:8
 msgid "comp-desc"
 msgstr ""
-"<p>Računarska sekcija KSET-a <strong>već 15+ godina</strong> održava i "
-"unapređuje računalnu infrastrukturu KSET-a te u suradnji s CARNetom putem "
-"live stream-a prenosi sva kulturna događanja u organizaciji KSET-a. Pri "
-"realizaciji svojih projekata sekcija se koristi otvorenim i besplatnim "
-"tehnologijama.</p> <p> <strong>Neki od najzahtjevnijih psihičkih i fizičkih "
-"poslova kojima se bavimo:</strong> <br /> <br />* Svi mogući (i nemogući) "
-"Linux sysadmin poslovi (ponekad i neki drugi OS-evi) <br />* održavanje i "
-"nadogradnja računalne mreže u KSET-u <br />* programiranje u svim mogućim "
-"programskim jezicima <br />* konfiguriranje svih (ne)zamislivih deamona/"
-"servisa <br />* stream-anje (u suradnji sa CARNet-om) <br />* pružanje "
-"besplatnog web hosting-a (i mail-a) studentskim udrugama <br />* "
-"wirelessiranje <br />* krimpanje UTP-a svih dužina (po standardu!) <br />* "
-"održavanje web stranica KSET-a <br />* održavanje tečaja za nadobudne "
-"studente <br />* održavanje dviju vještina na faksu <br />* itd. itd. itd.</"
-"p> <p>Sekcija broji oko 30ak članova/ica, skoro pa toliko računala "
-"pogonjenih GNU/Linuxom (Debianom, Ubuntu), *BSD-om i Windowsima, zatim par "
-"kilometara UTP-a, <br />nekoliko switcheva, impozantni RACK...</p> "
-"<p>Ukoliko vam ijedan od navedenih pojmova izaziva smiješak na licu i pritom "
-"se želite dobro zabaviti te nešto novo naučiti, a k tome ste još i "
-"student(ica) slobodno nam se pridružite. Uvijek smo u potrazi za novim, "
-"perspektivnim članovima sa širokim poljem tehničkih interesa i željom za "
-"radom u sekcijskoj atmosferi(tm) pa ako ste student i pronalazite se u "
-"gornjem opisu <strong>dođite na sastanak petkom u 18h ili se javite mailom "
-"trenutnom voditelju sekcije.</strong> </p>"
+<p>Računarska sekcija KSET-a, takozvani Comp, je ona devetina kluba koja brine 
+i o internetu u klubu i o klubu u internetu.</p><p>To prvenstveno znači da mi brinemo 
+o klupskoj mrežnoj infrastrukturi, softverskoj ili hardverskoj. Kada nešto ne valja, 
+mi to popravljamo. Kada nešto valja, mi pokušavamo naći način da valja još više.</p>
+<p>Dužnosti sekcije prema klubu podijeljene su ugrubo u tri domene:</p>
+<ol><li><strong>sysadmin</strong><p>Bilo to popravljanje servera ili nabavka 
+novog hardvera za servere, virtualizacija i deployment klupskih aplikacija 
+na higijenski način, postavke DNS-a, konfiguracija switcheva, WiFi u klubu ili 
+krimpanje Ethernet kablova, mi to smišljamo i implementiramo. Imamo nekoliko servera 
+na raspolaganju, a puno potreba, pa pokušavamo osigurati da sve bude na svojem 
+mjestu i održivo. Svi serveri vrte <strong>Debian</strong>, a od relevantnih tehnologija istaknuti 
+su <strong>LXC i Docker</strong> za virtualizaciju i <strong>nginx</strong> za posluživanje.</p></li>
+<li><strong>Internet of Things</strong><p>Većina članova se u nekom momentu 
+igrala s mikrokontrolerima poput <strong>Arduina</strong> i ugradbenim računalima poput 
+<strong>Raspberry Pija</strong>, pa svako toliko vidimo potrebu za korištenjem takvih znanja. 
+Primjeri ovog su klupski digitalni sat s funky vizualizacijama i Raspberry Pi koji vrti 
+Grafanu, alat za vizualizaciju serverske aktivnosti i opterećenja.</p></li>
+<li><strong>web</strong><p>Kad već imamo servere, bilo bi bezveze da oni zjape prazni. 
+Kada se ukaže potreba za razvojem neke web aplikacije za klupske potrebe, 
+na nama je da to provedemo u djelo. Jedan primjer je <a href='https://www.kset.org/'>
+stranica na kojoj čitaš ovo</a>, a tu su još i stranice za <a href='https://brucosijada.kset.org/'>
+brucošijadu</a> i <a href='https://jobfair.fer.unizg.hr/'>JobFair</a>, kao i nekoliko 
+internih aplikacija. U trenutku pisanja većina aplikacija je u <strong>Djangu</strong> ili 
+<strong>Flasku</strong> (web radni okviri za Python), a neke koriste <strong>Ruby on Rails.</strong>
+</p></li></ol>
+<p>Uglavnom smo zagriženi linuksaši (od Ubuntua do Archa!) i njegovatelji open source 
+tehnologija. Ovome svjedoče sljedeće činjenice:</p><ul>
+<li>svake godine sudjelujemo na <strong>Danima otvorenih računarskih sustava (DORS/CLUC),</strong> 
+konferenciji o različitim open source tehnologijama,</li>
+<li>svake godine organiziramo <strong>Linux InstallFest</strong>, događaj na kojem svima zainteresiranima 
+pomažemo s instalacijom ovog operacijskog sustava, i to distribucije po želji,</li>
+<li>sekcija je usko povezana uz provođenje vještina <a href='http://www.fer.unizg.hr/predmet/okosl'>
+'Osnove korištenja operacijskog sustava Linux'</a> i <a href='http://www.fer.unizg.hr/predmet/nkosl'>
+'Napredno korištenje operacijskog sustava Linux' na FER-u, čime radimo na edukaciji studenata.</li></ol>
+<p>Pored svega toga, uvijek bude članova koji "briju" na <strong>grafiku, strojno učenje ili big data,</strong> 
+a spremni su podijeliti to iskustvo, ili, pak, neka znanja specifična za neki programski jezik.</p>
+<p>Pa eto. Ako te nešto od ovoga zanima i želiš naučiti više o nekoj od navedenih tehnologija i 
+uputiti se u rad i život kluba, javi se voditelju sekcije i/ili dođi na sastanak svakog petka u 19:15!</p>
+<p><strong>Širite ljubav i open source!</strong></p>
 
 #. Translators: Disco
 #: kset/templates/divisions/disco.html:5
