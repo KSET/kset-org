@@ -529,7 +529,7 @@ msgstr ""
 "<li>Saznati sve bitno o biciklima i biciklizmu i dobiti savjete</li>"
 "<li>Koristiti kvalitetni specijalizirani alat za bicikle te sve ostale "
 "potrebne masti i odmaščivaće</li>"
-"<li>Družiti se, roštiljati, dežurati u KSET-u (ondje se pak često kuha gulaš 
+"<li>Družiti se, roštiljati, dežurati u KSET-u (ondje se pak često kuha gulaš "
 "ili grah), popravljati bicikle i učiti o tome od iskusnijih kolega te "
 "sudjelovati u promociji biciklizma</li>"
 "<li>Sudjelovati na raznim utrkama - par članova su iskusni natjecatelji HR MTB Kupa!</li>"
