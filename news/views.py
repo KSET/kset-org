@@ -21,12 +21,12 @@ def active(request):
 
     sticky_news = News.get_sticky_news()
 
-    #get latest albums from gallery
+    # get latest albums from gallery
     latest = Album.objects.filter(category=Album.LIVE).order_by('-date_of_event')[:3]
 
     return render(request, 'news.html',
-        {'news': news, 'events': events, 'daytime_events': daytime_events,
-        'latest': latest, 'sticky_news': sticky_news})
+                  {'news': news, 'events': events, 'daytime_events': daytime_events,
+                   'latest': latest, 'sticky_news': sticky_news})
 
 
 def by_slug(request, slug):
