@@ -1099,6 +1099,9 @@ div.clear + div.left-column {
     padding-top: 10px;
 }
 
+.right-column .a1-box {
+    padding-top: 10px;
+}
 
 
 .right-box a {
