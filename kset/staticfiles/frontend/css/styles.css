@@ -687,6 +687,23 @@ h3
 }
 
 
+.logo-a1
+{
+    display: block;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.logo-a1 img {
+    width: 120px;
+}
+
+.logo-a1:hover
+{
+    opacity: 0.9;
+}
+
+
 /* LEFT COLUMN */
 
 .left-column
