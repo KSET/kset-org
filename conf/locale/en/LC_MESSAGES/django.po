@@ -425,6 +425,11 @@ msgstr "Always there for us"
 msgid "fer"
 msgstr "Faculty of Electrical Engineering <br /> and Computing"
 
+#. Translators: Daje nam pristup internetu
+#: kset/templates/program.html:85
+msgid "a1_logo_title"
+msgstr "Providing reliable internet access to us"
+
 #. Translators: Utičnice
 #: kset/templates/program.html:98
 msgid "plugs"
