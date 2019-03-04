@@ -425,6 +425,11 @@ msgstr "Uvijek je tu za nas"
 msgid "fer"
 msgstr "Fakultet elektrotehnike <br> i računarstva"
 
+#. Translators: Daje nam pristup internetu
+#: kset/templates/program.html:85
+msgid "a1_logo_title"
+msgstr "Daje nam pristup internetu"
+
 #. Translators: Utičnice
 #: kset/templates/program.html:98
 msgid "plugs"
