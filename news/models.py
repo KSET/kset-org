@@ -16,7 +16,7 @@ class News(models.Model):
     expire_at = models.DateTimeField(null=True)
     sticky = models.BooleanField(u'Sticky', default=False)
     thumb = FileBrowseField(u'Sličica', max_length=255, blank=True)
-    slug = models.SlugField(blank=True, max_length=128)
+    slug = models.SlugField(blank=True, max_length=128, unique=True)
 
     class Meta:
         verbose_name = 'vijest'
