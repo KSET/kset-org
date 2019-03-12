@@ -39,7 +39,7 @@ class Event(models.Model):
     content = HTMLField(u'Sadržaj', blank=True)
     tags = ArrayField(dbtype="text",
         help_text='OBAVEZNO odvojiti tagove zarezon ali *BEZ* razmaka. Primjer: tag1,tag2,tag3')
-    slug = models.SlugField(blank=True, max_length=128)
+    slug = models.SlugField(blank=True, max_length=128, unique=True)
     announce = models.BooleanField(u'Najavi')
     daytime = models.BooleanField(u'Dnevni')
     price = models.CharField(u'Cijena', max_length=16, null=True, blank=True)
