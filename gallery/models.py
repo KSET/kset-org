@@ -80,7 +80,7 @@ class Album(models.Model):
 
 class Image(models.Model):
     title = models.CharField(u'Naziv slike', max_length=255, unique=False)
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=255, unique=True)
     caption = HTMLField(u'Kratak opis', null=True, blank=True, max_length=255)
     photographer = models.ForeignKey(Photographer, null=True)
     date_of_event = models.DateField(u'Datum događaja')
