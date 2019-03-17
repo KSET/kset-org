@@ -54,6 +54,7 @@ class MemberAdmin(UserAdmin):
     search_fields = ('name', 'surname', 'nickname', 'username')
     search_fields_verbose = ('Ime', 'Prezime', 'Nadimak')
     list_filter = ['groups', MemberActiveFilter]
+    prepopulated_fields = {'slug': ('name', 'surname')}
 
     actions = [
         make_bill,
