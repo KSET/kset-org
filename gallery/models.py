@@ -39,7 +39,7 @@ class Album(models.Model):
     upload_path = FileBrowseField("Putanja do albuma", max_length=255,
         directory="gallery/", null=True, blank=True)
     title = models.CharField('Ime albuma', max_length=255, unique=False)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     description = HTMLField('Kratak opis', max_length=255)
     date_of_event = models.DateField('Datum događaja')
     date_of_upload = models.DateTimeField(auto_now=True)
