@@ -31,7 +31,7 @@ class Group(models.Model):
     STATUS = 'status'
 
     name = models.CharField("naziv", max_length=32)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     parent = models.ForeignKey('self', null=True, blank=True, verbose_name="nad-grupa")
     description = models.CharField("opis", max_length=128, null=True, blank=True)
     objects = GroupManager()
