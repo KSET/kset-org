@@ -80,7 +80,6 @@ class MemberFactory(factory.django.DjangoModelFactory):
     card_id = factory.Sequence(lambda n: 'CardID-%s' % n)
     name = factory.Sequence(lambda n: 'TestName%s' % n)
     surname = factory.Sequence(lambda n: 'TestSurname%s' % n)
-    slug = factory.Sequence(lambda n: 'test-member-%s' % n)
     nickname = factory.Sequence(lambda n: 'TestNickname%s' % n)
     username = factory.Sequence(lambda n: 'testusername%s' % n)
     password = None

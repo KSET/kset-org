@@ -66,7 +66,6 @@ class Member(models.Model):
     card_id = models.CharField("iskaznica", max_length=32, null=True, blank=True)
     name = models.CharField("ime", max_length=32)
     surname = models.CharField("prezime", max_length=64)
-    slug = models.SlugField(unique=True)
     nickname = models.CharField("nadimak", max_length=32, null=True, blank=True)
     username = models.CharField("korisničko ime", unique=True, max_length=32)
     password = models.CharField("lozinka", max_length=255, null=True, blank=True)
