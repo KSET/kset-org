@@ -2,6 +2,6 @@
 
 python-ldap==2.4.12
 django-auth-ldap==1.1.4
-gunicorn==18.0
+gunicorn==19.5.0
 mysql-python==1.2.5
 python-memcached==1.53
