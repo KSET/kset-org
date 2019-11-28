@@ -9,7 +9,7 @@ import datetime
 class RssProgramFeed(Feed):
     title = "www.KSET.org"
     link = "http://www.kset.org/"
-    description = "Klub Studenata ElektroTehnike - Program"
+    description = "Klub Studenata Elektrotehnike - Program"
     description_template = "templates/feed_description.html"
 
     def item_pubdate(self, obj):
