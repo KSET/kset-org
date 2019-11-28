@@ -48,11 +48,11 @@ msgstr "Croatian"
 msgid "English"
 msgstr "English"
 
-#. Translators: Klub Studenata Elektrotehnike
+#. Translators: Klub studenata elektrotehnike
 #: kset/templates/404.html:31 kset/templates/club.html:8
 #: kset/templates/index.html:42 kset/templates/newsletter.html:99
 msgid "description-short"
-msgstr "Klub Studenata Elektrotehnike"
+msgstr "Klub studenata elektrotehnike"
 
 #. Translators: NASLOVNICA
 #: kset/templates/404.html:56 kset/templates/index.html:90
