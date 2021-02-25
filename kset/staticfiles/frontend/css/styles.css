@@ -1564,6 +1564,7 @@ video {
     font-family: Roboto Slab;
     text-align: left;
     line-height: 20px;
+    padding-left: 70px;
 }
 
 .gallery-year {
