@@ -546,8 +546,7 @@ msgstr ""
 "ne osjeća sam/a. </p>"
 "<p>Većinu komunikacije vršimo preko Slacka, ali smo aktivni i na Facebooku.</p>"
 "<p>Za više informacija javi nam se na <a href='https://www.facebook.com/bicikl.kset'>"
-"Facebook stranici</a>, na mail voditelja sekcije (<a href='mailto:mihael.nosil@kset.org'>"
-"mihael.nosil@kset.org</a>) ili se raspitaj o nama u klubu KSET - netko će vjerojatno "
+"Facebook stranici</a>, na mail voditelja sekcije ili se raspitaj o nama u klubu KSET - netko će vjerojatno "
 "već biti tamo!</p>"
 
 #. Translators: Računarska
